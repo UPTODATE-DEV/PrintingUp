@@ -8,11 +8,13 @@ package controller.commande;
 import Elementary.Mywindows;
 import static Elementary.Mywindows.Ouput;
 import static Elementary.Mywindows.isSaved;
+import Elementary.references;
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.prefs.Preferences;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -29,7 +31,7 @@ import javafx.scene.text.Text;
  * @author Akim
  */
 public class AddcommandeController implements Initializable {
-    
+
     @FXML
     private TextField Tfdservice;
     @FXML
@@ -55,7 +57,7 @@ public class AddcommandeController implements Initializable {
     @FXML
     private ImageView imageviw;
 
-    private Button btn_ok =new Button();
+    public static Button btn_ok = new Button();
 
     /**
      * Initializes the controller class.
@@ -65,16 +67,17 @@ public class AddcommandeController implements Initializable {
         // TODO
         Init();
     }
-    
+
     void Init() {
         imageviw.setVisible(false);
+       
         btn_ok.setVisible(false);
         Mywindows.getInstanceL().ChargememtCompression(Tfdservice, "tbl_svc", "designation", null);
         Mywindows.getInstanceL().ChargememtCompression(Tfdtype_service, "tbl_type", "designation", null);
         Mywindows.getInstanceL().ChargememtCompression(Tfdclient, "tbl_client", "nom", null);
         mouci();
     }
-    
+
     @FXML
     private void Traitement_commande(ActionEvent event) throws Exception {
         if (event.getSource() == btn_commande) {
@@ -87,24 +90,23 @@ public class AddcommandeController implements Initializable {
             }
         }
     }
-    String query = "SELECT MAX(id) x FROM tbl_entecommande";
-    
+    private String query = "SELECT MAX(id) x FROM tbl_entecommande";
+
     public int isIdcommande(String client) throws Exception {
         if (isSaved("sp_commande", "PROCEDURE", Tfd_code, Tfdclient, 1) == true) {
             return Integer.parseInt(Mywindows.getInstanceL().ismac_up(query));
         }
         return 0;
     }
-    
+
     @FXML
     private void getadd(ActionEvent event) throws Exception {
         if (event.getSource() == btn_test_) {
             getClient();
         }
     }
-    
+
     void mouci() {
-        
         try {
             TfdQuantite.setOnMousePressed((e) -> {
                 String qry = "select SR.pu x FROM tbl_svc s INNER JOIN tbl_service SR ON s.id=SR.designation INNER JOIN tbl_type t ON\n"
@@ -114,7 +116,7 @@ public class AddcommandeController implements Initializable {
                 } else {
                     TfdPunitaire.setText(Double.toString(Double.parseDouble(Mywindows.getInstanceL().ismac_up(qry))));
                 }
-                
+
             });
             Tfdclient.setOnKeyReleased((e) -> {
                 if (e.getCode() == KeyCode.ENTER) {
@@ -124,22 +126,20 @@ public class AddcommandeController implements Initializable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
+
     }
-    
+
     void save(int c) throws Exception {
         if (isSaved("sp_Dcommande", "PROCEDURE", Tfd_code, TfdPunitaire, TfdQuantite, id_commande, Tfdservice, c, Tfdtype_service) == true) {
-            Ouput(Text, icon, "Enregistrement reussi", imageviw, btn_ok, true, false);
-            Tfdservice.requestFocus();
+            Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
         }
     }
-    
+
     void getClient() {
         if (!Mywindows.getInstanceL().isFieldsempty(Tfdclient)) {
             try {
                 if (Integer.parseInt(id_commande.getText()) == 0) {
                     id_commande.setText(Integer.toString(isIdcommande(Tfdclient.getText())));
-                    Tfdservice.requestFocus();
                 }
             } catch (Exception ex) {
                 Logger.getLogger(AddcommandeController.class.getName()).log(Level.SEVERE, null, ex);
@@ -148,5 +148,5 @@ public class AddcommandeController implements Initializable {
             System.out.println("Cree d'abord le numero commande");
         }
     }
-    
+
 }

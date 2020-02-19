@@ -670,7 +670,6 @@ public class Mywindows {
     }
 
     public String sexe_change(int x) {
-
         if (x == 0) {
             return "MASCULIN";
         } else if (x != 0) {

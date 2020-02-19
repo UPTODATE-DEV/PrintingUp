@@ -6,8 +6,12 @@
 package controller.nouveau;
 
 import Elementary.Mywindows;
+import static Elementary.Mywindows.Ouput;
+import static Elementary.Mywindows.initFields;
 import static Elementary.Mywindows.isSaved;
+import Elementary.references;
 import com.jfoenix.controls.JFXButton;
+import static controller.commande.AddcommandeController.btn_ok;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -15,6 +19,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -33,6 +39,12 @@ public class AddserviceController implements Initializable {
     private JFXButton btn_save;
     @FXML
     private Label Tfd_code;
+    @FXML
+    private Label icon;
+    @FXML
+    private Text Text;
+    @FXML
+    private ImageView imageviw;
 
     /**
      * Initializes the controller class.
@@ -40,14 +52,26 @@ public class AddserviceController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-         Mywindows.getInstanceL().ChargememtCompression(Tfdservice, "tbl_svc", "designation",null);
-        Mywindows.getInstanceL().ChargememtCompression(Tfdtype_service, "tbl_type", "designation",null);
+        Mywindows.getInstanceL().ChargememtCompression(Tfdservice, "tbl_svc", "designation", null);
+        Mywindows.getInstanceL().ChargememtCompression(Tfdtype_service, "tbl_type", "designation", null);
+        imageviw.setVisible(false);
     }
 
     @FXML
     private void Traitement_service(ActionEvent event) throws Exception {
         if (event.getSource() == btn_save) {
-            if (isSaved("sp_service", "PROCEDURE", Tfd_code, Tfdservice, Tfdpunitaire, Tfdtype_service, 1) == true) {
+            if (!Mywindows.getInstanceL().isFieldsempty(Tfdservice, Tfdpunitaire, Tfdtype_service)) {
+                if (Double.parseDouble(Tfdpunitaire.getText()) > 0) {
+                    if (isSaved("sp_service", "PROCEDURE", Tfd_code, Tfdservice, Tfdpunitaire, Tfdtype_service, 1) == true) {
+                        Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
+                        initFields(false, Tfdservice, Tfdpunitaire, Tfdtype_service);
+                    }
+                } else {
+                    Ouput(Text, icon, references.getInstanceE().MESSAGE_INFERIEUR, imageviw, btn_ok, true, true);
+                }
+
+            } else {
+                Ouput(Text, icon, references.getInstanceE().MESSAGE_ISMPTY, imageviw, btn_ok, true, true);
             }
         }
     }

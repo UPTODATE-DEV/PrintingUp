@@ -39,6 +39,8 @@ public class references {
     public final String MESSAGE_SAVE = "Vous avez enregistrer avec succès";
     public final String MESSAGE_MODIFY = "Vous avez modifier avec succès";
     public final String MESSAGE_DELETE = "Vous avez supprimer avec succès";
+    public final String MESSAGE_ISMPTY = "Completer les champ()s svp";
+    public final String MESSAGE_INFERIEUR = "Vous avez entrer le nontant invalider";
     /**
      * *
      * INITIALISATION DE LA CLASSE references TEST L'OBJECT

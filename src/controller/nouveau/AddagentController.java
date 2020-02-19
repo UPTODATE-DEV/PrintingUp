@@ -7,7 +7,11 @@ package controller.nouveau;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -15,6 +19,13 @@ import javafx.fxml.Initializable;
  * @author Akim
  */
 public class AddagentController implements Initializable {
+
+    @FXML
+    private Label icon;
+    @FXML
+    private Text Text;
+    @FXML
+    private ImageView imageviw;
 
     /**
      * Initializes the controller class.
