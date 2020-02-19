@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="388.0" prefWidth="391.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.nouveau.AddserviceController">
+   <children>
+      <AnchorPane layoutX="45.0" layoutY="8.0" prefHeight="56.0" prefWidth="56.0" style="-fx-background-color: #176FE5; -fx-background-radius: 5px;">
+         <effect>
+            <DropShadow color="#d0d0d0" />
+         </effect>
+         <children>
+            <JFXButton alignment="CENTER" contentDisplay="TOP" layoutY="7.0" prefHeight="48.0" prefWidth="56.0" text="service" textFill="WHITE" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0">
+               <font>
+                  <Font name="Century Gothic Bold" size="11.0" />
+               </font>
+               <graphic>
+                  <Icons525View fill="WHITE" glyphName="MYSPACE" size="18" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="42.0" layoutY="81.923828125">
+         <children>
+            <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service">
+               <font>
+                  <Font name="Century Gothic" size="13.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
+               <children>
+                  <TextField fx:id="Tfdservice" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le service" style="-fx-background-color: #fff;" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <MaterialIconView fill="#6fa3e6" glyphName="INSERT_DRIVE_FILE" size="18" />
+                     </graphic>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="42.0" layoutY="152.923828125">
+         <children>
+            <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type service">
+               <font>
+                  <Font name="Century Gothic" size="13.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
+               <children>
+                  <TextField fx:id="Tfdtype_service" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le type service" style="-fx-background-color: #fff;" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <MaterialIconView fill="#6fa3e6" glyphName="INSERT_DRIVE_FILE" size="18" />
+                     </graphic>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="42.0" layoutY="222.0">
+         <children>
+            <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P.Unitaire">
+               <font>
+                  <Font name="Century Gothic" size="13.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
+               <children>
+                  <TextField fx:id="Tfdpunitaire" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le p.unitaire" style="-fx-background-color: #fff;" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <MaterialIconView fill="#6fa3e6" glyphName="INSERT_DRIVE_FILE" size="18" />
+                     </graphic>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="btn_save" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="43.0" layoutY="294.0" onAction="#Traitement_service" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #176FE5;" text="Enregistrer" textFill="WHITE" />
+      <AnchorPane layoutX="46.0" layoutY="330.0" prefHeight="48.0" prefWidth="298.0" />
+      <Label fx:id="Tfd_code" layoutX="327.0" layoutY="29.0" prefHeight="17.0" prefWidth="20.0" text="0" textFill="WHITE" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="749.0" style="-fx-background-color: #F5F6FA;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.CommandeController">
+   <children>
+      <GridPane hgap="10.0" layoutX="-9.0" layoutY="1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="73.0" prefWidth="255.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+               <effect>
+                  <DropShadow color="#cdcdcd" />
+               </effect>
+               <children>
+                  <Text fill="#686868" layoutX="14.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Commande">
+                     <font>
+                        <Font name="Century Gothic Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#686868" layoutX="13.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cette interface vous permet d'ajouter des nouveaux commande..." wrappingWidth="224.126953125" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="73.0" prefWidth="463.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="1">
+               <effect>
+                  <DropShadow color="#cdcdcd" />
+               </effect>
+               <children>
+                  <GridPane hgap="15.0" layoutX="22.0" layoutY="12.0" AnchorPane.bottomAnchor="12.0" AnchorPane.topAnchor="12.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane fx:id="p1" prefHeight="63.0" prefWidth="71.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+                           <effect>
+                              <DropShadow color="#d0d0d0" />
+                           </effect>
+                           <children>
+                              <JFXButton fx:id="btn_client" alignment="CENTER" contentDisplay="TOP" layoutY="-1.0" onAction="#Call_windows" prefHeight="53.0" prefWidth="71.0" style="-fx-background-radius: 5px;" text="Valider" textFill="#c7c7d4" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="13.0" />
+                                 </font>
+                                 <graphic>
+                                    <Icons525View fill="#c7c7d4" glyphName="IMPORT" size="18" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="p2" prefHeight="63.0" prefWidth="71.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="1">
+                           <effect>
+                              <DropShadow color="#d0d0d0" />
+                           </effect>
+                           <children>
+                              <JFXButton fx:id="btn_agent" alignment="CENTER" contentDisplay="TOP" layoutY="-3.0" onAction="#Call_windows" prefHeight="54.0" prefWidth="71.0" style="-fx-background-radius: 5px;" text="Annuler" textFill="#c7c7d4" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-3.0">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="13.0" />
+                                 </font>
+                                 <graphic>
+                                    <MaterialIconView fill="#c7c7d4" glyphName="STREETVIEW" size="17" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="p3" prefHeight="63.0" prefWidth="71.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="2">
+                           <effect>
+                              <DropShadow color="#d0d0d0" />
+                           </effect>
+                           <children>
+                              <JFXButton fx:id="btn_service" alignment="CENTER" contentDisplay="TOP" layoutY="-3.0" onAction="#Call_windows" prefHeight="54.0" prefWidth="71.0" style="-fx-background-radius: 5px;" text="Modifier" textFill="#c7c7d4" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-3.0">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="13.0" />
+                                 </font>
+                                 <graphic>
+                                    <Icons525View fill="#c7c7d4" glyphName="SNOWFLAKE" size="18" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <AnchorPane layoutX="428.0" layoutY="92.0" prefHeight="32.0" prefWidth="306.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="92.0">
+         <children>
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="237.0" layoutY="1.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #176FE5;" text=" ">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="13" />
+               </graphic>
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </JFXButton>
+            <TextField layoutX="23.0" prefHeight="27.0" prefWidth="208.0" promptText="Rechercher une Livraison" style="-fx-border-color: #E9E9E9; -fx-background-color: #fff; -fx-border-radius: 5px;" />
+            <JFXButton fx:id="btn_commande_" alignment="CENTER" contentDisplay="CENTER" layoutX="279.0" layoutY="1.0" onAction="#getadd" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #176FE5;" text=" ">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TH_LARGE" size="13" />
+               </graphic>
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="14.0" layoutY="130.0" prefHeight="543.0" prefWidth="719.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="130.0" />
+      <HBox layoutX="24.0" layoutY="95.0" prefHeight="27.0" prefWidth="243.0">
+         <children>
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="42.0" style="-fx-background-color: #176FE5;" text="Page" textFill="WHITE">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

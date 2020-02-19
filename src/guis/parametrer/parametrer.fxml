@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="749.0" style="-fx-background-color: #F5F6FA;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.parametrer.ParametrerController">
+   <children>
+      <GridPane hgap="10.0" layoutX="-9.0" layoutY="1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="73.0" prefWidth="255.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+               <effect>
+                  <DropShadow color="#cdcdcd" />
+               </effect>
+               <children>
+                  <Text fill="#686868" layoutX="14.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parametrer">
+                     <font>
+                        <Font name="Century Gothic Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#686868" layoutX="13.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cette interface vous permet de configurer le serveur et verifier le serveur client connecter" wrappingWidth="224.126953125">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="73.0" prefWidth="463.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="1">
+               <effect>
+                  <DropShadow color="#cdcdcd" />
+               </effect>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <AnchorPane layoutX="428.0" layoutY="92.0" prefHeight="32.0" prefWidth="306.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="92.0">
+         <children>
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="237.0" layoutY="1.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #176FE5;" text=" ">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="13" />
+               </graphic>
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </JFXButton>
+            <TextField layoutX="23.0" prefHeight="27.0" prefWidth="208.0" promptText="Rechercher une Livraison" style="-fx-border-color: #E9E9E9; -fx-background-color: #fff; -fx-border-radius: 5px;" />
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="279.0" layoutY="1.0" onAction="#getadd" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #176FE5;" text=" ">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TH_LARGE" size="13" />
+               </graphic>
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="367.0" layoutY="139.0" prefHeight="451.0" prefWidth="701.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="130.0">
+         <children>
+            <VBox alignment="TOP_RIGHT" prefHeight="451.0" prefWidth="349.0" style="-fx-background-color: #FFF; -fx-border-width: 1px;">
+               <children>
+                  <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="451.0" prefWidth="347.0" style="-fx-background-color: #fff;">
+                     <children>
+                        <AnchorPane layoutX="41.0" layoutY="12.0" prefHeight="59.0" prefWidth="123.0" style="-fx-background-color: #176FE5; -fx-background-radius: 5px;">
+                           <effect>
+                              <DropShadow color="#d0d0d0" />
+                           </effect>
+                           <children>
+                              <JFXButton alignment="CENTER" contentDisplay="TOP" layoutY="7.0" prefHeight="48.0" prefWidth="56.0" text="CONFIGURATION" textFill="WHITE" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="11.0" />
+                                 </font>
+                                 <graphic>
+                                    <Icons525View fill="WHITE" glyphName="LINK" size="18" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="46.0" layoutY="81.923828125">
+                           <children>
+                              <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Serveur">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Text>
+                              <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
+                                 <children>
+                                    <TextField layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom ou l'adresse ip du serveur" style="-fx-background-color: #fff;" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <MaterialDesignIconView fill="#1970e389" glyphName="DNS" size="18" />
+                                       </graphic>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="46.0" layoutY="148.923828125">
+                           <children>
+                              <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Base des donnees">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Text>
+                              <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
+                                 <children>
+                                    <TextField layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom de la base des donnees" style="-fx-background-color: #fff;" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <MaterialDesignIconView fill="#1970e38a" glyphName="DOMAIN" size="18" />
+                                       </graphic>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="46.0" layoutY="215.0">
+                           <children>
+                              <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateur">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Text>
+                              <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
+                                 <children>
+                                    <TextField layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom d'utilisateur" style="-fx-background-color: #fff;" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <MaterialDesignIconView fill="#1970e38a" glyphName="ACCOUNT_BOX" size="18" />
+                                       </graphic>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="46.0" layoutY="280.0">
+                           <children>
+                              <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot depasse">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Text>
+                              <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
+                                 <children>
+                                    <TextField layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le mot de passe" style="-fx-background-color: #fff;" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#9fc6f8" glyphName="KEY" size="18" />
+                                       </graphic>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="125.0" layoutY="351.0" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #176FE5;" text="Configurer" textFill="WHITE" />
+                        <AnchorPane layoutX="45.0" layoutY="390.0" prefHeight="48.0" prefWidth="298.0" />
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="216.0" layoutY="351.0" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #176FE5;" text="Test" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+               </children>
+               <VBox.margin>
+                  <Insets left="380.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
+      <HBox layoutX="24.0" layoutY="95.0" prefHeight="27.0" prefWidth="243.0">
+         <children>
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="42.0" style="-fx-background-color: #176FE5;" text="Page" textFill="WHITE">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
