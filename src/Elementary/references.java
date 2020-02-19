@@ -27,8 +27,36 @@ public class references {
     public static final String COMMANDE = "/guis/commande/commande.fxml";
     public static final String PARAMETRE = "/guis/parametrer/parametrer.fxml";
     public static final String ADDCLIENT = "/guis/nouveau/addclient.fxml";
-    
+
     public static final String ADDSERVICE = "/guis/nouveau/addservice.fxml";
     public static final String ADDAGENT = "/guis/nouveau/addagent.fxml";
     public static final String ADDCOMMANDE = "/guis/commande/Addcommande.fxml";
+    /**
+     * *
+     *
+     * INITIALISATION DE MESSAGE D'ALERT
+     */
+    public final String MESSAGE_SAVE = "Vous avez enregistrer avec succès";
+    public final String MESSAGE_MODIFY = "Vous avez modifier avec succès";
+    public final String MESSAGE_DELETE = "Vous avez supprimer avec succès";
+    /**
+     * *
+     * INITIALISATION DE LA CLASSE references TEST L'OBJECT
+     *
+     */
+    private static references refere;
+
+    /**
+     * ******
+     * Initialisation de la class references
+     *
+     * @return
+     */
+    public static references getInstanceE() {
+        if (refere == null) {
+            refere = new references();
+        }
+        return refere;
+    }
+
 }
