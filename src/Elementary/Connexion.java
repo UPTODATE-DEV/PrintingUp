@@ -31,14 +31,11 @@ public class Connexion {
     }
 
     public static Connection isConnected() {
-        int x = 0;
         if (cnx == null) {
             new Connexion();
-            x++;
-            System.out.println("Connexion initialiser !!!  " + x);
+            System.out.println("Connexion initialiser !!!  ");
         }
-        x++;
-        System.out.println("Connexion disponible déjà  " + x);
+        System.out.println("Connexion disponible déjà  ");
         return cnx;
 
     }
