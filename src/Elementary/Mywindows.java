@@ -43,6 +43,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -236,11 +237,10 @@ public class Mywindows {
     public String num1, service1, quantite1, punitaire1;
 
 //    public void ScrollwithHBX(VBox princi, ArrayList data, String url, Node... receved) throws IOException {
-    public void ScrollwithHBX(VBox princi, int tr, String url) throws IOException, SQLException {
-        i = 0;
-        somme = tr;
-        size = tr;
-        pst = isConnected().prepareStatement("SELECT * FROM `vs_test`");
+    public void ScrollwithHBX(GridPane grid, int tr, String url) throws IOException, SQLException {
+        unit();
+
+              pst = isConnected().prepareStatement("SELECT * FROM `vs_test`");
         rst = pst.executeQuery();
         while (rst.next()) {
             num.add(rst.getString(1));
@@ -250,36 +250,29 @@ public class Mywindows {
         }
 
         Node[] node = new Node[num.size()];
+        grid.getChildren().clear();
+
+        int x = 0;
+        int i = 0;
         while (i < num.size()) {
-
-            if ((size - 1) >= 0) {
-
+           
                 HBox hbx = new HBox();
                 hbx.setStyle("-fx-fill: #F8F8F8");
-                for (int a = 0; a < 1; a++) {
-                     System.out.println(num.get(a));
+                for (int a = 0; a < tr; a++) {
+                    System.out.println(service1);
                     num1 = num.get(a).toString();
-                    service1 = num.get(a).toString();
-                    quantite1 = num.get(a).toString();
-                    punitaire1 = num.get(a).toString();
-
+                    service1 = service.get(a).toString();
+                    quantite1 = quantite.get(a).toString();
+                    punitaire1 = punitaire.get(a).toString();
                     node[a] = FXMLLoader.load(getClass().getResource(url));
-                    hbx.getChildren().add(node[a]);
+                    grid.add(node[i], a, x);
                     i++;
-                    princi.getChildren().add(hbx);
+                    if (i >= num.size()) {
+                        a = 5;
+                    }
                 }
-
-            } else {
-
-                HBox hbx2 = new HBox();
-                hbx2.setStyle("-fx-fill: #F8F8F8");
-//                loadData(i, data);
-                node[0] = FXMLLoader.load(getClass().getResource(url));
-                hbx2.getChildren().add(node[0]);
                 i++;
-                size = size - size;
-                princi.getChildren().add(hbx2);
-            }
+            
         }
     }
 
@@ -739,7 +732,7 @@ public class Mywindows {
      * @throws java.io.IOException
      * @Creatiom de l'Objet pour cette Classe
      */
-    
+
     /**
      * @param message
      * @param icon
@@ -890,14 +883,12 @@ public class Mywindows {
 //        }
 //    }
 //
-//    void unit() {
-//        AddcommandeController.service1=null;
-//        NOM.clear();
-//        SEXE.clear();
-//        LEVEL.clear();
-//        EXP.clear();
-//        FONCTION.clear();
-//        TEL.clear();
-//    }
-//              // AddcommandeController.service1.setText("OK");
+
+    private void unit() {
+        num.clear();
+        service.clear();
+        quantite.clear();
+        punitaire.clear();
+    }
+    // AddcommandeController.service1.setText("OK");
 }
