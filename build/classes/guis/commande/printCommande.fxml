@@ -7,28 +7,32 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="33.0" prefWidth="360.0" style="-fx-background-color: #fff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="controller.commande.PrintCommandeController">
+<AnchorPane prefHeight="163.0" prefWidth="155.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.PrintCommandeController">
    <children>
-      <Label fx:id="id_lab" layoutX="8.0" layoutY="9.0" prefHeight="17.0" prefWidth="43.0" text="001">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label fx:id="service" layoutX="56.0" layoutY="9.0" prefHeight="17.0" prefWidth="158.0" text="imprimer A3-couleur" />
-      <Label fx:id="quantite_" layoutX="219.0" layoutY="8.0" prefHeight="17.0" prefWidth="43.0" text="100000">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label fx:id="prix_unitaire" layoutX="269.0" layoutY="9.0" text="100000">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Button fx:id="btn_annuler" layoutX="327.0" layoutY="4.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="30.0" style="-fx-background-radius: 4em; -fx-border-radius: 4em; -fx-border-width: 25px; -fx-background-color: #DC511E;">
-         <graphic>
-            <Icons525View fill="WHITE" glyphName="REFRESH" size="15" />
-         </graphic>
-      </Button>
+      <AnchorPane id="AnchorPane" layoutX="3.0" layoutY="2.0" prefHeight="154.0" prefWidth="145.0" style="-fx-background-color: #fff;">
+         <children>
+            <Label fx:id="id_lab" layoutX="8.0" layoutY="9.0" prefHeight="17.0" prefWidth="43.0" text="001">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="service" layoutX="9.0" layoutY="32.0" prefHeight="17.0" prefWidth="127.0" text="000000000000000" />
+            <Label fx:id="quantite_" layoutX="33.0" layoutY="73.0" prefHeight="17.0" prefWidth="43.0" text="100000">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="prix_unitaire" layoutX="25.0" layoutY="106.0" text="100000">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_annuler" layoutX="76.0" layoutY="123.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="30.0" style="-fx-background-radius: 4em; -fx-border-radius: 4em; -fx-border-width: 25px; -fx-background-color: #DC511E;">
+               <graphic>
+                  <Icons525View fill="WHITE" glyphName="REFRESH" size="15" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

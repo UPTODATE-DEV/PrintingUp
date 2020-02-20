@@ -27,6 +27,8 @@ public class references {
     public static final String COMMANDE = "/guis/commande/commande.fxml";
     public static final String PARAMETRE = "/guis/parametrer/parametrer.fxml";
     public static final String ADDCLIENT = "/guis/nouveau/addclient.fxml";
+    
+    public static final String LOADCOMMANDE = "/guis/commande/printCommande.fxml";
 
     public static final String ADDSERVICE = "/guis/nouveau/addservice.fxml";
     public static final String ADDAGENT = "/guis/nouveau/addagent.fxml";
@@ -41,6 +43,8 @@ public class references {
     public final String MESSAGE_DELETE = "Vous avez supprimer avec succès";
     public final String MESSAGE_ISMPTY = "Completer les champ()s svp";
     public final String MESSAGE_INFERIEUR = "Vous avez entrer le nontant invalider";
+    
+    
     /**
      * *
      * INITIALISATION DE LA CLASSE references TEST L'OBJECT

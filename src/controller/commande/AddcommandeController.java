@@ -12,6 +12,7 @@ import Elementary.references;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,6 +25,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -60,12 +62,13 @@ public class AddcommandeController implements Initializable {
     private ImageView imageviw;
 
     public static Button btn_ok = new Button();
-    @FXML
     private VBox grideview;
     public static Label id_lab1;
     public static Label service1;
     public static Label quantite_1;
     public static Label prix_unitaire1;
+    @FXML
+    private GridPane tat_grid;
 
     /**
      * Initializes the controller class.
@@ -79,7 +82,11 @@ public class AddcommandeController implements Initializable {
     void Init() {
         try {
             imageviw.setVisible(false);
-            Mywindows.getInstanceL().ScrollwithHBX(grideview, 1, "/guis/commande/printCommande.fxml");
+            try {
+                Mywindows.getInstanceL().ScrollwithHBX(tat_grid, 1, "/guis/commande/printCommande.fxml");
+            } catch (SQLException ex) {
+                Logger.getLogger(AddcommandeController.class.getName()).log(Level.SEVERE, null, ex);
+            }
             btn_ok.setVisible(false);
             Mywindows.getInstanceL().ChargememtCompression(Tfdservice, "tbl_svc", "designation", null);
             Mywindows.getInstanceL().ChargememtCompression(Tfdtype_service, "tbl_type", "designation", null);

@@ -10,13 +10,17 @@ import static Elementary.Mywindows.getInstanceL;
 import static Elementary.references.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -38,6 +42,8 @@ public class NouveauController implements Initializable {
     @FXML
     private AnchorPane p3;
     private int status = 0;
+    @FXML
+    private VBox vbx;
 
     /**
      * Initializes the controller class.
@@ -46,8 +52,13 @@ public class NouveauController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         status = 1;
         if (status == 1) {
-            getInstanceL().SelectDataFor1(btn_client, btn_agent, btn_service);
-            getInstanceL().SelectDataFor(p1, p2, p3);
+            try {
+                getInstanceL().SelectDataFor1(btn_client, btn_agent, btn_service);
+                getInstanceL().SelectDataFor(p1, p2, p3);
+                getInstanceL().ScrollwithHBX(vbx, getInstanceL().getArray("SELECT * FROM `vs_test`"), LOADCOMMANDE, 5);
+            } catch (IOException ex) {
+                Logger.getLogger(NouveauController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 

@@ -40,11 +40,16 @@ public class PrintCommandeController implements Initializable {
         // TODO
         initFild();
     }
+    String str;
+    
 
     void initFild() {
+        str = getInstanceL().list.get(getInstanceL().code);
+        id_lab.setText(str.substring(0, str.indexOf("#")));
+        service.setText(str.substring( str.indexOf("#")+1, str.indexOf("|")));
 
         //AddcommandeController.id_lab1 = id_lab;
-        service.setText(getInstanceL().service1);
+        // idservice.setText(getInstanceL().service1);
         //AddcommandeController.quantite_1 = quantite_;
         //AddcommandeController.prix_unitaire1 = prix_unitaire;
     }
