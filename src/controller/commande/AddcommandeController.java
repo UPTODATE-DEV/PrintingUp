@@ -10,6 +10,7 @@ import static Elementary.Mywindows.Ouput;
 import static Elementary.Mywindows.isSaved;
 import Elementary.references;
 import com.jfoenix.controls.JFXButton;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -23,6 +24,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 /**
@@ -58,6 +60,12 @@ public class AddcommandeController implements Initializable {
     private ImageView imageviw;
 
     public static Button btn_ok = new Button();
+    @FXML
+    private VBox grideview;
+    public static Label id_lab1;
+    public static Label service1;
+    public static Label quantite_1;
+    public static Label prix_unitaire1;
 
     /**
      * Initializes the controller class.
@@ -69,13 +77,17 @@ public class AddcommandeController implements Initializable {
     }
 
     void Init() {
-        imageviw.setVisible(false);
-       
-        btn_ok.setVisible(false);
-        Mywindows.getInstanceL().ChargememtCompression(Tfdservice, "tbl_svc", "designation", null);
-        Mywindows.getInstanceL().ChargememtCompression(Tfdtype_service, "tbl_type", "designation", null);
-        Mywindows.getInstanceL().ChargememtCompression(Tfdclient, "tbl_client", "nom", null);
-        mouci();
+        try {
+            imageviw.setVisible(false);
+            Mywindows.getInstanceL().ScrollwithHBX(grideview, 1, "/guis/commande/printCommande.fxml");
+            btn_ok.setVisible(false);
+            Mywindows.getInstanceL().ChargememtCompression(Tfdservice, "tbl_svc", "designation", null);
+            Mywindows.getInstanceL().ChargememtCompression(Tfdtype_service, "tbl_type", "designation", null);
+            Mywindows.getInstanceL().ChargememtCompression(Tfdclient, "tbl_client", "nom", null);
+            mouci();
+        } catch (IOException ex) {
+            Logger.getLogger(AddcommandeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML

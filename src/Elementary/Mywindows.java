@@ -10,9 +10,12 @@ import static Elementary.Connexion.isConnected;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
+import controller.commande.AddcommandeController;
+import controller.commande.PrintCommandeController;
 import static controllers.PrincipaleController.Rcotent;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
+import java.io.BufferedReader;
 //import static controllers.PrincipaleController.Indexstack;
 import java.io.IOException;
 import java.net.URL;
@@ -44,9 +47,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -232,27 +232,42 @@ public class Mywindows {
     int somme;
     static int size;
     public static int resutatId;
+    private ArrayList num, service, quantite, punitaire;
+    public String num1, service1, quantite1, punitaire1;
 
 //    public void ScrollwithHBX(VBox princi, ArrayList data, String url, Node... receved) throws IOException {
-    public void ScrollwithHBX(VBox princi, int tr, String url) throws IOException {
+    public void ScrollwithHBX(VBox princi, int tr, String url) throws IOException, SQLException {
         i = 0;
         somme = tr;
         size = tr;
+        pst = isConnected().prepareStatement("SELECT * FROM `vs_test`");
+        rst = pst.executeQuery();
+        while (rst.next()) {
+            num.add(rst.getString(1));
+            service.add(rst.getString(2));
+            quantite.add(rst.getString(3));
+            punitaire.add(rst.getString(4));
+        }
 
-        Node[] node = new Node[somme];
-        while (i < somme) {
-            if ((size - 4) >= 0) {
+        Node[] node = new Node[num.size()];
+        while (i < num.size()) {
+
+            if ((size - 1) >= 0) {
 
                 HBox hbx = new HBox();
                 hbx.setStyle("-fx-fill: #F8F8F8");
-                for (int a = 0; a < 4; a++) {
-//                    loadData(i, data);
+                for (int a = 0; a < 1; a++) {
+                     System.out.println(num.get(a));
+                    num1 = num.get(a).toString();
+                    service1 = num.get(a).toString();
+                    quantite1 = num.get(a).toString();
+                    punitaire1 = num.get(a).toString();
+
                     node[a] = FXMLLoader.load(getClass().getResource(url));
                     hbx.getChildren().add(node[a]);
                     i++;
+                    princi.getChildren().add(hbx);
                 }
-                size = size - 4;
-                princi.getChildren().add(hbx);
 
             } else {
 
@@ -716,7 +731,7 @@ public class Mywindows {
             TextFields.bindAutoCompletion(textFied, AutoCompression(Table, Colonne, cnd));
         });
     }
-     /**
+    /**
      * @param princi
      * @param size
      * @param url
@@ -724,49 +739,8 @@ public class Mywindows {
      * @throws java.io.IOException
      * @Creatiom de l'Objet pour cette Classe
      */
-//    int somme;
-//    int size;
-//    public static int resutatId1;
-   public static int l_index;
-
-    public void ScrollwithHBX(VBox princi, ArrayList data, String url,int nbr) throws IOException {
-        i = 0;
-        l_index = 0;
-        somme = data.size();
-        size = data.size();
-
-        Node[] node = new Node[somme];
-        princi.getChildren().clear();
-        while (i < somme) {
-            if ((size - nbr) >= 0) {
-
-                HBox hbx = new HBox();
-                hbx.setStyle("-fx-fill: #F8F8F8");
-                for (int a = 0; a < nbr; a++) {
-//                    loadData(i, data);
-                    node[a] = FXMLLoader.load(getClass().getResource(url));
-                    hbx.getChildren().add(node[a]);
-                    i++;
-                }
-                size = size - nbr;
-                princi.getChildren().add(hbx);
-
-            } else {
-
-                HBox hbx2 = new HBox();
-                hbx2.setStyle("-fx-fill: #F8F8F8");
-                for (int b = 0; b < size; b++) {
-                    node[b] = FXMLLoader.load(getClass().getResource(url));
-                    hbx2.getChildren().add(node[b]);
-                    i++;
-                }
-                size = size - size;
-                princi.getChildren().add(hbx2);
-            }
-
-        }
-    }
-     /**
+    
+    /**
      * @param message
      * @param icon
      * @param str
@@ -854,5 +828,76 @@ public class Mywindows {
 
     }
 
-
+    public ObservableList<String> getArray(String query) {
+        ObservableList<String> oblist = FXCollections.observableArrayList();
+        try {
+            pst = isConnected().prepareStatement(query);
+            rst = pst.executeQuery();
+            while (rst.next()) {
+                // ObservableList<String> row = FXCollections.observableArrayList();
+                for (int i = 1; i <= rst.getMetaData().getColumnCount(); i++) {
+                    oblist.addAll(rst.getString(i) + "\n");
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Mywindows.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return oblist;
+    }
+// public void Scroll(BufferedReader read) throws IOException, SQLException {
+//        unit();
+//        String ligne;
+//        while ((rst.next())) {
+//           // System.err.println(ligne);
+//            AddcommandeController.service1.add(getJson(ligne, "code"));
+//            NOM.add(getJson(ligne, "nom"));
+//            EXP.add(getJson(ligne, "exp"));
+//            SEXE.add(getJson(ligne, "sexe"));
+//            FONCTION.add(getJson(ligne, "fonction"));
+//            LEVEL.add(getJson(ligne, "level"));
+//            TEL.add(getJson(ligne, "tel"));
+//        }
+//        txtInfos_.setText("Liste des Utilisateurs (" + CODE.size() + ")");
+//
+//        AnchorPane[] node = new AnchorPane[CODE.size()];
+//        grid.getChildren().clear();
+//        int x = 0;
+//        int i = 0;
+//        while (i < CODE.size()) {
+//            System.err.println("I " + i);
+//            for (int ii = 0; ii < 2; ii++) {
+//                System.err.println(i + "       II " + ii);
+//                LoadUsersController.ID = CODE.get(i);
+//                LoadUsersController.NAME = NOM.get(i);
+//                LoadUsersController.NUMBER = String.valueOf(i + 1);
+//                LoadUsersController.FONCTION = FONCTION.get(i);
+//                LoadUsersController.EXP = EXP.get(i);
+//                LoadUsersController.LEVE = LEVEL.get(i);
+//                LoadUsersController.SEXE = SEXE.get(i);
+//                LoadUsersController.TEL = TEL.get(i);
+//                try {
+//                    node[i] = FXMLLoader.load(getClass().getResource("/Chargement/loadUsers.fxml"));
+//                } catch (IOException ex) {
+//                    ev.Dialog(ex.getMessage());
+//                }
+//                grid.add(node[i], ii, x);
+//                i++;
+//                if (i >= CODE.size()) {
+//                    ii = 5;
+//                }
+//            }
+//            x++;
+//        }
+//    }
+//
+//    void unit() {
+//        AddcommandeController.service1=null;
+//        NOM.clear();
+//        SEXE.clear();
+//        LEVEL.clear();
+//        EXP.clear();
+//        FONCTION.clear();
+//        TEL.clear();
+//    }
+//              // AddcommandeController.service1.setText("OK");
 }
