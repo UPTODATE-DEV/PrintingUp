@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="158.0" prefWidth="238.0" style="-fx-background-color: #fff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="controller.commande.PrintCommandeAllController">
+   <children>
+      <Label layoutX="2.0" layoutY="1.0" prefHeight="26.0" prefWidth="240.0" style="-fx-background-color: #176FE5; -fx-background-radius: 4em;" text="00" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <MaterialDesignIconView fill="WHITE" glyphName="LIGHTBULB" size="15" />
+         </graphic>
+      </Label>
+      <VBox layoutY="27.0">
+         <children>
+            <Label fx:id="lbldesignation" prefHeight="17.0" prefWidth="240.0" text="Designation">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
+               </VBox.margin>
+               <graphic>
+                  <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
+               </graphic>
+            </Label>
+            <Label fx:id="lbltype" prefHeight="17.0" prefWidth="240.0" text="Type">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
+               </VBox.margin>
+               <graphic>
+                  <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
+               </graphic>
+            </Label>
+            <Label fx:id="lblqte" prefHeight="17.0" prefWidth="240.0" text="Quantite">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
+               </VBox.margin>
+               <graphic>
+                  <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
+               </graphic>
+            </Label>
+            <Label fx:id="lblprix" prefHeight="17.0" prefWidth="240.0" text="Punitaire">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
+               </VBox.margin>
+               <graphic>
+                  <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
+               </graphic>
+            </Label>
+            <Label fx:id="lbltotal" prefHeight="17.0" prefWidth="240.0" text="Ptotal">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
+               </VBox.margin>
+               <graphic>
+                  <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
+               </graphic>
+            </Label>
+         </children>
+         <padding>
+            <Insets top="4.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -7,8 +7,10 @@ package controller.commande;
 
 import Elementary.Mywindows;
 import static Elementary.Mywindows.Ouput;
+import static Elementary.Mywindows.getInstanceL;
 import static Elementary.Mywindows.isSaved;
 import Elementary.references;
+import static Elementary.references.LOAD_COMMANDE;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
@@ -67,8 +69,9 @@ public class AddcommandeController implements Initializable {
     public static Label service1;
     public static Label quantite_1;
     public static Label prix_unitaire1;
-    @FXML
     private GridPane tat_grid;
+    @FXML
+    private VBox vb_;
 
     /**
      * Initializes the controller class.
@@ -80,18 +83,20 @@ public class AddcommandeController implements Initializable {
     }
 
     void Init() {
+
+        imageviw.setVisible(false);
+        btn_ok.setVisible(false);
+        Mywindows.getInstanceL().ChargememtCompression(Tfdservice, "tbl_svc", "designation", null);
+        Mywindows.getInstanceL().ChargememtCompression(Tfdtype_service, "tbl_type", "designation", null);
+        Mywindows.getInstanceL().ChargememtCompression(Tfdclient, "tbl_client", "nom", null);
+        mouci();
+        TfdPunitaire.setEditable(false);
+
+    }
+
+    void initData() {
         try {
-            imageviw.setVisible(false);
-            try {
-                Mywindows.getInstanceL().ScrollwithHBX(tat_grid, 1, "/guis/commande/printCommande.fxml");
-            } catch (SQLException ex) {
-                Logger.getLogger(AddcommandeController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            btn_ok.setVisible(false);
-            Mywindows.getInstanceL().ChargememtCompression(Tfdservice, "tbl_svc", "designation", null);
-            Mywindows.getInstanceL().ChargememtCompression(Tfdtype_service, "tbl_type", "designation", null);
-            Mywindows.getInstanceL().ChargememtCompression(Tfdclient, "tbl_client", "nom", null);
-            mouci();
+            Mywindows.getInstanceL().ScrollwithHBX(vb_, getInstanceL().getCommande(), LOAD_COMMANDE, 1);
         } catch (IOException ex) {
             Logger.getLogger(AddcommandeController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -110,7 +115,6 @@ public class AddcommandeController implements Initializable {
         }
     }
     private String query = "SELECT MAX(id) x FROM tbl_entecommande";
-
     public int isIdcommande(String client) throws Exception {
         if (isSaved("sp_commande", "PROCEDURE", Tfd_code, Tfdclient, 1) == true) {
             return Integer.parseInt(Mywindows.getInstanceL().ismac_up(query));
@@ -149,8 +153,14 @@ public class AddcommandeController implements Initializable {
     }
 
     void save(int c) throws Exception {
-        if (isSaved("sp_Dcommande", "PROCEDURE", Tfd_code, TfdPunitaire, TfdQuantite, id_commande, Tfdservice, c, Tfdtype_service) == true) {
-            Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
+        if (!id_commande.getText().equals("0")) {
+            if (isSaved("sp_Dcommande", "PROCEDURE", Tfd_code, TfdPunitaire, TfdQuantite, id_commande, Tfdservice, c, Tfdtype_service) == true) {
+                Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
+                Mywindows.initFields(true, TfdPunitaire, TfdQuantite, Tfdservice, Tfdtype_service);
+                initData();
+            }
+        } else {
+            Ouput(Text, icon, references.getInstanceE().MESSAGE_FACT, imageviw, btn_ok, true, true);
         }
     }
 
@@ -164,7 +174,7 @@ public class AddcommandeController implements Initializable {
                 Logger.getLogger(AddcommandeController.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            System.out.println("Cree d'abord le numero commande");
+            Ouput(Text, icon, references.getInstanceE().MESSAGE_FACT, imageviw, btn_ok, true, true);
         }
     }
 

@@ -236,44 +236,6 @@ public class Mywindows {
     private ArrayList num, service, quantite, punitaire;
     public String num1, service1, quantite1, punitaire1;
 
-//    public void ScrollwithHBX(VBox princi, ArrayList data, String url, Node... receved) throws IOException {
-    public void ScrollwithHBX(GridPane grid, int tr, String url) throws IOException, SQLException {
-        unit();
-        pst = isConnected().prepareStatement("SELECT * FROM `vs_test`");
-        rst = pst.executeQuery();
-        while (rst.next()) {
-            num.add(rst.getString(1));
-            service.add(rst.getString(2));
-            quantite.add(rst.getString(3));
-            punitaire.add(rst.getString(4));
-        }
-        System.out.println(service.get(2));
-        AnchorPane[] node = new AnchorPane[num.size()];
-        grid.getChildren().clear();
-
-        int x = 0;
-        int i = 0;
-        while (i < num.size()) {
-            grid.setStyle("-fx-fill: #F8F8F8");
-            for (int a = 0; a < tr; a++) {
-                num1 = num.get(i).toString();
-                service1 = service.get(i).toString();
-                quantite1 = quantite.get(i).toString();
-                punitaire1 = punitaire.get(i).toString();
-
-                node[i] = FXMLLoader.load(getClass().getResource(url));
-                grid.add(node[i], a, x);
-
-                i++;
-                if (i >= num.size()) {
-                    a = 5;
-                }
-            }
-            i++;
-
-        }
-    }
-
     /**
      * @param location
      * @param transition
@@ -722,14 +684,6 @@ public class Mywindows {
             TextFields.bindAutoCompletion(textFied, AutoCompression(Table, Colonne, cnd));
         });
     }
-    /**
-     * @param princi
-     * @param size
-     * @param url
-     * @param receved
-     * @throws java.io.IOException
-     * @Creatiom de l'Objet pour cette Classe
-     */
 
     /**
      * @param message
@@ -778,7 +732,7 @@ public class Mywindows {
         loading = new Thread() {
             @Override
             public void run() {
-                try {
+                try { 
                     image.setVisible(true);
                     Thread.sleep(1500);
                     image.setVisible(false);
@@ -821,18 +775,17 @@ public class Mywindows {
     public ArrayList<String> list = new ArrayList();
 
     public ArrayList<String> getArray(String query) {
-        //bservableList<String> oblist = FXCollections.observableArrayList();
         list.clear();
-
         try {
             pst = isConnected().prepareStatement(query);
             rst = pst.executeQuery();
             while (rst.next()) {
-                
+                String cmd = rst.getString(1);
+
                 list.add(
-                                rst.getString(1) 
+                        cmd
                         + "#" + rst.getString(2)
-                        + "|" + rst.getString(3) 
+                        + "|" + rst.getString(3)
                         + "'" + rst.getString(4));
 
             }
@@ -841,61 +794,38 @@ public class Mywindows {
         }
         return list;
     }
-// public void Scroll(BufferedReader read) throws IOException, SQLException {
-//        unit();
-//        String ligne;
-//        while ((rst.next())) {
-//           // System.err.println(ligne);
-//            AddcommandeController.service1.add(getJson(ligne, "code"));
-//            NOM.add(getJson(ligne, "nom"));
-//            EXP.add(getJson(ligne, "exp"));
-//            SEXE.add(getJson(ligne, "sexe"));
-//            FONCTION.add(getJson(ligne, "fonction"));
-//            LEVEL.add(getJson(ligne, "level"));
-//            TEL.add(getJson(ligne, "tel"));
-//        }
-//        txtInfos_.setText("Liste des Utilisateurs (" + CODE.size() + ")");
-//
-//        AnchorPane[] node = new AnchorPane[CODE.size()];
-//        grid.getChildren().clear();
-//        int x = 0;
-//        int i = 0;
-//        while (i < CODE.size()) {
-//            System.err.println("I " + i);
-//            for (int ii = 0; ii < 2; ii++) {
-//                System.err.println(i + "       II " + ii);
-//                LoadUsersController.ID = CODE.get(i);
-//                LoadUsersController.NAME = NOM.get(i);
-//                LoadUsersController.NUMBER = String.valueOf(i + 1);
-//                LoadUsersController.FONCTION = FONCTION.get(i);
-//                LoadUsersController.EXP = EXP.get(i);
-//                LoadUsersController.LEVE = LEVEL.get(i);
-//                LoadUsersController.SEXE = SEXE.get(i);
-//                LoadUsersController.TEL = TEL.get(i);
-//                try {
-//                    node[i] = FXMLLoader.load(getClass().getResource("/Chargement/loadUsers.fxml"));
-//                } catch (IOException ex) {
-//                    ev.Dialog(ex.getMessage());
-//                }
-//                grid.add(node[i], ii, x);
-//                i++;
-//                if (i >= CODE.size()) {
-//                    ii = 5;
-//                }
-//            }
-//            x++;
-//        }
-//    }
-//
 
-    private void unit() {
-        num.clear();
-        service.clear();
-        quantite.clear();
-        punitaire.clear();
+    public ArrayList<String> getCommande() {
+        list.clear();
+        try {
+            pst = isConnected().prepareStatement("SELECT * FROM `afficher_cmd` WHERE"
+                    + "        (`entId`= (SELECT "
+                    + "                MAX(`tbl_detailcommande`.`codecmd`)"
+                    + "            FROM"
+                    + "                `tbl_detailcommande`))");
+
+            rst = pst.executeQuery();
+            while (rst.next()) {
+                String cmd = rst.getString("id");
+                if (Integer.parseInt(cmd) < 10) {
+                    cmd = "00" + cmd;
+                } else if (Integer.parseInt(cmd) > 9 && Integer.parseInt(cmd) < 100) {
+                    cmd = "0" + cmd;
+                } else {
+                    cmd = cmd;
+                }
+                list.add(
+                        cmd
+                        + "#" + rst.getString("designation")
+                        + "|" + rst.getString("pu")
+                        + "'" + rst.getString("nb_srvc"));
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Mywindows.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
     }
-    // AddcommandeController.service1.setText("OK");
-
     /**
      * @param princi
      * @param size
@@ -907,20 +837,20 @@ public class Mywindows {
 //    int somme;
 //    int size;
 //    public static int resutatId;
-    public static int l_index;
-public int code;
-    public void ScrollwithHBX(VBox princi, ArrayList data, String url,int nbr) throws IOException {
+    public int code;
+
+    public void ScrollwithHBX(VBox princi, ArrayList data, String url, int nbr) throws IOException {
 //    public void ScrollwithHBX(VBox princi, int tr, String url, int nbr) throws IOException {
         i = 0;
-        l_index = 0;
-      //  somme = tr;
-      //  size = tr;
+
+        //  somme = tr;
+        //  size = tr;
         somme = data.size();
         size = data.size();
 
         Node[] node = new Node[somme];
         princi.getChildren().clear();
-        code=0;
+        code = 0;
         while (i < somme) {
             if ((size - nbr) >= 0) {
 
@@ -937,7 +867,6 @@ public int code;
                 princi.getChildren().add(hbx);
 
             } else {
-
                 HBox hbx2 = new HBox();
                 hbx2.setStyle("-fx-fill: #F8F8F8");
                 for (int b = 0; b < size; b++) {

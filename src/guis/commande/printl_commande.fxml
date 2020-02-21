@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="44.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.Printl_commandeController">
+   <children>
+      <Label fx:id="id_" alignment="CENTER" layoutX="6.0" layoutY="20.0" prefHeight="17.0" prefWidth="40.0" text="001">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="CIRCLE" />
+         </graphic>
+      </Label>
+      <Label fx:id="service" layoutX="53.0" layoutY="20.0" prefHeight="17.0" prefWidth="160.0" text="Impression A1" textFill="#010101">
+         <graphic>
+            <FontAwesomeIconView glyphName="LINE_CHART" />
+         </graphic></Label>
+      <Label fx:id="qte_" layoutX="217.0" layoutY="20.0" prefHeight="17.0" prefWidth="47.0" text="2000">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="HOURGLASS_END" />
+         </graphic></Label>
+      <Label fx:id="punite" layoutX="271.0" layoutY="20.0" prefHeight="17.0" prefWidth="47.0" text="2000">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="HOURGLASS_1" />
+         </graphic></Label>
+      <Button fx:id="btn_ok" layoutX="324.0" layoutY="16.0" mnemonicParsing="false" onAction="#Traitement" style="-fx-background-color: Transparent; -fx-background-color: #DC501C;">
+         <graphic>
+            <Icons525View fill="WHITE" glyphName="REFRESH" size="15" />
+         </graphic>
+      </Button>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="2.0" prefHeight="17.0" prefWidth="40.0" text="N°" textFill="#c2c2c2" />
+      <Label layoutX="53.0" layoutY="2.0" prefHeight="17.0" prefWidth="160.0" text="Désignation" textFill="#c2c2c2" />
+      <Label layoutX="217.0" layoutY="2.0" prefHeight="17.0" prefWidth="47.0" text="Quantite" textFill="#c2c2c2" />
+      <Label layoutX="271.0" layoutY="2.0" text="Punitaire" textFill="#c2c2c2" />
+   </children>
+</AnchorPane>

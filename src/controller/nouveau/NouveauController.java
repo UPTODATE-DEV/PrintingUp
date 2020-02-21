@@ -52,13 +52,8 @@ public class NouveauController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         status = 1;
         if (status == 1) {
-            try {
-                getInstanceL().SelectDataFor1(btn_client, btn_agent, btn_service);
-                getInstanceL().SelectDataFor(p1, p2, p3);
-                getInstanceL().ScrollwithHBX(vbx, getInstanceL().getArray("SELECT * FROM `vs_test`"), LOADCOMMANDE, 5);
-            } catch (IOException ex) {
-                Logger.getLogger(NouveauController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            getInstanceL().SelectDataFor1(btn_client, btn_agent, btn_service);
+            getInstanceL().SelectDataFor(p1, p2, p3);
         }
     }
 
@@ -81,10 +76,12 @@ public class NouveauController implements Initializable {
     }
 
     @FXML
-    private void Call_windows(ActionEvent event) {
+    private void Call_windows(ActionEvent event) throws IOException {
         if (event.getSource() == btn_client) {
             getInstanceL().SelectDataFor1(btn_client, btn_agent, btn_service);
             getInstanceL().SelectDataFor(p1, p2, p3);
+            getInstanceL().ScrollwithHBX(vbx, getInstanceL().getArray("SELECT * FROM `vs_test`"), LOADCOMMANDE, 5);
+
             status = 1;
         } else if (event.getSource() == btn_agent) {
             getInstanceL().SelectDataFor1(btn_agent, btn_client, btn_service);
@@ -95,6 +92,6 @@ public class NouveauController implements Initializable {
             getInstanceL().SelectDataFor(p3, p2, p1);
             status = 3;
         }
-     
+
     }
 }
