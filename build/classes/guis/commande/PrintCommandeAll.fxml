@@ -3,14 +3,15 @@
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="158.0" prefWidth="238.0" style="-fx-background-color: #fff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="controller.commande.PrintCommandeAllController">
+<AnchorPane id="AnchorPane" prefHeight="133.0" prefWidth="219.0" style="-fx-background-color: #fff; -fx-background-radius: 4em; -fx-border-radius: 4em;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="controller.commande.PrintCommandeAllController">
    <children>
-      <Label layoutX="2.0" layoutY="1.0" prefHeight="26.0" prefWidth="240.0" style="-fx-background-color: #176FE5; -fx-background-radius: 4em;" text="00" textFill="WHITE">
+      <Label fx:id="lblcmd" layoutX="2.0" layoutY="1.0" prefHeight="20.0" prefWidth="214.0" style="-fx-background-color: #176FE5; -fx-background-radius: 4em;" text="00" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -18,7 +19,7 @@
             <MaterialDesignIconView fill="WHITE" glyphName="LIGHTBULB" size="15" />
          </graphic>
       </Label>
-      <VBox layoutY="27.0">
+      <VBox layoutY="21.0" prefHeight="119.0" prefWidth="214.0">
          <children>
             <Label fx:id="lbldesignation" prefHeight="17.0" prefWidth="240.0" text="Designation">
                <VBox.margin>
@@ -27,6 +28,9 @@
                <graphic>
                   <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
                </graphic>
+               <font>
+                  <Font name="Bell MT" size="11.0" />
+               </font>
             </Label>
             <Label fx:id="lbltype" prefHeight="17.0" prefWidth="240.0" text="Type">
                <VBox.margin>
@@ -35,6 +39,9 @@
                <graphic>
                   <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
                </graphic>
+               <font>
+                  <Font name="Bell MT" size="11.0" />
+               </font>
             </Label>
             <Label fx:id="lblqte" prefHeight="17.0" prefWidth="240.0" text="Quantite">
                <VBox.margin>
@@ -43,6 +50,9 @@
                <graphic>
                   <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
                </graphic>
+               <font>
+                  <Font name="Bell MT" size="11.0" />
+               </font>
             </Label>
             <Label fx:id="lblprix" prefHeight="17.0" prefWidth="240.0" text="Punitaire">
                <VBox.margin>
@@ -51,6 +61,9 @@
                <graphic>
                   <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
                </graphic>
+               <font>
+                  <Font name="Bell MT" size="11.0" />
+               </font>
             </Label>
             <Label fx:id="lbltotal" prefHeight="17.0" prefWidth="240.0" text="Ptotal">
                <VBox.margin>
@@ -59,11 +72,16 @@
                <graphic>
                   <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
                </graphic>
+               <font>
+                  <Font name="Bell MT" size="11.0" />
+               </font>
             </Label>
+            <Separator prefWidth="200.0" />
          </children>
          <padding>
             <Insets top="4.0" />
          </padding>
       </VBox>
+      <Separator layoutX="-9.0" prefHeight="3.0" prefWidth="228.0" />
    </children>
 </AnchorPane>

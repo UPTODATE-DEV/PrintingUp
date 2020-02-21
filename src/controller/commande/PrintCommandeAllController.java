@@ -5,8 +5,13 @@
  */
 package controller.commande;
 
+import Elementary.Mywindows;
+import controllers.DashbordController;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -28,6 +33,8 @@ public class PrintCommandeAllController implements Initializable {
     private Label lblprix;
     @FXML
     private Label lbltotal;
+    @FXML
+    private Label lblcmd;
 
     /**
      * Initializes the controller class.
@@ -35,7 +42,20 @@ public class PrintCommandeAllController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
-    }    
-    
+        initFild();
+
+    }
+    String str;
+
+    void initFild() {
+        str = Mywindows.getInstanceL().list.get(Mywindows.getInstanceL().code);
+        lbldesignation.setText(str.substring(0, str.indexOf("|")));
+        lbltype.setText(str.substring(str.indexOf("|") + 1, str.indexOf("#")));
+        lblprix.setText(str.substring(str.indexOf("#") + 1, str.indexOf("*")));
+        lblqte.setText(str.substring(str.indexOf("*") + 1, str.indexOf("@")));
+        lbltotal.setText(str.substring(str.indexOf("@") + 1, str.indexOf("!")));
+        lblcmd.setText(str.substring(str.indexOf("!") + 1));
+
+    }
+
 }

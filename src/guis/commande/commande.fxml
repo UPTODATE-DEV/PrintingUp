@@ -4,6 +4,7 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.icons525.Icons525View?>
 <?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -126,7 +127,11 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <VBox layoutX="14.0" layoutY="130.0" prefHeight="543.0" prefWidth="719.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="130.0" />
+      <ScrollPane layoutX="14.0" layoutY="130.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="130.0">
+         <content>
+            <VBox fx:id="vb_commande" prefHeight="543.0" prefWidth="719.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" />
+         </content>
+      </ScrollPane>
       <HBox layoutX="24.0" layoutY="95.0" prefHeight="27.0" prefWidth="243.0">
          <children>
             <JFXButton alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="42.0" style="-fx-background-color: #176FE5;" text="Page" textFill="WHITE">

@@ -33,6 +33,8 @@ public class references {
     public static final String ADDSERVICE = "/guis/nouveau/addservice.fxml";
     public static final String ADDAGENT = "/guis/nouveau/addagent.fxml";
     public static final String ADDCOMMANDE = "/guis/commande/Addcommande.fxml";
+    public static final String PRINT_CMD = "/guis/commande/PrintCommandeAll.fxml";
+
     /**
      * *
      *

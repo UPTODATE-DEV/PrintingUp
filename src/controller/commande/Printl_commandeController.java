@@ -57,7 +57,8 @@ public class Printl_commandeController implements Initializable {
 
     @FXML
     private void Traitement(ActionEvent event) throws Exception {
-        if (Mywindows.isSaved("sp_annuler", "PROCEDURE", id_)) {
+        if (Mywindows.isSaved("PROCEDURE", "sp_annuler", id_)==true) {
+            System.out.print(id_.getText());
         }
     }
 

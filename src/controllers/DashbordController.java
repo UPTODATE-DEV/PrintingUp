@@ -7,7 +7,10 @@ package controllers;
 
 import Elementary.Mywindows;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.Initializable;
 
 /**
@@ -22,8 +25,7 @@ public class DashbordController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-  //  System.out.println(Mywindows.getInstanceL().getArray(null,"SELECT * FROM `vs_test`"));
+        
     }
 
 }

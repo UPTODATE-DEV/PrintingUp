@@ -7,6 +7,7 @@ package Elementary;
 
 //import Others.ElementaryCode;
 import static Elementary.Connexion.isConnected;
+import com.google.gson.Gson;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
@@ -19,6 +20,7 @@ import java.io.BufferedReader;
 //import static controllers.PrincipaleController.Indexstack;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Array;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -732,7 +734,7 @@ public class Mywindows {
         loading = new Thread() {
             @Override
             public void run() {
-                try { 
+                try {
                     image.setVisible(true);
                     Thread.sleep(1500);
                     image.setVisible(false);
@@ -796,6 +798,7 @@ public class Mywindows {
     }
 
     public ArrayList<String> getCommande() {
+
         list.clear();
         try {
             pst = isConnected().prepareStatement("SELECT * FROM `afficher_cmd` WHERE"
@@ -880,6 +883,22 @@ public class Mywindows {
             }
 
         }
+    }
+
+    public ArrayList getData() throws SQLException {
+
+        pst = isConnected().prepareStatement("SELECT * FROM vs_facture");
+        rst = pst.executeQuery();
+        while (rst.next()) {
+            list.add(
+                    rst.getString("service")
+                    + "|" + rst.getString("type_")
+                    + "#" + rst.getString("Punitaire")
+                    + "*" + rst.getString("Qte")
+                    + "@" + rst.getString("Total")
+                    + "!" + rst.getString("codecmd"));
+        }
+        return list;
     }
 
 }
