@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox prefHeight="169.0" prefWidth="187.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.Other_commandeController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="187.0" style="-fx-background-color: #fff;">
+         <children>
+            <VBox layoutX="3.0" layoutY="26.0" prefHeight="140.0" prefWidth="181.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="179.0" text="Cizungu">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="2.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="182.0" text="Montant payer" textFill="#948f8f">
+                     <VBox.margin>
+                        <Insets left="2.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="179.0" text=" 1500" textFill="#948f8f">
+                     <VBox.margin>
+                        <Insets left="2.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="180.0" text="Rester à payer" textFill="#948f8f">
+                     <VBox.margin>
+                        <Insets left="2.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="179.0" text="900" textFill="#948f8f">
+                     <VBox.margin>
+                        <Insets left="2.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="185.0" text="Date dernière paiement" textFill="#948f8f">
+                     <VBox.margin>
+                        <Insets left="2.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="177.0" text="2020.02.27" textFill="#948f8f">
+                     <VBox.margin>
+                        <Insets left="2.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Label alignment="CENTER" layoutX="82.0" layoutY="2.0" prefHeight="28.0" prefWidth="28.0" style="-fx-background-color: #A7E0BC; -fx-background-radius: 4em;">
+               <graphic>
+                  <MaterialDesignIconView fill="#17d162" glyphName="INFORMATION" size="20" />
+               </graphic>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
