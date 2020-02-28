@@ -85,7 +85,7 @@ public class AddclientController implements Initializable {
     @FXML
     private void Traitement_client(ActionEvent event) throws Exception {
         if (event.getSource() == Btn_save) {
-            if (!getInstanceL().isFieldsempty(nomTfd, prenomTfd, sexe_lbl, teleTfd, mailTfd, adresstfd)) {
+            if (!getInstanceL().isFieldsempty(nomTfd, prenomTfd, sexe_lbl, teleTfd, mailTfd, adresstfd)==false) {
                 if (isSaved("sp_client", "PROCEDURE", modifierLbl, nomTfd, prenomTfd, sexe_lbl, teleTfd, lab, mailTfd, adresstfd) == true) {
                     Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
                     initFields(false, nomTfd, prenomTfd, teleTfd, mailTfd, adresstfd);

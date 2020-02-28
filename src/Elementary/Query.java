@@ -13,4 +13,8 @@ public class Query {
 
     public String montant = "SELECT montant x FROM tbl_facture WHERE codecmdE";
     public String query = "SELECT MAX(id) x FROM tbl_entecommande";
+
+    public String getQuery(String nom, String id) {
+        return "SELECT *FROM vs_paiement WHERE codefcr= '" + id + "'AND nom='" + nom + "'";
+    }
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="127.0" prefWidth="156.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.Other_paiementController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="124.0" prefWidth="156.0" style="-fx-background-color: #fff;">
+         <children>
+            <HBox layoutX="7.0" layoutY="46.0" prefHeight="27.0" prefWidth="138.0" style="-fx-background-radius: 4em; -fx-border-color: #d8d8d8; -fx-border-width: 0.5px;">
+               <children>
+                  <TextField fx:id="Tfd_montant" alignment="CENTER" promptText="Entrer le montant" style="-fx-background-color: Transparent;" text="0.0" />
+               </children>
+            </HBox>
+            <Label layoutX="37.0" layoutY="24.0" text="Payer la facture" textFill="#6b6969" />
+            <JFXButton fx:id="btn_paiement" buttonType="RAISED" layoutX="54.0" layoutY="78.0" style="-fx-background-color: #176FE5;" text="Valider" textFill="WHITE" />
+            <Button layoutX="62.0" layoutY="2.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="20.0" style="-fx-background-color: Transparent; -fx-background-radius: 4em;" textFill="#f0cc8d80">
+               <graphic>
+                  <MaterialDesignIconView fill="#4f9e77" glyphName="FILE_MULTIPLE" size="20" />
+               </graphic>
+            </Button>
+            <HBox layoutX="9.0" layoutY="105.0" prefHeight="17.0" prefWidth="138.0">
+               <children>
+                  <Label fx:id="alert_paiement" alignment="CENTER" prefHeight="17.0" prefWidth="144.0" />
+                  <Text fx:id="massage" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="121.8033447265625" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

@@ -1,87 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="133.0" prefWidth="219.0" style="-fx-background-color: #fff; -fx-background-radius: 4em; -fx-border-radius: 4em;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="controller.commande.PrintCommandeAllController">
+<VBox xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.PrintCommandeAllController">
    <children>
-      <Label fx:id="lblcmd" layoutX="2.0" layoutY="1.0" prefHeight="20.0" prefWidth="214.0" style="-fx-background-color: #176FE5; -fx-background-radius: 4em;" text="00" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-         <graphic>
-            <MaterialDesignIconView fill="WHITE" glyphName="LIGHTBULB" size="15" />
-         </graphic>
-      </Label>
-      <VBox layoutY="21.0" prefHeight="119.0" prefWidth="214.0">
+      <AnchorPane prefHeight="135.0" prefWidth="187.0">
          <children>
-            <Label fx:id="lbldesignation" prefHeight="17.0" prefWidth="240.0" text="Designation">
-               <VBox.margin>
-                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
-               </VBox.margin>
-               <graphic>
-                  <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
-               </graphic>
-               <font>
-                  <Font name="Bell MT" size="11.0" />
-               </font>
-            </Label>
-            <Label fx:id="lbltype" prefHeight="17.0" prefWidth="240.0" text="Type">
-               <VBox.margin>
-                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
-               </VBox.margin>
-               <graphic>
-                  <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
-               </graphic>
-               <font>
-                  <Font name="Bell MT" size="11.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblqte" prefHeight="17.0" prefWidth="240.0" text="Quantite">
-               <VBox.margin>
-                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
-               </VBox.margin>
-               <graphic>
-                  <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
-               </graphic>
-               <font>
-                  <Font name="Bell MT" size="11.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblprix" prefHeight="17.0" prefWidth="240.0" text="Punitaire">
-               <VBox.margin>
-                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
-               </VBox.margin>
-               <graphic>
-                  <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
-               </graphic>
-               <font>
-                  <Font name="Bell MT" size="11.0" />
-               </font>
-            </Label>
-            <Label fx:id="lbltotal" prefHeight="17.0" prefWidth="240.0" text="Ptotal">
-               <VBox.margin>
-                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
-               </VBox.margin>
-               <graphic>
-                  <MaterialDesignIconView glyphName="LIGHTBULB" size="15" />
-               </graphic>
-               <font>
-                  <Font name="Bell MT" size="11.0" />
-               </font>
-            </Label>
-            <Separator prefWidth="200.0" />
+            <AnchorPane layoutX="6.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="196.0" style="-fx-background-color: #fff; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+               <children>
+                  <Label fx:id="lblcmd" alignment="CENTER" contentDisplay="CENTER" layoutX="83.0" layoutY="4.0" prefHeight="33.0" prefWidth="32.0" style="-fx-background-color: #62B6E7; -fx-background-radius: 4em;" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <graphic>
+                        <Icons525View fill="#fbfafa" glyphName="BASKET" size="20" />
+                     </graphic>
+                  </Label>
+                  <VBox layoutX="-4.0" layoutY="40.0" prefHeight="71.0" prefWidth="202.0">
+                     <children>
+                        <Label fx:id="lbldesignation" alignment="CENTER" prefHeight="17.0" prefWidth="206.0" text="Nom client">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="3.0" right="3.0" top="4.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lblqte" alignment="CENTER" prefHeight="17.0" prefWidth="218.0" text="Quantite" textFill="#c2c2c2">
+                           <VBox.margin>
+                              <Insets left="3.0" right="3.0" top="4.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <MaterialDesignIconView fill="#beebe9e5" glyphName="CHART_SCATTERPLOT_HEXBIN" size="18" />
+                           </graphic>
+                        </Label>
+                        <Label fx:id="lbltotal" alignment="CENTER" prefHeight="17.0" prefWidth="283.0" text="5000" textFill="#c2c2c2">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="3.0" right="3.0" top="4.0" />
+                           </VBox.margin>
+                           <graphic>
+                              <MaterialDesignIconView fill="#9acdcc8f" glyphName="CARDS_OUTLINE" size="17" />
+                           </graphic>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Label fx:id="alert_paiement" layoutX="167.0" layoutY="6.0" prefHeight="17.0" prefWidth="25.0" />
+                  <AnchorPane fx:id="pan_infor" layoutX="6.0" layoutY="6.0">
+                     <children>
+                        <Label fx:id="lbl_informa" onMouseClicked="#call_informande" prefHeight="17.0" prefWidth="17.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
          </children>
-         <padding>
-            <Insets top="4.0" />
-         </padding>
-      </VBox>
-      <Separator layoutX="-9.0" prefHeight="3.0" prefWidth="228.0" />
+      </AnchorPane>
    </children>
-</AnchorPane>
+</VBox>

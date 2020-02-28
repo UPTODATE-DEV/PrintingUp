@@ -116,7 +116,7 @@
                   <Font size="7.0" />
                </font>
             </JFXButton>
-            <TextField layoutX="23.0" prefHeight="27.0" prefWidth="208.0" promptText="Rechercher une Livraison" style="-fx-border-color: #E9E9E9; -fx-background-color: #fff; -fx-border-radius: 5px;" />
+            <TextField fx:id="Tfl_search" layoutX="23.0" prefHeight="27.0" prefWidth="208.0" promptText="Rechercher une Livraison" style="-fx-border-color: #E9E9E9; -fx-background-color: #fff; -fx-border-radius: 5px;" />
             <JFXButton fx:id="btn_commande_" alignment="CENTER" contentDisplay="CENTER" layoutX="279.0" layoutY="1.0" onAction="#getadd" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #176FE5;" text=" ">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="TH_LARGE" size="13" />
@@ -127,9 +127,9 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <ScrollPane layoutX="14.0" layoutY="130.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="130.0">
+      <ScrollPane layoutX="14.0" layoutY="130.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="130.0">
          <content>
-            <VBox fx:id="vb_commande" prefHeight="543.0" prefWidth="719.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" />
+            <VBox fx:id="vb_commande" prefHeight="543.0" prefWidth="719.0" style="-fx-background-color: #F5F6FA; -fx-background-radius: 5px;" />
          </content>
       </ScrollPane>
       <HBox layoutX="24.0" layoutY="95.0" prefHeight="27.0" prefWidth="243.0">

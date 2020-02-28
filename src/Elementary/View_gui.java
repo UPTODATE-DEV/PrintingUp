@@ -56,7 +56,7 @@ public class View_gui extends Traitement {
                     );
                     break;
                 case 3:
-                    String cmd = rs.getString("codecmd");
+                    String cmd = rs.getString("id");
                     if (Integer.parseInt(cmd) < 10) {
                         cmd = "000" + cmd;
                     } else if (Integer.parseInt(cmd) > 10 && Integer.parseInt(cmd) < 100) {
@@ -64,16 +64,48 @@ public class View_gui extends Traitement {
                     } else {
                         cmd = "0" + cmd;
                     }
+                    String payer = rs.getString("payer");
+                    if (payer == null) {
+                        payer = "0";
+                    }
+                    int log = rs.getString("nom").length();
                     list.add(
-                            rs.getString("nom")
-                            + "|" + rs.getString("qte")
-                            + "#" + rs.getString("total")
-                            + "!" + cmd);
+                            rs.getString("nom").substring(1, log)
+                            + "|" + rs.getString("nb_srvc")
+                            + "#" + rs.getString("a_payer")
+                            + "$" + payer
+                            + "!" + cmd
+                    );
                     break;
 
             }
         }
         return list;
+    }
+    public ArrayList<String> list1;
+
+    public ArrayList isPayer(int x) throws SQLException {
+        list1 = new ArrayList();
+        switch (x) {
+            case 1:
+                rs = stm.executeQuery("SELECT montant FROM vs_charger_nom WHERE a_payer=montant");
+                break;
+            case 2:
+                rs = stm.executeQuery("SELECT montant FROM vs_charger_nom WHERE a_payer<>montant");
+                break;
+            default:
+                rs = stm.executeQuery("SELECT montant FROM vs_charger_nom WHERE montant is null");
+                break;
+        }
+        while (rs.next()) {
+            list1.add(
+                    rs.getString(1)
+            );
+
+        }
+
+        return list1;
+
     }
 
     public static View_gui getIns() {

@@ -53,7 +53,7 @@ public class Other_paiementController implements Initializable {
                 if (Tfd_montant.getText().equals("0.0") || Tfd_montant.getText().isEmpty() || Double.parseDouble(Tfd_montant.getText()) <= 0.0) {
                     Mywindows.OuputText(massage, "Paiement échoue", alert_paiement, true);
                 } else {
-                    if (Mywindows.isSaved("sp_paiement", "PROCEDURE", Tfd_montant, getId().getText(), "1") == true) {
+                    if (Mywindows.isSaved("sp_paiement", "PROCEDURE", Tfd_montant, getId(), "1") == true) {
                         Mywindows.OuputText(massage, "Paiement réussi ", alert_paiement, false);
                     }
                 }

@@ -18,6 +18,8 @@ public class references {
     public static final String PRINCIPAL = "/gui/principale.fxml";
     public static final String DASHBORD = "/gui/dashbord.fxml";
     public static final String OTHERMENU = "/gui/other.fxml";
+    public static final String OTHEPAIEMENT = "/guis/commande/other_paiement.fxml";
+    public static final String OTHEINFO = "/guis/commande/other_commande.fxml";
 
     /**
      *
@@ -27,11 +29,13 @@ public class references {
     public static final String COMMANDE = "/guis/commande/commande.fxml";
     public static final String PARAMETRE = "/guis/parametrer/parametrer.fxml";
     public static final String ADDCLIENT = "/guis/nouveau/addclient.fxml";
-    public static final String LOADCOMMANDE = "/guis/commande/printCommande.fxml";
+    public static final String LOADCOMMANDE = "/guis/nouveau/printService.fxml";
     public static final String LOAD_COMMANDE = "/guis/commande/printl_commande.fxml";
+    public static final String LOAD_DETTE = "/guis/commande/orher_dette.fxml";
 
     public static final String ADDSERVICE = "/guis/nouveau/addservice.fxml";
     public static final String ADDAGENT = "/guis/nouveau/addagent.fxml";
+    public static final String PRINT_CLIENT = "/guis/nouveau/printClient.fxml";
     public static final String ADDCOMMANDE = "/guis/commande/Addcommande.fxml";
     public static final String PRINT_CMD = "/guis/commande/PrintCommandeAll.fxml";
 

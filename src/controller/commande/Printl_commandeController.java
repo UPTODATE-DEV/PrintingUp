@@ -5,10 +5,9 @@
  */
 package controller.commande;
 
-import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
+import Elementary.Traitement;
 import java.net.URL;
-import java.sql.PreparedStatement;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -57,9 +56,15 @@ public class Printl_commandeController implements Initializable {
 
     @FXML
     private void Traitement(ActionEvent event) throws Exception {
-        if (Mywindows.isSaved("PROCEDURE", "sp_annuler", id_)==true) {
+        int x = Traitement.getInstanceT().stm.executeUpdate("DELETE FROM tbl_detailcommande WHERE codecmd='" + Integer.parseInt(id_.getText())+"'" );
+        if (x != 1) {
             System.out.print(id_.getText());
+        } else {
+            System.out.print("OK");
         }
+//        if (Mywindows.isSaved("PROCEDURE", "sp_annuler", id_)==true) {
+//            
+//        }
     }
 
 }

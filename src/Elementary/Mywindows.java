@@ -7,20 +7,15 @@ package Elementary;
 
 //import Others.ElementaryCode;
 import static Elementary.Connexion.isConnected;
-import com.google.gson.Gson;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
-import controller.commande.AddcommandeController;
-import controller.commande.PrintCommandeController;
 import static controllers.PrincipaleController.Rcotent;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
-import java.io.BufferedReader;
 //import static controllers.PrincipaleController.Indexstack;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Array;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -45,7 +40,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -62,7 +56,7 @@ import org.controlsfx.control.textfield.TextFields;
  *
  * @author Authentique
  */
-public class Mywindows {
+public class Mywindows extends Traitement {
 
     private static Mywindows window;
 
@@ -235,8 +229,6 @@ public class Mywindows {
     int somme;
     static int size;
     public static int resutatId;
-    private ArrayList num, service, quantite, punitaire;
-    public String num1, service1, quantite1, punitaire1;
 
     /**
      * @param location
@@ -584,10 +576,10 @@ public class Mywindows {
          */
         try {
             if ("PROCEDURE".equals(typeQuerry)) {
-                pst = isConnected().prepareCall("call " + nameT + "" + _p);
+                getInstanceT().ps = isConnected().prepareCall("call " + nameT + "" + _p);
                 System.out.println("call " + nameT + "" + _p);
             } else if ("QUERRY".equals(typeQuerry)) {
-                pst = isConnected().prepareStatement("insert into " + nameT + " values" + _p);
+                getInstanceT().ps = isConnected().prepareStatement("insert into " + nameT + " values" + _p);
             }
             System.out.println("Querry: insert into " + nameT + " values" + _p);
             /**
@@ -597,13 +589,13 @@ public class Mywindows {
 //            for (Object data : dataInt) {
             for (int k = 0; k < dataInt.length; k++) {
                 System.out.println("data[" + (ip + 1) + "] " + dataInt[k]);
-                pst.setObject((k + 1), dataInt[k].toString());
+                getInstanceT().ps.setObject((k + 1), dataInt[k].toString());
                 ip++;
             }
             /**
              * @Execution de PrepareStatement
              */
-            int x = pst.executeUpdate();
+            int x = getInstanceT().ps.executeUpdate();
             if (x == 1) {
                 return true;
             }
@@ -622,13 +614,13 @@ public class Mywindows {
 
     public String ismac_up(String query) {
         try {
-            pst = Connexion.isConnected().prepareStatement(query);
-            rst = pst.executeQuery();
-            if (rst.next()) {
-                if (rst.getString("x").equals(null) || Double.parseDouble(rst.getString("x")) == 0.0) {
+            ps = Connexion.isConnected().prepareStatement(query);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                if (rs.getString("x").isEmpty() || Double.parseDouble(rs.getString("x")) == 0.0) {
                     return "0.0";
                 } else {
-                    return rst.getString("x");
+                    return rs.getString("x");
                 }
 
             }
@@ -653,13 +645,13 @@ public class Mywindows {
         ObservableList list = FXCollections.observableArrayList();
         try {
             if (cond == null) {
-                pst = Connexion.isConnected().prepareStatement("SELECT " + Colone + " FROM " + Table);
+                ps = Connexion.isConnected().prepareStatement("SELECT " + Colone + " FROM " + Table);
             } else {
-                pst = Connexion.isConnected().prepareStatement("SELECT " + Colone + " FROM " + Table + " " + cond);
+                ps = Connexion.isConnected().prepareStatement("SELECT " + Colone + " FROM " + Table + " " + cond);
             }
-            rst = pst.executeQuery();
-            while (rst.next()) {
-                list.addAll(rst.getString(Colone));
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.addAll(rs.getString(Colone));
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -667,20 +659,7 @@ public class Mywindows {
         return list;
     }
 
-    public boolean Isnumeric(String x) {
-        try {
-            if (x.contentEquals("D")) {
-                x = null;
-            }
-            double v = Double.parseDouble(x);
-        } catch (NumberFormatException e) {
-            x = null;
-        }
-        return false;
-
-    }
     // FOnction D'affichage
-
     public void ChargememtCompression(TextField textFied, String Table, String Colonne, String cnd) {
         textFied.setOnMouseClicked((e) -> {
             TextFields.bindAutoCompletion(textFied, AutoCompression(Table, Colonne, cnd));
@@ -774,21 +753,77 @@ public class Mywindows {
         }
 
     }
+
+    public static void OuputText(Text message, String str, Label icon, boolean error) {
+        if (error) {
+            mat = new MaterialDesignIconView(MaterialDesignIcon.ALERT_OUTLINE);
+            mat.setGlyphSize(15);
+            message.setFill(Color.web("#c95a5a"));
+            mat.setStyle("-fx-fill:#c95a5a");
+        } else {
+            mat = new MaterialDesignIconView(MaterialDesignIcon.CHECKBOX_MULTIPLE_MARKED_OUTLINE);
+            mat.setGlyphSize(15);
+            message.setFill(Color.web("#6A75CA"));
+            mat.setStyle("-fx-fill:#6A75CA");
+        }
+        Task<Void> task = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                Thread.sleep(1000);
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                    }
+                });
+                message.setText(str);
+                Thread.sleep(3000);
+                message.setText("");
+                icon.setVisible(false);
+
+                return null;
+            }
+        };
+        out = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            icon.setGraphic(mat);
+                        }
+                    });
+                    ;
+                    icon.setVisible(true);
+                    message.setText(str);
+                    Thread.sleep(3500);
+                    message.setText("");
+                    icon.setVisible(false);
+
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Mywindows.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+        };
+        out.start();
+
+    }
     public ArrayList<String> list = new ArrayList();
 
     public ArrayList<String> getArray(String query) {
         list.clear();
         try {
-            pst = isConnected().prepareStatement(query);
-            rst = pst.executeQuery();
-            while (rst.next()) {
-                String cmd = rst.getString(1);
+            ps = isConnected().prepareStatement(query);
+            rs = getInstanceT().ps.executeQuery();
+            while (rs.next()) {
+                String cmd = rs.getString(1);
 
                 list.add(
                         cmd
-                        + "#" + rst.getString(2)
-                        + "|" + rst.getString(3)
-                        + "'" + rst.getString(4));
+                        + "#" + rs.getString(2)
+                        + "|" + rs.getString(3)
+                        + "'" + rs.getString(4));
 
             }
         } catch (SQLException ex) {
@@ -886,17 +921,25 @@ public class Mywindows {
     }
 
     public ArrayList getData() throws SQLException {
-
-        pst = isConnected().prepareStatement("SELECT * FROM vs_facture");
+        list.clear();
+        pst = isConnected().prepareStatement("select * from vs_cmd_Effect");
         rst = pst.executeQuery();
         while (rst.next()) {
+            String cmd = rst.getString("codecmd");
+            if (Integer.parseInt(cmd) < 10) {
+                cmd = "000" + cmd;
+            } else if (Integer.parseInt(cmd) > 10 && Integer.parseInt(cmd) < 100) {
+                cmd = "00" + cmd;
+            } else {
+                cmd = "0" + cmd;
+            }
             list.add(
                     rst.getString("service")
                     + "|" + rst.getString("type_")
                     + "#" + rst.getString("Punitaire")
                     + "*" + rst.getString("Qte")
                     + "@" + rst.getString("Total")
-                    + "!" + rst.getString("codecmd"));
+                    + "!" + cmd);
         }
         return list;
     }
