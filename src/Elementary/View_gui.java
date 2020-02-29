@@ -5,11 +5,8 @@
  */
 package Elementary;
 
-import com.google.gson.Gson;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -71,41 +68,22 @@ public class View_gui extends Traitement {
                     int log = rs.getString("nom").length();
                     list.add(
                             rs.getString("nom").substring(1, log)
-                            + "|" + rs.getString("nb_srvc")
+                            + "|" + rs.getString("qte")
                             + "#" + rs.getString("a_payer")
                             + "$" + payer
                             + "!" + cmd
                     );
                     break;
-
+                case 4:
+                    list.add(
+                            rs.getString("id")
+                            + "|" + rs.getString("nom")
+                            + "^" + rs.getString("date")
+                    );
+                    break;
             }
         }
         return list;
-    }
-    public ArrayList<String> list1;
-
-    public ArrayList isPayer(int x) throws SQLException {
-        list1 = new ArrayList();
-        switch (x) {
-            case 1:
-                rs = stm.executeQuery("SELECT montant FROM vs_charger_nom WHERE a_payer=montant");
-                break;
-            case 2:
-                rs = stm.executeQuery("SELECT montant FROM vs_charger_nom WHERE a_payer<>montant");
-                break;
-            default:
-                rs = stm.executeQuery("SELECT montant FROM vs_charger_nom WHERE montant is null");
-                break;
-        }
-        while (rs.next()) {
-            list1.add(
-                    rs.getString(1)
-            );
-
-        }
-
-        return list1;
-
     }
 
     public static View_gui getIns() {

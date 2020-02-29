@@ -41,7 +41,7 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                            <graphic>
-                              <MaterialDesignIconView fill="#beebe9e5" glyphName="CHART_SCATTERPLOT_HEXBIN" size="18" />
+                              <MaterialDesignIconView fill="#beebe9e5" glyphName="KODI" size="18" />
                            </graphic>
                         </Label>
                         <Label fx:id="lbltotal" alignment="CENTER" prefHeight="17.0" prefWidth="283.0" text="5000" textFill="#c2c2c2">

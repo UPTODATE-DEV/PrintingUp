@@ -7,6 +7,7 @@ package controller.commande;
 
 import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
+import static Elementary.Mywindows.popOverMenu;
 import Elementary.View_gui;
 import static Elementary.references.*;
 import com.jfoenix.controls.JFXButton;
@@ -20,9 +21,11 @@ import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import org.controlsfx.control.PopOver;
 
 /**
  * FXML Controller class
@@ -64,7 +67,7 @@ public class CommandeController implements Initializable {
         try {
             recherche();
             try {
-                getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "select * from vs_effect"), PRINT_CMD, 4);
+                getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 4);
             } catch (SQLException ex) {
                 Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -73,9 +76,26 @@ public class CommandeController implements Initializable {
         }
 
     }
+//    String str;
+//    public Label Tfd_nom, Tfd_id, Tfddate;
+//
+//    void initF() {
+//        str = getInstanceL().list.get(getInstanceL().code);
+//        Tfd_nom.setText(str.substring(0, str.indexOf("|")));
+//        Tfd_id.setText(str.substring(str.indexOf("|") + 1, str.indexOf("^")));
+//        Tfddate.setText(str.substring(str.indexOf("^") + 1));
+//System.out.println(str.substring(str.indexOf("^") + 1));
+//    }
 
     @FXML
-    private void Call_windows(ActionEvent event) {
+    private void Call_windows(ActionEvent event) throws IOException {
+        if (event.getSource() == btn_client) {
+            popOverMenu(p1, getClass().getResource(LOAD_PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
+        } else if (event.getSource() == btn_agent) {
+            popOverMenu(p2, getClass().getResource(PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
+        } else if (event.getSource() == btn_service) {
+            popOverMenu(p3, getClass().getResource(LOAD_PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
+        }
     }
 
     @FXML
@@ -90,7 +110,7 @@ public class CommandeController implements Initializable {
             try {
                 getInstanceL().ScrollwithHBX(vb_commande,
                         View_gui.getIns().getService(3,
-                                "select * from vs_effect WHERE nom LIKE '%"
+                                "SELECT * FROM new_vs_print2_paiement WHERE nom LIKE '%"
                                 + Tfl_search.getText()
                                 + "%' OR id LIKE '%" + Tfl_search.getText() + "%'"), PRINT_CMD, 4);
 

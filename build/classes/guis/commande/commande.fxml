@@ -60,7 +60,7 @@
                               <DropShadow color="#d0d0d0" />
                            </effect>
                            <children>
-                              <JFXButton fx:id="btn_client" alignment="CENTER" contentDisplay="TOP" layoutY="-1.0" onAction="#Call_windows" prefHeight="53.0" prefWidth="71.0" style="-fx-background-radius: 5px;" text="Valider" textFill="#c7c7d4" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                              <JFXButton fx:id="btn_client" alignment="CENTER" contentDisplay="TOP" layoutY="-1.0" onAction="#Call_windows" prefHeight="53.0" prefWidth="71.0" style="-fx-background-radius: 5px;" text="R.Dette" textFill="#c7c7d4" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
                                  <font>
                                     <Font name="Century Gothic Bold" size="13.0" />
                                  </font>
@@ -75,7 +75,7 @@
                               <DropShadow color="#d0d0d0" />
                            </effect>
                            <children>
-                              <JFXButton fx:id="btn_agent" alignment="CENTER" contentDisplay="TOP" layoutY="-3.0" onAction="#Call_windows" prefHeight="54.0" prefWidth="71.0" style="-fx-background-radius: 5px;" text="Annuler" textFill="#c7c7d4" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-3.0">
+                              <JFXButton fx:id="btn_agent" alignment="CENTER" contentDisplay="TOP" layoutY="-3.0" onAction="#Call_windows" prefHeight="54.0" prefWidth="71.0" style="-fx-background-radius: 5px;" text="Livre" textFill="#c7c7d4" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-3.0">
                                  <font>
                                     <Font name="Century Gothic Bold" size="13.0" />
                                  </font>
@@ -85,12 +85,12 @@
                               </JFXButton>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="p3" prefHeight="63.0" prefWidth="71.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="2">
+                        <AnchorPane fx:id="p3" prefHeight="49.0" prefWidth="78.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="2">
                            <effect>
                               <DropShadow color="#d0d0d0" />
                            </effect>
                            <children>
-                              <JFXButton fx:id="btn_service" alignment="CENTER" contentDisplay="TOP" layoutY="-3.0" onAction="#Call_windows" prefHeight="54.0" prefWidth="71.0" style="-fx-background-radius: 5px;" text="Modifier" textFill="#c7c7d4" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-3.0">
+                              <JFXButton fx:id="btn_service" alignment="CENTER" contentDisplay="TOP" layoutY="-3.0" onAction="#Call_windows" prefHeight="54.0" prefWidth="71.0" style="-fx-background-radius: 5px;" text="Non livre" textFill="#c7c7d4" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-3.0">
                                  <font>
                                     <Font name="Century Gothic Bold" size="13.0" />
                                  </font>

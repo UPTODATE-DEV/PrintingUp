@@ -46,7 +46,7 @@ public class PrintCommandeController implements Initializable {
     void initFild() {
         str = getInstanceL().list.get(getInstanceL().code);
         id_lab.setText(str.substring(0, str.indexOf("#")));
-        service.setText(str.substring( str.indexOf("#")+1, str.indexOf("|")));
+        service.setText(str.substring(str.indexOf("#")+1, str.indexOf("|")));
 
         //AddcommandeController.id_lab1 = id_lab;
         // idservice.setText(getInstanceL().service1);
