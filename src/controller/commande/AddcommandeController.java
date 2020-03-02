@@ -11,21 +11,21 @@ import static Elementary.Mywindows.getInstanceL;
 import static Elementary.Mywindows.isSaved;
 import static Elementary.Mywindows.popOverMenu;
 import static Elementary.Traitement.getInstanceT;
+import Elementary.View_gui;
 import static Elementary.View_gui.getIns;
 import Elementary.references;
 import static Elementary.references.LOAD_COMMANDE;
 import static Elementary.references.LOAD_DETTE;
 import static Elementary.references.OTHEPAIEMENT;
-import static Elementary.references.OTHERMENU;
+import static Elementary.references.PRINT_CMD;
 import com.jfoenix.controls.JFXButton;
-import static controller.commande.Other_paiementController.getOther;
+import static controller.commande.CommandeController.vb_commande1;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.prefs.Preferences;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -98,6 +98,11 @@ public class AddcommandeController implements Initializable {
     private AnchorPane pan1_1;
     @FXML
     private Label lbl_paiement1;
+    public static VBox vb_1;
+
+    public static Label lbl_frac1;
+    public static Label lbl_dollars1;
+    public static Label id_commande1;
 
     /**
      * Initializes the controller class.
@@ -106,14 +111,19 @@ public class AddcommandeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         Init();
+        vb_1 = vb_;
+        lbl_dollars1 = lbl_dollars;
+        lbl_frac1 = lbl_frac;
     }
 
     void Init() {
+        //initInitial();
+        id_commande1 = id_commande;
         imageviw.setVisible(false);
         btn_ok.setVisible(false);
         Mywindows.getInstanceL().ChargememtCompression(Tfdservice, "tbl_svc", "designation", null);
         Mywindows.getInstanceL().ChargememtCompression(Tfdtype_service, "tbl_type", "designation", null);
-        Mywindows.getInstanceL().ChargememtCompression(Tfdclient, "tbl_client", "nom", null);
+        Mywindows.getInstanceL().ChargememtCompression(Tfdclient, "vs_clientConcat", "nom", null);
         mouci();
         TfdPunitaire.setEditable(false);
         //Other_paiementController.getId1 = id_commande;
@@ -123,7 +133,7 @@ public class AddcommandeController implements Initializable {
 
     void initData() {
         try {
-            Mywindows.getInstanceL().ScrollwithHBX(vb_, getInstanceL().getCommande(), LOAD_COMMANDE, 1);
+            Mywindows.getInstanceL().ScrollwithHBX(vb_1, getInstanceL().getCommande(), LOAD_COMMANDE, 1);
         } catch (IOException ex) {
             Logger.getLogger(AddcommandeController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -136,16 +146,16 @@ public class AddcommandeController implements Initializable {
                 if (!Mywindows.getInstanceL().isFieldsempty(Tfdservice, TfdPunitaire, Tfdtype_service, Tfdclient)) {
                     if (Double.parseDouble(TfdQuantite.getText()) > 0) {
                         save(1);
-                        System.out.println(getIns().montant);
-                        double mtant = Double.parseDouble(getInstanceL().ismac_up(getIns().montant + "='" + id_commande.getText() + "'"));
-                        lbl_frac.setText(Double.toString(mtant));
-                        lbl_dollars.setText(Double.toString(mtant / 1600));
+                        initInitial();
+                        init();
                     }
                 } else {
-                    Ouput(Text, icon, references.getInstanceE().MESSAGE_ISMPTY, imageviw, btn_ok, true, true);
+                    //OuputText(Text, icon, references.getInstanceE().MESSAGE_ISMPTY, imageviw, btn_ok, true, true);
+                    Mywindows.OuputText(Text, references.getInstanceE().MESSAGE_ISMPTY, icon, true);
+
                 }
             } else {
-                Ouput(Text, icon, references.getInstanceE().MESSAGE_FACT, imageviw, btn_ok, true, true);
+                Mywindows.OuputText(Text, references.getInstanceE().MESSAGE_FACT, icon, true);
             }
         }
     }
@@ -155,6 +165,12 @@ public class AddcommandeController implements Initializable {
             return Integer.parseInt(getInstanceL().ismac_up(getIns().query));
         }
         return 0;
+    }
+
+    void initInitial() {
+        double mtant = Double.parseDouble(getInstanceL().ismac_up(getIns().montant + "='" + id_commande.getText() + "'"));
+        lbl_frac1.setText(Double.toString(mtant));
+        lbl_dollars1.setText(Double.toString(mtant / 1600));
     }
 
     @FXML
@@ -187,7 +203,7 @@ public class AddcommandeController implements Initializable {
 
     void save(int c) throws Exception {
         if (isSaved("sp_Dcommande", "PROCEDURE", Tfd_code, TfdPunitaire, TfdQuantite, id_commande, Tfdservice, c, Tfdtype_service) == true) {
-            Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
+            Mywindows.OuputText(Text, references.getInstanceE().MESSAGE_SAVE, icon, false);
             Mywindows.initFields(true, TfdPunitaire, TfdQuantite, Tfdservice, Tfdtype_service);
             initData();
         }
@@ -231,6 +247,19 @@ public class AddcommandeController implements Initializable {
                 Logger.getLogger(AddcommandeController.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
+    }
+
+    void init() {
+        try {
+            try {
+                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 4);
+            } catch (SQLException ex) {
+                Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
 }

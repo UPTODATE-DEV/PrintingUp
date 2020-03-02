@@ -576,8 +576,8 @@ public class Mywindows extends Traitement {
          */
         try {
             if ("PROCEDURE".equals(typeQuerry)) {
-                getInstanceT().ps = isConnected().prepareCall("call " + nameT + "" + _p);
-                System.out.println("call " + nameT + "" + _p);
+                getInstanceT().ps = isConnected().prepareCall("Call " + nameT + "" + _p);
+                System.out.println("Call " + nameT + "" + _p);
             } else if ("QUERRY".equals(typeQuerry)) {
                 getInstanceT().ps = isConnected().prepareStatement("insert into " + nameT + " values" + _p);
             }

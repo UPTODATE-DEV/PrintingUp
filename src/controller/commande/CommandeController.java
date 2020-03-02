@@ -53,6 +53,7 @@ public class CommandeController implements Initializable {
     private VBox vb_commande;
     @FXML
     private TextField Tfl_search;
+    public static VBox vb_commande1;
 
     /**
      * Initializes the controller class.
@@ -64,10 +65,11 @@ public class CommandeController implements Initializable {
     }
 
     void init() {
+        vb_commande1 = vb_commande;
         try {
             recherche();
             try {
-                getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 4);
+                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 4);
             } catch (SQLException ex) {
                 Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -76,25 +78,21 @@ public class CommandeController implements Initializable {
         }
 
     }
-//    String str;
-//    public Label Tfd_nom, Tfd_id, Tfddate;
-//
-//    void initF() {
-//        str = getInstanceL().list.get(getInstanceL().code);
-//        Tfd_nom.setText(str.substring(0, str.indexOf("|")));
-//        Tfd_id.setText(str.substring(str.indexOf("|") + 1, str.indexOf("^")));
-//        Tfddate.setText(str.substring(str.indexOf("^") + 1));
-//System.out.println(str.substring(str.indexOf("^") + 1));
-//    }
 
     @FXML
     private void Call_windows(ActionEvent event) throws IOException {
-        if (event.getSource() == btn_client) {
-            popOverMenu(p1, getClass().getResource(LOAD_PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
-        } else if (event.getSource() == btn_agent) {
-            popOverMenu(p2, getClass().getResource(PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
+        if (event.getSource() == btn_agent) {
+            popOverMenu(p2, getClass().getResource(LOAD_PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
+            getInstanceL().SelectDataFor1(btn_agent, btn_client, btn_service);
+            getInstanceL().SelectDataFor(p2, p1, p3);
+        } else if (event.getSource() == btn_client) {
+            popOverMenu(p1, getClass().getResource(PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
+            getInstanceL().SelectDataFor1(btn_client, btn_agent, btn_service);
+            getInstanceL().SelectDataFor(p1, p2, p3);
         } else if (event.getSource() == btn_service) {
             popOverMenu(p3, getClass().getResource(LOAD_PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
+            getInstanceL().SelectDataFor1(btn_service, btn_agent, btn_client);
+            getInstanceL().SelectDataFor(p3, p2, p1);
         }
     }
 

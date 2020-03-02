@@ -35,6 +35,15 @@ public class Traitement extends Query {
         }
     }
 
+    public boolean getprepare(String query) throws SQLException {
+        ps = Connexion.isConnected().prepareCall(query);
+        int x = ps.executeUpdate();
+        if (x == 1) {
+            return true;
+        }
+        return false;
+
+    }
     private static Traitement traite;
 
     public boolean isNumerique(TextField text) {

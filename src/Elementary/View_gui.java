@@ -54,6 +54,7 @@ public class View_gui extends Traitement {
                     break;
                 case 3:
                     String cmd = rs.getString("id");
+                    int x = rs.getString("id").length();
                     if (Integer.parseInt(cmd) < 10) {
                         cmd = "000" + cmd;
                     } else if (Integer.parseInt(cmd) > 10 && Integer.parseInt(cmd) < 100) {
@@ -67,7 +68,7 @@ public class View_gui extends Traitement {
                     }
                     int log = rs.getString("nom").length();
                     list.add(
-                            rs.getString("nom").substring(1, log)
+                            rs.getString("nom").substring(x, log)
                             + "|" + rs.getString("qte")
                             + "#" + rs.getString("a_payer")
                             + "$" + payer
@@ -79,6 +80,30 @@ public class View_gui extends Traitement {
                             rs.getString("id")
                             + "|" + rs.getString("nom")
                             + "^" + rs.getString("date")
+                    );
+                    break;
+                case 5:
+                    String montant = rs.getString("montant");
+                    if (montant == null) {
+                        montant = "0.0";
+                    }
+                    int loge = rs.getString("nom").length();
+                    int log2 = rs.getString("id").length();
+                    list.add(
+                            rs.getString("id")
+                            + "&" + rs.getString("a_payer")
+                            + "^" + rs.getString("nom").substring(log2, loge)
+                            + "#" + (rs.getDouble("a_payer") - Double.parseDouble(montant))
+                    );
+                    break;
+                case 6:
+
+                    list.add(
+                            rs.getString("codecmd")
+                            + "^" + rs.getString("service")
+                            + "#" + rs.getString("type_")
+                            + "&" + rs.getString("Punitaire")
+                            + "%" + rs.getString("qte")
                     );
                     break;
             }

@@ -1,65 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="410.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.orther_paiement_detteController">
+<VBox prefHeight="477.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.orther_paiement_detteController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="382.0">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="382.0">
          <children>
-            <ScrollPane layoutX="7.0" layoutY="58.0" prefHeight="331.0" prefWidth="368.0" style="-fx-background-color: Transparent;">
+            <ScrollPane layoutX="7.0" layoutY="58.0" prefHeight="388.0" prefWidth="368.0" style="-fx-background-color: Transparent;">
                <content>
-                  <VBox fx:id="vbox_verifierdette" prefHeight="329.0" prefWidth="366.0" />
+                  <VBox fx:id="vbox_verifierdette" prefHeight="383.0" prefWidth="366.0" />
                </content>
             </ScrollPane>
-            <HBox layoutX="57.0" layoutY="12.0">
-               <children>
-                  <AnchorPane prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #1E9DBF; -fx-background-radius: 2px;">
-                     <children>
-                        <Label alignment="CENTER" layoutY="7.0" prefHeight="23.0" prefWidth="85.0" text="200.000" textFill="#fff2f2">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="17.0" prefWidth="85.0" text="Non livre" />
-                     </children>
-                     <HBox.margin>
-                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-                     </HBox.margin>
-                  </AnchorPane>
-                  <AnchorPane style="-fx-background-color: #4F9E77; -fx-background-radius: 2px;">
-                     <children>
-                        <Label alignment="CENTER" layoutY="7.0" prefHeight="23.0" prefWidth="85.0" text="25.000" textFill="#fff2f2">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutY="-2.0" prefHeight="17.0" prefWidth="85.0" text="Livre" />
-                     </children>
-                     <HBox.margin>
-                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-                     </HBox.margin>
-                  </AnchorPane>
-                  <AnchorPane style="-fx-background-color: #DC511D; -fx-background-radius: 2px;">
-                     <children>
-                        <Label alignment="CENTER" layoutY="7.0" prefHeight="23.0" prefWidth="85.0" text="1.000" textFill="#fff2f2">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="-3.0" layoutY="-1.0" prefHeight="17.0" prefWidth="85.0" text="Disponible" />
-                     </children>
-                     <HBox.margin>
-                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-                     </HBox.margin>
-                  </AnchorPane>
-               </children>
-            </HBox>
+            <TextField fx:id="Tfd_search" layoutX="149.0" layoutY="24.0" prefHeight="25.0" prefWidth="225.0" promptText="Rechercher..." style="-fx-background-color: Trsnsparent; -fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px;" />
          </children>
       </AnchorPane>
    </children>

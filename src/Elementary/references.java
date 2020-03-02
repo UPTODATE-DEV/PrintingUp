@@ -34,13 +34,14 @@ public class references {
     public static final String LOAD_DETTE = "/guis/commande/orher_dette.fxml";
     public static final String LOAD_PRINT_DETTE = "/guis/commande/orther_verifier_dette.fxml";
     public static final String LOAD_PRINT_LISTDETTE = "/guis/commande/orther_v_dette.fxml";
+    public static final String LOAD_DETAIL = "/guis/commande/other_commande.fxml";
 
     public static final String ADDSERVICE = "/guis/nouveau/addservice.fxml";
     public static final String ADDAGENT = "/guis/nouveau/addagent.fxml";
     public static final String PRINT_CLIENT = "/guis/nouveau/printClient.fxml";
     public static final String ADDCOMMANDE = "/guis/commande/Addcommande.fxml";
     public static final String PRINT_CMD = "/guis/commande/PrintCommandeAll.fxml";
-    
+
     public static final String PRINT_DETTE = "/guis/commande/orther_paiement_dette.fxml";
     public static final String PRINT_PAIEMENT_DETTE = "/guis/commande/other_regle_dette.fxml";
 

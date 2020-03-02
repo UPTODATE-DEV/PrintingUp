@@ -60,7 +60,7 @@
                               <DropShadow color="#d0d0d0" />
                            </effect>
                            <children>
-                              <JFXButton fx:id="btn_client" alignment="CENTER" contentDisplay="TOP" layoutY="-1.0" onAction="#Call_windows" prefHeight="53.0" prefWidth="71.0" style="-fx-background-radius: 5px;" text="R.Dette" textFill="#c7c7d4" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                              <JFXButton fx:id="btn_client" alignment="CENTER" contentDisplay="TOP" layoutY="-1.0" onAction="#Call_windows" prefHeight="53.0" prefWidth="71.0" style="-fx-background-radius: 5px;" text="Dette" textFill="#c7c7d4" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
                                  <font>
                                     <Font name="Century Gothic Bold" size="13.0" />
                                  </font>
