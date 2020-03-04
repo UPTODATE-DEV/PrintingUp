@@ -67,6 +67,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
+                  <Label fx:id="id_commande" layoutX="166.0" layoutY="12.0" prefHeight="17.0" prefWidth="32.0" text="0" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children>

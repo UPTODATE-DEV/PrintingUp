@@ -1,35 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="193.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.Detail_cmdController">
+<AnchorPane prefHeight="30.0" prefWidth="287.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.Detail_cmdController">
    <children>
-      <Label fx:id="lbl_service" layoutX="2.0" layoutY="3.0" prefHeight="17.0" prefWidth="69.0" text="Service">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbl_type" layoutX="77.0" layoutY="4.0" prefHeight="17.0" prefWidth="47.0" text="Type">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbl_pu" layoutX="129.0" layoutY="4.0" prefHeight="17.0" prefWidth="28.0" text="Pu">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbl_qte" layoutX="163.0" layoutY="4.0" prefHeight="17.0" prefWidth="28.0" text="Qte">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
+      <AnchorPane layoutX="1.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="282.0" style="-fx-background-color: #fff;">
+         <children>
+            <Label fx:id="lbl_service" layoutX="6.0" layoutY="7.0" prefHeight="17.0" prefWidth="99.0" text="Service">
+               <graphic>
+                  <MaterialDesignIconView fill="#72a4f0" glyphName="ANIMATION" size="10" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="9.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_type" layoutX="113.0" layoutY="8.0" prefHeight="17.0" prefWidth="56.0" text="Type" textFill="#0f0f10">
+               <graphic>
+                  <MaterialDesignIconView fill="#72a4f0" glyphName="BRUSH" size="10" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="9.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_pu" layoutX="174.0" layoutY="8.0" prefHeight="17.0" prefWidth="56.0" text="2000000">
+               <graphic>
+                  <MaterialDesignIconView fill="#72a4f0" glyphName="BOOKMARK_PLUS" size="10" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="9.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_qte" layoutX="232.0" layoutY="8.0" prefHeight="17.0" prefWidth="50.0" text="200000">
+               <graphic>
+                  <MaterialDesignIconView fill="#72a4f0" glyphName="APPLE_MOBILEME" size="10" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="9.0" />
+               </font>
+            </Label>
+            <Label layoutX="7.0" layoutY="-5.0" prefHeight="17.0" prefWidth="99.0" text="Designation" textFill="#b9a2a2">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+            <Label layoutX="113.0" layoutY="-5.0" prefHeight="17.0" prefWidth="56.0" text="Type-service" textFill="#b9a2a2">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+            <Label layoutX="177.0" layoutY="-4.0" prefHeight="17.0" prefWidth="34.0" text="PUnitaire" textFill="#b9a2a2">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+            <Label layoutX="231.0" layoutY="-4.0" prefHeight="17.0" prefWidth="50.0" text="Quantité" textFill="#b9a2a2">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow color="#148dd9" height="2.1" radius="1.0125000000000002" width="3.95" />
+         </effect>
+      </AnchorPane>
    </children>
-   <effect>
-      <DropShadow />
-   </effect>
 </AnchorPane>

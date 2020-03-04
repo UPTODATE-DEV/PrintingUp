@@ -4,17 +4,19 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<VBox prefHeight="264.0" prefWidth="187.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.Other_commandeController">
+<VBox prefHeight="264.0" prefWidth="287.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.Other_commandeController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="264.0" prefWidth="187.0" style="-fx-background-color: #fff;">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="264.0" prefWidth="287.0" style="-fx-background-color: #fff;">
          <children>
-            <VBox fx:id="vb_detail" layoutX="-4.0" layoutY="31.0" prefHeight="235.0" prefWidth="193.0" />
-            <Label alignment="CENTER" layoutX="82.0" layoutY="2.0" prefHeight="28.0" prefWidth="28.0" style="-fx-background-color: #A7E0BC; -fx-background-radius: 4em;">
+            <VBox fx:id="vb_detail" layoutY="35.0" prefHeight="212.0" prefWidth="287.0" />
+            <Label alignment="CENTER" layoutX="127.0" layoutY="4.0" prefHeight="28.0" prefWidth="28.0" style="-fx-background-color: #A7E0BC; -fx-background-radius: 4em;">
                <graphic>
                   <MaterialDesignIconView fill="#17d162" glyphName="INFORMATION" size="20" />
                </graphic>
             </Label>
+            <Text fill="#d0a8a8" layoutX="7.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La détaille de cette commande" wrappingWidth="122.47003173828125" />
          </children>
       </AnchorPane>
    </children>

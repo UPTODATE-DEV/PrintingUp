@@ -49,16 +49,30 @@ public class Other_paiementController implements Initializable {
     void paiement() {
         testCaract();
         btn_paiement.setOnMouseClicked((value) -> {
-            try {
-                if (Tfd_montant.getText().equals("0.0") || Tfd_montant.getText().isEmpty() || Double.parseDouble(Tfd_montant.getText()) <= 0.0) {
-                    Mywindows.OuputText(massage, "Paiement échoue", alert_paiement, true);
-                } else {
-                    if (Mywindows.isSaved("sp_paiement", "PROCEDURE", Tfd_montant, getId(), "1") == true) {
-                        Mywindows.OuputText(massage, "Paiement réussi ", alert_paiement, false);
-                    }
+            if (Integer.parseInt(getId().getText()) != 0) {
+                switch (Tfd_montant.getText()) {
+                    case "0.0":
+                        Mywindows.OuputText(massage, "Paiement échoue", alert_paiement, true);
+                        break;
+                    case "":
+                        Mywindows.OuputText(massage, "Paiement échoue", alert_paiement, true);
+                        break;
+                    default:
+                        try {
+                            if ((Double.parseDouble(Tfd_montant.getText()) <= 0.0)) {
+                                Mywindows.OuputText(massage, "Paiement échoue", alert_paiement, true);
+                            } else {
+                                if (Mywindows.isSaved("sp_paiement", "PROCEDURE", Tfd_montant, getId(), "1") == true) {
+                                    Mywindows.OuputText(massage, "Paiement réussi ", alert_paiement, false);
+                                }
+                            }
+                        } catch (Exception ex) {
+                            Logger.getLogger(Other_paiementController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        break;
                 }
-            } catch (Exception ex) {
-                Logger.getLogger(Other_paiementController.class.getName()).log(Level.SEVERE, null, ex);
+            } else {
+                Mywindows.OuputText(massage, "Commande invalider", alert_paiement, true);
             }
         });
 
@@ -67,6 +81,7 @@ public class Other_paiementController implements Initializable {
     void testCaract() {
         Tfd_montant.setOnKeyReleased((value) -> {
             Traitement.getInstanceT().isNumerique(Tfd_montant);
+
         });
 
     }

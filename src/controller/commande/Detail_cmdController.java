@@ -28,23 +28,27 @@ public class Detail_cmdController implements Initializable {
     private Label lbl_pu;
     @FXML
     private Label lbl_qte;
-    public static Label code_1;
+    public static String code_1;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        initFild();
     }
 
     String str;
 
     void initFild() {
         str = getIns().list.get(getInstanceL().code);
-        code_1.setText(str.substring(0, str.indexOf("^")));
+        code_1 = str.substring(0, str.indexOf("^"));
         lbl_service.setText(str.substring(str.indexOf("^") + 1, str.indexOf("#")));
         lbl_type.setText(str.substring(str.indexOf("#") + 1, str.indexOf("&")));
+        lbl_pu.setText(str.substring(str.indexOf("&") + 1, str.indexOf("%")));
         lbl_qte.setText(str.substring(str.indexOf("%") + 1));
+
     }
 
 }

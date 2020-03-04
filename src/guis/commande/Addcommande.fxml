@@ -234,17 +234,5 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="pan1_1" layoutX="240.0" layoutY="30.0" prefHeight="20.0" prefWidth="113.0" style="-fx-background-color: #DC511D; -fx-background-radius: 5px;">
-         <children>
-            <Label fx:id="lbl_paiement1" alignment="CENTER" layoutX="2.0" layoutY="1.0" onMouseClicked="#callpaiement" prefHeight="17.0" prefWidth="108.0" style="-fx-background-color: #DC511D;" text="Régler une datte" textFill="WHITE">
-               <graphic>
-                  <MaterialDesignIconView fill="WHITE" glyphName="MESSAGE" />
-               </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Label>
-         </children>
-      </AnchorPane>
    </children>
 </AnchorPane>

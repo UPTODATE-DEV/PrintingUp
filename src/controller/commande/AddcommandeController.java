@@ -15,7 +15,6 @@ import Elementary.View_gui;
 import static Elementary.View_gui.getIns;
 import Elementary.references;
 import static Elementary.references.LOAD_COMMANDE;
-import static Elementary.references.LOAD_DETTE;
 import static Elementary.references.OTHEPAIEMENT;
 import static Elementary.references.PRINT_CMD;
 import com.jfoenix.controls.JFXButton;
@@ -94,9 +93,7 @@ public class AddcommandeController implements Initializable {
     private AnchorPane pan1;
     @FXML
     private AnchorPane pan1_;
-    @FXML
     private AnchorPane pan1_1;
-    @FXML
     private Label lbl_paiement1;
     public static VBox vb_1;
 
@@ -128,7 +125,7 @@ public class AddcommandeController implements Initializable {
         TfdPunitaire.setEditable(false);
         //Other_paiementController.getId1 = id_commande;
         Other_paiementController.getOther().setId(id_commande);
-        call_dette();
+        //call_dette();
     }
 
     void initData() {
@@ -237,16 +234,6 @@ public class AddcommandeController implements Initializable {
             Logger.getLogger(AddcommandeController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }
-
-    void call_dette() {
-        lbl_paiement1.setOnMouseClicked((value) -> {
-            try {
-                popOverMenu(pan1_1, getClass().getResource(LOAD_DETTE), PopOver.ArrowLocation.TOP_CENTER);
-            } catch (IOException ex) {
-                Logger.getLogger(AddcommandeController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
     }
 
     void init() {

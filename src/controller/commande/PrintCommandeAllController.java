@@ -41,6 +41,8 @@ public class PrintCommandeAllController implements Initializable {
     private Label lbl_informa;
     @FXML
     private AnchorPane pan_infor;
+    @FXML
+    private Label id_commande;
 
     /**
      * Initializes the controller class.
@@ -61,6 +63,8 @@ public class PrintCommandeAllController implements Initializable {
         lblqte.setText(str.substring(str.indexOf("|") + 1, str.indexOf("#")));
         lbltotal.setText(str.substring(str.indexOf("#") + 1, str.indexOf("$")));
         String payer = str.substring(str.indexOf("$") + 1, str.indexOf("!"));
+        id_commande.setText(Integer.toString(Integer.parseInt(str.substring(str.indexOf("!") + 1))));
+
         if (lbltotal.getText().equals(payer)) {
             alert_paiement.setGraphic(Mywindows.getInstanceT().font("-fx-fill:#A4E3A4", MaterialDesignIcon.CHECKBOX_MARKED));
         } else if (Double.parseDouble(lbltotal.getText()) > Double.parseDouble(payer) && Double.parseDouble(payer) > 0) {
@@ -72,7 +76,9 @@ public class PrintCommandeAllController implements Initializable {
 
     @FXML
     private void call_informande(MouseEvent event) throws IOException {
+        Other_commandeController.lab = id_commande;
         popOverMenu(pan_infor, getClass().getResource(OTHEINFO), PopOver.ArrowLocation.TOP_CENTER);
+
     }
 
 }

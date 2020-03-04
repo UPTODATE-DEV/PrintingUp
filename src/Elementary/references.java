@@ -31,10 +31,9 @@ public class references {
     public static final String ADDCLIENT = "/guis/nouveau/addclient.fxml";
     public static final String LOADCOMMANDE = "/guis/nouveau/printService.fxml";
     public static final String LOAD_COMMANDE = "/guis/commande/printl_commande.fxml";
-    public static final String LOAD_DETTE = "/guis/commande/orher_dette.fxml";
     public static final String LOAD_PRINT_DETTE = "/guis/commande/orther_verifier_dette.fxml";
     public static final String LOAD_PRINT_LISTDETTE = "/guis/commande/orther_v_dette.fxml";
-    public static final String LOAD_DETAIL = "/guis/commande/other_commande.fxml";
+    public static final String LOAD_DETAIL = "/guis/commande/detail_cmd.fxml";
 
     public static final String ADDSERVICE = "/guis/nouveau/addservice.fxml";
     public static final String ADDAGENT = "/guis/nouveau/addagent.fxml";

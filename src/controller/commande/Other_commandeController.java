@@ -17,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 /**
@@ -28,6 +29,7 @@ public class Other_commandeController implements Initializable {
 
     @FXML
     private VBox vb_detail;
+    public static Label lab;
 
     /**
      * Initializes the controller class.
@@ -35,8 +37,10 @@ public class Other_commandeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        initData();
+        lab.getText();
     }
-    String str = "SELECT codecmd,service,type_,Punitaire,qte FROM vs_facture";
+    String str = "SELECT codecmd,service,type_,Punitaire,qte FROM vs_facture where codecmd='" + lab.getText() + "'";
 
     void initData() {
         try {

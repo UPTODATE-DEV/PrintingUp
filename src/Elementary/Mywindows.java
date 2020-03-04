@@ -776,7 +776,7 @@ public class Mywindows extends Traitement {
                     }
                 });
                 message.setText(str);
-                Thread.sleep(3000);
+                Thread.sleep(1000);
                 message.setText("");
                 icon.setVisible(false);
 
