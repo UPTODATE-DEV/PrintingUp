@@ -8,7 +8,6 @@ package controller.commande;
 import static Elementary.Mywindows.getInstanceL;
 import Elementary.View_gui;
 import static Elementary.references.LOAD_PRINT_LISTDETTE;
-import static Elementary.references.PRINT_CMD;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -41,7 +40,7 @@ public class Orther_verifier_detteController implements Initializable {
     void init() {
         try {
             try {
-                getInstanceL().ScrollwithHBX(vbox_verifierdette, View_gui.getIns().getService(4,"SELECT * FROM new_valider_commande"), LOAD_PRINT_LISTDETTE,2);
+                getInstanceL().ScrollwithHBX(vbox_verifierdette, View_gui.getIns().getService(4, "SELECT * FROM new_valider_commande"), LOAD_PRINT_LISTDETTE, 2);
             } catch (IOException ex) {
                 Logger.getLogger(Orther_verifier_detteController.class.getName()).log(Level.SEVERE, null, ex);
             }
