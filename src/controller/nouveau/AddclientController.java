@@ -10,9 +10,13 @@ import static Elementary.Mywindows.Ouput;
 import static Elementary.Mywindows.getInstanceL;
 import static Elementary.Mywindows.initFields;
 import static Elementary.Mywindows.isSaved;
+import static Elementary.View_gui.getIns;
 import Elementary.references;
+import static Elementary.references.PRINT_CLIENT;
 import com.jfoenix.controls.JFXButton;
+import com.sun.deploy.util.SessionState;
 import static controller.commande.AddcommandeController.btn_ok;
+import static controller.nouveau.NouveauController.vbx1;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -23,6 +27,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import lib.client.ClientDao;
+import lib.client.ImplemanteClient;
+import static lib.client.ImplemanteClient.Instance;
 
 /**
  * FXML Controller class
@@ -56,6 +63,7 @@ public class AddclientController implements Initializable {
     private Text Text;
     @FXML
     private ImageView imageviw;
+    ClientDao client;
 
     /**
      * Initializes the controller class.
@@ -85,11 +93,13 @@ public class AddclientController implements Initializable {
     @FXML
     private void Traitement_client(ActionEvent event) throws Exception {
         if (event.getSource() == Btn_save) {
-            if (!getInstanceL().isFieldsempty(nomTfd, prenomTfd, sexe_lbl, teleTfd, mailTfd, adresstfd)==false) {
-                if (isSaved("sp_client", "PROCEDURE", modifierLbl, nomTfd, prenomTfd, sexe_lbl, teleTfd, lab, mailTfd, adresstfd) == true) {
-                    Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
-                    initFields(false, nomTfd, prenomTfd, teleTfd, mailTfd, adresstfd);
-                }
+            client = new ClientDao(nomTfd.getText(), prenomTfd.getText(), sexe_lbl.getText(), teleTfd.getText(), mailTfd.getText(), adresstfd.getText(), "1", "0");
+            if (!getInstanceL().isFieldsempty(nomTfd, prenomTfd, sexe_lbl, teleTfd, mailTfd, adresstfd) == false) {
+                Instance().Enregistrer(client);
+                Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
+                initFields(false, nomTfd, prenomTfd, teleTfd, mailTfd, adresstfd);
+                  getInstanceL().ScrollwithHBX(vbx1, getIns().getService(2, "SELECT * FROM tbl_client"), PRINT_CLIENT, 4);
+
             } else {
                 Ouput(Text, icon, references.getInstanceE().MESSAGE_ISMPTY, imageviw, btn_ok, true, true);
             }

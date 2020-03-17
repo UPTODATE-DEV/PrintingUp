@@ -8,6 +8,7 @@ package Elementary;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,9 +23,15 @@ public class Connexion {
     private String usename = "root";
     private String password = "root";
 
+    public static Statement stm;
+
     public Connexion() {
         try {
             cnx = DriverManager.getConnection(url, usename, password);
+            if (stm == null) {
+                stm = cnx.createStatement();
+            }
+            cnx.setAutoCommit(false);
         } catch (SQLException ex) {
             Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -33,7 +40,7 @@ public class Connexion {
     public static Connection isConnected() {
         if (cnx == null) {
             new Connexion();
-            System.out.println("Connexion initialiser !!!  ");
+        
         }
         System.out.println("Connexion disponible déjà  ");
         return cnx;

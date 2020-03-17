@@ -50,13 +50,14 @@ public class NouveauController implements Initializable {
     private VBox vbx;
     @FXML
     private TextField tfd_sercher;
-
+    public static  VBox vbx1;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         status = 1;
+        vbx1=vbx;
         if (status == 1) {
             getInstanceL().SelectDataFor1(btn_client, btn_agent, btn_service);
             getInstanceL().SelectDataFor(p1, p2, p3);
