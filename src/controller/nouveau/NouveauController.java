@@ -50,20 +50,20 @@ public class NouveauController implements Initializable {
     private VBox vbx;
     @FXML
     private TextField tfd_sercher;
-    public static  VBox vbx1;
+    public static VBox vbx1;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         status = 1;
-        vbx1=vbx;
+        vbx1 = vbx;
         if (status == 1) {
             getInstanceL().SelectDataFor1(btn_client, btn_agent, btn_service);
             getInstanceL().SelectDataFor(p1, p2, p3);
-            init(2);
             search_new("client");
-
+            init(2);  
         }
     }
 
@@ -72,10 +72,10 @@ public class NouveauController implements Initializable {
             try {
                 switch (c) {
                     case 1:
-                        getInstanceL().ScrollwithHBX(vbx, getIns().getService(1, "SELECT * FROM vs_aff_service"), LOADCOMMANDE, 5);
+                        getInstanceL().ScrollwithHBX(vbx1, getIns().getService(1, "SELECT * FROM vs_aff_service"), LOADCOMMANDE, 4);
                         break;
                     case 2:
-                        getInstanceL().ScrollwithHBX(vbx, getIns().getService(2, "SELECT * FROM tbl_client"), PRINT_CLIENT, 4);
+                        getInstanceL().ScrollwithHBX(vbx1, getIns().getService(2, "SELECT * FROM tbl_client"), PRINT_CLIENT, 4);
                         break;
                 }
             } catch (IOException ex) {
@@ -132,30 +132,31 @@ public class NouveauController implements Initializable {
         try {
             tfd_sercher.setOnKeyReleased((KeyEvent value) -> {
                 switch (str) {
-                    case "service": {
+                    case "service":
                         try {
                             try {
                                 getInstanceL().ScrollwithHBX(vbx, getIns().getService(1,
                                         "SELECT * FROM vs_aff_service"
                                         + " WHERE service LIKE '%" + tfd_sercher.getText() + "%' OR id LIKE '%"
-                                        + tfd_sercher.getText() + "%'"), LOADCOMMANDE, 5);
+                                        + tfd_sercher.getText() + "%'"), LOADCOMMANDE, 4);
                             } catch (IOException ex) {
                                 Logger.getLogger(NouveauController.class.getName()).log(Level.SEVERE, null, ex);
                             }
                         } catch (SQLException ex) {
                             Logger.getLogger(NouveauController.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                    }
+                    
                     break;
                     case "agent":
+                        System.out.println("Pas encore implementer");
                         break;
                     case "client":
                         try {
                             try {
-                                getInstanceL().ScrollwithHBX(vbx, getIns().getService(1,
+                                getInstanceL().ScrollwithHBX(vbx, getIns().getService(2,
                                         "SELECT * FROM tbl_client"
                                         + " WHERE nom LIKE '%" + tfd_sercher.getText() + "%' OR id LIKE '%"
-                                        + tfd_sercher.getText() + "%'"), LOADCOMMANDE, 5);
+                                        + tfd_sercher.getText() + "%'"), PRINT_CLIENT, 4);
                             } catch (IOException ex) {
                                 Logger.getLogger(NouveauController.class.getName()).log(Level.SEVERE, null, ex);
                             }

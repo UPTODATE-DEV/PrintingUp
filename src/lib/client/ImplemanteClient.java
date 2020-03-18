@@ -29,16 +29,18 @@ public class ImplemanteClient implements IClient {
         try {
             pst = isConnected().prepareCall("{Call sp_client (?,?,?,?,?,?,?,?)}");
             pst.setString(1, client.getCode_());
-            pst.setString(2, client.getNom());
-            pst.setString(3, client.getPrenom());
-            pst.setString(4, client.getSexe());
+            pst.setString(2, client.getNom().toUpperCase());
+            pst.setString(3, client.getPrenom().toUpperCase());
+            pst.setString(4, client.getSexe().toUpperCase());
             pst.setString(5, client.getTel());
             pst.setString(6, client.getStatis());
-            pst.setString(7, client.getMail());
-            pst.setString(8, client.getAdress());
+            pst.setString(7, client.getMail().toLowerCase());
+            pst.setString(8, client.getAdress().toUpperCase());
             int x = pst.executeUpdate();
+            System.out.println(Integer.toString(x));
             if (x == 1) {
                 isConnected().commit();
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(ImplemanteClient.class.getName()).log(Level.SEVERE, null, ex);

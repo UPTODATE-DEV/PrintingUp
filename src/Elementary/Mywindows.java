@@ -686,14 +686,14 @@ public class Mywindows extends Traitement {
         } else {
             mat = new MaterialDesignIconView(MaterialDesignIcon.CHECKBOX_MULTIPLE_MARKED_OUTLINE);
             mat.setGlyphSize(27);
-            message.setFill(Color.web("#6A75CA"));
-            mat.setStyle("-fx-fill:#6A75CA");
+            message.setFill(Color.web("#1C87DB"));
+            mat.setStyle("-fx-fill:#1C87DB");
 
         }
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                Thread.sleep(1000);
+                Thread.sleep(500);
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
@@ -702,7 +702,7 @@ public class Mywindows extends Traitement {
                 });
                 icon.setVisible(true);
                 message.setText(str);
-                Thread.sleep(3000);
+                Thread.sleep(500);
                 message.setText("");
                 icon.setVisible(false);
                 bt.setDisable(false);
@@ -715,7 +715,7 @@ public class Mywindows extends Traitement {
             public void run() {
                 try {
                     image.setVisible(true);
-                    Thread.sleep(1500);
+                    Thread.sleep(500);
                     image.setVisible(false);
                     new Thread(task).start();
                 } catch (InterruptedException ex) {
@@ -736,7 +736,7 @@ public class Mywindows extends Traitement {
                     });
                     icon.setVisible(true);
                     message.setText(str);
-                    Thread.sleep(3500);
+                    Thread.sleep(500);
                     message.setText("");
                     icon.setVisible(false);
                 } catch (InterruptedException ex) {
@@ -769,14 +769,14 @@ public class Mywindows extends Traitement {
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                Thread.sleep(1000);
+                Thread.sleep(500);
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
                     }
                 });
                 message.setText(str);
-                Thread.sleep(1000);
+                Thread.sleep(500);
                 message.setText("");
                 icon.setVisible(false);
 
@@ -796,7 +796,7 @@ public class Mywindows extends Traitement {
                     ;
                     icon.setVisible(true);
                     message.setText(str);
-                    Thread.sleep(3500);
+                    Thread.sleep(500);
                     message.setText("");
                     icon.setVisible(false);
 

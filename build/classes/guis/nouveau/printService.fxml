@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="137.0" prefWidth="182.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.nouveau.PrintServiceController">
+<AnchorPane prefHeight="137.0" prefWidth="201.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.nouveau.PrintServiceController">
    <children>
-      <AnchorPane id="AnchorPane" layoutX="7.0" layoutY="8.0" prefHeight="113.0" prefWidth="141.0" style="-fx-background-color: #fff; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+      <AnchorPane id="AnchorPane" layoutX="6.0" layoutY="4.0" prefHeight="129.0" prefWidth="195.0" style="-fx-background-color: #fff; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="4.0">
          <children>
-            <VBox layoutY="41.0" prefHeight="63.0" prefWidth="137.0" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <VBox layoutY="41.0" prefHeight="63.0" prefWidth="195.0" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Label fx:id="service" alignment="CENTER" prefHeight="17.0" prefWidth="146.0" text="Service">
+                  <Label fx:id="service" alignment="CENTER" prefHeight="17.0" prefWidth="192.0" text="Service">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -21,24 +23,37 @@
                         <Insets left="2.0" right="2.0" top="4.0" />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="type" alignment="CENTER" prefHeight="17.0" prefWidth="147.0" text="Type" textFill="#c2c2c2">
+                  <Label fx:id="type" alignment="CENTER" prefHeight="17.0" prefWidth="192.0" text="Type" textFill="#c2c2c2">
                      <VBox.margin>
                         <Insets left="2.0" right="2.0" top="4.0" />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="prix_unitaire" alignment="CENTER" prefHeight="17.0" prefWidth="150.0" text="Punitaire" textFill="#c2c2c2">
+                  <Label fx:id="prix_unitaire" alignment="CENTER" prefHeight="17.0" prefWidth="204.0" text="Punitaire" textFill="#f2afae">
                      <VBox.margin>
                         <Insets left="2.0" right="2.0" top="4.0" />
                      </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                   </Label>
                </children>
             </VBox>
-            <Label alignment="CENTER" layoutX="56.0" layoutY="3.0" prefHeight="37.0" prefWidth="39.0" style="-fx-background-color: #62B6E7; -fx-background-radius: 4em;">
+            <Label alignment="CENTER" layoutX="77.0" layoutY="5.0" prefHeight="37.0" prefWidth="39.0" style="-fx-background-color: #62B6E7; -fx-background-radius: 4em;">
                <graphic>
-                  <Icons525View glyphName="COGS" size="28" />
+                  <Icons525View fill="WHITE" glyphName="COGS" size="28" />
                </graphic>
             </Label>
             <Label fx:id="id_lab" layoutX="7.0" layoutY="6.0" text="00" textFill="WHITE" />
+            <MaterialDesignIconView fx:id="deletebtn" fill="#ea5754" glyphName="SYNC" layoutX="157.0" layoutY="13.0" size="15">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MaterialDesignIconView>
+            <MaterialDesignIconView fx:id="updatebtn" fill="#60c8ee" glyphName="DOWNLOAD" layoutX="175.0" layoutY="14.0" size="15">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MaterialDesignIconView>
          </children>
       </AnchorPane>
    </children>

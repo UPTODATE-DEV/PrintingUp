@@ -21,6 +21,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import lib.service.ImplementeService;
+import lib.service.ServiceDao;
 
 /**
  * FXML Controller class
@@ -45,6 +47,7 @@ public class AddserviceController implements Initializable {
     private Text Text;
     @FXML
     private ImageView imageviw;
+    public static ServiceDao service;
 
     /**
      * Initializes the controller class.
@@ -61,11 +64,12 @@ public class AddserviceController implements Initializable {
     private void Traitement_service(ActionEvent event) throws Exception {
         if (event.getSource() == btn_save) {
             if (!Mywindows.getInstanceL().isFieldsempty(Tfdservice, Tfdpunitaire, Tfdtype_service)) {
+                service = new ServiceDao(Tfd_code.getText(), Tfdservice.getText(), Float.parseFloat(Tfdpunitaire.getText()), Tfdtype_service.getText(), "1");
                 if (Double.parseDouble(Tfdpunitaire.getText()) > 0) {
-                    if (isSaved("sp_service", "PROCEDURE", Tfd_code, Tfdservice, Tfdpunitaire, Tfdtype_service, 1) == true) {
-                        Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
-                        initFields(false, Tfdservice, Tfdpunitaire, Tfdtype_service);
-                    }
+                    new ImplementeService().Enregistrer(service);
+                    Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
+                    initFields(false, Tfdservice, Tfdpunitaire, Tfdtype_service);
+
                 } else {
                     Ouput(Text, icon, references.getInstanceE().MESSAGE_INFERIEUR, imageviw, btn_ok, true, true);
                 }

@@ -7,6 +7,7 @@ package controller.nouveau;
 
 import static Elementary.Mywindows.getInstanceL;
 import static Elementary.View_gui.getIns;
+import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -28,6 +29,10 @@ public class PrintServiceController implements Initializable {
     private Label type;
     @FXML
     private Label prix_unitaire;
+    @FXML
+    private MaterialDesignIconView deletebtn;
+    @FXML
+    private MaterialDesignIconView updatebtn;
 
     /**
      * Initializes the controller class.

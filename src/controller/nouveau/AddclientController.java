@@ -9,14 +9,13 @@ import Elementary.Mywindows;
 import static Elementary.Mywindows.Ouput;
 import static Elementary.Mywindows.getInstanceL;
 import static Elementary.Mywindows.initFields;
-import static Elementary.Mywindows.isSaved;
 import static Elementary.View_gui.getIns;
 import Elementary.references;
 import static Elementary.references.PRINT_CLIENT;
 import com.jfoenix.controls.JFXButton;
-import com.sun.deploy.util.SessionState;
 import static controller.commande.AddcommandeController.btn_ok;
 import static controller.nouveau.NouveauController.vbx1;
+import static controller.nouveau.PrintClientController.id_modifier1;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -28,7 +27,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import lib.client.ClientDao;
-import lib.client.ImplemanteClient;
 import static lib.client.ImplemanteClient.Instance;
 
 /**
@@ -63,7 +61,15 @@ public class AddclientController implements Initializable {
     private Text Text;
     @FXML
     private ImageView imageviw;
-    ClientDao client;
+    public static ClientDao client;
+
+    public static Label sexe_lbl1;
+    public static TextField nomTfd1;
+    public static TextField mailTfd1;
+    public static TextField adresstfd1;
+    public static TextField prenomTfd1;
+    public static JFXButton Btn_save1;
+    public static TextField teleTfd1;
 
     /**
      * Initializes the controller class.
@@ -74,13 +80,22 @@ public class AddclientController implements Initializable {
         sexe_lbl.setText(Mywindows.getInstanceL().sexe_change(0));
         x++;
         imageviw.setVisible(false);
+        init();
+    }
 
+    void init() {
+        sexe_lbl1 = sexe_lbl;
+        nomTfd1 = nomTfd;
+        prenomTfd1 = prenomTfd;
+        mailTfd1 = mailTfd;
+        adresstfd1 = adresstfd;
+        teleTfd1 = teleTfd;
+        Btn_save1 = Btn_save;
     }
 
     @FXML
     private void sexe_change(ActionEvent event) {
         sexe_lbl.setText(Mywindows.getInstanceL().sexe_change(x));
-        //  getInstanceL().SelectDataFor(p1);
         if (x == 0) {
             x++;
         } else if (x != 0) {
@@ -93,12 +108,20 @@ public class AddclientController implements Initializable {
     @FXML
     private void Traitement_client(ActionEvent event) throws Exception {
         if (event.getSource() == Btn_save) {
-            client = new ClientDao(nomTfd.getText(), prenomTfd.getText(), sexe_lbl.getText(), teleTfd.getText(), mailTfd.getText(), adresstfd.getText(), "1", "0");
+            if (Btn_save1.getText().equals("Modifier")) {
+                client = new ClientDao(nomTfd.getText(), prenomTfd.getText(), sexe_lbl.getText(), teleTfd.getText(), mailTfd.getText(), adresstfd.getText(), "2", Integer.toString(Integer.parseInt(id_modifier1.getText())));
+            } else {
+                client = new ClientDao(nomTfd.getText(), prenomTfd.getText(), sexe_lbl.getText(), teleTfd.getText(), mailTfd.getText(), adresstfd.getText(), "1", "0");
+            }
             if (!getInstanceL().isFieldsempty(nomTfd, prenomTfd, sexe_lbl, teleTfd, mailTfd, adresstfd) == false) {
                 Instance().Enregistrer(client);
-                Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
+                if (Btn_save1.getText().equals("Modifier")) {
+                    Ouput(Text, icon, references.getInstanceE().MESSAGE_MODIFY, imageviw, btn_ok, true, false);
+                } else {
+                    Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
+                }
                 initFields(false, nomTfd, prenomTfd, teleTfd, mailTfd, adresstfd);
-                  getInstanceL().ScrollwithHBX(vbx1, getIns().getService(2, "SELECT * FROM tbl_client"), PRINT_CLIENT, 4);
+                getInstanceL().ScrollwithHBX(vbx1, getIns().getService(2, "SELECT * FROM tbl_client"), PRINT_CLIENT, 4);
 
             } else {
                 Ouput(Text, icon, references.getInstanceE().MESSAGE_ISMPTY, imageviw, btn_ok, true, true);

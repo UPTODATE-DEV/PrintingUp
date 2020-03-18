@@ -27,12 +27,13 @@ public class Connexion {
 
     public Connexion() {
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             cnx = DriverManager.getConnection(url, usename, password);
             if (stm == null) {
                 stm = cnx.createStatement();
             }
             cnx.setAutoCommit(false);
-        } catch (SQLException ex) {
+        } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -40,7 +41,7 @@ public class Connexion {
     public static Connection isConnected() {
         if (cnx == null) {
             new Connexion();
-        
+
         }
         System.out.println("Connexion disponible déjà  ");
         return cnx;

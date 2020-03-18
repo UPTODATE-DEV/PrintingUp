@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Up_priting.jar" size="4718928" download="eager" />
+    <jar href="Up_priting.jar" size="4724698" download="eager" />
     <jar href="lib\GNCalendar-1.0-alpha.jar" size="11402" download="eager" />
     <jar href="lib\Window.jar" size="18565" download="eager" />
     <jar href="lib\fontawesomefx-glyphsbrowser-all-1.0.jar" size="1662483" download="eager" />
