@@ -22,6 +22,9 @@
                      <graphic>
                         <Icons525View fill="#fbfafa" glyphName="BASKET" size="20" />
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Label>
                   <VBox layoutX="-4.0" layoutY="40.0" prefHeight="71.0" prefWidth="202.0">
                      <children>
@@ -62,7 +65,7 @@
                      <children>
                         <Label fx:id="lbl_informa" onMouseClicked="#call_informande" prefHeight="17.0" prefWidth="17.0">
                            <cursor>
-                              <Cursor fx:constant="HAND" />
+                              <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </Label>
                      </children>

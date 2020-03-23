@@ -41,7 +41,6 @@ public class Other_commandeController implements Initializable {
         lab.getText();
     }
     String str = "SELECT codecmd,service,type_,Punitaire,qte FROM vs_facture where codecmd='" + lab.getText() + "'";
-
     void initData() {
         try {
             Mywindows.getInstanceL().ScrollwithHBX(vb_detail, View_gui.getIns().getService(6, str), LOAD_DETAIL, 1);

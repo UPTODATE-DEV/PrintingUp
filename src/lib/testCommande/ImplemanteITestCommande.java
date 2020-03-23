@@ -17,18 +17,19 @@ import java.util.logging.Logger;
  * @author Akim
  */
 public class ImplemanteITestCommande implements ITestCommande {
-
+    
     PreparedStatement pst;
     private volatile static ImplemanteITestCommande _instance;
-
+    
     @Override
     public void save(Dao test) {
         try {
             pst = isConnected().prepareCall("{Call new_exeCommende(?,?)}");
             pst.setString(1, test.getCommande());
             pst.setString(2, test.getStatis_());
-            pst.executeUpdate();
+            int x = pst.executeUpdate();
             isConnected().commit();
+            System.out.println(Integer.toString(x));
         } catch (SQLException ex) {
             Logger.getLogger(ImplemanteITestCommande.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -39,7 +40,7 @@ public class ImplemanteITestCommande implements ITestCommande {
             }
         }
     }
-
+    
     public static ImplemanteITestCommande Instance() {
         if (_instance == null) {
             synchronized (ImplemanteITestCommande.class) {
@@ -50,5 +51,5 @@ public class ImplemanteITestCommande implements ITestCommande {
         }
         return _instance;
     }
-
+    
 }

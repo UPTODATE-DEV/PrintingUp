@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -17,6 +18,15 @@ import javafx.fxml.Initializable;
  * @author Akim
  */
 public class ParametrerController implements Initializable {
+
+    @FXML
+    private TextField Tfd_serveur;
+    @FXML
+    private TextField Tfd_db;
+    @FXML
+    private TextField Tfd_user;
+    @FXML
+    private TextField Tfd_pass;
 
     /**
      * Initializes the controller class.

@@ -73,11 +73,10 @@ public class Printl_commandeController implements Initializable {
     @FXML
     private void Traitement(ActionEvent event) throws Exception {
         getInstanceT().ps = Connexion.isConnected().prepareCall("Call sp_delete_service (?)");
-        getInstanceT().ps.setInt(1, Integer.parseInt(id_.getText()));
+        getInstanceT().ps.setString(1, id_.getText());
         int x = getInstanceT().ps.executeUpdate();
         if (x == 1) {
             initData();
-            init();
             initInitial();
         }
 //        if (Mywindows.isSaved("PROCEDURE", "sp_annuler", id_)==true) {

@@ -37,7 +37,7 @@ public class references {
     public static final String LOAD_PRINT_ENCOURS = "/guis/commande/ort_encours.fxml";
     public static final String LOAD_DETAIL = "/guis/commande/detail_cmd.fxml";
 
-    public static final String LOAD_PRINT_DISPONIBLE= "/guis/commande/ort_disponible.fxml";
+    public static final String LOAD_PRINT_DISPONIBLE = "/guis/commande/ort_disponible.fxml";
     public static final String LOAD_PRINT_FIN = "/guis/commande/orther_printDisponible.fxml";
 
     public static final String ADDSERVICE = "/guis/nouveau/addservice.fxml";
@@ -57,7 +57,7 @@ public class references {
     public final String MESSAGE_SAVE = "Vous avez enregistrer avec succès";
     public final String MESSAGE_MODIFY = "Vous avez modifier avec succès";
     public final String MESSAGE_DELETE = "Vous avez supprimer avec succès";
-    public final String MESSAGE_ISMPTY = "Completer les champ()s svp";
+    public final String MESSAGE_ISMPTY = "Completer les champs svp";
     public final String MESSAGE_INFERIEUR = "Vous avez entrer le nontant invalider";
     public final String MESSAGE_FACT = "Créé d'abord la facture svp";
 

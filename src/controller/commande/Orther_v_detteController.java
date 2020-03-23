@@ -5,13 +5,11 @@
  */
 package controller.commande;
 
-import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
-import Elementary.Traitement;
 import Elementary.View_gui;
 import static Elementary.View_gui.getIns;
 import static Elementary.references.LOAD_PRINT_LISTDETTE;
-import static controller.commande.Orther_verifier_detteController.vbox_v;
+import static controller.commande.CommandeController.vb_commande1;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.io.IOException;
 import java.net.URL;
@@ -72,7 +70,9 @@ public class Orther_v_detteController implements Initializable {
                     if (!Tfd_id.getText().equals("0")) {
                         ImplemanteITestCommande.Instance().save(dao);
                         init();
+                        //System.out.println("Enregistrement réussi !!!"+  Tfd_id.getText());
                     }
+                  
 //                    Mywindows.isSaved("ps_livrecommande", "PROCEDURE", Tfd_nom);
                 }
             } catch (Exception ex) {
@@ -84,7 +84,7 @@ public class Orther_v_detteController implements Initializable {
     void init() {
         try {
             try {
-                getInstanceL().ScrollwithHBX(vbox_v, View_gui.getIns().getService(4, "select * from new_test_encours where statis='Attente'"), LOAD_PRINT_LISTDETTE, 2);
+                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(4, "select * from new_test_encours where statis='Attente'"), LOAD_PRINT_LISTDETTE, 4);
             } catch (IOException ex) {
                 Logger.getLogger(Orther_verifier_detteController.class.getName()).log(Level.SEVERE, null, ex);
             }

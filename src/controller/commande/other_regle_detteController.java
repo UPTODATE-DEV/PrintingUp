@@ -9,6 +9,7 @@ import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
 import Elementary.View_gui;
 import static Elementary.references.PRINT_PAIEMENT_DETTE;
+import static controller.commande.CommandeController.vb_commande1;
 import static controller.commande.orther_paiement_detteController.vbox_verifierdette1;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.io.IOException;
@@ -95,7 +96,7 @@ public class other_regle_detteController implements Initializable {
     void init1() {
         try {
             try {
-                getInstanceL().ScrollwithHBX(vbox_verifierdette1, View_gui.getIns().getService(5, "SELECT * FROM client_dette"), PRINT_PAIEMENT_DETTE, 2);
+                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(5, "SELECT * FROM client_dette"), PRINT_PAIEMENT_DETTE, 2);
             } catch (IOException ex) {
                 Logger.getLogger(Orther_verifier_detteController.class.getName()).log(Level.SEVERE, null, ex);
             }

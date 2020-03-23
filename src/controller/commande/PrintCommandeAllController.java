@@ -59,7 +59,7 @@ public class PrintCommandeAllController implements Initializable {
         lbl_informa.setGraphic(Mywindows.getInstanceT().font("-fx-fill:#16C75D", MaterialDesignIcon.INFORMATION));
 
     }
-    String str, st;
+    String str;
 
     void initFild() {
         eventDetail() ;

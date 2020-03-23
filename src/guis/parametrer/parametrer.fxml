@@ -102,7 +102,7 @@
                               </Text>
                               <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
                                  <children>
-                                    <TextField layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom ou l'adresse ip du serveur" style="-fx-background-color: #fff;" />
+                                    <TextField fx:id="Tfd_serveur" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom ou l'adresse ip du serveur" style="-fx-background-color: #fff;" />
                                     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <graphic>
                                           <MaterialDesignIconView fill="#1970e389" glyphName="DNS" size="18" />
@@ -121,7 +121,7 @@
                               </Text>
                               <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
                                  <children>
-                                    <TextField layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom de la base des donnees" style="-fx-background-color: #fff;" />
+                                    <TextField fx:id="Tfd_db" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom de la base des donnees" style="-fx-background-color: #fff;" />
                                     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <graphic>
                                           <MaterialDesignIconView fill="#1970e38a" glyphName="DOMAIN" size="18" />
@@ -140,7 +140,7 @@
                               </Text>
                               <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
                                  <children>
-                                    <TextField layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom d'utilisateur" style="-fx-background-color: #fff;" />
+                                    <TextField fx:id="Tfd_user" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom d'utilisateur" style="-fx-background-color: #fff;" />
                                     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <graphic>
                                           <MaterialDesignIconView fill="#1970e38a" glyphName="ACCOUNT_BOX" size="18" />
@@ -159,7 +159,7 @@
                               </Text>
                               <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
                                  <children>
-                                    <TextField layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le mot de passe" style="-fx-background-color: #fff;" />
+                                    <TextField fx:id="Tfd_pass" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le mot de passe" style="-fx-background-color: #fff;" />
                                     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <graphic>
                                           <FontAwesomeIconView fill="#9fc6f8" glyphName="KEY" size="18" />

@@ -9,6 +9,7 @@ import static Elementary.Mywindows.getInstanceL;
 import Elementary.View_gui;
 import static Elementary.View_gui.getIns;
 import static Elementary.references.LOAD_PRINT_LISTDETTE;
+import static controller.commande.CommandeController.vb_commande1;
 import static controller.commande.ort_traitement_encours.vbx_;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.io.IOException;
@@ -82,7 +83,7 @@ public class ort_encours implements Initializable {
     void init() {
         try {
             try {
-                getInstanceL().ScrollwithHBX(vbx_, View_gui.getIns().getService(4, "select * from new_test_encours where statis='Encours'"), LOAD_PRINT_LISTDETTE, 2);
+                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(4, "select * from new_test_encours where statis='Encours'"), LOAD_PRINT_LISTDETTE, 4);
             } catch (IOException ex) {
                 Logger.getLogger(Orther_verifier_detteController.class.getName()).log(Level.SEVERE, null, ex);
             }
