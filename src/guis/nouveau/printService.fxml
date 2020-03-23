@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.icons525.Icons525View?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
@@ -44,16 +45,12 @@
                </graphic>
             </Label>
             <Label fx:id="id_lab" layoutX="7.0" layoutY="6.0" text="00" textFill="WHITE" />
-            <MaterialDesignIconView fx:id="deletebtn" fill="#ea5754" glyphName="SYNC" layoutX="157.0" layoutY="13.0" size="15">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </MaterialDesignIconView>
             <MaterialDesignIconView fx:id="updatebtn" fill="#60c8ee" glyphName="DOWNLOAD" layoutX="175.0" layoutY="14.0" size="15">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MaterialDesignIconView>
+            <FontAwesomeIconView fx:id="deletebtn" fill="#dc511d" glyphName="TRASH_ALT" layoutX="164.0" layoutY="11.0" />
          </children>
       </AnchorPane>
    </children>

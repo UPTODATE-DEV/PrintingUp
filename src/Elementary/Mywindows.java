@@ -615,12 +615,12 @@ public class Mywindows extends Traitement {
     public String ismac_up(String query) {
         try {
             ps = Connexion.isConnected().prepareStatement(query);
-            rs = ps.executeQuery();
-            if (rs.next()) {
-                if (rs.getString("x").isEmpty() || Double.parseDouble(rs.getString("x")) == 0.0) {
+            rst = ps.executeQuery();
+            if (rst.next()) {
+                if (rst.getString("x").isEmpty() || Double.parseDouble(rst.getString("x")) == 0.0) {
                     return "0.0";
                 } else {
-                    return rs.getString("x");
+                    return rst.getString("x");
                 }
 
             }
@@ -649,9 +649,9 @@ public class Mywindows extends Traitement {
             } else {
                 ps = Connexion.isConnected().prepareStatement("SELECT " + Colone + " FROM " + Table + " " + cond);
             }
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                list.addAll(rs.getString(Colone));
+            rst = ps.executeQuery();
+            while (rst.next()) {
+                list.addAll(rst.getString(Colone));
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -693,7 +693,7 @@ public class Mywindows extends Traitement {
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                Thread.sleep(500);
+                Thread.sleep(1000);
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
@@ -702,7 +702,7 @@ public class Mywindows extends Traitement {
                 });
                 icon.setVisible(true);
                 message.setText(str);
-                Thread.sleep(500);
+                Thread.sleep(1000);
                 message.setText("");
                 icon.setVisible(false);
                 bt.setDisable(false);
@@ -715,7 +715,7 @@ public class Mywindows extends Traitement {
             public void run() {
                 try {
                     image.setVisible(true);
-                    Thread.sleep(500);
+                    Thread.sleep(1000);
                     image.setVisible(false);
                     new Thread(task).start();
                 } catch (InterruptedException ex) {
@@ -736,7 +736,7 @@ public class Mywindows extends Traitement {
                     });
                     icon.setVisible(true);
                     message.setText(str);
-                    Thread.sleep(500);
+                    Thread.sleep(1000);
                     message.setText("");
                     icon.setVisible(false);
                 } catch (InterruptedException ex) {
@@ -769,14 +769,14 @@ public class Mywindows extends Traitement {
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                Thread.sleep(500);
+                Thread.sleep(1000);
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
                     }
                 });
                 message.setText(str);
-                Thread.sleep(500);
+                Thread.sleep(1000);
                 message.setText("");
                 icon.setVisible(false);
 
@@ -796,7 +796,7 @@ public class Mywindows extends Traitement {
                     ;
                     icon.setVisible(true);
                     message.setText(str);
-                    Thread.sleep(500);
+                    Thread.sleep(1000);
                     message.setText("");
                     icon.setVisible(false);
 
@@ -815,15 +815,15 @@ public class Mywindows extends Traitement {
         list.clear();
         try {
             ps = isConnected().prepareStatement(query);
-            rs = getInstanceT().ps.executeQuery();
-            while (rs.next()) {
-                String cmd = rs.getString(1);
+            rst = getInstanceT().ps.executeQuery();
+            while (rst.next()) {
+                String cmd = rst.getString(1);
 
                 list.add(
                         cmd
-                        + "#" + rs.getString(2)
-                        + "|" + rs.getString(3)
-                        + "'" + rs.getString(4));
+                        + "#" + rst.getString(2)
+                        + "|" + rst.getString(3)
+                        + "'" + rst.getString(4));
 
             }
         } catch (SQLException ex) {
@@ -836,7 +836,7 @@ public class Mywindows extends Traitement {
 
         list.clear();
         try {
-            pst = isConnected().prepareStatement("SELECT * FROM `afficher_cmd` WHERE"
+            pst = isConnected().prepareStatement("SELECT * FROM `afficher_cmd_` WHERE"
                     + "        (`entId`= (SELECT "
                     + "                MAX(`tbl_detailcommande`.`codecmd`)"
                     + "            FROM"

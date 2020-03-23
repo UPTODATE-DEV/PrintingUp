@@ -3,15 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/nouveau/PrintServiceController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/service/ServiceDao.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/nouveau/AddserviceController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/client/ImplemanteClient.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/AddcommandeController.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/commande/entete/EnteteCommendeDao.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/orther_printDisponible.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/Other_paiementController.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/commande/detail/ImplemanteIDetailCommandeDao.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/CommandeController.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/PrintCommandeAllController.java</file>
             <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/nouveau/PrintClientController.java</file>
             <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/nouveau/NouveauController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/service/ImplementeService.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/nouveau/AddclientController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/Elementary/Mywindows.java</file>
         </group>
     </open-files>
 </project-private>

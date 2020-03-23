@@ -32,8 +32,13 @@ public class references {
     public static final String LOADCOMMANDE = "/guis/nouveau/printService.fxml";
     public static final String LOAD_COMMANDE = "/guis/commande/printl_commande.fxml";
     public static final String LOAD_PRINT_DETTE = "/guis/commande/orther_verifier_dette.fxml";
+    public static final String LOAD_ENCOURS = "/guis/commande/ort_traitement_encours.fxml";
     public static final String LOAD_PRINT_LISTDETTE = "/guis/commande/orther_v_dette.fxml";
+    public static final String LOAD_PRINT_ENCOURS = "/guis/commande/ort_encours.fxml";
     public static final String LOAD_DETAIL = "/guis/commande/detail_cmd.fxml";
+
+    public static final String LOAD_PRINT_DISPONIBLE= "/guis/commande/ort_disponible.fxml";
+    public static final String LOAD_PRINT_FIN = "/guis/commande/orther_printDisponible.fxml";
 
     public static final String ADDSERVICE = "/guis/nouveau/addservice.fxml";
     public static final String ADDAGENT = "/guis/nouveau/addagent.fxml";

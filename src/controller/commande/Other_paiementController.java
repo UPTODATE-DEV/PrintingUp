@@ -5,10 +5,19 @@
  */
 package controller.commande;
 
+import Elementary.Connexion;
 import Elementary.Mywindows;
+import static Elementary.Mywindows.getInstanceL;
 import Elementary.Traitement;
+import static Elementary.Traitement.getInstanceT;
+import Elementary.View_gui;
+import static Elementary.references.PRINT_CMD;
 import com.jfoenix.controls.JFXButton;
+import static controller.commande.AddcommandeController.lbl_frac1;
+import static controller.commande.CommandeController.vb_commande1;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,6 +40,8 @@ public class Other_paiementController implements Initializable {
     private JFXButton btn_paiement;
     private int getId;
     public static Label getId1;
+    public static Label Montant;
+
     @FXML
     private Label alert_paiement;
     @FXML
@@ -52,22 +63,33 @@ public class Other_paiementController implements Initializable {
             if (Integer.parseInt(getId().getText()) != 0) {
                 switch (Tfd_montant.getText()) {
                     case "0.0":
-                        Mywindows.OuputText(massage, "Paiement échoue", alert_paiement, true);
+                        Mywindows.OuputText(massage, "Paiement échouer", alert_paiement, true);
                         break;
                     case "":
                         Mywindows.OuputText(massage, "Paiement échoue", alert_paiement, true);
                         break;
                     default:
                         try {
-                            if ((Double.parseDouble(Tfd_montant.getText()) <= 0.0)) {
-                                Mywindows.OuputText(massage, "Paiement échoue", alert_paiement, true);
+                            if ((Double.parseDouble(Tfd_montant.getText()) <= 0.0) || (Double.parseDouble(Tfd_montant.getText()) > Double.parseDouble(lbl_frac1.getText()))) {
+                                Mywindows.OuputText(massage, "Montant invalider", alert_paiement, true);
                             } else {
-                                if (Mywindows.isSaved("sp_paiement", "PROCEDURE", Tfd_montant, getId(), "1") == true) {
+                                if (getInstanceT().getprepare("Call sp_paiement ('" + Tfd_montant.getText() + "','" + getId().getText() + "'," + 1 + ")") == true) {
+                                    Tfd_montant.setText("0.0");
+                                    getId().setText("00");
                                     Mywindows.OuputText(massage, "Paiement réussi ", alert_paiement, false);
+                                    init();
+                                } else {
+                                    Mywindows.OuputText(massage, "Paiement échouer ", alert_paiement, true);
                                 }
                             }
-                        } catch (Exception ex) {
+                        } catch (NumberFormatException | SQLException ex) {
                             Logger.getLogger(Other_paiementController.class.getName()).log(Level.SEVERE, null, ex);
+                        } finally {
+                            try {
+                                Connexion.isConnected().rollback();
+                            } catch (SQLException ex) {
+                                Logger.getLogger(Other_paiementController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                         }
                         break;
                 }
@@ -75,7 +97,6 @@ public class Other_paiementController implements Initializable {
                 Mywindows.OuputText(massage, "Commande invalider", alert_paiement, true);
             }
         });
-
     }
 
     void testCaract() {
@@ -93,13 +114,39 @@ public class Other_paiementController implements Initializable {
     public void setId(Label id) {
         this.getId1 = id;
     }
-    static Other_paiementController getOther;
+
+    private Label getMontant() {
+        return getId1;
+    }
+
+    public void setMontant(Label id) {
+        this.getId1 = id;
+    }
+    private volatile static Other_paiementController getOther;
 
     public static Other_paiementController getOther() {
         if (getOther == null) {
-            getOther = new Other_paiementController();
+            synchronized (Other_paiementController.class) {
+                if (getOther == null) {
+                    getOther = new Other_paiementController();
+                }
+            }
+
         }
         return getOther;
+    }
+
+    void init() {
+        try {
+            try {
+                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 4);
+            } catch (SQLException ex) {
+                Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(orther_paiement_detteController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
 }

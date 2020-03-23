@@ -20,11 +20,14 @@ public class Preparedsta {
         ps.executeUpdate();
     }
 
-    public static PreparedStatement isPrepare() throws SQLException {
+    public static PreparedStatement Prepare() throws SQLException {
         if (ps == null) {
             new Preparedsta();
         }
         return ps;
     }
+    
+   
+    
 
 }

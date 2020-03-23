@@ -12,9 +12,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="375.0" prefWidth="391.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.nouveau.AddserviceController">
+<AnchorPane id="AnchorPane" prefHeight="375.0" prefWidth="366.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.nouveau.AddserviceController">
    <children>
-      <AnchorPane layoutX="45.0" layoutY="8.0" prefHeight="56.0" prefWidth="56.0" style="-fx-background-color: #176FE5; -fx-background-radius: 5px;">
+      <AnchorPane layoutX="38.0" layoutY="8.0" prefHeight="56.0" prefWidth="56.0" style="-fx-background-color: #176FE5; -fx-background-radius: 5px;">
          <effect>
             <DropShadow color="#d0d0d0" />
          </effect>
@@ -29,7 +29,7 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="42.0" layoutY="81.923828125">
+      <AnchorPane layoutX="34.0" layoutY="87.0">
          <children>
             <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service">
                <font>
@@ -48,7 +48,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="42.0" layoutY="152.923828125">
+      <AnchorPane layoutX="34.0" layoutY="158.0">
          <children>
             <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type service">
                <font>
@@ -67,7 +67,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="42.0" layoutY="222.0">
+      <AnchorPane layoutX="34.0" layoutY="227.0">
          <children>
             <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P.Unitaire">
                <font>
@@ -86,9 +86,9 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <JFXButton fx:id="btn_save" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="43.0" layoutY="294.0" onAction="#Traitement_service" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #176FE5;" text="Enregistrer" textFill="WHITE" />
+      <JFXButton fx:id="btn_save" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="35.0" layoutY="299.0" onAction="#Traitement_service" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #176FE5;" text="Enregistrer" textFill="WHITE" />
       <Label fx:id="Tfd_code" layoutX="327.0" layoutY="29.0" prefHeight="17.0" prefWidth="20.0" text="0" textFill="WHITE" />
-      <AnchorPane layoutX="41.0" layoutY="329.0" prefHeight="27.0" prefWidth="274.0">
+      <AnchorPane layoutX="33.0" layoutY="334.0" prefHeight="27.0" prefWidth="274.0">
          <children>
             <Label fx:id="icon" prefHeight="27.0" prefWidth="45.0" />
             <Text fx:id="Text" layoutX="45.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="255.99999406188726">

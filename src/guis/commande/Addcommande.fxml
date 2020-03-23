@@ -7,6 +7,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -42,7 +43,6 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
@@ -89,25 +89,6 @@
             </AnchorPane>
             <AnchorPane GridPane.rowIndex="2">
                <children>
-                  <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type-service">
-                     <font>
-                        <Font name="Century Gothic" size="13.0" />
-                     </font>
-                  </Text>
-                  <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
-                     <children>
-                        <TextField fx:id="Tfdtype_service" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer type service" style="-fx-background-color: #fff;" />
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <graphic>
-                              <MaterialDesignIconView fill="#1970e389" glyphName="CHECKBOX_MARKED" size="18" />
-                           </graphic>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane GridPane.rowIndex="3">
-               <children>
                   <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantite">
                      <font>
                         <Font name="Century Gothic" size="13.0" />
@@ -125,7 +106,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane GridPane.rowIndex="4">
+            <AnchorPane GridPane.rowIndex="3">
                <children>
                   <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P.unitaire">
                      <font>
@@ -146,8 +127,8 @@
             </AnchorPane>
          </children>
       </GridPane>
-      <JFXButton fx:id="btn_commande" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="38.0" layoutY="420.0" onAction="#Traitement_commande" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #176FE5;" text="Commander" textFill="WHITE" />
-      <AnchorPane layoutX="20.0" layoutY="453.0" prefHeight="27.0" prefWidth="274.0">
+      <JFXButton fx:id="btn_commande" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="72.0" layoutY="349.0" onAction="#Traitement_commande" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #176FE5;" text="Commander" textFill="WHITE" />
+      <AnchorPane layoutX="24.0" layoutY="397.0" prefHeight="27.0" prefWidth="274.0">
          <children>
             <Label fx:id="icon" prefHeight="27.0" prefWidth="45.0" />
             <Text fx:id="Text" layoutX="45.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="255.99999406188726">
@@ -177,7 +158,7 @@
          </font>
       </JFXButton>
       <VBox fx:id="vb_" layoutX="361.0" layoutY="103.0" prefHeight="285.0" prefWidth="358.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="361.0" AnchorPane.rightAnchor="10.0" />
-      <JFXButton fx:id="btn_print" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="142.0" layoutY="420.0" onAction="#Traitement_commande" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #176FE5;" text="Imprimer" textFill="WHITE" />
+      <JFXButton fx:id="btn_print" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="176.0" layoutY="349.0" onAction="#Traitement_commande" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #176FE5;" text="Imprimer" textFill="WHITE" />
       <HBox alignment="CENTER" layoutX="135.0" layoutY="14.0" prefHeight="54.0" prefWidth="308.0" style="-fx-border-width: 0.5px; -fx-border-color: #D8D8D8; -fx-background-radius: 1em;" AnchorPane.leftAnchor="361.0" AnchorPane.rightAnchor="10.0">
          <children>
             <AnchorPane prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: Transparent;">
@@ -234,5 +215,7 @@
             </Label>
          </children>
       </AnchorPane>
+      <ListView fx:id="listClient" layoutX="24.0" layoutY="140.0" prefHeight="206.0" prefWidth="298.0" style="-fx-background-color: Transparent;" />
+      <ListView fx:id="listService" layoutX="25.0" layoutY="202.0" prefHeight="285.0" prefWidth="298.0" style="-fx-background-color: Transparent;" />
    </children>
 </AnchorPane>

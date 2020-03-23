@@ -8,43 +8,31 @@ package Elementary;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 /**
  *
  * @author Akim
  */
-public class Traitement extends Query {
+public class Traitement extends Connexion {
 
     public PreparedStatement ps;
-    public ResultSet rs;
-    public Statement stm;
-
-    public Traitement() {
-        try {
-            if (stm == null) {
-                stm = Connexion.isConnected().createStatement();
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Traitement.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
 
     public boolean getprepare(String query) throws SQLException {
         ps = Connexion.isConnected().prepareCall(query);
         int x = ps.executeUpdate();
+        isConnected().commit();
         if (x == 1) {
             return true;
         }
         return false;
 
     }
-    private static Traitement traite;
+    private volatile static Traitement traite;
 
     public boolean isNumerique(TextField text) {
         try {
@@ -61,7 +49,11 @@ public class Traitement extends Query {
 
     public static Traitement getInstanceT() {
         if (traite == null) {
-            traite = new Traitement();
+            synchronized (Traitement.class) {
+                if (traite == null) {
+                    traite = new Traitement();
+                }
+            }
         }
         return traite;
     }
@@ -74,4 +66,29 @@ public class Traitement extends Query {
         return font;
     }
 
+    public void chargeOnList(ListView<String> List_view, String tb) {
+        List_view.getItems().clear();
+        try {
+            rst = stm.executeQuery(tb);
+            while (rst.next()) {
+                List_view.getItems().addAll(rst.getString("x"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Traitement.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public String getValue(String query) {
+        try {
+            rst = stm.executeQuery(query);
+            if (rst.next()) {
+                return rst.getString("x");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Traitement.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 }

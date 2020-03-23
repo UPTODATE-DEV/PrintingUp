@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="84.0" prefWidth="181.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.ort_encours">
+   <children>
+      <AnchorPane layoutX="6.0" layoutY="3.0" prefHeight="95.0" prefWidth="169.0" style="-fx-background-color: #fff; -fx-background-radius: 1px; -fx-border-color: #EFB29B; -fx-border-width: 0.5px;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="3.0">
+         <children>
+            <MaterialDesignIconView fill="#ed8c67" glyphName="VECTOR_CIRCLE" layoutX="76.0" layoutY="21.0" size="20" />
+            <VBox layoutX="4.0" layoutY="17.0" prefHeight="63.0" prefWidth="163.0">
+               <children>
+                  <Label fx:id="Tfd_nom" alignment="CENTER" prefHeight="17.0" prefWidth="181.0" text="AKILIMALI-CIZUNGU">
+                     <VBox.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbldateFin" alignment="CENTER" prefHeight="17.0" prefWidth="181.0" text="2020.02.27 00:00:00" textFill="#9a9898">
+                     <VBox.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Tfddate" alignment="CENTER" prefHeight="17.0" prefWidth="181.0" text="2020.02.27 00:00:00" textFill="#9a9898">
+                     <VBox.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <MaterialDesignIconView fx:id="btn_livre" fill="#1cb9c1" glyphName="CHECKBOX_MULTIPLE_MARKED" layoutX="150.0" layoutY="76.0" size="15">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MaterialDesignIconView>
+            <Label fx:id="Tfd_id" layoutX="9.0" layoutY="5.0" text="0" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

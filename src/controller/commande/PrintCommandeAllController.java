@@ -6,13 +6,18 @@
 package controller.commande;
 
 import Elementary.Mywindows;
+import static Elementary.Mywindows.getInstanceL;
 import static Elementary.Mywindows.popOverMenu;
 import Elementary.View_gui;
+import static Elementary.references.ADDCLIENT;
 import static Elementary.references.OTHEINFO;
+import com.jfoenix.controls.JFXDialog;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -57,7 +62,8 @@ public class PrintCommandeAllController implements Initializable {
     String str, st;
 
     void initFild() {
-        str = View_gui.getIns().list.get(Mywindows.getInstanceL().code);
+        eventDetail() ;
+        str = View_gui.getIns().list.get(getInstanceL().code);
         // st = View_gui.getIns().list1.get(Mywindows.getInstanceL().code);
         lbldesignation.setText(str.substring(0, str.indexOf("|")));
         lblqte.setText(str.substring(str.indexOf("|") + 1, str.indexOf("#")));
@@ -76,9 +82,21 @@ public class PrintCommandeAllController implements Initializable {
 
     @FXML
     private void call_informande(MouseEvent event) throws IOException {
-        Other_commandeController.lab = id_commande;
-        popOverMenu(pan_infor, getClass().getResource(OTHEINFO), PopOver.ArrowLocation.TOP_CENTER);
+//        Other_commandeController.lab = id_commande;
+//        // popOverMenu(pan_infor, getClass().getResource(OTHEINFO), PopOver.ArrowLocation.TOP_CENTER);
+//        Mywindows.showFormDialog(getClass().getResource(OTHEINFO), JFXDialog.DialogTransition.CENTER, 264, 500);
 
+    }
+
+    void eventDetail() {
+        lblcmd.setOnMouseClicked((e) -> {
+            try {
+                Other_commandeController.lab = id_commande;
+                Mywindows.showFormDialog(getClass().getResource(OTHEINFO), JFXDialog.DialogTransition.CENTER, 264, 525);
+            } catch (IOException ex) {
+                Logger.getLogger(PrintCommandeAllController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
     }
 
 }

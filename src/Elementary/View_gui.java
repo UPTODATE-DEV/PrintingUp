@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author Akim
  */
-public class View_gui extends Traitement {
+public class View_gui extends Connexion {
 
     public ArrayList<String> list = new ArrayList();
     public static View_gui view;
@@ -20,11 +20,11 @@ public class View_gui extends Traitement {
     public ArrayList getService(int z, String query) throws SQLException {
         list.clear();
         String id;
-        rs = stm.executeQuery(query);
-        while (rs.next()) {
+        rst = stm.executeQuery(query);
+        while (rst.next()) {
             switch (z) {
                 case 1:
-                    id = rs.getString("id");
+                    id = rst.getString("id");
                     if (Integer.parseInt(id) < 10) {
                         id = "00" + id;
                     } else {
@@ -32,13 +32,13 @@ public class View_gui extends Traitement {
                     }
                     list.add(
                             id
-                            + "#" + rs.getString("service")
-                            + "%" + rs.getString("type")
-                            + "$" + rs.getString("pu") + " FC"
+                            + "#" + rst.getString("service")
+                            + "%" + rst.getString("type")
+                            + "$" + rst.getString("pu") + " FC"
                     );
                     break;
                 case 2:
-                    id = rs.getString("id");
+                    id = rst.getString("id");
                     if (Integer.parseInt(id) < 10) {
                         id = "00" + id;
                     } else {
@@ -46,15 +46,15 @@ public class View_gui extends Traitement {
                     }
                     list.add(
                             id
-                            + "#" + rs.getString("nom")
-                            + "^" + rs.getString("tel")
-                            + "*" + rs.getString("mail")
-                            + "&&" + rs.getString("adress")
+                            + "#" + rst.getString("nom")
+                            + "^" + rst.getString("tel")
+                            + "*" + rst.getString("mail")
+                            + "&&" + rst.getString("adress")
                     );
                     break;
                 case 3:
-                    String cmd = rs.getString("id");
-                    int x = rs.getString("id").length();
+                    String cmd = rst.getString("id");
+                    int x = rst.getString("id").length();
                     if (Integer.parseInt(cmd) < 10) {
                         cmd = "000" + cmd;
                     } else if (Integer.parseInt(cmd) > 10 && Integer.parseInt(cmd) < 100) {
@@ -62,48 +62,50 @@ public class View_gui extends Traitement {
                     } else {
                         cmd = "0" + cmd;
                     }
-                    String payer = rs.getString("payer");
+                    String payer = rst.getString("payer");
                     if (payer == null) {
                         payer = "0";
                     }
-                    int log = rs.getString("nom").length();
+                    int log = rst.getString("nom").length();
                     list.add(
-                            rs.getString("nom").substring(x, log)
-                            + "|" + rs.getString("qte")
-                            + "#" + rs.getString("a_payer")
+                            rst.getString("nom").substring(x, log)
+                            + "|" + rst.getString("qte")
+                            + "#" + rst.getString("a_payer")
                             + "$" + payer
                             + "!" + cmd
                     );
                     break;
                 case 4:
                     list.add(
-                            rs.getString("id")
-                            + "|" + rs.getString("nom")
-                            + "^" + rs.getString("date")
+                            rst.getString("id")
+                            + "|" + rst.getString("nom")
+                            + "^" + rst.getString("date_db")
+                            + "%" + rst.getString("date_fn")
+                            + "&" + rst.getString("statis")
                     );
                     break;
                 case 5:
-                    String montant = rs.getString("montant");
+                    String montant = rst.getString("montant");
                     if (montant == null) {
                         montant = "0.0";
                     }
-                    int loge = rs.getString("nom").length();
-                    int log2 = rs.getString("id").length();
+                    int loge = rst.getString("nom").length();
+                    int log2 = rst.getString("id").length();
                     list.add(
-                            rs.getString("id")
-                            + "&" + rs.getString("a_payer")
-                            + "^" + rs.getString("nom").substring(log2, loge)
-                            + "#" + (rs.getDouble("a_payer") - Double.parseDouble(montant))
+                            rst.getString("id")
+                            + "&" + rst.getString("a_payer")
+                            + "^" + rst.getString("nom").substring(log2, loge)
+                            + "#" + (rst.getDouble("a_payer") - Double.parseDouble(montant))
                     );
                     break;
                 case 6:
 
                     list.add(
-                            rs.getString("codecmd")
-                            + "^" + rs.getString("service")
-                            + "#" + rs.getString("type_")
-                            + "&" + rs.getString("Punitaire")
-                            + "%" + rs.getString("qte")
+                            rst.getString("codecmd")
+                            + "^" + rst.getString("service")
+                            + "#" + rst.getString("type_")
+                            + "&" + rst.getString("Punitaire")
+                            + "%" + rst.getString("qte")
                     );
                     break;
             }

@@ -27,6 +27,7 @@ public class Orther_verifier_detteController implements Initializable {
 
     @FXML
     private VBox vbox_verifierdette;
+    public static VBox vbox_v;
 
     /**
      * Initializes the controller class.
@@ -38,9 +39,10 @@ public class Orther_verifier_detteController implements Initializable {
     }
 
     void init() {
+        vbox_v = vbox_verifierdette;
         try {
             try {
-                getInstanceL().ScrollwithHBX(vbox_verifierdette, View_gui.getIns().getService(4, "SELECT * FROM new_valider_commande"), LOAD_PRINT_LISTDETTE, 2);
+                getInstanceL().ScrollwithHBX(vbox_v, View_gui.getIns().getService(4, "select * from new_test_encours where statis='Attente'"), LOAD_PRINT_LISTDETTE, 2);
             } catch (IOException ex) {
                 Logger.getLogger(Orther_verifier_detteController.class.getName()).log(Level.SEVERE, null, ex);
             }

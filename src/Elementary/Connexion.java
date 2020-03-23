@@ -7,6 +7,7 @@ package Elementary;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -16,7 +17,7 @@ import java.util.logging.Logger;
  *
  * @author Akim
  */
-public class Connexion {
+public class Connexion extends Query {
 
     private static Connection cnx;
     private String url = "jdbc:mysql://localhost:3306/printing_up";
@@ -24,6 +25,7 @@ public class Connexion {
     private String password = "root";
 
     public static Statement stm;
+    public static ResultSet rst;
 
     public Connexion() {
         try {
@@ -41,9 +43,9 @@ public class Connexion {
     public static Connection isConnected() {
         if (cnx == null) {
             new Connexion();
-
+        } else {
+            System.out.println("Connexion disponible !!!");
         }
-        System.out.println("Connexion disponible déjà  ");
         return cnx;
 
     }

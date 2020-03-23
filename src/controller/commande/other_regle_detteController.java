@@ -8,7 +8,6 @@ package controller.commande;
 import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
 import Elementary.View_gui;
-import static Elementary.View_gui.getIns;
 import static Elementary.references.PRINT_PAIEMENT_DETTE;
 import static controller.commande.orther_paiement_detteController.vbox_verifierdette1;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
@@ -23,6 +22,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import lib.client.Dao_paiement;
+import static lib.client.ImpletantionPaiement.getInstance;
 
 /**
  * FXML Controller class
@@ -47,6 +48,7 @@ public class other_regle_detteController implements Initializable {
     private Text massage;
     @FXML
     private Label alert_paiement;
+    private Dao_paiement dao;
 
     /**
      * Initializes the controller class.
@@ -77,14 +79,14 @@ public class other_regle_detteController implements Initializable {
                     Mywindows.OuputText(massage, "", alert_paiement, true);
 
                 } else {
-                    if (Mywindows.isSaved("sp_paiement", "PROCEDURE", Tfd_montant, Tfd_id, "1") == true) {
-                        Mywindows.OuputText(massage, "", alert_paiement, false);
-                        Tfd_montant.setText("0.0");
-                        init1();
+                    // ImplemanteITestCommande.Instance().save(dao, "{Call sp_paiement(?,?)}");
+                    dao = new Dao_paiement(Tfd_id.getText(), Double.parseDouble(Tfd_montant.getText()), "1");
+                    getInstance().save(dao);
+                    Tfd_montant.setText("0.0");
+                    init1();
 
-                    }
                 }
-            } catch (Exception ex) {
+            } catch (NumberFormatException ex) {
                 Logger.getLogger(Other_paiementController.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
