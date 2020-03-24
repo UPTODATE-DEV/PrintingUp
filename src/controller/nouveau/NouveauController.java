@@ -20,7 +20,6 @@ import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -51,7 +50,7 @@ public class NouveauController implements Initializable {
     @FXML
     private TextField tfd_sercher;
     public static VBox vbx1;
-
+//  Alerts.info("Info", "Lorem ipsum dolor color.");
     /**
      * Initializes the controller class.
      */
@@ -118,6 +117,7 @@ public class NouveauController implements Initializable {
             getInstanceL().SelectDataFor(p2, p1, p3);
             status = 2;
             search_new("agent");
+             
         } else if (event.getSource() == btn_service) {
             getInstanceL().SelectDataFor1(btn_service, btn_agent, btn_client);
             getInstanceL().SelectDataFor(p3, p2, p1);

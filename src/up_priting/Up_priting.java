@@ -5,7 +5,7 @@
  */
 package up_priting;
 
-import static Elementary.references.PRINCIPAL;
+import static Elementary.references.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,13 +17,11 @@ import javafx.stage.Stage;
  * @author Authentique
  */
 public class Up_priting extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(PRINCIPAL));
-        
+        Parent root = FXMLLoader.load(getClass().getResource(LOGIN));
         Scene scene = new Scene(root);
-        
         stage.setScene(scene);
         stage.show();
     }
@@ -34,5 +32,5 @@ public class Up_priting extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

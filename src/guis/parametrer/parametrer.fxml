@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import de.jensd.fx.glyphs.icons525.Icons525View?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -51,144 +52,163 @@
             </AnchorPane>
          </children>
       </GridPane>
-      <AnchorPane layoutX="428.0" layoutY="92.0" prefHeight="32.0" prefWidth="306.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="92.0">
+      <VBox layoutX="367.0" layoutY="89.0" prefHeight="584.0" prefWidth="719.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="89.0">
          <children>
-            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="237.0" layoutY="1.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #176FE5;" text=" ">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="13" />
-               </graphic>
-               <font>
-                  <Font size="7.0" />
-               </font>
-            </JFXButton>
-            <TextField layoutX="23.0" prefHeight="27.0" prefWidth="208.0" promptText="Rechercher une Livraison" style="-fx-border-color: #E9E9E9; -fx-background-color: #fff; -fx-border-radius: 5px;" />
-            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="279.0" layoutY="1.0" onAction="#getadd" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #176FE5;" text=" ">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="TH_LARGE" size="13" />
-               </graphic>
-               <font>
-                  <Font size="7.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </AnchorPane>
-      <VBox layoutX="367.0" layoutY="139.0" prefHeight="451.0" prefWidth="701.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="130.0">
-         <children>
-            <VBox alignment="TOP_RIGHT" prefHeight="451.0" prefWidth="349.0" style="-fx-background-color: #FFF; -fx-border-width: 1px;">
-               <children>
-                  <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="451.0" prefWidth="347.0" style="-fx-background-color: #fff;">
-                     <children>
-                        <AnchorPane layoutX="41.0" layoutY="12.0" prefHeight="59.0" prefWidth="123.0" style="-fx-background-color: #176FE5; -fx-background-radius: 5px;">
-                           <effect>
-                              <DropShadow color="#d0d0d0" />
-                           </effect>
+            <TabPane prefHeight="550.0" prefWidth="719.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                  <Tab text="Configuration">
+                    <content>
+                      <AnchorPane>
                            <children>
-                              <JFXButton alignment="CENTER" contentDisplay="TOP" layoutY="7.0" prefHeight="48.0" prefWidth="56.0" text="CONFIGURATION" textFill="WHITE" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0">
-                                 <font>
-                                    <Font name="Century Gothic Bold" size="11.0" />
-                                 </font>
-                                 <graphic>
-                                    <Icons525View fill="WHITE" glyphName="LINK" size="18" />
-                                 </graphic>
-                              </JFXButton>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="46.0" layoutY="81.923828125">
-                           <children>
-                              <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Serveur">
-                                 <font>
-                                    <Font name="Century Gothic" size="13.0" />
-                                 </font>
-                              </Text>
-                              <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
+                              <VBox layoutX="338.0" layoutY="32.0" AnchorPane.bottomAnchor="203.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0" />
+                              <Button layoutX="116.0" layoutY="363.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="98.0" styleClass="btn-primary" text="Configurer" AnchorPane.leftAnchor="116.0" />
+                              <AnchorPane layoutX="7.0" layoutY="32.0" prefHeight="308.0" prefWidth="316.0" style="-fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px;" AnchorPane.bottomAnchor="165.0" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="32.0">
                                  <children>
-                                    <TextField fx:id="Tfd_serveur" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom ou l'adresse ip du serveur" style="-fx-background-color: #fff;" />
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <graphic>
-                                          <MaterialDesignIconView fill="#1970e389" glyphName="DNS" size="18" />
-                                       </graphic>
-                                    </Label>
+                                    <GridPane hgap="4.0" layoutX="5.0" layoutY="20.0" prefHeight="270.0" prefWidth="305.0" vgap="4.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <HBox prefHeight="27.0" prefWidth="294.0" style="-fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px;" GridPane.rowIndex="1">
+                                             <children>
+                                                <MaterialDesignIconView fill="#1cb9c1" glyphName="SERVER" size="15">
+                                                   <HBox.margin>
+                                                      <Insets left="4.0" right="2.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignIconView>
+                                                <TextField fx:id="Tfdserveur" prefHeight="25.0" prefWidth="350.0" promptText="Entrer le serveur" style="-fx-background-color: Transparent;" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="27.0" prefWidth="299.0" style="-fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px;" GridPane.rowIndex="3">
+                                             <children>
+                                                <MaterialDesignIconView fill="#1cb9c1" glyphName="DATABASE" size="15">
+                                                   <HBox.margin>
+                                                      <Insets left="4.0" right="2.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignIconView>
+                                                <TextField fx:id="Tfdbasededonne" prefHeight="25.0" prefWidth="352.0" promptText="Entrer la base de donne" style="-fx-background-color: Transparent;" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="27.0" prefWidth="297.0" style="-fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px;" GridPane.rowIndex="5">
+                                             <children>
+                                                <MaterialDesignIconView fill="#1cb9c1" glyphName="ACCOUNT" size="15">
+                                                   <HBox.margin>
+                                                      <Insets left="4.0" right="2.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignIconView>
+                                                <TextField fx:id="TfdUtilisateur" prefHeight="25.0" prefWidth="350.0" promptText="Enter d'utilisateur" style="-fx-background-color: Transparent;" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="27.0" prefWidth="301.0" style="-fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px;" GridPane.rowIndex="7">
+                                             <children>
+                                                <MaterialDesignIconView fill="#1cb9c1" glyphName="KEY_VARIANT" size="15">
+                                                   <HBox.margin>
+                                                      <Insets left="4.0" right="2.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignIconView>
+                                                <TextField fx:id="TfdMotdepasse" prefHeight="25.0" prefWidth="351.0" promptText="Entrer le mot depasse" style="-fx-background-color: Transparent;" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="27.0" prefWidth="300.0" style="-fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px;" GridPane.rowIndex="9">
+                                             <children>
+                                                <MaterialDesignIconView fill="#1cb9c1" glyphName="LINK" size="15">
+                                                   <HBox.margin>
+                                                      <Insets left="4.0" right="2.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignIconView>
+                                                <TextField fx:id="TfdChemin" prefHeight="25.0" prefWidth="352.0" promptText="Entrer le chemin des etats des sorties" style="-fx-background-color: Transparent;" />
+                                             </children>
+                                          </HBox>
+                                          <Label text="Serveur" />
+                                          <Label text="Base de donne" GridPane.rowIndex="2" />
+                                          <Label text="Utilisateur" GridPane.rowIndex="4" />
+                                          <Label text="Mot depasse" GridPane.rowIndex="6" />
+                                          <Label text="Chemin  impression" GridPane.rowIndex="8" />
+                                       </children>
+                                    </GridPane>
+                                 </children></AnchorPane>
+                              <AnchorPane layoutX="344.0" layoutY="32.0" prefHeight="297.0" prefWidth="327.0" AnchorPane.leftAnchor="344.0" AnchorPane.rightAnchor="48.0">
+                                 <children>
+                                    <Label layoutX="130.0" layoutY="19.0" text="Création du réseau local" />
+                                    <Button alignment="CENTER" layoutX="122.0" layoutY="149.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="83.0" styleClass="btn-gray" text="Crée réseau" />
+                                    <GridPane hgap="4.0" layoutX="20.0" layoutY="36.0" prefHeight="100.0" prefWidth="295.0" vgap="4.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <HBox style="-fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px;" GridPane.rowIndex="1">
+                                             <children>
+                                                <MaterialDesignIconView fill="#1cb9c1" glyphName="SERVER">
+                                                   <HBox.margin>
+                                                      <Insets left="4.0" right="4.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignIconView>
+                                                <TextField prefHeight="25.0" prefWidth="309.0" promptText="Entrer le nom du réseau" />
+                                             </children>
+                                          </HBox>
+                                          <HBox style="-fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px;" GridPane.rowIndex="3">
+                                             <children>
+                                                <MaterialDesignIconView fill="#1cb9c1" glyphName="KEY">
+                                                   <HBox.margin>
+                                                      <Insets left="4.0" right="4.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignIconView>
+                                                <TextField prefHeight="25.0" prefWidth="309.0" promptText="Entrer le mot dépasse" />
+                                             </children>
+                                          </HBox>
+                                          <Label text="Nom du réseau" />
+                                          <Label text="Mot depasse du réseau" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
                                  </children>
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="46.0" layoutY="148.923828125">
-                           <children>
-                              <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Base des donnees">
-                                 <font>
-                                    <Font name="Century Gothic" size="13.0" />
-                                 </font>
-                              </Text>
-                              <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
-                                 <children>
-                                    <TextField fx:id="Tfd_db" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom de la base des donnees" style="-fx-background-color: #fff;" />
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <graphic>
-                                          <MaterialDesignIconView fill="#1970e38a" glyphName="DOMAIN" size="18" />
-                                       </graphic>
-                                    </Label>
-                                 </children>
-                              </AnchorPane>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="46.0" layoutY="215.0">
-                           <children>
-                              <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateur">
-                                 <font>
-                                    <Font name="Century Gothic" size="13.0" />
-                                 </font>
-                              </Text>
-                              <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
-                                 <children>
-                                    <TextField fx:id="Tfd_user" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom d'utilisateur" style="-fx-background-color: #fff;" />
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <graphic>
-                                          <MaterialDesignIconView fill="#1970e38a" glyphName="ACCOUNT_BOX" size="18" />
-                                       </graphic>
-                                    </Label>
-                                 </children>
-                              </AnchorPane>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="46.0" layoutY="280.0">
-                           <children>
-                              <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot depasse">
-                                 <font>
-                                    <Font name="Century Gothic" size="13.0" />
-                                 </font>
-                              </Text>
-                              <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
-                                 <children>
-                                    <TextField fx:id="Tfd_pass" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le mot de passe" style="-fx-background-color: #fff;" />
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <graphic>
-                                          <FontAwesomeIconView fill="#9fc6f8" glyphName="KEY" size="18" />
-                                       </graphic>
-                                    </Label>
-                                 </children>
-                              </AnchorPane>
-                           </children>
-                        </AnchorPane>
-                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="125.0" layoutY="351.0" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #176FE5;" text="Configurer" textFill="WHITE" />
-                        <AnchorPane layoutX="45.0" layoutY="390.0" prefHeight="48.0" prefWidth="298.0" />
-                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="216.0" layoutY="351.0" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #176FE5;" text="Test" textFill="WHITE" />
-                     </children>
-                  </AnchorPane>
-               </children>
-               <VBox.margin>
-                  <Insets left="380.0" right="10.0" top="20.0" />
-               </VBox.margin>
-            </VBox>
+                    </content>
+                  </Tab>
+                  <Tab text="Entreprise">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+                <Tab text="Utilisateur">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+                <Tab text="Profil">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
          </children>
       </VBox>
-      <HBox layoutX="24.0" layoutY="95.0" prefHeight="27.0" prefWidth="243.0">
-         <children>
-            <JFXButton alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="42.0" style="-fx-background-color: #176FE5;" text="Page" textFill="WHITE">
-               <font>
-                  <Font size="9.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </HBox>
    </children>
+   <stylesheets>
+      <URL value="@../../css/bootstrap.css" />
+      <URL value="@../../css/custom.css" />
+      <URL value="@../../css/skeleton.css" />
+      <URL value="@../../css/login.css" />
+      <URL value="@../../css/material-color.css" />
+   </stylesheets>
 </AnchorPane>

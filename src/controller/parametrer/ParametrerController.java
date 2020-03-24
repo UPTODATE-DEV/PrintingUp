@@ -20,13 +20,15 @@ import javafx.scene.control.TextField;
 public class ParametrerController implements Initializable {
 
     @FXML
-    private TextField Tfd_serveur;
+    private TextField Tfdserveur;
     @FXML
-    private TextField Tfd_db;
+    private TextField Tfdbasededonne;
     @FXML
-    private TextField Tfd_user;
+    private TextField TfdUtilisateur;
     @FXML
-    private TextField Tfd_pass;
+    private TextField TfdMotdepasse;
+    @FXML
+    private TextField TfdChemin;
 
     /**
      * Initializes the controller class.
@@ -36,8 +38,5 @@ public class ParametrerController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void getadd(ActionEvent event) {
-    }
     
 }

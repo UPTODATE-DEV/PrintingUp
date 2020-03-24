@@ -16,8 +16,8 @@ import static controller.nouveau.AddserviceController.Tfdpunitaire1;
 import static controller.nouveau.AddserviceController.Tfdservice1;
 import static controller.nouveau.AddserviceController.Tfdtype_service1;
 import static controller.nouveau.AddserviceController.btn_save1;
-import static controller.nouveau.AddserviceController.service;
 import static controller.nouveau.NouveauController.vbx1;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.io.IOException;
 import java.net.URL;
@@ -47,7 +47,7 @@ public class PrintServiceController implements Initializable {
     @FXML
     private Label prix_unitaire;
     @FXML
-    private MaterialDesignIconView deletebtn;
+    private FontAwesomeIconView deletebtn;
     @FXML
     private MaterialDesignIconView updatebtn;
     public static int x;

@@ -15,6 +15,7 @@ import static Elementary.references.PRINT_CLIENT;
 import com.jfoenix.controls.JFXDialog;
 import static controller.nouveau.AddclientController.client;
 import static controller.nouveau.NouveauController.vbx1;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.io.IOException;
 import java.net.URL;
@@ -52,7 +53,7 @@ public class PrintClientController implements Initializable {
     @FXML
     private MaterialDesignIconView updatebtn;
     @FXML
-    private MaterialDesignIconView deletebtn;
+    private FontAwesomeIconView deletebtn;
     public static Label id_modifier1;
     private ResultSet rs;
 

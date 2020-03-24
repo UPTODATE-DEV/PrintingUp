@@ -8,13 +8,21 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Up_priting.jar" size="4755031" download="eager" />
+    <jar href="Up_priting.jar" size="10161137" download="eager" />
+    <jar href="lib\GNAvatarView-1.0-rc.jar" size="26082" download="eager" />
+    <jar href="lib\GNButton-1.1.0.jar" size="194323" download="eager" />
     <jar href="lib\GNCalendar-1.0-alpha.jar" size="11402" download="eager" />
+    <jar href="lib\GNCarousel-2.1.5.jar" size="530460" download="eager" />
+    <jar href="lib\GNDecorator-2.1.2-alpha.jar" size="2869249" download="eager" />
     <jar href="lib\Window.jar" size="18565" download="eager" />
+    <jar href="lib\animatefx-1.2.0.jar" size="85592" download="eager" />
+    <jar href="lib\colors-1.4.jar" size="32122" download="eager" />
     <jar href="lib\fontawesomefx-glyphsbrowser-all-1.0.jar" size="1662483" download="eager" />
     <jar href="lib\gson-2.8.2.jar" size="232932" download="eager" />
     <jar href="lib\jfoenix.jar" size="2142035" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib\scenicView.jar" size="524264" download="eager" />
+    <jar href="lib\tilesfx-1.5.2.jar" size="1365796" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Up_priting" >
     <param name="requiredFXVersion" value="8.0+"/>

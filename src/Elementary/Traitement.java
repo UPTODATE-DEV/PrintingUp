@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
@@ -90,5 +91,39 @@ public class Traitement extends Connexion {
             Logger.getLogger(Traitement.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+
+    public static void noSymbols(final TextField field, String exceptions) {
+        ChangeListener listener = (ChangeListener<Number>) (observable, oldValue, newValue) -> {
+            if (field.getText() != null) {
+                if (field.getText().length() > 0) {
+                    String value = field.getText();
+                    value = value.replaceAll("[^a-zA-Z0-9 " + exceptions + "]", "");
+                    field.setText(value);
+                }
+            }
+        };
+        field.lengthProperty().addListener(listener);
+    }
+
+    public static boolean isEmail(TextField field) { // KeyPressed
+        boolean is = false;
+        if (!field.getText().isEmpty()) {
+            if (field.getText().contains("@") && field.getText().contains(".") && !field.getText().contains(" ")) {
+
+                String user = field.getText().substring(0, field.getText().lastIndexOf('@'));
+                String domain = field.getText().substring(field.getText().lastIndexOf('@') + 1, field.getText().length());
+                String subdomain = field.getText().substring(field.getText().indexOf(".") + 1, field.getText().length());
+
+                if ((user.length() >= 1) && (!user.contains("@"))
+                        && (domain.contains(".")) && (!domain.contains("@"))
+                        && (domain.indexOf(".") >= 1)
+                        && (domain.lastIndexOf(".") < domain.length() - 1)
+                        && subdomain.length() >= 2) {
+                    is = true;
+                }
+            }
+        }
+        return is;
     }
 }

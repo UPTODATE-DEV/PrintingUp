@@ -5,10 +5,12 @@
  */
 package controller.nouveau;
 
+import Elementary.Alerts;
 import Elementary.Mywindows;
 import static Elementary.Mywindows.Ouput;
 import static Elementary.Mywindows.getInstanceL;
 import static Elementary.Mywindows.initFields;
+import Elementary.Traitement;
 import static Elementary.View_gui.getIns;
 import Elementary.references;
 import static Elementary.references.PRINT_CLIENT;
@@ -91,6 +93,7 @@ public class AddclientController implements Initializable {
         adresstfd1 = adresstfd;
         teleTfd1 = teleTfd;
         Btn_save1 = Btn_save;
+        //  isEmail1();
     }
 
     @FXML
@@ -126,7 +129,14 @@ public class AddclientController implements Initializable {
             } else {
                 Ouput(Text, icon, references.getInstanceE().MESSAGE_ISMPTY, imageviw, btn_ok, true, true);
             }
+
         }
+    }
+
+    void isEmail1() {
+        mailTfd.setOnKeyPressed((e) -> {
+            Traitement.isEmail(mailTfd);
+        });
     }
 
 }

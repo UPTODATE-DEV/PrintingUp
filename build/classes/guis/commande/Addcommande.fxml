@@ -4,10 +4,12 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.icons525.Icons525View?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -157,7 +159,11 @@
             <Font size="7.0" />
          </font>
       </JFXButton>
-      <VBox fx:id="vb_" layoutX="361.0" layoutY="103.0" prefHeight="285.0" prefWidth="358.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="361.0" AnchorPane.rightAnchor="10.0" />
+      <ScrollPane layoutX="361.0" layoutY="103.0" AnchorPane.leftAnchor="361.0" AnchorPane.rightAnchor="10.0">
+         <content>
+            <VBox fx:id="vb_" prefHeight="285.0" prefWidth="358.0" style="-fx-background-color: #fff;" />
+         </content>
+      </ScrollPane>
       <JFXButton fx:id="btn_print" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="176.0" layoutY="349.0" onAction="#Traitement_commande" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #176FE5;" text="Imprimer" textFill="WHITE" />
       <HBox alignment="CENTER" layoutX="135.0" layoutY="14.0" prefHeight="54.0" prefWidth="308.0" style="-fx-border-width: 0.5px; -fx-border-color: #D8D8D8; -fx-background-radius: 1em;" AnchorPane.leftAnchor="361.0" AnchorPane.rightAnchor="10.0">
          <children>
@@ -218,4 +224,8 @@
       <ListView fx:id="listClient" layoutX="24.0" layoutY="140.0" prefHeight="206.0" prefWidth="298.0" style="-fx-background-color: Transparent;" />
       <ListView fx:id="listService" layoutX="25.0" layoutY="202.0" prefHeight="285.0" prefWidth="298.0" style="-fx-background-color: Transparent;" />
    </children>
+   <stylesheets>
+      <URL value="@../../css/custom-scroll.css" />
+      <URL value="@../../css/material-color.css" />
+   </stylesheets>
 </AnchorPane>
