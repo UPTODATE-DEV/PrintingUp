@@ -16,7 +16,15 @@ public class references {
      * @Gui
      */
     public static final String PRINCIPAL = "/gui/principale.fxml";
-    public static final String LOGIN= "/guis/parametrer/login.fxml";
+
+    public static final String DASHBORD_1 = "/gui/dashbord_1.fxml";
+
+    public static final String PRINT_SERVICE = "/gui/printRealisation.fxml";
+
+    public static final String LOGIN = "/guis/parametrer/login.fxml";
+    
+    public static String CONF = "/guis/parametrer/configuration_server.fxml";
+    
     public static final String DASHBORD = "/gui/dashbord.fxml";
     public static final String OTHERMENU = "/gui/other.fxml";
     public static final String OTHEPAIEMENT = "/guis/commande/other_paiement.fxml";

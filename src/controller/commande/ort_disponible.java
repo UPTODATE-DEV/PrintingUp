@@ -7,10 +7,7 @@ package controller.commande;
 
 import static Elementary.Mywindows.getInstanceL;
 import Elementary.View_gui;
-import static Elementary.references.LOAD_PRINT_DISPONIBLE;
-import static Elementary.references.LOAD_PRINT_ENCOURS;
 import static Elementary.references.LOAD_PRINT_FIN;
-import static controller.commande.ort_traitement_encours.vbx_;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;

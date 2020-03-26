@@ -5,12 +5,21 @@
  */
 package controller.parametrer;
 
+import Elementary.Mywindows;
+import static Elementary.references.*;
+import com.jfoenix.controls.JFXDialog;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import org.controlsfx.control.Rating;
 
 /**
  * FXML Controller class
@@ -29,6 +38,14 @@ public class ParametrerController implements Initializable {
     private TextField TfdMotdepasse;
     @FXML
     private TextField TfdChemin;
+    @FXML
+    private Label fullName;
+    @FXML
+    private Label note;
+    @FXML
+    private Rating rating;
+    @FXML
+    private Button btn_config;
 
     /**
      * Initializes the controller class.
@@ -36,7 +53,18 @@ public class ParametrerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        evenement();
     }    
+void evenement(){
+btn_config.setOnMouseClicked((e)->{
+    try {
+        Mywindows.showFormDialog(getClass().getResource(CONF), JFXDialog.DialogTransition.CENTER, 349, 427);
+    } catch (IOException ex) {
+        Logger.getLogger(ParametrerController.class.getName()).log(Level.SEVERE, null, ex);
+    }
 
+});
+
+}
     
 }

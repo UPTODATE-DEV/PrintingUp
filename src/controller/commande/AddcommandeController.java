@@ -164,7 +164,7 @@ public class AddcommandeController implements Initializable {
                         if (!id_commande.getText().equals("0")) {
                             ImplemanteITestCommande.Instance().save(dao);
                         }
-                        initInitial();
+                        initInitial(lbl_frac1, lbl_dollars1);
                         init();
                     }
                 } else {
@@ -175,6 +175,8 @@ public class AddcommandeController implements Initializable {
             } else {
                 Mywindows.OuputText(Text, references.getInstanceE().MESSAGE_FACT, icon, true);
             }
+        }else if(event.getSource()==btn_print){
+        
         }
     }
 
@@ -185,10 +187,10 @@ public class AddcommandeController implements Initializable {
 
     }
 
-    void initInitial() {
-        double mtant = Double.parseDouble(getInstanceL().ismac_up(getIns().montant + "='" + id_commande.getText() + "'"));
-        lbl_frac1.setText(Double.toString(mtant));
-        lbl_dollars1.setText(Double.toString(mtant / 1600));
+    public static void initInitial(Label m1, Label m2) {
+        double mtant = Double.parseDouble(getInstanceL().ismac_up(getIns().montant + "='" + id_commande1.getText() + "'"));
+        m1.setText(Double.toString(mtant));
+        m2.setText(Double.toString(mtant / 1600));
     }
 
     @FXML
@@ -270,7 +272,6 @@ public class AddcommandeController implements Initializable {
     }
 
     void evenement() {
-
         Tfdservice.setOnKeyReleased((e) -> {
             listService.setVisible(true);
             getInstanceT().chargeOnList(listService, "SELECT designation x FROM new_service WHERE designation LIKE'%" + Tfdservice.getText() + "%'");

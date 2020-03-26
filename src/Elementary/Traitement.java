@@ -12,8 +12,13 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
+import javafx.event.ActionEvent;
+import javafx.geometry.Pos;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 /**
  *
@@ -125,5 +130,27 @@ public class Traitement extends Connexion {
             }
         }
         return is;
+    }
+        public static String dateB(DatePicker c) {
+        String j, a, m;
+        String date1;
+        j = c.getEditor().getText().substring(0, 2);
+        m = c.getEditor().getText().substring(3, 5);
+        a = c.getEditor().getText().substring(6, 10);
+        date1 = a + "-" + m + "-" + j;
+        return date1;
+    }
+          public static void alerteAvertissement(String titre, String message) {
+
+        Notifications notificationAvertissement;
+        notificationAvertissement = Notifications.create()
+                .title(titre)
+                .text("\n                                 " + message)
+                .graphic(null)
+                .hideAfter(Duration.seconds(5))
+                .position(Pos.BASELINE_RIGHT)
+                .onAction((ActionEvent event) -> {
+                });
+        notificationAvertissement.showWarning();
     }
 }

@@ -5,7 +5,11 @@
  */
 package controller.commande;
 
+import Elementary.Connexion;
 import static Elementary.Mywindows.getInstanceL;
+import Elementary.Traitement;
+import static Elementary.Traitement.alerteAvertissement;
+import static Elementary.Traitement.getInstanceT;
 import Elementary.View_gui;
 import static Elementary.View_gui.getIns;
 import Elementary.references;
@@ -19,6 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import lib.testCommande.Dao;
 import lib.testCommande.ImplemanteITestCommande;
@@ -37,7 +42,7 @@ public class orther_printDisponible implements Initializable {
     @FXML
     private Label Tfddate;
     @FXML
-    private MaterialDesignIconView btn_livre;
+    private Button btn_livre;
     @FXML
     private Label Tfd_id;
     Dao dao;
@@ -65,10 +70,15 @@ public class orther_printDisponible implements Initializable {
         btn_livre.setOnMouseClicked((e) -> {
             try {
                 if (!Tfd_nom.getText().isEmpty()) {
-                    dao = new Dao(Tfd_id.getText(), "Livraison");
-                    if (!Tfd_id.getText().equals("0")) {
-                        ImplemanteITestCommande.Instance().save(dao);
-                        init();
+                    if (getTest(Tfd_id.getText()) == true) {
+                        dao = new Dao(Tfd_id.getText(), "Livraison");
+                        if (!Tfd_id.getText().equals("0")) {
+                            ImplemanteITestCommande.Instance().save(dao);
+                            init();
+                        }
+                    } else {
+
+                        alerteAvertissement("Attention", "Payer d'abord avant de livrai...");
                     }
                 }
             } catch (Exception ex) {
@@ -76,6 +86,7 @@ public class orther_printDisponible implements Initializable {
             }
         });
     }
+
     void init() {
         try {
             try {
@@ -85,6 +96,17 @@ public class orther_printDisponible implements Initializable {
             }
         } catch (SQLException ex) {
             Logger.getLogger(Orther_verifier_detteController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    private boolean getTest(String code) throws SQLException {
+        getInstanceL().ps = Connexion.isConnected().prepareStatement("SELECT codecmdE x FROM `view_testvalidation` WHERE (m_paiement=montant) AND (codecmdE='" + code + "')");
+        Connexion.rst = getInstanceL().ps.executeQuery();
+        if (Connexion.rst.next()) {
+            return true;
+        } else {
+            return false;
         }
 
     }

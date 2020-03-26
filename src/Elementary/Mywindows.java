@@ -10,6 +10,7 @@ import static Elementary.Connexion.isConnected;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
+import static controller.commande.AddcommandeController.id_commande1;
 import static controllers.PrincipaleController.Rcotent;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
@@ -690,6 +691,7 @@ public class Mywindows extends Traitement {
             mat.setStyle("-fx-fill:#1C87DB");
 
         }
+
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
@@ -702,7 +704,7 @@ public class Mywindows extends Traitement {
                 });
                 icon.setVisible(true);
                 message.setText(str);
-                Thread.sleep(1000);
+                Thread.sleep(500);
                 message.setText("");
                 icon.setVisible(false);
                 bt.setDisable(false);
@@ -715,7 +717,7 @@ public class Mywindows extends Traitement {
             public void run() {
                 try {
                     image.setVisible(true);
-                    Thread.sleep(1000);
+                    Thread.sleep(2000);
                     image.setVisible(false);
                     new Thread(task).start();
                 } catch (InterruptedException ex) {
@@ -736,7 +738,7 @@ public class Mywindows extends Traitement {
                     });
                     icon.setVisible(true);
                     message.setText(str);
-                    Thread.sleep(1000);
+                    Thread.sleep(500);
                     message.setText("");
                     icon.setVisible(false);
                 } catch (InterruptedException ex) {
@@ -769,14 +771,14 @@ public class Mywindows extends Traitement {
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                Thread.sleep(1000);
+                Thread.sleep(1500);
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
                     }
                 });
                 message.setText(str);
-                Thread.sleep(1000);
+                Thread.sleep(500);
                 message.setText("");
                 icon.setVisible(false);
 
@@ -796,7 +798,7 @@ public class Mywindows extends Traitement {
                     ;
                     icon.setVisible(true);
                     message.setText(str);
-                    Thread.sleep(1000);
+                    Thread.sleep(500);
                     message.setText("");
                     icon.setVisible(false);
 
@@ -836,12 +838,7 @@ public class Mywindows extends Traitement {
 
         list.clear();
         try {
-            pst = isConnected().prepareStatement("SELECT * FROM `afficher_cmd_` WHERE"
-                    + "        (`entId`= (SELECT "
-                    + "                MAX(`tbl_detailcommande`.`codecmd`)"
-                    + "            FROM"
-                    + "                `tbl_detailcommande`))");
-
+            pst = isConnected().prepareStatement("SELECT * FROM `afficher_cmd_` WHERE entId ='"+id_commande1.getText()+"'");
             rst = pst.executeQuery();
             while (rst.next()) {
                 String cmd = rst.getString("id");
@@ -857,6 +854,7 @@ public class Mywindows extends Traitement {
                         + "#" + rst.getString("designation")
                         + "|" + rst.getString("pu")
                         + "'" + rst.getString("nb_srvc"));
+                System.out.println(id_commande1.getText());
 
             }
         } catch (SQLException ex) {

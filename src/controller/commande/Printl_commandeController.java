@@ -8,13 +8,10 @@ package controller.commande;
 import Elementary.Connexion;
 import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
-import Elementary.Traitement;
 import static Elementary.Traitement.getInstanceT;
 import Elementary.View_gui;
-import static Elementary.View_gui.getIns;
 import static Elementary.references.LOAD_COMMANDE;
 import static Elementary.references.PRINT_CMD;
-import static controller.commande.AddcommandeController.id_commande1;
 import static controller.commande.AddcommandeController.lbl_dollars1;
 import static controller.commande.AddcommandeController.lbl_frac1;
 import static controller.commande.AddcommandeController.vb_1;
@@ -74,41 +71,24 @@ public class Printl_commandeController implements Initializable {
     private void Traitement(ActionEvent event) throws Exception {
         getInstanceT().ps = Connexion.isConnected().prepareCall("Call sp_delete_service (?)");
         getInstanceT().ps.setString(1, id_.getText());
-        int x = getInstanceT().ps.executeUpdate();
-        if (x == 1) {
-            initData();
-            initInitial();
-        }
-//        if (Mywindows.isSaved("PROCEDURE", "sp_annuler", id_)==true) {
-//            
+        getInstanceT().ps.executeUpdate();
+        initData();
+        AddcommandeController.initInitial(lbl_frac1, lbl_dollars1);
+
 //        }
-    }
-
-    void initInitial() {
-        double mtant = Double.parseDouble(getInstanceL().ismac_up(getIns().montant + "='" + id_commande1.getText() + "'"));
-        lbl_frac1.setText(Double.toString(mtant));
-        lbl_dollars1.setText(Double.toString(mtant / 1600));
-    }
-
-    void init() {
-        try {
-            try {
-                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 4);
-            } catch (SQLException ex) {
-                Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
     }
 
     void initData() {
         try {
             Mywindows.getInstanceL().ScrollwithHBX(vb_1, getInstanceL().getCommande(), LOAD_COMMANDE, 1);
+            getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 4);
+
         } catch (IOException ex) {
             Logger.getLogger(AddcommandeController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Printl_commandeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
+ 
 }

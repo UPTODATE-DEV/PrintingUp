@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gn.lab.GNCalendarTile?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="749.0" style="-fx-background-color: #F5F6FA;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Dashbord_1Controller">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="60.0" prefHeight="135.0" prefWidth="729.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <AnchorPane layoutX="139.0" layoutY="78.0" prefHeight="48.0" prefWidth="565.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="78.0">
+               <children>
+                  <Text fill="#686868" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Up Priting">
+                     <font>
+                        <Font name="Century Gothic Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#686868" layoutX="1.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rapidité" wrappingWidth="73.828125" />
+                  <Text fill="#686868" layoutX="97.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dévise Première">
+                     <font>
+                        <Font name="Century Gothic Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#686868" layoutX="98.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Serviabilité" wrappingWidth="73.828125" />
+                  <Text fill="#686868" layoutX="230.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dévise Deuxième">
+                     <font>
+                        <Font name="Century Gothic Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#686868" layoutX="231.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fiabilité" wrappingWidth="73.828125" />
+                  <Text fill="#686868" layoutX="377.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Et en Fin">
+                     <font>
+                        <Font name="Century Gothic Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#686868" layoutX="378.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Economie du temps" wrappingWidth="109.19726559240371" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="11.0" layoutY="54.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #EA5754;" />
+            <Label layoutX="46.0" layoutY="55.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #D23171;" />
+            <Label layoutX="11.0" layoutY="89.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #B8AB3B;" />
+            <Label layoutX="46.0" layoutY="90.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #AD5354;" />
+            <Label layoutX="80.0" layoutY="91.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #118A4A;" />
+            <Label layoutX="11.0" layoutY="19.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #ED6C21;" />
+            <AnchorPane layoutX="139.0" layoutY="13.0" prefHeight="66.0" prefWidth="565.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="13.0">
+               <children>
+                  <Text fill="#686868" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Un bon imprimeur doit satisfaire ses clients">
+                     <font>
+                        <Font name="Century Gothic Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#686868" layoutX="1.0" layoutY="30.076171875" strokeType="OUTSIDE" strokeWidth="0.0" text="Tout doit être mis en œuvre afin que le client se rende compte qu’il n’est pas un numéro parmi tant d’autres, mais une personne qui attend un service d’un fournisseur attentionné." wrappingWidth="532.828125" />
+               </children>
+            </AnchorPane>
+         </children>
+         <effect>
+            <DropShadow color="#cdcdcd" />
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="414.0" layoutY="531.0" prefHeight="102.0" prefWidth="286.0" style="-fx-background-color: #1875F0; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <Text fill="WHITE" layoutX="27.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consigne liée  au reglamation des clients" textAlignment="CENTER" wrappingWidth="235.7197158113122">
+               <font>
+                  <Font name="Century Gothic Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="27.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Une bonne gestion financière est difficile. C’est pourquoi un grand nombre de personnes..." textAlignment="CENTER" wrappingWidth="235.71972094476223">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="38.0" layoutY="466.0" prefHeight="306.0" prefWidth="433.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="306.0" AnchorPane.topAnchor="364.0">
+         <effect>
+            <DropShadow color="#cdcdcd" />
+         </effect>
+         <children>
+            <Label layoutX="23.0" layoutY="41.0" prefHeight="15.0" prefWidth="15.0" style="-fx-background-color: #1875F0; -fx-background-radius: 50px;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Text fill="#000000a4" layoutX="23.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Graphyque">
+               <font>
+                  <Font name="Century Gothic Bold" size="13.0" />
+               </font>
+            </Text>
+            <FontAwesomeIconView fill="WHITE" glyphName="STACK_EXCHANGE" layoutX="27.0" layoutY="52.0" size="10" />
+            <Text fill="#00000073" layoutX="41.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Le graphyque si après fait une comparaison entre cette semaine et la semaine passé sur les activité en général" wrappingWidth="365.95703125" />
+            <VBox fx:id="vbx" layoutX="3.0" layoutY="76.0" prefHeight="231.0" prefWidth="428.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="76.0">
+               <children>
+                  <PieChart fx:id="staticView" />
+               </children></VBox>
+         </children>
+      </AnchorPane>
+      <GNCalendarTile layoutX="455.0" layoutY="365.0" prefHeight="197.0" prefWidth="286.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="119.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="364.0">
+         <effect>
+            <DropShadow color="#cdcdcd" />
+         </effect>
+      </GNCalendarTile>
+      <ScrollPane layoutX="12.0" layoutY="209.0" prefHeight="135.0" prefWidth="729.0" styleClass="decrement-arrow" stylesheets="@../css/custom-scroll.css" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="8.0">
+         <content>
+            <VBox fx:id="vb_service" prefHeight="135.0" prefWidth="727.0" style="-fx-background-color: Transparent;" />
+         </content>
+      </ScrollPane>
+   </children>
+   <stylesheets>
+      <URL value="@../css/material-color.css" />
+      <URL value="@../css/master.css" />
+   </stylesheets>
+</AnchorPane>

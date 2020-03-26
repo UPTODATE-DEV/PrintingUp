@@ -116,7 +116,7 @@ public class AddclientController implements Initializable {
             } else {
                 client = new ClientDao(nomTfd.getText(), prenomTfd.getText(), sexe_lbl.getText(), teleTfd.getText(), mailTfd.getText(), adresstfd.getText(), "1", "0");
             }
-            if (!getInstanceL().isFieldsempty(nomTfd, prenomTfd, sexe_lbl, teleTfd, mailTfd, adresstfd) == false) {
+            if (!champs.champs_vide.isFieldsempty(nomTfd, prenomTfd, sexe_lbl, teleTfd, mailTfd, adresstfd) == true) {
                 Instance().Enregistrer(client);
                 if (Btn_save1.getText().equals("Modifier")) {
                     Ouput(Text, icon, references.getInstanceE().MESSAGE_MODIFY, imageviw, btn_ok, true, false);

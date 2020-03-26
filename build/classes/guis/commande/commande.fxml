@@ -5,6 +5,7 @@
 <?import de.jensd.fx.glyphs.icons525.Icons525View?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import java.net.URL?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -17,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="749.0" style="-fx-background-color: #F5F6FA;" stylesheets="@../../css/custom-scroll.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.CommandeController">
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="749.0" style="-fx-background-color: #F5F6FA;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.CommandeController">
    <children>
       <GridPane hgap="10.0" layoutX="-9.0" layoutY="1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0">
          <columnConstraints>
@@ -180,4 +181,8 @@
          </children>
       </HBox>
    </children>
+   <stylesheets>
+      <URL value="@../../css/custom-scroll.css" />
+      <URL value="@../../css/master.css" />
+   </stylesheets>
 </AnchorPane>

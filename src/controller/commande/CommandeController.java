@@ -90,8 +90,8 @@ public class CommandeController implements Initializable {
         // TODO 
         initTread();
         if (status == 1) {
-//            getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
-//            getInstanceL().SelectDataFor1(btn_commande1, btn_dette, btn_attent, btn_encours, btn_disponible);
+            getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
+            getInstanceL().SelectDataFor1(btn_commande1, btn_dette, btn_attent, btn_encours, btn_disponible);
             init(1);
             recherche();
             i1.setVisible(false);
@@ -191,20 +191,20 @@ public class CommandeController implements Initializable {
         if (event.getSource() == btn_dette) {
             //  popOverMenu(p2, getClass().getResource(LOAD_PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
             // getInstanceL().SelectDataFor(p2, p1, p31, p3);
-//            getInstanceL().SelectDataFor(p2, p1, p3, p4, p5);
-//            getInstanceL().SelectDataFor1(btn_dette, btn_commande1, btn_attent, btn_encours, btn_disponible);
+            getInstanceL().SelectDataFor(p2, p1, p3, p4, p5);
+            getInstanceL().SelectDataFor1(btn_dette, btn_commande1, btn_attent, btn_encours, btn_disponible);
             status = 2;
             init(4);
         } else if (event.getSource() == btn_attent) {
             // popOverMenu(p1, getClass().getResource(PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
-//            getInstanceL().SelectDataFor(p3, p2, p1, p4, p5);
-//            getInstanceL().SelectDataFor1(btn_attent, btn_dette, btn_commande1, btn_encours, btn_disponible);
+            getInstanceL().SelectDataFor(p3, p2, p1, p4, p5);
+            getInstanceL().SelectDataFor1(btn_attent, btn_dette, btn_commande1, btn_encours, btn_disponible);
             init(3);
             status = 3;
         } else if (event.getSource() == btn_encours) {
             //  popOverMenu(p31, getClass().getResource(LOAD_ENCOURS), PopOver.ArrowLocation.TOP_CENTER);
-//            getInstanceL().SelectDataFor(p4, p3, p2, p1, p5);
-//            getInstanceL().SelectDataFor1(btn_encours, btn_attent, btn_dette, btn_commande1, btn_disponible);
+            getInstanceL().SelectDataFor(p4, p3, p2, p1, p5);
+            getInstanceL().SelectDataFor1(btn_encours, btn_attent, btn_dette, btn_commande1, btn_disponible);
             status = 4;
             init(5);
         } else if (event.getSource() == btn_disponible) {
@@ -215,8 +215,8 @@ public class CommandeController implements Initializable {
             init(2);
         } else if (event.getSource() == btn_commande1) {
 
-//            getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
-//            getInstanceL().SelectDataFor1(btn_commande1, btn_dette, btn_attent, btn_encours, btn_disponible);
+            getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
+            getInstanceL().SelectDataFor1(btn_commande1, btn_dette, btn_attent, btn_encours, btn_disponible);
             status = 1;
             init(1);
         }

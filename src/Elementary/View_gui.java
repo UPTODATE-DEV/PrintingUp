@@ -5,6 +5,7 @@
  */
 package Elementary;
 
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -15,12 +16,14 @@ import java.util.ArrayList;
 public class View_gui extends Connexion {
 
     public ArrayList<String> list = new ArrayList();
-    public static View_gui view;
+    public volatile static View_gui view;
 
     public ArrayList getService(int z, String query) throws SQLException {
         list.clear();
         String id;
-        rst = stm.executeQuery(query);
+        PreparedStatement pst = isConnected().prepareStatement(query);
+        rst = pst.executeQuery();
+        // rst = stm.executeQuery(query);
         while (rst.next()) {
             switch (z) {
                 case 1:
@@ -106,6 +109,22 @@ public class View_gui extends Connexion {
                             + "#" + rst.getString("type_")
                             + "&" + rst.getString("Punitaire")
                             + "%" + rst.getString("qte")
+                    );
+                    break;
+                case 7:
+                    String nbre = rst.getString("nbre");
+
+                    if (Integer.parseInt(nbre) < 10) {
+                        nbre = "00" + nbre;
+                    } else if (Integer.parseInt(nbre) >= 10 && Integer.parseInt(nbre) < 100) {
+                        nbre = "0" + nbre;
+                    } else {
+                        nbre = nbre;
+                    }
+                    list.add(
+                            nbre
+                            + "^" + rst.getString("service")
+                            + "#" + rst.getString("date_")
                     );
                     break;
             }

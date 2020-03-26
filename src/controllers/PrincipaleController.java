@@ -8,13 +8,22 @@ package controllers;
 import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
 import static Elementary.Mywindows.popOverMenu;
+import static Elementary.Traitement.dateB;
+import static Elementary.View_gui.getIns;
 import static Elementary.references.*;
+import com.jfoenix.controls.JFXButton;
+import static controllers.Dashbord_1Controller.vb_serce;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -49,6 +58,14 @@ public class PrincipaleController implements Initializable {
     @FXML
     private AnchorPane pan6;
     public static StackPane Rcotent;
+    @FXML
+    private DatePicker dteP;
+    @FXML
+    private DatePicker dteFin;
+    @FXML
+    private AnchorPane pan61;
+    @FXML
+    private JFXButton btn_refresh;
 
     /**
      * Initializes the controller class.
@@ -56,16 +73,19 @@ public class PrincipaleController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Rcotent = cotent;
-        Mywindows.makejira(cotent, getClass().getResource(DASHBORD));
+        dteP.setValue(LocalDate.now());
+        dteFin.setValue(LocalDate.now());
+        Mywindows.makejira(cotent, getClass().getResource(DASHBORD_1));
         getInstanceL().IsSeleted(s_dash, s_new, s_Ccommande, s_parametre);
         getInstanceL().SelectDataFor(p1, p2, p3, p4);
+        evenememet();
     }
 
     @FXML
     private void CallFormArticle(MouseEvent event) {
         getInstanceL().IsSeleted(s_dash, s_new, s_Ccommande, s_parametre);
         getInstanceL().SelectDataFor(p1, p2, p3, p4);
-        Mywindows.makejira(cotent, getClass().getResource(DASHBORD));
+        Mywindows.makejira(cotent, getClass().getResource(DASHBORD_1));
     }
 
     @FXML
@@ -94,5 +114,15 @@ public class PrincipaleController implements Initializable {
         popOverMenu(pan6, getClass().getResource(OTHERMENU), PopOver.ArrowLocation.TOP_CENTER);
     }
 
+    void evenememet() {
+        btn_refresh.setOnMouseClicked((e) -> {
+            try {
+                getInstanceL().ScrollwithHBX(vb_serce, getIns().getService(7, "SELECT * FROM new_print_dashboard_2 WHERE date_ BETWEEN '" + dateB(dteP) + "' AND '" + dateB(dteFin) + "'"), PRINT_SERVICE, 4);
+            } catch (IOException | SQLException ex) {
+                Logger.getLogger(PrincipaleController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        });
+    }
 
 }

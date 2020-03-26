@@ -10,7 +10,6 @@ import Elementary.View_gui;
 import static Elementary.View_gui.getIns;
 import static Elementary.references.LOAD_PRINT_LISTDETTE;
 import static controller.commande.CommandeController.vb_commande1;
-import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -19,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import lib.testCommande.Dao;
 import lib.testCommande.ImplemanteITestCommande;
@@ -37,7 +37,7 @@ public class Orther_v_detteController implements Initializable {
     @FXML
     private Label Tfd_id;
     @FXML
-    private MaterialDesignIconView btn_livre;
+    private Button btn_livre;
     @FXML
     private Label lbldateFin;
     Dao dao;

@@ -3,6 +3,7 @@
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -41,13 +42,16 @@
                   </Label>
                </children>
             </VBox>
-            <MaterialDesignIconView fx:id="btn_livre" fill="#1cb9c1" glyphName="CHECKBOX_MULTIPLE_MARKED" layoutX="150.0" layoutY="76.0" size="15">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </MaterialDesignIconView>
             <Label fx:id="Tfd_id" layoutX="9.0" layoutY="5.0" text="0" textFill="WHITE" />
          </children>
       </AnchorPane>
+      <Button fx:id="btn_livre" layoutX="145.0" layoutY="57.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="28.0" style="-fx-background-color: #FF8E1B;">
+         <graphic>
+            <MaterialDesignIconView fill="WHITE" glyphName="CHECK_CIRCLE" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

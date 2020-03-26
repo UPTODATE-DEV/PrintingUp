@@ -74,7 +74,6 @@ public class Other_paiementController implements Initializable {
                                 Mywindows.OuputText(massage, "Montant invalider", alert_paiement, true);
                             } else {
                                 if (getInstanceT().getprepare("Call sp_paiement ('" + Tfd_montant.getText() + "','" + getId().getText() + "'," + 1 + ")") == true) {
-                                    
                                     Tfd_montant.setText("0.0");
                                     getId().setText("00");
                                     Mywindows.OuputText(massage, "Paiement réussi ", alert_paiement, false);

@@ -20,6 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import lib.testCommande.Dao;
 import lib.testCommande.ImplemanteITestCommande;
@@ -38,7 +39,7 @@ public class ort_encours implements Initializable {
     @FXML
     private Label Tfddate;
     @FXML
-    private MaterialDesignIconView btn_livre;
+    private Button btn_livre;
     @FXML
     private Label Tfd_id;
     Dao dao;
@@ -65,10 +66,12 @@ public class ort_encours implements Initializable {
 
     void livrecommande() {
         btn_livre.setOnMouseClicked((e) -> {
+            
             try {
                 if (!Tfd_nom.getText().isEmpty()) {
                     dao = new Dao(Tfd_id.getText(), "Fin");
                     if (!Tfd_id.getText().equals("0")) {
+                       // if()
                         ImplemanteITestCommande.Instance().save(dao);
                         init();
                     }

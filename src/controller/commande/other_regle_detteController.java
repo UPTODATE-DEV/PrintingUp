@@ -10,7 +10,6 @@ import static Elementary.Mywindows.getInstanceL;
 import Elementary.View_gui;
 import static Elementary.references.PRINT_PAIEMENT_DETTE;
 import static controller.commande.CommandeController.vb_commande1;
-import static controller.commande.orther_paiement_detteController.vbox_verifierdette1;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.io.IOException;
 import java.net.URL;
@@ -20,6 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -42,7 +42,7 @@ public class other_regle_detteController implements Initializable {
     @FXML
     private Label Tfd_id;
     @FXML
-    private MaterialDesignIconView btn_valider;
+    private Button btn_valider;
     @FXML
     private TextField Tfd_montant;
     @FXML
@@ -75,16 +75,19 @@ public class other_regle_detteController implements Initializable {
             try {
                 if (Tfd_montant.getText().equals("0.0")
                         || Tfd_montant.getText().isEmpty()
-                        || Double.parseDouble(Tfd_montant.getText()) <= 0.0
-                        || (Double.parseDouble(Tfd_montant.getText()) > Double.parseDouble(Tfddate.getText()))) {
+                        || Double.parseDouble(Tfd_montant.getText()) <= 0.0) {
                     Mywindows.OuputText(massage, "", alert_paiement, true);
 
                 } else {
-                    // ImplemanteITestCommande.Instance().save(dao, "{Call sp_paiement(?,?)}");
-                    dao = new Dao_paiement(Tfd_id.getText(), Double.parseDouble(Tfd_montant.getText()), "1");
-                    getInstance().save(dao);
-                    Tfd_montant.setText("0.0");
-                    init1();
+                    if (Double.parseDouble(Tfd_montant.getText()) <= Double.parseDouble(Tfd_montant_a_paye.getText())) {
+                        
+                        dao = new Dao_paiement(Tfd_id.getText(), Double.parseDouble(Tfd_montant.getText()), "1");
+                        getInstance().save(dao);
+                        Tfd_montant.setText("0.0");
+                        init1();
+                    } else {
+                        Mywindows.OuputText(massage, "", alert_paiement, true);
+                    }
 
                 }
             } catch (NumberFormatException ex) {
@@ -96,7 +99,7 @@ public class other_regle_detteController implements Initializable {
     void init1() {
         try {
             try {
-                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(5, "SELECT * FROM client_dette"), PRINT_PAIEMENT_DETTE, 2);
+                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(5, "SELECT * FROM client_dette"), PRINT_PAIEMENT_DETTE, 4);
             } catch (IOException ex) {
                 Logger.getLogger(Orther_verifier_detteController.class.getName()).log(Level.SEVERE, null, ex);
             }
