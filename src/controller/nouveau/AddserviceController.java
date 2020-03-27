@@ -9,7 +9,6 @@ import Elementary.Mywindows;
 import static Elementary.Mywindows.Ouput;
 import static Elementary.Mywindows.getInstanceL;
 import static Elementary.Mywindows.initFields;
-import static Elementary.Mywindows.isSaved;
 import Elementary.Traitement;
 import static Elementary.View_gui.getIns;
 import Elementary.references;
@@ -91,6 +90,7 @@ public class AddserviceController implements Initializable {
                 }
                 if (Double.parseDouble(Tfdpunitaire.getText()) > 0) {
                     new ImplementeService().Enregistrer(service);
+                    
                     initFields(false, Tfdservice, Tfdpunitaire, Tfdtype_service);
                     if (btn_save1.getText().equals("Modifier")) {
                         Ouput(Text, icon, references.getInstanceE().MESSAGE_MODIFY, imageviw, btn_ok, true, false);

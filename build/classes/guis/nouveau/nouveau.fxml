@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.icons525.Icons525View?>
-<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -49,7 +48,6 @@
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
@@ -70,22 +68,7 @@
                               </JFXButton>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="p2" prefHeight="63.0" prefWidth="71.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="1">
-                           <effect>
-                              <DropShadow color="#d0d0d0" />
-                           </effect>
-                           <children>
-                              <JFXButton fx:id="btn_agent" alignment="CENTER" contentDisplay="TOP" layoutY="-3.0" onAction="#Call_windows" prefHeight="54.0" prefWidth="71.0" style="-fx-background-radius: 5px;" text="Agent" textFill="#c7c7d4" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-3.0">
-                                 <font>
-                                    <Font name="Century Gothic Bold" size="13.0" />
-                                 </font>
-                                 <graphic>
-                                    <MaterialIconView fill="#c7c7d4" glyphName="STREETVIEW" size="17" />
-                                 </graphic>
-                              </JFXButton>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="p3" prefHeight="63.0" prefWidth="71.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="2">
+                        <AnchorPane fx:id="p3" prefHeight="63.0" prefWidth="71.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="1">
                            <effect>
                               <DropShadow color="#d0d0d0" />
                            </effect>

@@ -46,12 +46,12 @@
                </children>
             </VBox>
             <Label fx:id="id_modifier" layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="47.0" text="0" textFill="WHITE" />
-            <MaterialDesignIconView fx:id="updatebtn" fill="#50899e" glyphName="DOWNLOAD" layoutX="164.0" layoutY="13.0" size="15">
+            <MaterialDesignIconView fx:id="updatebtn" fill="#50899e" glyphName="PENCIL" layoutX="159.0" layoutY="20.0" size="18">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MaterialDesignIconView>
-            <FontAwesomeIconView fx:id="deletebtn" fill="#dc511d" glyphName="TRASH_ALT" layoutX="152.0" layoutY="10.0" />
+            <FontAwesomeIconView fx:id="deletebtn" fill="#dc511d" glyphName="TRASH_ALT" layoutX="142.0" layoutY="19.0" size="18" />
          </children>
       </AnchorPane>
    </children>

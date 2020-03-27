@@ -5,9 +5,6 @@
  */
 package Elementary;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 
 /**

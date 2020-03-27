@@ -13,6 +13,7 @@ import Elementary.View_gui;
 import static Elementary.references.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
+import static controllers.PrincipaleController.bool;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.io.IOException;
 import java.net.URL;
@@ -26,8 +27,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -35,9 +38,6 @@ import javafx.scene.layout.VBox;
  * @author Akim
  */
 public class CommandeController implements Initializable {
-
-    @FXML
-    private AnchorPane p1;
 
     @FXML
     private AnchorPane p2;
@@ -65,14 +65,10 @@ public class CommandeController implements Initializable {
     @FXML
     private JFXButton btn_disponible;
     @FXML
-    private JFXButton btn_commande1;
-    @FXML
     private AnchorPane p4;
     @FXML
     private AnchorPane p5;
     int status = 1;
-    @FXML
-    private MaterialDesignIconView i1;
     @FXML
     private MaterialDesignIconView i2;
     @FXML
@@ -81,6 +77,10 @@ public class CommandeController implements Initializable {
     private MaterialDesignIconView i4;
     @FXML
     private MaterialDesignIconView i5;
+    @FXML
+    private Text s_commande_rappor;
+    @FXML
+    private GridPane menu_ok;
 
     /**
      * Initializes the controller class.
@@ -88,13 +88,34 @@ public class CommandeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO 
-        initTread();
+
         if (status == 1) {
-            getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
-            getInstanceL().SelectDataFor1(btn_commande1, btn_dette, btn_attent, btn_encours, btn_disponible);
-            init(1);
-            recherche();
-            i1.setVisible(false);
+            if (bool == true) {
+                s_commande_rappor.setText("Rapport");
+                btn_dette.setVisible(false);
+                btn_attent.setVisible(false);
+                btn_encours.setVisible(false);
+                btn_disponible.setVisible(false);
+//                getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
+//                getInstanceL().SelectDataFor1(btn_commande1, btn_dette, btn_attent, btn_encours, btn_disponible);
+                init(1);
+                recherche();
+                menu_ok.setVisible(false);
+                //i1.setVisible(false);
+            } else {
+                s_commande_rappor.setText("Commande");
+                menu_ok.setVisible(true);
+                btn_dette.setVisible(true);
+                btn_attent.setVisible(true);
+                btn_encours.setVisible(true);
+                btn_disponible.setVisible(true);
+                getInstanceL().SelectDataFor(p3, p2, p4, p5);
+                getInstanceL().SelectDataFor1(btn_attent, btn_dette, btn_encours, btn_disponible);
+                init(3);
+                initTread();
+
+            }
+
         }
 
     }
@@ -136,7 +157,9 @@ public class CommandeController implements Initializable {
     }
 
     void initTreed() {
+
         if (isConnected() != null) {
+
             if (Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM tbl_exe_commande where statis='Attente'")) > 0) {
                 i3.setVisible(true);
             } else {
@@ -191,35 +214,36 @@ public class CommandeController implements Initializable {
         if (event.getSource() == btn_dette) {
             //  popOverMenu(p2, getClass().getResource(LOAD_PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
             // getInstanceL().SelectDataFor(p2, p1, p31, p3);
-            getInstanceL().SelectDataFor(p2, p1, p3, p4, p5);
-            getInstanceL().SelectDataFor1(btn_dette, btn_commande1, btn_attent, btn_encours, btn_disponible);
+            getInstanceL().SelectDataFor(p2, p3, p4, p5);
+            getInstanceL().SelectDataFor1(btn_dette, btn_attent, btn_encours, btn_disponible);
             status = 2;
             init(4);
         } else if (event.getSource() == btn_attent) {
             // popOverMenu(p1, getClass().getResource(PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
-            getInstanceL().SelectDataFor(p3, p2, p1, p4, p5);
-            getInstanceL().SelectDataFor1(btn_attent, btn_dette, btn_commande1, btn_encours, btn_disponible);
+            getInstanceL().SelectDataFor(p3, p2, p4, p5);
+            getInstanceL().SelectDataFor1(btn_attent, btn_dette, btn_encours, btn_disponible);
             init(3);
             status = 3;
         } else if (event.getSource() == btn_encours) {
             //  popOverMenu(p31, getClass().getResource(LOAD_ENCOURS), PopOver.ArrowLocation.TOP_CENTER);
-            getInstanceL().SelectDataFor(p4, p3, p2, p1, p5);
-            getInstanceL().SelectDataFor1(btn_encours, btn_attent, btn_dette, btn_commande1, btn_disponible);
+            getInstanceL().SelectDataFor(p4, p3, p2, p5);
+            getInstanceL().SelectDataFor1(btn_encours, btn_attent, btn_dette, btn_disponible);
             status = 4;
             init(5);
         } else if (event.getSource() == btn_disponible) {
             // popOverMenu(p3, getClass().getResource(LOAD_PRINT_DISPONIBLE), PopOver.ArrowLocation.TOP_CENTER);
-            getInstanceL().SelectDataFor(p5, p4, p3, p2, p1);
-            getInstanceL().SelectDataFor1(btn_disponible, btn_encours, btn_attent, btn_dette, btn_commande1);
+            getInstanceL().SelectDataFor(p5, p4, p3, p2);
+            getInstanceL().SelectDataFor1(btn_disponible, btn_encours, btn_attent, btn_dette);
             status = 5;
             init(2);
-        } else if (event.getSource() == btn_commande1) {
-
-            getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
-            getInstanceL().SelectDataFor1(btn_commande1, btn_dette, btn_attent, btn_encours, btn_disponible);
-            status = 1;
-            init(1);
         }
+//        else if (event.getSource() == btn_commande1) {
+//
+//            getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
+//            getInstanceL().SelectDataFor1(btn_commande1, btn_dette, btn_attent, btn_encours, btn_disponible);
+//            status = 1;
+//            init(1);
+//        }
     }
 
     @FXML
@@ -230,16 +254,19 @@ public class CommandeController implements Initializable {
     }
 
     void recherche() {
-        Tfl_search.setOnKeyPressed((e) -> {
-            try {
-                getInstanceL().ScrollwithHBX(vb_commande,
-                        View_gui.getIns().getService(3,
-                                "SELECT * FROM new_vs_print2_paiement WHERE nom LIKE '%"
-                                + Tfl_search.getText()
-                                + "%' OR id LIKE '%" + Tfl_search.getText() + "%'"), PRINT_CMD, 4);
 
-            } catch (SQLException | IOException ex) {
-                Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
+        Tfl_search.setOnKeyPressed((e) -> {
+            if (bool == true) {
+                try {
+                    getInstanceL().ScrollwithHBX(vb_commande,
+                            View_gui.getIns().getService(3,
+                                    "SELECT * FROM new_vs_print2_paiement WHERE nom LIKE '%"
+                                    + Tfl_search.getText()
+                                    + "%' OR id LIKE '%" + Tfl_search.getText() + "%'"), PRINT_CMD, 4);
+
+                } catch (SQLException | IOException ex) {
+                    Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
 
         });

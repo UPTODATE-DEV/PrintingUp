@@ -46,7 +46,7 @@ public class Traitement extends Connexion {
                 text.setText(null);
             }
             double c = Double.parseDouble(text.getText());
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             text.setText(null);
         }
         return false;
@@ -131,7 +131,8 @@ public class Traitement extends Connexion {
         }
         return is;
     }
-        public static String dateB(DatePicker c) {
+
+    public static String dateB(DatePicker c) {
         String j, a, m;
         String date1;
         j = c.getEditor().getText().substring(0, 2);
@@ -140,7 +141,8 @@ public class Traitement extends Connexion {
         date1 = a + "-" + m + "-" + j;
         return date1;
     }
-          public static void alerteAvertissement(String titre, String message) {
+
+    public static void alerteAvertissement(String titre, String message) {
 
         Notifications notificationAvertissement;
         notificationAvertissement = Notifications.create()

@@ -191,5 +191,7 @@
             </ImageView>
          </children>
       </AnchorPane>
+      <MaterialDesignIconView fx:id="ERRORtel" fill="#e93e20" glyphName="SELECT_OFF" layoutX="344.0" layoutY="297.0" />
+      <MaterialDesignIconView fx:id="ERRORemail" fill="#f31919" glyphName="SELECT_OFF" layoutX="344.0" layoutY="359.0" />
    </children>
 </AnchorPane>

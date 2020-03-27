@@ -14,6 +14,7 @@ import Elementary.View_gui;
 import static Elementary.View_gui.getIns;
 import Elementary.references;
 import static Elementary.references.LOAD_COMMANDE;
+import static Elementary.references.LOAD_PRINT_LISTDETTE;
 import static Elementary.references.OTHEPAIEMENT;
 import static Elementary.references.PRINT_CMD;
 import com.jfoenix.controls.JFXButton;
@@ -261,7 +262,7 @@ public class AddcommandeController implements Initializable {
     void init() {
         try {
             try {
-                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 4);
+                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(4, "SELECT * FROM new_test_encours where statis='Attente'"), LOAD_PRINT_LISTDETTE, 4);
             } catch (SQLException ex) {
                 Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
             }

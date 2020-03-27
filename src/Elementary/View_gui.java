@@ -79,12 +79,18 @@ public class View_gui extends Connexion {
                     );
                     break;
                 case 4:
+                    String dateFin = rst.getString("date_fn");
+                    if (dateFin == null) {
+                        dateFin = "En attente";
+                    } else {
+                        dateFin = dateFin;
+                    }
                     list.add(
                             rst.getString("id")
                             + "|" + rst.getString("nom")
                             + "^" + rst.getString("date_db")
-                            + "%" + rst.getString("date_fn")
-                            + "&" + rst.getString("statis")
+                            + "%" + dateFin
+                            +"&" + rst.getString("statis")
                     );
                     break;
                 case 5:
@@ -134,7 +140,11 @@ public class View_gui extends Connexion {
 
     public static View_gui getIns() {
         if (view == null) {
-            view = new View_gui();
+            synchronized (View_gui.class) {
+                if (view == null) {
+                    view = new View_gui();
+                }
+            }
         }
         return view;
     }

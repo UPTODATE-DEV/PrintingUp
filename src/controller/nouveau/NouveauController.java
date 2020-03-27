@@ -35,13 +35,9 @@ public class NouveauController implements Initializable {
     @FXML
     private JFXButton btn_client;
     @FXML
-    private JFXButton btn_agent;
-    @FXML
     private JFXButton btn_service;
     @FXML
     private AnchorPane p1;
-    @FXML
-    private AnchorPane p2;
     @FXML
     private AnchorPane p3;
     private int status = 0;
@@ -51,6 +47,7 @@ public class NouveauController implements Initializable {
     private TextField tfd_sercher;
     public static VBox vbx1;
 //  Alerts.info("Info", "Lorem ipsum dolor color.");
+
     /**
      * Initializes the controller class.
      */
@@ -59,10 +56,10 @@ public class NouveauController implements Initializable {
         status = 1;
         vbx1 = vbx;
         if (status == 1) {
-            getInstanceL().SelectDataFor1(btn_client, btn_agent, btn_service);
-            getInstanceL().SelectDataFor(p1, p2, p3);
+            getInstanceL().SelectDataFor1(btn_client, btn_service);
+            getInstanceL().SelectDataFor(p1, p3);
             search_new("client");
-            init(2);  
+            init(2);
         }
     }
 
@@ -92,9 +89,6 @@ public class NouveauController implements Initializable {
             case 1:
                 Mywindows.showFormDialog(getClass().getResource(ADDCLIENT), JFXDialog.DialogTransition.CENTER, 391, 554);
                 break;
-            case 2:
-                Mywindows.showFormDialog(getClass().getResource(ADDAGENT), JFXDialog.DialogTransition.CENTER, 391, 554);
-                break;
             case 3:
                 Mywindows.showFormDialog(getClass().getResource(ADDSERVICE), JFXDialog.DialogTransition.CENTER, 391, 388);
                 break;
@@ -107,20 +101,14 @@ public class NouveauController implements Initializable {
     @FXML
     private void Call_windows(ActionEvent event) throws IOException {
         if (event.getSource() == btn_client) {
-            getInstanceL().SelectDataFor1(btn_client, btn_agent, btn_service);
-            getInstanceL().SelectDataFor(p1, p2, p3);
+            getInstanceL().SelectDataFor1(btn_client, btn_service);
+            getInstanceL().SelectDataFor(p1, p3);
             init(2);
             search_new("client");
             status = 1;
-        } else if (event.getSource() == btn_agent) {
-            getInstanceL().SelectDataFor1(btn_agent, btn_client, btn_service);
-            getInstanceL().SelectDataFor(p2, p1, p3);
-            status = 2;
-            search_new("agent");
-             
         } else if (event.getSource() == btn_service) {
-            getInstanceL().SelectDataFor1(btn_service, btn_agent, btn_client);
-            getInstanceL().SelectDataFor(p3, p2, p1);
+            getInstanceL().SelectDataFor1(btn_service, btn_client);
+            getInstanceL().SelectDataFor(p3, p1);
             init(1);
             search_new("service");
             status = 3;
@@ -145,10 +133,7 @@ public class NouveauController implements Initializable {
                         } catch (SQLException ex) {
                             Logger.getLogger(NouveauController.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                    
-                    break;
-                    case "agent":
-                        System.out.println("Pas encore implementer");
+
                         break;
                     case "client":
                         try {

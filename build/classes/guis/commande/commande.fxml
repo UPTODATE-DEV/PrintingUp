@@ -34,7 +34,7 @@
                   <DropShadow color="#cdcdcd" />
                </effect>
                <children>
-                  <Text fill="#686868" layoutX="14.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Commande">
+                  <Text fx:id="s_commande_rappor" fill="#686868" layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Commande" wrappingWidth="133.71157836914062">
                      <font>
                         <Font name="Century Gothic Bold" size="14.0" />
                      </font>
@@ -47,11 +47,10 @@
                   <DropShadow color="#cdcdcd" />
                </effect>
                <children>
-                  <GridPane hgap="10.0" layoutX="25.0" layoutY="14.0" prefHeight="47.0" prefWidth="386.0" vgap="1.0" AnchorPane.bottomAnchor="12.0" AnchorPane.topAnchor="14.0">
+                  <GridPane fx:id="menu_ok" hgap="10.0" layoutX="25.0" layoutY="14.0" prefHeight="47.0" prefWidth="330.0" vgap="1.0" AnchorPane.bottomAnchor="12.0" AnchorPane.topAnchor="14.0">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.66668701171875" minWidth="10.0" prefWidth="67.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.66668701171875" minWidth="10.0" prefWidth="67.0" />
                         <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="72.66668701171875" minWidth="10.0" prefWidth="67.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.66668701171875" minWidth="10.0" prefWidth="67.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.66668701171875" minWidth="10.0" prefWidth="67.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.66668701171875" minWidth="10.0" prefWidth="67.0" />
                      </columnConstraints>
@@ -59,23 +58,7 @@
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <AnchorPane fx:id="p1" prefHeight="47.0" prefWidth="61.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
-                           <effect>
-                              <DropShadow color="#d0d0d0" />
-                           </effect>
-                           <children>
-                              <JFXButton fx:id="btn_commande1" alignment="CENTER" contentDisplay="TOP" layoutY="-1.0" onAction="#Call_windows" prefHeight="47.0" prefWidth="72.0" style="-fx-background-radius: 5px;" text="Commande" textFill="#c7c7d4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <font>
-                                    <Font name="Century Gothic Bold" size="10.0" />
-                                 </font>
-                                 <graphic>
-                                    <Icons525View fill="#c7c7d4" glyphName="IMPORT" size="18" />
-                                 </graphic>
-                              </JFXButton>
-                              <MaterialDesignIconView fx:id="i1" fill="#dc8181" glyphName="INFORMATION_VARIANT" layoutX="-1.0" layoutY="13.0" size="15" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="p2" prefHeight="49.0" prefWidth="61.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="1">
+                        <AnchorPane fx:id="p2" prefHeight="49.0" prefWidth="61.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="3">
                            <effect>
                               <DropShadow color="#d0d0d0" />
                            </effect>
@@ -88,10 +71,10 @@
                                     <Icons525View fill="#c7c7d4" glyphName="IMPORT" size="18" />
                                  </graphic>
                               </JFXButton>
-                              <MaterialDesignIconView fx:id="i2" fill="#76d2da" glyphName="INFORMATION_VARIANT" layoutX="-2.0" layoutY="14.0" size="15" />
+                              <MaterialDesignIconView fx:id="i2" fill="#ec3232" glyphName="INFORMATION_VARIANT" layoutX="-2.0" layoutY="17.0" size="20" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="p3" prefHeight="47.0" prefWidth="64.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="2">
+                        <AnchorPane fx:id="p3" prefHeight="47.0" prefWidth="64.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                            <effect>
                               <DropShadow color="#d0d0d0" />
                            </effect>
@@ -104,10 +87,10 @@
                                     <MaterialIconView fill="#c7c7d4" glyphName="STREETVIEW" size="17" />
                                  </graphic>
                               </JFXButton>
-                              <MaterialDesignIconView fx:id="i3" fill="#df9393" glyphName="INFORMATION_VARIANT" layoutY="14.0" size="15" />
+                              <MaterialDesignIconView fx:id="i3" fill="#f24040" glyphName="INFORMATION_VARIANT" layoutY="19.0" size="20" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="p4" prefHeight="49.0" prefWidth="82.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="3">
+                        <AnchorPane fx:id="p4" prefHeight="49.0" prefWidth="82.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="1">
                            <effect>
                               <DropShadow color="#d0d0d0" />
                            </effect>
@@ -120,10 +103,10 @@
                                     <Icons525View fill="#c7c7d4" glyphName="SNOWFLAKE" size="18" />
                                  </graphic>
                               </JFXButton>
-                              <MaterialDesignIconView fx:id="i4" glyphName="INFORMATION_VARIANT" layoutX="1.0" layoutY="12.0" size="15" />
+                              <MaterialDesignIconView fx:id="i4" fill="#ee0d0d" glyphName="INFORMATION_VARIANT" layoutX="1.0" layoutY="21.0" size="20" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="p5" prefHeight="47.0" prefWidth="144.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="4">
+                        <AnchorPane fx:id="p5" prefHeight="47.0" prefWidth="144.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="2">
                            <effect>
                               <DropShadow color="#d0d0d0" />
                            </effect>
@@ -136,7 +119,7 @@
                                     <Icons525View fill="#c7c7d4" glyphName="PASTE" size="18" />
                                  </graphic>
                               </JFXButton>
-                              <MaterialDesignIconView fx:id="i5" fill="#dd7b7b" glyphName="INFORMATION_VARIANT" layoutX="1.0" layoutY="13.0" size="15" />
+                              <MaterialDesignIconView fx:id="i5" fill="#f93030" glyphName="INFORMATION_VARIANT" layoutX="1.0" layoutY="20.0" size="20" />
                            </children>
                         </AnchorPane>
                      </children>

@@ -66,6 +66,11 @@ public class PrincipaleController implements Initializable {
     private AnchorPane pan61;
     @FXML
     private JFXButton btn_refresh;
+    @FXML
+    private Label s_Rapport;
+    @FXML
+    private AnchorPane p5;
+    public static boolean bool;
 
     /**
      * Initializes the controller class.
@@ -77,35 +82,36 @@ public class PrincipaleController implements Initializable {
         dteFin.setValue(LocalDate.now());
         Mywindows.makejira(cotent, getClass().getResource(DASHBORD_1));
         getInstanceL().IsSeleted(s_dash, s_new, s_Ccommande, s_parametre);
-        getInstanceL().SelectDataFor(p1, p2, p3, p4);
+        getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
         evenememet();
     }
 
     @FXML
     private void CallFormArticle(MouseEvent event) {
-        getInstanceL().IsSeleted(s_dash, s_new, s_Ccommande, s_parametre);
-        getInstanceL().SelectDataFor(p1, p2, p3, p4);
+        getInstanceL().IsSeleted(s_dash, s_new, s_Ccommande, s_parametre, s_Rapport);
+        getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
         Mywindows.makejira(cotent, getClass().getResource(DASHBORD_1));
     }
 
     @FXML
     private void CallFormEntreprise(MouseEvent event) {
-        getInstanceL().IsSeleted(s_parametre, s_dash, s_new, s_Ccommande);
-        getInstanceL().SelectDataFor(p4, p1, p2, p3);
+        getInstanceL().IsSeleted(s_parametre, s_dash, s_new, s_Ccommande, s_Rapport);
+        getInstanceL().SelectDataFor(p4, p1, p2, p3, p5);
         getInstanceL().makejira(cotent, getClass().getResource(PARAMETRE));
     }
 
     @FXML
     private void CallFormNew(MouseEvent event) {
-        getInstanceL().IsSeleted(s_new, s_dash, s_Ccommande, s_parametre);
-        getInstanceL().SelectDataFor(p2, p1, p3, p4);
+        getInstanceL().IsSeleted(s_new, s_dash, s_Ccommande, s_parametre, s_Rapport);
+        getInstanceL().SelectDataFor(p2, p1, p3, p4, p5);
         getInstanceL().makejira(cotent, getClass().getResource(NOUVEAU));
     }
 
     @FXML
     private void CallFormCommande(MouseEvent event) {
-        getInstanceL().IsSeleted(s_Ccommande, s_new, s_dash, s_parametre);
-        getInstanceL().SelectDataFor(p3, p1, p2, p4);
+        bool = false;
+        getInstanceL().IsSeleted(s_Ccommande, s_new, s_dash, s_parametre, s_Rapport);
+        getInstanceL().SelectDataFor(p3, p1, p2, p4, p5);
         getInstanceL().makejira(cotent, getClass().getResource(COMMANDE));
     }
 
@@ -123,6 +129,16 @@ public class PrincipaleController implements Initializable {
             }
 
         });
+    }
+
+    @FXML
+    private void CallFormRapport(MouseEvent event) {
+
+        bool = true;
+        getInstanceL().IsSeleted(s_Rapport, s_Ccommande, s_new, s_dash, s_parametre);
+        getInstanceL().SelectDataFor(p5, p3, p1, p2, p4);
+        getInstanceL().makejira(cotent, getClass().getResource(COMMANDE));
+
     }
 
 }

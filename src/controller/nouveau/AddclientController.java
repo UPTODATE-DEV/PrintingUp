@@ -18,6 +18,7 @@ import com.jfoenix.controls.JFXButton;
 import static controller.commande.AddcommandeController.btn_ok;
 import static controller.nouveau.NouveauController.vbx1;
 import static controller.nouveau.PrintClientController.id_modifier1;
+import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -72,6 +73,10 @@ public class AddclientController implements Initializable {
     public static TextField prenomTfd1;
     public static JFXButton Btn_save1;
     public static TextField teleTfd1;
+    @FXML
+    private MaterialDesignIconView ERRORtel;
+    @FXML
+    private MaterialDesignIconView ERRORemail;
 
     /**
      * Initializes the controller class.
@@ -83,6 +88,9 @@ public class AddclientController implements Initializable {
         x++;
         imageviw.setVisible(false);
         init();
+        testEmTe();
+        ERRORemail.setVisible(false);
+        ERRORtel.setVisible(false);
     }
 
     void init() {
@@ -116,16 +124,28 @@ public class AddclientController implements Initializable {
             } else {
                 client = new ClientDao(nomTfd.getText(), prenomTfd.getText(), sexe_lbl.getText(), teleTfd.getText(), mailTfd.getText(), adresstfd.getText(), "1", "0");
             }
-            if (!champs.champs_vide.isFieldsempty(nomTfd, prenomTfd, sexe_lbl, teleTfd, mailTfd, adresstfd) == true) {
-                Instance().Enregistrer(client);
-                if (Btn_save1.getText().equals("Modifier")) {
-                    Ouput(Text, icon, references.getInstanceE().MESSAGE_MODIFY, imageviw, btn_ok, true, false);
-                } else {
-                    Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
-                }
-                initFields(false, nomTfd, prenomTfd, teleTfd, mailTfd, adresstfd);
-                getInstanceL().ScrollwithHBX(vbx1, getIns().getService(2, "SELECT * FROM tbl_client"), PRINT_CLIENT, 4);
+            if (!champs.champs_vide.isFieldsempty(nomTfd, prenomTfd, teleTfd, mailTfd, adresstfd) == true) {
+                if (isTestNumero() == true & isTestEmail() == true) {
+                    Instance().Enregistrer(client);
 
+                    if (Btn_save1.getText().equals("Modifier")) {
+                        Ouput(Text, icon, references.getInstanceE().MESSAGE_MODIFY, imageviw, btn_ok, true, false);
+                    } else {
+                        Ouput(Text, icon, references.getInstanceE().MESSAGE_SAVE, imageviw, btn_ok, true, false);
+                    }
+                    initFields(false, nomTfd, prenomTfd, teleTfd, mailTfd, adresstfd);
+                    getInstanceL().ScrollwithHBX(vbx1, getIns().getService(2, "SELECT * FROM tbl_client"), PRINT_CLIENT, 4);
+                } else {
+                    if (isTestNumero() == false) {
+                        ERRORtel.setVisible(true);
+                        teleTfd.requestFocus();
+                    }
+                    if (isTestEmail()== false) {
+                        ERRORemail.setVisible(true);
+                        mailTfd.requestFocus();
+                    }
+
+                }
             } else {
                 Ouput(Text, icon, references.getInstanceE().MESSAGE_ISMPTY, imageviw, btn_ok, true, true);
             }
@@ -136,6 +156,39 @@ public class AddclientController implements Initializable {
     void isEmail1() {
         mailTfd.setOnKeyPressed((e) -> {
             Traitement.isEmail(mailTfd);
+        });
+    }
+
+    boolean isTestNumero() {
+        if (teleTfd.getText().length() <= 13) {
+            return true;
+        }
+        return false;
+
+    }
+
+    boolean isTestEmail() {
+        if (mailTfd.getText().trim().contains("@")) {
+            return true;
+        }
+        return false;
+
+    }
+
+    void testEmTe() {
+        teleTfd.setOnKeyReleased((e) -> {
+            if (teleTfd.getText().trim().length() > 13) {
+                ERRORtel.setVisible(true);
+            } else {
+                ERRORtel.setVisible(false);
+            }
+        });
+        mailTfd.setOnKeyReleased((e) -> {
+            if (mailTfd.getText().trim().contains("@")) {
+                ERRORemail.setVisible(false);
+            } else {
+                ERRORemail.setVisible(true);
+            }
         });
     }
 

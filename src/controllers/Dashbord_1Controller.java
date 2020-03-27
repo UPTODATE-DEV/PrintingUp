@@ -43,7 +43,7 @@ public class Dashbord_1Controller implements Initializable {
     @FXML
     private PieChart staticView;
     ObservableList<PieChart.Data> data;
-
+    private PreparedStatement pst;
     /**
      * Initializes the controller class.
      */
@@ -55,17 +55,16 @@ public class Dashbord_1Controller implements Initializable {
             pieChat();
             staticView.setData(data);
             //  stackedBar.getData().add(series);
-
             getInstanceL().ScrollwithHBX(vb_serce, getIns().getService(7, "SELECT * FROM new_print_dashboard_2"), PRINT_SERVICE, 4);
         } catch (SQLException | IOException ex) {
             Logger.getLogger(Dashbord_1Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    PreparedStatement pst;
+
 
     void pieChat() throws SQLException {
         data = FXCollections.observableArrayList();
-        pst = isConnected().prepareStatement("SELECT * FROM new_print_dashboard_2");
+        pst = isConnected().prepareStatement("SELECT * FROM new_print_dashboard_2 WHERE date_ BETWEEN ");
         rst = pst.executeQuery();
         while (rst.next()) {
             data.add(new PieChart.Data(rst.getString("service"), rst.getInt("nbre")));
