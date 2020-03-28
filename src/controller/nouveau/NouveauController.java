@@ -119,7 +119,7 @@ public class NouveauController implements Initializable {
     void search_new(String str) {
         try {
             tfd_sercher.setOnKeyReleased((KeyEvent value) -> {
-                switch (str) {
+                switch (str) { 
                     case "service":
                         try {
                             try {

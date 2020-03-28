@@ -8,7 +8,9 @@ package controllers;
 import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
 import static Elementary.Mywindows.popOverMenu;
+import Elementary.Traitement;
 import static Elementary.Traitement.dateB;
+import static Elementary.Traitement.getInstanceT;
 import static Elementary.View_gui.getIns;
 import static Elementary.references.*;
 import com.jfoenix.controls.JFXButton;
@@ -72,12 +74,22 @@ public class PrincipaleController implements Initializable {
     private AnchorPane p5;
     public static boolean bool;
 
+    public static DatePicker dteFin2;
+    public static DatePicker dteP1;
+    @FXML
+    private Label alerter_retrait;
+    @FXML
+    private AnchorPane p7;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Rcotent = cotent;
+        dteP1 = dteP;
+        dteFin2 = dteFin;
+        getInstanceT().Ecart(dteP, dteFin);
         dteP.setValue(LocalDate.now());
         dteFin.setValue(LocalDate.now());
         Mywindows.makejira(cotent, getClass().getResource(DASHBORD_1));
@@ -124,6 +136,7 @@ public class PrincipaleController implements Initializable {
         btn_refresh.setOnMouseClicked((e) -> {
             try {
                 getInstanceL().ScrollwithHBX(vb_serce, getIns().getService(7, "SELECT * FROM new_print_dashboard_2 WHERE date_ BETWEEN '" + dateB(dteP) + "' AND '" + dateB(dteFin) + "'"), PRINT_SERVICE, 4);
+                // new Dashbord_1Controller().pieChat(2, dteP, dteP1);
             } catch (IOException | SQLException ex) {
                 Logger.getLogger(PrincipaleController.class.getName()).log(Level.SEVERE, null, ex);
             }

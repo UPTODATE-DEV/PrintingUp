@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="570.0" prefWidth="556.0" style="-fx-background-color: #F1F4F9;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c_parametre.DeviseController">
+   <children>
+      <Text layoutX="17.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choix de la Dévise" wrappingWidth="252.99999575316906">
+         <font>
+            <Font name="Lucida Console" size="18.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="14.0" layoutY="35.0" prefHeight="115.0" prefWidth="528.0" style="-fx-background-color: #212B38;" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="35.0">
+         <children>
+            <Label layoutX="420.0" layoutY="12.0" prefHeight="25.0" prefWidth="5.0" style="-fx-background-color: #F9C933; -fx-background-radius: 2px;">
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </Label>
+            <Label layoutX="433.0" layoutY="11.0" prefHeight="36.0" prefWidth="5.0" style="-fx-background-color: #EF844A; -fx-background-radius: 2px;">
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </Label>
+            <Label layoutX="446.0" layoutY="12.0" prefHeight="16.0" prefWidth="5.0" style="-fx-background-color: #398395; -fx-background-radius: 2px;">
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </Label>
+            <Label layoutX="446.0" layoutY="32.0" prefHeight="16.0" prefWidth="5.0" style="-fx-background-color: #398395; -fx-background-radius: 2px;">
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="14.0" prefHeight="57.0" prefWidth="58.0" style="-fx-border-color: #EF844A; -fx-border-width: 0.25; -fx-border-radius: 5px;" text="\$" textFill="#e4e4e49e">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#c95656" />
+               </effect>
+            </Label>
+            <Text fill="WHITE" layoutX="102.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dollar" wrappingWidth="174.99999580532312">
+               <font>
+                  <Font name="Lucida Console" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#f5f5f5" layoutX="102.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aperçu" wrappingWidth="57.99999575316906">
+               <font>
+                  <Font name="Ebrima Bold" size="15.0" />
+               </font>
+            </Text>
+            <Label layoutX="102.0" layoutY="63.0" prefHeight="17.0" prefWidth="92.0" text="\$ 123.5" textFill="#e4e4e4">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#f9c933" glyphName="SQUARE" size="15" />
+               </graphic>
+            </Label>
+            <Label layoutX="206.0" layoutY="62.0" prefHeight="17.0" prefWidth="92.0" text="3423.5$" textFill="#e4e4e4">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#ef844a" glyphName="SQUARE" size="15" />
+               </graphic>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="160.0" prefHeight="391.0" prefWidth="528.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="160.0">
+         <children>
+            <GridPane alignment="CENTER" hgap="25.0" layoutX="21.0" layoutY="18.0" vgap="45.0" AnchorPane.bottomAnchor="108.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="18.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <CheckBox mnemonicParsing="false" text="afghani afghan   ؋ ">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="France       €" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Mozambique     MZM" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Cambodge  ៛" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text=" Kenya     KSh" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" prefWidth="151.0" text="Soudan du Sud   SDG" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Guinée équa   FCFA" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" prefHeight="16.0" prefWidth="157.0" text="États-Unis  $" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Malawi     MK" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" prefHeight="16.0" prefWidth="158.0" text="Congo-Brazzaville    ₣" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Nigéria       ₦" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Botswana  P" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Congo-Kinshasa  Fc" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Ouganda    USh" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Zambie    ZMK" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </GridPane>
+            <JFXButton fx:id="btAdd" buttonType="RAISED" layoutX="407.0" layoutY="344.0" onAction="#AddUser" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #fff;" text="Enregistrer" textFill="#48477b" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="344.0">
+               <graphic>
+                  <FontAwesomeIconView fill="#48477b" glyphName="GEAR" size="15" />
+               </graphic>
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </JFXButton>
+            <AnchorPane layoutX="120.0" layoutY="340.0" prefHeight="42.0" prefWidth="276.0">
+               <children>
+                  <Text fx:id="message" layoutX="51.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="205.13671875" />
+                  <Label fx:id="icon" layoutX="7.0" layoutY="2.0" prefHeight="30.0" prefWidth="38.0" text=" " />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

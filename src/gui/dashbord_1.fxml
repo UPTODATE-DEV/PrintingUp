@@ -2,7 +2,6 @@
 
 <?import com.gn.lab.GNCalendarTile?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import java.net.URL?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -113,8 +112,4 @@
          </content>
       </ScrollPane>
    </children>
-   <stylesheets>
-      <URL value="@../css/material-color.css" />
-      <URL value="@../css/master.css" />
-   </stylesheets>
 </AnchorPane>

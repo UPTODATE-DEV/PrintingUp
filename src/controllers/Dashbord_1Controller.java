@@ -6,14 +6,15 @@
 package controllers;
 
 import static Elementary.Connexion.*;
-import Elementary.DoughnutChat;
 import static Elementary.Mywindows.getInstanceL;
+import static Elementary.Traitement.dateB;
 import static Elementary.View_gui.getIns;
 import static Elementary.references.PRINT_SERVICE;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,6 +25,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.StackedBarChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.DatePicker;
 import javafx.scene.layout.VBox;
 
 /**
@@ -44,6 +46,7 @@ public class Dashbord_1Controller implements Initializable {
     private PieChart staticView;
     ObservableList<PieChart.Data> data;
     private PreparedStatement pst;
+
     /**
      * Initializes the controller class.
      */
@@ -52,7 +55,7 @@ public class Dashbord_1Controller implements Initializable {
         try {
             // TODO
             vb_serce = vb_service;
-            pieChat();
+            pieChat(1, null, null);
             staticView.setData(data);
             //  stackedBar.getData().add(series);
             getInstanceL().ScrollwithHBX(vb_serce, getIns().getService(7, "SELECT * FROM new_print_dashboard_2"), PRINT_SERVICE, 4);
@@ -61,14 +64,17 @@ public class Dashbord_1Controller implements Initializable {
         }
     }
 
-
-    void pieChat() throws SQLException {
+    public void pieChat(Integer c, DatePicker d1, DatePicker d2) throws SQLException {
         data = FXCollections.observableArrayList();
-        pst = isConnected().prepareStatement("SELECT * FROM new_print_dashboard_2 WHERE date_ BETWEEN ");
+        if (c != 1) {
+            pst = isConnected().prepareStatement("SELECT * FROM new_print_dashboard_2 WHERE date_ BETWEEN '" + dateB(d1) + "' AND '" + dateB(d2) + "'");
+        } else {
+            pst = isConnected().prepareStatement("SELECT * FROM new_print_dashboard_2 WHERE date_ ='" + LocalDate.now().toString() + "'");
+        }
         rst = pst.executeQuery();
         while (rst.next()) {
             data.add(new PieChart.Data(rst.getString("service"), rst.getInt("nbre")));
-
+            System.out.println("Evenement clic");
         }
     }
 

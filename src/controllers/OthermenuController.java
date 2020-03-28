@@ -7,11 +7,7 @@ package controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -20,14 +16,6 @@ import javafx.scene.layout.AnchorPane;
  */
 public class OthermenuController implements Initializable {
 
-    @FXML
-    private AnchorPane pan1;
-    @FXML
-    private Label b_dash;
-    @FXML
-    private AnchorPane pan2;
-    @FXML
-    private Label b_profil;
 
     /**
      * Initializes the controller class.
@@ -37,12 +25,5 @@ public class OthermenuController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void CallEntreprise(MouseEvent event) {
-    }
-
-    @FXML
-    private void CallProfil(MouseEvent event) {
-    }
     
 }

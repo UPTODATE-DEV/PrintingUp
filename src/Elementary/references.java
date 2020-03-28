@@ -22,9 +22,9 @@ public class references {
     public static final String PRINT_SERVICE = "/gui/printRealisation.fxml";
 
     public static final String LOGIN = "/guis/parametrer/login.fxml";
-    
+
     public static String CONF = "/guis/parametrer/configuration_server.fxml";
-    
+
     public static final String DASHBORD = "/gui/dashbord.fxml";
     public static final String OTHERMENU = "/gui/other.fxml";
     public static final String OTHEPAIEMENT = "/guis/commande/other_paiement.fxml";
@@ -36,7 +36,6 @@ public class references {
      */
     public static final String NOUVEAU = "/guis/nouveau/nouveau.fxml";
     public static final String COMMANDE = "/guis/commande/commande.fxml";
-    public static final String PARAMETRE = "/guis/parametrer/parametrer.fxml";
     public static final String ADDCLIENT = "/guis/nouveau/addclient.fxml";
     public static final String LOADCOMMANDE = "/guis/nouveau/printService.fxml";
     public static final String LOAD_COMMANDE = "/guis/commande/printl_commande.fxml";
@@ -57,6 +56,14 @@ public class references {
 
     public static final String PRINT_DETTE = "/guis/commande/orther_paiement_dette.fxml";
     public static final String PRINT_PAIEMENT_DETTE = "/guis/commande/other_regle_dette.fxml";
+
+    public static final String PARAMETRE = "/parametre/parametre.fxml";
+    public static final String USER = "/parametre/user.fxml";
+    public static final String PROFIL = "/parametre/profil.fxml";
+    public static final String DEVISE = "/parametre/devise.fxml";
+    public static final String LOADPARAMETRE = "/parametre/loadparametre.fxml";
+    public static final String ABON = "/parametre/abonnement.fxml";
+    public static final String ENTRER = "/parametre/entreprise.fxml";
 
     /**
      * *

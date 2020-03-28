@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="570.0" prefWidth="556.0" style="-fx-background-color: #F1F4F9;" stylesheets="@../Style/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c_parametre.UserController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="7.0" prefHeight="45.0" prefWidth="505.0" style="-fx-background-color: fff; -fx-background-radius: 5px;" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="7.0">
+         <children>
+            <Text fill="#00000086" layoutX="51.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Total des Utilisateur" wrappingWidth="103.99999575316906">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="309.0" layoutY="11.0" prefHeight="26.0" prefWidth="208.0" style="-fx-background-color: #fff; -fx-border-color: #BAC3E2; -fx-border-width: 0.25; -fx-border-radius: 7px; -fx-background-radius: 7px;" AnchorPane.rightAnchor="11.0">
+               <children>
+                  <TextField layoutX="5.0" layoutY="1.0" prefHeight="24.0" prefWidth="176.0" promptText="Rechercher un Utilisateur" style="-fx-background-color: #FFF;">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </TextField>
+                  <OctIconView fill="#070707" glyphName="SEARCH" layoutX="187.0" layoutY="19.0" size="13" />
+               </children>
+               <effect>
+                  <DropShadow color="WHITE" />
+               </effect>
+            </AnchorPane>
+         </children>
+         <effect>
+            <DropShadow color="#f2f2f2" />
+         </effect>
+      </AnchorPane>
+      <ScrollPane layoutX="8.0" layoutY="97.0" prefHeight="469.0" prefWidth="540.0" styleClass="othersscroll" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="97.0">
+         <content>
+            <VBox fx:id="vbx" alignment="CENTER" prefHeight="478.0" prefWidth="521.0" spacing="5.0" />
+         </content>
+      </ScrollPane>
+      <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="512.0" layoutY="60.0" onAction="#showDialog" prefHeight="25.0" prefWidth="20.0" style="-fx-background-color: #fff;" text=" " textFill="#48477b" AnchorPane.rightAnchor="19.0">
+         <graphic>
+            <FontAwesomeIconView fill="#48477b" glyphName="PLUS" rotate="90.0" size="16" />
+         </graphic>
+         <font>
+            <Font name="Century Gothic" size="9.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
