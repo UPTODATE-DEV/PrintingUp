@@ -3,29 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/ort_disponible.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/orther_printDisponible.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/nouveau/AddserviceController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/Elementary/Dialog.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/other_regle_detteController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/orther_paiement_detteController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/Printl_commandeController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/parametrer/login/login.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/ort_encours.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/parametrer/ParametrerController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/nouveau/AddclientController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/AddcommandeController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/nouveau/PrintServiceController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/Elementary/references.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/Other_paiementController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controllers/PrincipaleController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/Elementary/Traitement.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/nouveau/PrintClientController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/CommandeController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/up_priting/Up_priting.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/ort_traitement_encours.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/nouveau/NouveauController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controllers/OtherController.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/user/IUser.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/ChargementControllers/LoadUsersController.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/utilisateur/ImplementUtilisateurDao.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/c_addForms/AddUserController.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/user/ImplementeIUser.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/c_addForms/UpdateuserController.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/user/UserDao.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/utilisateur/UtilisateurDao.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/Elementary/Connexion.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/Elementary/Mywindows.java</file>
         </group>
     </open-files>
 </project-private>

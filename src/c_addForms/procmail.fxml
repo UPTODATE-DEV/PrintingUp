@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="243.0" prefWidth="433.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c_addForms.ProcmailController">
+   <children>
+      <AnchorPane layoutX="86.0" layoutY="104.0" prefHeight="49.0" prefWidth="248.0">
+         <children>
+            <Label layoutX="3.0" text="Adreese Mail" textFill="#42526e">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="258.0" style="-fx-border-color: #48477B; -fx-border-width: 0.25; -fx-border-radius: 4px;">
+               <children>
+                  <TextField fx:id="txtmail" alignment="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="28.0" prefWidth="251.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="1.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="194.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/crocIcon.png" />
+         </image>
+      </ImageView>
+      <JFXButton alignment="CENTER" contentDisplay="RIGHT" layoutX="86.0" layoutY="161.0" onAction="#config" prefHeight="26.0" prefWidth="258.0" style="-fx-background-color: #48477b;" text="Renitialisez le mot de passe" textFill="WHITE">
+         <font>
+            <Font name="Ebrima" size="12.0" />
+         </font>
+      </JFXButton>
+      <Text layoutX="82.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Renitialisez le mot de passe" wrappingWidth="258.00000059604645">
+         <font>
+            <Font name="Lucida Console" size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

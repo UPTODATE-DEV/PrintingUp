@@ -7,6 +7,8 @@ package Elementary;
 
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -15,8 +17,11 @@ import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.util.Callback;
@@ -30,7 +35,9 @@ import org.controlsfx.control.Notifications;
 public class Traitement extends Connexion {
 
     public PreparedStatement ps;
-
+    public static final int status = 0;
+  
+  
     public boolean getprepare(String query) throws SQLException {
         ps = Connexion.isConnected().prepareCall(query);
         int x = ps.executeUpdate();
@@ -39,6 +46,27 @@ public class Traitement extends Connexion {
             return true;
         }
         return false;
+
+    }
+      
+     public static String pwd_crypte_md5(String password) {
+        byte[] uniquekey = password.getBytes();
+        byte[] hash = null;
+        try {
+            hash = MessageDigest.getInstance("MD5").digest(uniquekey);
+        } catch (NoSuchAlgorithmException e) {
+        }
+        StringBuilder hashString = new StringBuilder();
+        for (int i = 0; i < hash.length; i++) {
+            String hex = Integer.toHexString(hash[i]);
+            if (hex.length() == 1) {
+                hashString.append('0');
+                hashString.append(hex.charAt(hex.length() - 1));
+            } else {
+                hashString.append(hex.charAt(hex.length() - 2));
+            }
+        }
+        return hashString.toString();
 
     }
     private volatile static Traitement traite;
@@ -179,5 +207,37 @@ public class Traitement extends Connexion {
             }
         };
         d2.setDayCellFactory(dayCellFactory);
+    }
+    
+        static String genre;
+    static MaterialDesignIconView designIcon;
+
+    /**
+     * Fonctions & Methodes
+     *
+     * @param str2
+     * @param lab
+     * @return
+     * @throws java.lang.Exception
+     */
+    //#1
+    public static String getDifGenre(String str2, Label lab) throws Exception {
+
+        if ("Féminin".equals(str2)) {
+
+            designIcon = new MaterialDesignIconView(MaterialDesignIcon.HUMAN_MALE);
+            designIcon.setGlyphSize(20);
+            designIcon.setStyle("-fx-fill:#1875F0");
+            genre = "Masculin";
+        } else {
+            designIcon = new MaterialDesignIconView(MaterialDesignIcon.HUMAN_FEMALE);
+            designIcon.setGlyphSize(20);
+            designIcon.setStyle("-fx-fill:#1875F0");
+            genre = "Féminin";
+        }
+
+        lab.setGraphic(designIcon);
+
+        return genre;
     }
 }

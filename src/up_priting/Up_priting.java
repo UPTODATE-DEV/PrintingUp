@@ -22,6 +22,7 @@ public class Up_priting extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource(LOGIN));
         Scene scene = new Scene(root);
+        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
     }

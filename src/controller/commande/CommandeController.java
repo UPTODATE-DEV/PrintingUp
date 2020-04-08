@@ -255,7 +255,7 @@ public class CommandeController implements Initializable {
 
     void recherche() {
 
-        Tfl_search.setOnKeyPressed((e) -> {
+        Tfl_search.setOnKeyReleased((e) -> {
             if (bool == true) {
                 try {
                     getInstanceL().ScrollwithHBX(vb_commande,

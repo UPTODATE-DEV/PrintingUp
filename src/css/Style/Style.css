@@ -1,0 +1,177 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 31, 2019, 2:40:19 AM
+    Author     : Authentique
+*/
+/*.tab{
+    -fx-pref-width: 266;
+    -fx-pref-height:35;
+    -fx-background-color:  #EFF2F8;
+    -fx-text-fill: #red;
+}*/
+/*.context-menu{
+    -fx-background-color: derive( red,20%);
+}*/
+/*
+.menu-bar{
+    -fx-base:red;
+    -fx-background-color: gray;
+}*/
+/*.tab-hearder-background{
+    -fx-background-color: #55A376;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane
+{
+    -fx-tab-min-width:90px;
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+*/
+/*tab-header-background {
+    -fx-background-color:  #EFF2F8;
+
+
+.tab .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: #AAABB4;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+*/
+.tab:selected .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: #6A75CA;
+}
+/*.jfx-tab-pane .tab-selected-line
+{
+-fx-border-color: red;
+}*/
+/*
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+  -fx-padding: 0.416667em 0.166667em 0.0em 0.833em; /* 5 2 0 10 
+    -fx-padding: 0.416667em 0.166667em 0.0em 0.0em;  overridden as 5 2 0 0 
+}*/
+
+
+/*ici*/
+.scroll-pane{
+    -fx-background:#fff;
+    -fx-border-color:#fff;
+}
+.othersscroll{
+    -fx-background: #F1F4F9;
+    -fx-border-color:  #F1F4F9;
+}
+
+.CursorChange{
+    -fx-cursor: hand;
+}
+
+/* Customize the label (the container) */
+/* Create a custom radio button */
+.check-box .box {
+
+    -fx-background-color: white;
+    -fx-border-color:grey;
+    -fx-border-radius: 3px; 
+    /*  border: solid white;
+      border-width:;*/
+}
+
+.check-box:selected .mark {
+
+    -fx-background-color: white;
+
+}
+
+.check-box:selected .box {
+
+    -fx-background-color:  #1875F0;
+}
+.colors{
+    /*-fx-background-color: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);*/ 
+    /*-fx-background-color: radial-gradient(center 50% 50% , radius 100% , #ffebcd, #008080);*/
+    -fx-background-color: linear-gradient(to right top, #f3f3f5, #f6f6f7, #f9f9fa,#ffffff, #ffffff, #ffffff);
+}
+
+.OutError{
+    -fx-fill: #c95a5a;
+}
+.OutCorrect{
+    -fx-fill: #6A75CA;
+}
+.thumbs-up-icon{
+    -fx-fill:#c95a5a;
+}
+.txtcolor{
+    -fx-background-color:#fff;
+    -fx-text-fill: #9e9999;
+}
+.bordertxt{
+    -fx-background-color:#fff;
+    -fx-border-color:  #BAC3E2;
+    -fx-border-width: 0.5px;
+}
+
+
+.date-chooser { 
+    -fx-background-image: url("image/logoAvecsloglan.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left bottom; 
+}
+
+.isBell{
+    -fx-background-color:#FC9797;
+    -fx-background-radius:50px;
+}
+.isNotBell{
+    -fx-background-color:#F1F4F9;
+    -fx-background-radius:50px;
+}
+
+
+/* 
+ Data Picker
+*/
+
+.date-chooser {
+    -fx-background-color:linear-gradient( #F1F4F9, #F1F4F9);
+
+    -fx-background-image: url("/icons/crocIcon.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left bottom;
+}  
+
+
+
+/* 
+ Pie Chart
+*/
+.data0.chart-pie { -fx-pie-color:  #D8E6FF; }
+.data1.chart-pie { -fx-pie-color:  FFE0E0; }
+
+.chart-legend { -fx-background-color:  #F7F8FB; }
+
+/* 
+ Pie Chart
+*/
+
+/*.text-area {
+    text-area-background: white ;
+}*/
+
+.text-area .content {
+    -fx-background-color:  #F1F4F9 ;
+}

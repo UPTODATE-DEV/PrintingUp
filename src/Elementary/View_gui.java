@@ -90,7 +90,7 @@ public class View_gui extends Connexion {
                             + "|" + rst.getString("nom")
                             + "^" + rst.getString("date_db")
                             + "%" + dateFin
-                            +"&" + rst.getString("statis")
+                            + "&" + rst.getString("statis")
                     );
                     break;
                 case 5:
@@ -133,6 +133,21 @@ public class View_gui extends Connexion {
                             + "#" + rst.getString("date_")
                     );
                     break;
+                case 8:
+                    String niveau = rst.getString("niveau");
+                    if (niveau == null) {
+                        niveau = "Invalide";
+                    }
+                    list.add(
+                            rst.getString(1)
+                            + "#>" + capitalize(rst.getString(2))
+                            + "<#" + rst.getString(3).substring(0, 1)
+                            + "<&" + rst.getString(4)
+                            + "&>" + rst.getString(5)
+                            + "<$" + capitalize(rst.getString(6))
+                            + "$>" + niveau
+                    );
+                    break;
             }
         }
         return list;
@@ -147,5 +162,9 @@ public class View_gui extends Connexion {
             }
         }
         return view;
+    }
+
+    public String capitalize(String txt) {
+        return txt.substring(0, 1) + "" + (txt.toLowerCase()).substring(1, txt.length());
     }
 }

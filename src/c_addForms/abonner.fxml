@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="414.0" prefWidth="440.0" style="-fx-background-color: fff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="c_addForms.AbonnerController">
+   <children>
+      <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="196.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/crocIcon.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="mail" alignment="CENTER" contentDisplay="CENTER" layoutX="97.0" layoutY="209.0" prefHeight="17.0" prefWidth="298.0" text="xxxxxxxxxxxxx@gmail.com" textFill="#42526e">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="48.0" layoutY="99.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #3949A3; -fx-background-radius: 4px;" text="1" textFill="WHITE">
+         <font>
+            <Font name="Ebrima Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="48.0" layoutY="182.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #03A1E9; -fx-background-radius: 4px;" text="2" textFill="WHITE">
+         <font>
+            <Font name="Ebrima Bold" size="14.0" />
+         </font>
+      </Label>
+      <Text fill="#000000a7" layoutX="88.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Envoie de l'Argent sur le numero si dessous" textAlignment="CENTER" wrappingWidth="283.021484375">
+         <font>
+            <Font name="Yu Gothic Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#000000b7" layoutX="170.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+243999026241" textAlignment="CENTER">
+         <font>
+            <Font name="Yu Gothic Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#000000a7" layoutX="97.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrez le code envoyé par upto-Date sur l'Adresse" textAlignment="CENTER" wrappingWidth="304.0000051409006">
+         <font>
+            <Font name="Yu Gothic Bold" size="12.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="106.0" layoutY="235.0" prefHeight="49.0" prefWidth="248.0">
+         <children>
+            <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="258.0" style="-fx-border-color: #48477B; -fx-border-width: 0.25; -fx-border-radius: 4px;">
+               <children>
+                  <TextField fx:id="txtmail" alignment="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="28.0" prefWidth="251.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="1.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <JFXButton alignment="CENTER" contentDisplay="RIGHT" layoutX="106.0" layoutY="297.0" onAction="#valider" prefHeight="26.0" prefWidth="258.0" style="-fx-background-color: #48477b;" text="Valider" textFill="WHITE">
+         <font>
+            <Font name="Ebrima" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

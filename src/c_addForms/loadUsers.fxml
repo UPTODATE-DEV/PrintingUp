@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="119.0" prefWidth="288.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChargementControllers.LoadUsersController">
+   <children>
+      <AnchorPane layoutX="5.0" layoutY="3.0" prefHeight="113.0" prefWidth="270.0" style="-fx-background-color: #FFF; -fx-background-radius: 1px;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="3.0">
+         <children>
+            <Label fx:id="nom" layoutX="87.0" layoutY="24.0" prefHeight="15.0" prefWidth="169.0" text="AKILIMALI CIZUNGU INNOCENT">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="txtFonction" layoutX="89.0" layoutY="40.0" prefHeight="17.0" prefWidth="97.0" text="Administrateur" textFill="#b6b6b6" />
+            <Text fill="#464545" layoutX="88.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Niveau compte" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="28.0" prefHeight="76.0" prefWidth="80.0" style="-fx-border-radius: 50px; -fx-border-color: #eff2f8; -fx-border-width: 1px;">
+               <graphic>
+                  <FontAwesomeIconView fill="#779dcf" glyphName="QRCODE" size="45" />
+               </graphic>
+            </Label>
+            <Label layoutX="140.0" layoutY="73.0" prefHeight="17.0" prefWidth="24.0" text="Tel :" textFill="#9a9a9a" />
+            <Label fx:id="txtTel" alignment="TOP_LEFT" layoutX="164.0" layoutY="72.0" prefHeight="17.0" prefWidth="97.0" text="+243 977748166" textFill="#c0c0c0" />
+            <Label layoutX="87.0" layoutY="74.0" prefHeight="17.0" prefWidth="32.0" text="Sexe :" textFill="#041d4d" />
+            <Label fx:id="txtSexe" layoutX="120.0" layoutY="74.0" prefHeight="17.0" prefWidth="17.0" text="M" textFill="#32e99c">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="niveau" layoutX="171.0" layoutY="57.0" prefHeight="17.0" prefWidth="80.0" text="10">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <MaterialDesignIconView fx:id="btn_update" fill="#539fd6" glyphName="BORDER_COLOR" layoutX="254.0" layoutY="23.0" size="20">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MaterialDesignIconView>
+            <FontAwesomeIconView fx:id="btn_delete" fill="#e69b9b" glyphName="TRASH_ALT" layoutX="229.0" layoutY="21.0" size="20">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <Label fx:id="mail" layoutX="89.0" layoutY="91.0" prefHeight="17.0" prefWidth="191.0" text="gentilakili98@gmail.com" textFill="#beb6b6" />
+            <Label fx:id="id" layoutX="10.0" layoutY="5.0" text="00" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

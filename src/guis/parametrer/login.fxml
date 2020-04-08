@@ -17,6 +17,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
 
 <StackPane fx:id="fenetreLogin" prefHeight="601.0" prefWidth="1004.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.parametrer.login.login">
    <padding>
@@ -29,33 +30,35 @@
                <children>
                   <HBox prefHeight="439.0" prefWidth="726.0">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="437.0" prefWidth="544.0" spacing="40.0" styleClass="teste">
+                        <HBox alignment="CENTER" prefHeight="437.0" prefWidth="544.0" spacing="40.0" style="-fx-background-color: #fff;" styleClass="teste">
                            <children>
                               <GNAvatarView fx:id="avatar" prefHeight="435.0" prefWidth="175.0" strokeWidth="0.0">
                                  <effect>
                                     <DropShadow color="#00000035" />
                                  </effect>
                                  <image>
-                                    <Image url="@../../media/2144.jpg" />
+                                    <Image url="@../../icons/uptodate.png" />
                                  </image>
                               </GNAvatarView>
                               <Separator orientation="VERTICAL" prefHeight="200.0" />
-                              <VBox alignment="CENTER" prefHeight="347.0" prefWidth="297.0" spacing="20.0">
+                              <VBox alignment="CENTER" prefHeight="347.0" prefWidth="309.0" spacing="20.0">
                                  <children>
                                     <Label alignment="CENTER" prefHeight="49.0" prefWidth="176.0" style="-fx-text-fill: -text-color;" styleClass="h2" text="LOGIN">
                                        <VBox.margin>
                                           <Insets top="10.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <HBox fx:id="box_username" alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="282.0" style="-fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px;">
+                                    <HBox fx:id="box_username" alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="282.0" style="-fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px; -fx-background-radius: 0.5px;">
                                        <children>
-                                          <SVGPath content="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" scaleX="1.3" scaleY="1.3" strokeWidth="2.0" style="-fx-fill: -icon-color;" />
-                                          <TextField fx:id="username" prefHeight="32.0" prefWidth="245.0" promptText="Username" styleClass="clearable-field" />
+                                          <SVGPath content="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" scaleX="1.3" scaleY="1.3" strokeWidth="2.0" style="-fx-fill: -icon-color;">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" />
+                                             </HBox.margin></SVGPath>
+                                          <TextField fx:id="username" prefHeight="32.0" prefWidth="270.0" promptText="Username" style="-fx-background-color: Transparent;" styleClass="clearable-field">
+                                             <HBox.margin>
+                                                <Insets left="2.0" />
+                                             </HBox.margin></TextField>
                                        </children>
-                                       <styleClass>
-                                          <String fx:value="box-light" />
-                                          <String fx:value="rounded" />
-                                       </styleClass>
                                        <VBox.margin>
                                           <Insets />
                                        </VBox.margin>
@@ -63,30 +66,35 @@
                                           <Insets right="10.0" />
                                        </padding>
                                     </HBox>
-                                    <HBox fx:id="box_password" alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="282.0" style="-fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px;">
+                                    <HBox fx:id="box_password" alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="267.0" style="-fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px; -fx-border-radius: 0.50px;">
                                        <children>
-                                          <SVGPath content="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" scaleX="1.3" scaleY="1.3" strokeWidth="2.0" style="-fx-fill: -icon-color;" />
-                                          <PasswordField fx:id="password" prefHeight="32.0" prefWidth="246.0" promptText="Password" styleClass="viewer-field" />
+                                          <SVGPath content="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" scaleX="1.3" scaleY="1.3" strokeWidth="2.0" style="-fx-fill: -icon-color;">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" />
+                                             </HBox.margin></SVGPath>
+                                          <PasswordField fx:id="password" prefHeight="32.0" prefWidth="254.0" promptText="Password" style="-fx-background-color: Transparent;" styleClass="viewer-field" stylesheets="@../../css/bootstrap.css">
+                                             <HBox.margin>
+                                                <Insets left="2.0" />
+                                             </HBox.margin></PasswordField>
                                        </children>
-                                       <styleClass>
-                                          <String fx:value="box-light" />
-                                          <String fx:value="rounded" />
-                                       </styleClass>
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
                                     </HBox>
-                                    <Button fx:id="login" defaultButton="true" mnemonicParsing="false" prefWidth="322.0" text="Sign In">
+                                    <Button fx:id="login" defaultButton="true" mnemonicParsing="false" prefHeight="29.0" prefWidth="110.0" style="-fx-background-color: #33B5E5;" stylesheets="@../../css/light.css" text="Sign In" textFill="WHITE">
                                        <styleClass>
                                           <String fx:value="btn-primary" />
                                           <String fx:value="btn-info" />
                                        </styleClass>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
                                     </Button>
                                     <Label fx:id="lbl_error" styleClass="text-danger" text="Invalid username or password." visible="false" />
                                     <HBox alignment="CENTER" prefHeight="17.0" prefWidth="289.0">
                                        <children>
-                                          <Label text="Forgot your name of the" />
-                                          <Hyperlink text="user / password" />
+                                          <Label text="Créate le compte " />
+                                          <Hyperlink fx:id="createrUser" prefHeight="23.0" prefWidth="122.0" text="utilisateur / password" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -106,7 +114,7 @@
                   </HBox>
                </children>
             </FlowPane>
-            <Hyperlink alignment="CENTER_RIGHT" contentDisplay="RIGHT" onMouseClicked="#switchCreate" text="Create your account">
+            <Hyperlink alignment="CENTER_RIGHT" contentDisplay="RIGHT" onMouseClicked="#switchCreate" text="Créate entreprise">
                <graphic>
                   <SVGPath content="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" />
                </graphic>
@@ -115,10 +123,8 @@
       </VBox>
    </children>
    <stylesheets>
-      <URL value="@../../css/skeleton.css" />
-      <URL value="@../../css/material-color.css" />
-      <URL value="@../../css/master.css" />
       <URL value="@../../css/login.css" />
-      <URL value="@../../css/light.css" />
+      <URL value="@../../css/material-color.css" />
+      <URL value="@../../css/material.css" />
    </stylesheets>
 </StackPane>

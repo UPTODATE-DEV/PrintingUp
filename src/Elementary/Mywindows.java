@@ -60,6 +60,7 @@ import org.controlsfx.control.textfield.TextFields;
 public class Mywindows extends Traitement {
 
     private static Mywindows window;
+    public int resulta = 0;
 
     /**
      * @param URL
@@ -228,7 +229,7 @@ public class Mywindows extends Traitement {
      * @Creatiom de l'Objet pour cette Classe
      */
     int somme;
-    static int size;
+    public static int size;
     public static int resutatId;
 
     /**
@@ -838,7 +839,7 @@ public class Mywindows extends Traitement {
 
         list.clear();
         try {
-            pst = isConnected().prepareStatement("SELECT * FROM `afficher_cmd_` WHERE entId ='"+id_commande1.getText()+"'");
+            pst = isConnected().prepareStatement("SELECT * FROM `afficher_cmd_` WHERE entId ='" + id_commande1.getText() + "'");
             rst = pst.executeQuery();
             while (rst.next()) {
                 String cmd = rst.getString("id");
@@ -883,6 +884,7 @@ public class Mywindows extends Traitement {
         //  size = tr;
         somme = data.size();
         size = data.size();
+        resulta=data.size();
 
         Node[] node = new Node[somme];
         princi.getChildren().clear();

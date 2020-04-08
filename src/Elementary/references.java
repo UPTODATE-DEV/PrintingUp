@@ -64,6 +64,9 @@ public class references {
     public static final String LOADPARAMETRE = "/parametre/loadparametre.fxml";
     public static final String ABON = "/parametre/abonnement.fxml";
     public static final String ENTRER = "/parametre/entreprise.fxml";
+    public static final String ENTRER_AGENT = "/parametre/user_detail.fxml";
+    public static final String LOAD_UTILISATEUR = "/c_addForms/loadUsers.fxml";
+    public static final String LOAD_USER = "/parametre/update_user.fxml";
 
     /**
      * *
