@@ -106,9 +106,9 @@
             <DropShadow color="#cdcdcd" />
          </effect>
       </GNCalendarTile>
-      <ScrollPane layoutX="12.0" layoutY="209.0" prefHeight="135.0" prefWidth="729.0" styleClass="decrement-arrow" stylesheets="@../css/custom-scroll.css" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="8.0">
+      <ScrollPane layoutX="12.0" layoutY="214.0" prefHeight="135.0" prefWidth="729.0" styleClass="decrement-arrow" stylesheets="@../css/custom-scroll.css" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="8.0">
          <content>
-            <VBox fx:id="vb_service" prefHeight="135.0" prefWidth="727.0" style="-fx-background-color: Transparent;" />
+            <VBox fx:id="vb_service" prefHeight="135.0" prefWidth="729.0" style="-fx-background-color: Transparent;" />
          </content>
       </ScrollPane>
    </children>

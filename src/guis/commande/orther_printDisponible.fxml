@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="98.0" prefWidth="288.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.orther_printDisponible">
+<AnchorPane prefHeight="119.0" prefWidth="288.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.orther_printDisponible">
    <children>
-      <AnchorPane layoutX="6.0" layoutY="3.0" prefHeight="95.0" prefWidth="169.0" style="-fx-background-color: #fff; -fx-background-radius: 1px; -fx-border-color: #EFB29B; -fx-border-width: 0.5px;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="3.0">
+      <AnchorPane layoutX="6.0" layoutY="3.0" prefHeight="95.0" prefWidth="169.0" style="-fx-background-color: #fff; -fx-background-radius: 1px; -fx-border-width: 0.5px;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="3.0">
          <children>
             <MaterialDesignIconView fill="#42b5e3" glyphName="VECTOR_CIRCLE" layoutX="128.0" layoutY="21.0" size="20" />
             <VBox layoutX="4.0" layoutY="17.0" prefHeight="63.0" prefWidth="269.0">
@@ -43,15 +43,20 @@
                </children>
             </VBox>
             <Label fx:id="Tfd_id" layoutX="9.0" layoutY="5.0" text="0" textFill="WHITE" />
+            <Button fx:id="btn_livre" layoutX="125.0" layoutY="86.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="28.0" style="-fx-background-color: #42B5E3;">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="CHECK_CIRCLE" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="6.0" layoutY="1.0" text="Disponible" textFill="#dddcdc">
+               <graphic>
+                  <MaterialDesignIconView fill="#e2dddd" glyphName="OFFICE" />
+               </graphic>
+            </Label>
          </children>
       </AnchorPane>
-      <Button fx:id="btn_livre" layoutX="250.0" layoutY="57.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="28.0" style="-fx-background-color: #42B5E3;">
-         <graphic>
-            <MaterialDesignIconView fill="WHITE" glyphName="CHECK_CIRCLE" />
-         </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
    </children>
 </AnchorPane>

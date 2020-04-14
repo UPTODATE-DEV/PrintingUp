@@ -58,13 +58,13 @@ public class Dashbord_1Controller implements Initializable {
             pieChat(1, null, null);
             staticView.setData(data);
             //  stackedBar.getData().add(series);
-            getInstanceL().ScrollwithHBX(vb_serce, getIns().getService(7, "SELECT * FROM new_print_dashboard_2"), PRINT_SERVICE, 3);
+              getInstanceL().ScrollwithHBX(vb_serce, getIns().getService(7, "SELECT * FROM new_print_dashboard_2 "), PRINT_SERVICE, 3);
         } catch (SQLException | IOException ex) {
             Logger.getLogger(Dashbord_1Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void pieChat(Integer c, DatePicker d1, DatePicker d2) throws SQLException {
+    public void pieChat(int c, DatePicker d1, DatePicker d2) throws SQLException {
         data = FXCollections.observableArrayList();
         if (c != 1) {
             pst = isConnected().prepareStatement("SELECT * FROM new_print_dashboard_2 WHERE date_ BETWEEN '" + dateB(d1) + "' AND '" + dateB(d2) + "'");
