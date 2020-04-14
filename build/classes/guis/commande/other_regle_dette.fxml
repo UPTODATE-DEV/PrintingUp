@@ -12,14 +12,14 @@
 
 <VBox xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.other_regle_detteController">
    <children>
-      <AnchorPane prefHeight="191.0" prefWidth="181.0">
+      <AnchorPane prefHeight="191.0" prefWidth="288.0">
          <children>
-            <AnchorPane layoutX="4.0" layoutY="4.0" prefHeight="180.0" prefWidth="172.0" style="-fx-background-color: #fff; -fx-background-radius: 1px;">
+            <AnchorPane layoutX="4.0" layoutY="4.0" prefHeight="180.0" prefWidth="281.0" style="-fx-background-color: #fff; -fx-background-radius: 1px;">
                <children>
-                  <MaterialDesignIconView fill="#33b5e5" glyphName="RADAR" layoutX="78.0" layoutY="23.0" size="26" />
-                  <VBox layoutY="19.0" prefHeight="94.0" prefWidth="172.0">
+                  <MaterialDesignIconView fill="#33b5e5" glyphName="RADAR" layoutX="127.0" layoutY="23.0" size="26" AnchorPane.leftAnchor="127.5" AnchorPane.rightAnchor="127.5" />
+                  <VBox layoutY="19.0" prefHeight="97.0" prefWidth="281.0">
                      <children>
-                        <Label fx:id="Tfd_nom" alignment="CENTER" prefHeight="17.0" prefWidth="181.0" text="AKILIMALI-CIZUNGU">
+                        <Label fx:id="Tfd_nom" alignment="CENTER" prefHeight="17.0" prefWidth="291.0" text="AKILIMALI-CIZUNGU">
                            <VBox.margin>
                               <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                            </VBox.margin>
@@ -27,12 +27,12 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="181.0" text="Montant à payé" textFill="#9a9898">
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="281.0" text="Montant à payé" textFill="#9a9898">
                            <VBox.margin>
                               <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                            </VBox.margin>
                         </Label>
-                        <Label fx:id="Tfddate" alignment="CENTER" prefHeight="17.0" prefWidth="181.0" text="2100000" textFill="#121111">
+                        <Label fx:id="Tfddate" alignment="CENTER" prefHeight="17.0" prefWidth="288.0" text="2100000" textFill="#121111">
                            <VBox.margin>
                               <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                            </VBox.margin>
@@ -40,8 +40,8 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="174.0" text="Reste à payé" textFill="#9a9898" />
-                        <Label fx:id="Tfd_montant_a_paye" alignment="CENTER" prefHeight="17.0" prefWidth="174.0" text="500000" textFill="#bf4706">
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="295.0" text="Reste à payé" textFill="#9a9898" />
+                        <Label fx:id="Tfd_montant_a_paye" alignment="CENTER" prefHeight="17.0" prefWidth="291.0" text="500000" textFill="#bf4706">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -49,14 +49,19 @@
                      </children>
                   </VBox>
                   <Label fx:id="Tfd_id" layoutX="7.0" layoutY="6.0" prefHeight="17.0" prefWidth="14.0" text="0" textFill="WHITE" />
-                  <TextField fx:id="Tfd_montant" alignment="CENTER" layoutX="16.0" layoutY="117.0" prefHeight="25.0" prefWidth="145.0" promptText="Entrer le montant..............." style="-fx-background-color: Transparent; -fx-border-width: 0.25px; -fx-border-color: #9a9898; -fx-background-radius: 2px;" text="0.0" />
+                  <TextField fx:id="Tfd_montant" alignment="CENTER" layoutX="50.0" layoutY="119.0" prefHeight="27.0" prefWidth="187.0" promptText="Entrer le montant..............." style="-fx-background-color: Transparent; -fx-border-width: 0.25px; -fx-border-color: #9a9898; -fx-background-radius: 2px;" text="0.0" />
                   <Text fx:id="massage" layoutX="17.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="40.13671875" />
                   <Label fx:id="alert_paiement" layoutX="17.0" layoutY="151.0" prefHeight="17.0" prefWidth="25.0" />
-                  <Button fx:id="btn_valider" layoutX="57.0" layoutY="149.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #33B5E5;" text="Valider" textFill="WHITE">
+                  <Button fx:id="btn_valider" layoutX="108.0" layoutY="151.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #33B5E5;" text="Valider" textFill="WHITE">
                      <graphic>
                         <MaterialDesignIconView fill="WHITE" glyphName="UPLOAD" />
                      </graphic>
                   </Button>
+                  <Label layoutX="3.0" layoutY="5.0" text="Regle la dette" textFill="#ddd4d4">
+                     <graphic>
+                        <MaterialDesignIconView fill="#cac3c3" glyphName="FORMAT_PAINT" />
+                     </graphic>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
