@@ -21,7 +21,7 @@
             <Text fill="#464545" layoutX="88.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Niveau compte" />
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="28.0" prefHeight="76.0" prefWidth="80.0" style="-fx-border-radius: 50px; -fx-border-color: #eff2f8; -fx-border-width: 1px;">
                <graphic>
-                  <FontAwesomeIconView fill="#779dcf" glyphName="QRCODE" size="45" />
+                  <FontAwesomeIconView fill="#ececec" glyphName="USER" size="45" />
                </graphic>
             </Label>
             <Label layoutX="140.0" layoutY="73.0" prefHeight="17.0" prefWidth="24.0" text="Tel :" textFill="#9a9a9a" />

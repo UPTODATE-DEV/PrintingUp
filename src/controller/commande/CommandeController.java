@@ -51,6 +51,7 @@ public class CommandeController implements Initializable {
     @FXML
     private TextField Tfl_search;
     public static VBox vb_commande1;
+    @FXML
     private AnchorPane p31;
     private Label lbl_dette;
     private Label lbl_attente;
@@ -81,6 +82,12 @@ public class CommandeController implements Initializable {
     private Text s_commande_rappor;
     @FXML
     private GridPane menu_ok;
+    @FXML
+    private JFXButton btn_attent1;
+    @FXML
+    private MaterialDesignIconView i31;
+    @FXML
+    private JFXButton btAdd;
 
     /**
      * Initializes the controller class.
@@ -101,6 +108,7 @@ public class CommandeController implements Initializable {
                 init(1);
                 recherche();
                 menu_ok.setVisible(false);
+                btn_commande_.setVisible(false);
                 //i1.setVisible(false);
             } else {
                 s_commande_rappor.setText("Commande");
@@ -128,19 +136,19 @@ public class CommandeController implements Initializable {
             try {
                 switch (x) {
                     case 1:
-                        getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 4);
+                        getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 2);
                         break;
                     case 2:
-                        getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(4, "SELECT * FROM new_test_encours Where statis='Fin'"), LOAD_PRINT_FIN, 4);
+                        getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(4, "SELECT * FROM new_test_encours Where statis='Fin'"), LOAD_PRINT_FIN, 2);
                         break;
                     case 3:
-                        getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(4, "SELECT * FROM new_test_encours where statis='Attente'"), LOAD_PRINT_LISTDETTE, 4);
+                        getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(4, "SELECT * FROM new_test_encours where statis='Attente'"), LOAD_PRINT_LISTDETTE, 2);
                         break;
                     case 4:
-                        getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(5, "SELECT * FROM client_dette"), PRINT_PAIEMENT_DETTE, 4);
+                        getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(5, "SELECT * FROM client_dette"), PRINT_PAIEMENT_DETTE, 2);
                         break;
                     case 5:
-                        getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(4, "SELECT * FROM new_test_encours where statis='Encours'"), LOAD_PRINT_ENCOURS, 4);
+                        getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(4, "SELECT * FROM new_test_encours where statis='Encours'"), LOAD_PRINT_ENCOURS, 2);
                         break;
                     case 6:
 
@@ -270,6 +278,10 @@ public class CommandeController implements Initializable {
             }
 
         });
+    }
+
+    @FXML
+    private void synchro(ActionEvent event) {
     }
 
 }

@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="84.0" prefWidth="181.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.orther_printDisponible">
+<AnchorPane prefHeight="98.0" prefWidth="288.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.orther_printDisponible">
    <children>
       <AnchorPane layoutX="6.0" layoutY="3.0" prefHeight="95.0" prefWidth="169.0" style="-fx-background-color: #fff; -fx-background-radius: 1px; -fx-border-color: #EFB29B; -fx-border-width: 0.5px;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="3.0">
          <children>
-            <MaterialDesignIconView fill="#ed8c67" glyphName="VECTOR_CIRCLE" layoutX="76.0" layoutY="21.0" size="20" />
-            <VBox layoutX="4.0" layoutY="17.0" prefHeight="63.0" prefWidth="163.0">
+            <MaterialDesignIconView fill="#42b5e3" glyphName="VECTOR_CIRCLE" layoutX="128.0" layoutY="21.0" size="20" />
+            <VBox layoutX="4.0" layoutY="17.0" prefHeight="63.0" prefWidth="269.0">
                <children>
-                  <Label fx:id="Tfd_nom" alignment="CENTER" prefHeight="17.0" prefWidth="181.0" text="AKILIMALI-CIZUNGU">
+                  <Label fx:id="Tfd_nom" alignment="CENTER" prefHeight="17.0" prefWidth="274.0" text="AKILIMALI-CIZUNGU">
                      <VBox.margin>
                         <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </VBox.margin>
@@ -24,7 +24,7 @@
                         <Font name="System Bold" size="9.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbldateFin" alignment="CENTER" prefHeight="17.0" prefWidth="181.0" text="2020.02.27 00:00:00" textFill="#9a9898">
+                  <Label fx:id="lbldateFin" alignment="CENTER" prefHeight="17.0" prefWidth="277.0" text="2020.02.27 00:00:00" textFill="#9a9898">
                      <VBox.margin>
                         <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </VBox.margin>
@@ -32,7 +32,7 @@
                         <Font size="10.0" />
                      </font>
                   </Label>
-                  <Label fx:id="Tfddate" alignment="CENTER" prefHeight="17.0" prefWidth="181.0" text="2020.02.27 00:00:00" textFill="#9a9898">
+                  <Label fx:id="Tfddate" alignment="CENTER" prefHeight="17.0" prefWidth="270.0" text="2020.02.27 00:00:00" textFill="#9a9898">
                      <VBox.margin>
                         <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </VBox.margin>
@@ -45,7 +45,7 @@
             <Label fx:id="Tfd_id" layoutX="9.0" layoutY="5.0" text="0" textFill="WHITE" />
          </children>
       </AnchorPane>
-      <Button fx:id="btn_livre" layoutX="145.0" layoutY="57.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="28.0" style="-fx-background-color: #FF8E1B;">
+      <Button fx:id="btn_livre" layoutX="250.0" layoutY="57.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="28.0" style="-fx-background-color: #42B5E3;">
          <graphic>
             <MaterialDesignIconView fill="WHITE" glyphName="CHECK_CIRCLE" />
          </graphic>

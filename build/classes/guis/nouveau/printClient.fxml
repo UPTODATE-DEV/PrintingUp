@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="136.0" prefWidth="187.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.nouveau.PrintClientController">
+<AnchorPane prefHeight="136.0" prefWidth="212.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.nouveau.PrintClientController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="131.0" prefWidth="180.0" style="-fx-background-color: #fff; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+      <AnchorPane prefHeight="131.0" prefWidth="179.0" style="-fx-background-color: #fff; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
          <children>
-            <Label fx:id="Lfb_position" alignment="CENTER" layoutX="75.0" layoutY="8.0" prefHeight="36.0" prefWidth="37.0" style="-fx-background-radius: 4em; -fx-background-color: #62B6E7; -fx-border-width: 25px;" text="A" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="71.0">
+            <Label fx:id="Lfb_position" alignment="CENTER" layoutX="80.0" layoutY="1.0" prefHeight="43.0" prefWidth="47.0" style="-fx-background-radius: 4em; -fx-background-color: #62B6E7; -fx-border-width: 25px;" text="A" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="77.0">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -46,12 +46,12 @@
                </children>
             </VBox>
             <Label fx:id="id_modifier" layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="47.0" text="0" textFill="WHITE" />
-            <MaterialDesignIconView fx:id="updatebtn" fill="#50899e" glyphName="PENCIL" layoutX="159.0" layoutY="20.0" size="18">
+            <MaterialDesignIconView fx:id="updatebtn" fill="#50899e" glyphName="PENCIL" layoutX="180.0" layoutY="21.0" size="18">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MaterialDesignIconView>
-            <FontAwesomeIconView fx:id="deletebtn" fill="#dc511d" glyphName="TRASH_ALT" layoutX="142.0" layoutY="19.0" size="18" />
+            <FontAwesomeIconView fx:id="deletebtn" fill="#dc511d" glyphName="TRASH_ALT" layoutX="163.0" layoutY="20.0" size="18" />
          </children>
       </AnchorPane>
    </children>

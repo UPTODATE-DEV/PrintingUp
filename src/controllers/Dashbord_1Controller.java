@@ -58,7 +58,7 @@ public class Dashbord_1Controller implements Initializable {
             pieChat(1, null, null);
             staticView.setData(data);
             //  stackedBar.getData().add(series);
-            getInstanceL().ScrollwithHBX(vb_serce, getIns().getService(7, "SELECT * FROM new_print_dashboard_2"), PRINT_SERVICE, 4);
+            getInstanceL().ScrollwithHBX(vb_serce, getIns().getService(7, "SELECT * FROM new_print_dashboard_2"), PRINT_SERVICE, 3);
         } catch (SQLException | IOException ex) {
             Logger.getLogger(Dashbord_1Controller.class.getName()).log(Level.SEVERE, null, ex);
         }

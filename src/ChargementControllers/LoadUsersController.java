@@ -91,9 +91,7 @@ public class LoadUsersController implements Initializable {
                     mail_.setText(rst.getString("mail"));
                     txttelephone_.setText(rst.getString("tel"));
                 }
-            } catch (IOException ex) {
-                Logger.getLogger(LoadUsersController.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
+            } catch (IOException | SQLException ex) {
                 Logger.getLogger(LoadUsersController.class.getName()).log(Level.SEVERE, null, ex);
             }
         });

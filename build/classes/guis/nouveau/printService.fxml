@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="137.0" prefWidth="201.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.nouveau.PrintServiceController">
+<AnchorPane prefHeight="137.0" prefWidth="212.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.nouveau.PrintServiceController">
    <children>
       <AnchorPane id="AnchorPane" layoutX="6.0" layoutY="4.0" prefHeight="129.0" prefWidth="195.0" style="-fx-background-color: #fff; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="4.0">
          <children>

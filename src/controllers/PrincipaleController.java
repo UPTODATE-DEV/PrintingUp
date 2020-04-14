@@ -135,7 +135,7 @@ public class PrincipaleController implements Initializable {
     void evenememet() {
         btn_refresh.setOnMouseClicked((e) -> {
             try {
-                getInstanceL().ScrollwithHBX(vb_serce, getIns().getService(7, "SELECT * FROM new_print_dashboard_2 WHERE date_ BETWEEN '" + dateB(dteP) + "' AND '" + dateB(dteFin) + "'"), PRINT_SERVICE, 4);
+                getInstanceL().ScrollwithHBX(vb_serce, getIns().getService(7, "SELECT * FROM new_print_dashboard_2 WHERE date_ BETWEEN '" + dateB(dteP) + "' AND '" + dateB(dteFin) + "'"), PRINT_SERVICE, 3);
                 // new Dashbord_1Controller().pieChat(2, dteP, dteP1);
             } catch (IOException | SQLException ex) {
                 Logger.getLogger(PrincipaleController.class.getName()).log(Level.SEVERE, null, ex);

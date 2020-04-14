@@ -148,7 +148,7 @@ public class login implements Initializable {
         login.setOnMouseClicked((e) -> {
             if (validPassword() && validUsername()) {
                 ((Stage) fenetreLogin.getScene().getWindow()).close();
-                CallWindow.Callwindow.GetInstance().call(PRINCIPAL, "UP-PRINT", 0, "/media/Ativo 1@3x.png");
+                CallWindow.Callwindow.GetInstance().call(PRINCIPAL, "UP-PRINT", 0, "/icons/uptodate.png");
             }
 
         });

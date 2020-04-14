@@ -16,7 +16,7 @@
          <children>
             <AnchorPane layoutX="4.0" layoutY="4.0" prefHeight="180.0" prefWidth="172.0" style="-fx-background-color: #fff; -fx-background-radius: 1px;">
                <children>
-                  <MaterialDesignIconView fill="#ed8c67" glyphName="RADAR" layoutX="78.0" layoutY="23.0" size="26" />
+                  <MaterialDesignIconView fill="#33b5e5" glyphName="RADAR" layoutX="78.0" layoutY="23.0" size="26" />
                   <VBox layoutY="19.0" prefHeight="94.0" prefWidth="172.0">
                      <children>
                         <Label fx:id="Tfd_nom" alignment="CENTER" prefHeight="17.0" prefWidth="181.0" text="AKILIMALI-CIZUNGU">
@@ -52,7 +52,7 @@
                   <TextField fx:id="Tfd_montant" alignment="CENTER" layoutX="16.0" layoutY="117.0" prefHeight="25.0" prefWidth="145.0" promptText="Entrer le montant..............." style="-fx-background-color: Transparent; -fx-border-width: 0.25px; -fx-border-color: #9a9898; -fx-background-radius: 2px;" text="0.0" />
                   <Text fx:id="massage" layoutX="17.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="40.13671875" />
                   <Label fx:id="alert_paiement" layoutX="17.0" layoutY="151.0" prefHeight="17.0" prefWidth="25.0" />
-                  <Button fx:id="btn_valider" layoutX="57.0" layoutY="149.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FF8E1B;" text="Valider" textFill="WHITE">
+                  <Button fx:id="btn_valider" layoutX="57.0" layoutY="149.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #33B5E5;" text="Valider" textFill="WHITE">
                      <graphic>
                         <MaterialDesignIconView fill="WHITE" glyphName="UPLOAD" />
                      </graphic>

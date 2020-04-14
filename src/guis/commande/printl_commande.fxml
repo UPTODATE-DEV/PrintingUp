@@ -34,7 +34,7 @@
          <graphic>
             <FontAwesomeIconView fill="#f3acac" glyphName="HOURGLASS_1" />
          </graphic></Label>
-      <Button fx:id="btn_ok" layoutX="326.0" layoutY="15.0" mnemonicParsing="false" onAction="#Traitement" prefHeight="17.0" prefWidth="26.0" style="-fx-background-color: Transparent; -fx-background-color: #DC501C;">
+      <Button fx:id="btn_ok" layoutX="326.0" layoutY="15.0" mnemonicParsing="false" onAction="#Traitement" prefHeight="17.0" prefWidth="26.0" style="-fx-background-color: Transparent; -fx-background-color: #33B5E5;">
          <graphic>
             <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" size="12" />
          </graphic>
