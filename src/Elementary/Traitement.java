@@ -36,8 +36,7 @@ public class Traitement extends Connexion {
 
     public PreparedStatement ps;
     public static final int status = 0;
-  
-  
+
     public boolean getprepare(String query) throws SQLException {
         ps = Connexion.isConnected().prepareCall(query);
         int x = ps.executeUpdate();
@@ -48,8 +47,8 @@ public class Traitement extends Connexion {
         return false;
 
     }
-      
-     public static String pwd_crypte_md5(String password) {
+
+    public static String pwd_crypte_md5(String password) {
         byte[] uniquekey = password.getBytes();
         byte[] hash = null;
         try {
@@ -208,8 +207,8 @@ public class Traitement extends Connexion {
         };
         d2.setDayCellFactory(dayCellFactory);
     }
-    
-        static String genre;
+
+    static String genre;
     static MaterialDesignIconView designIcon;
 
     /**

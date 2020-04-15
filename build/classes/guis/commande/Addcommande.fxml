@@ -161,7 +161,7 @@
       </JFXButton>
       <ScrollPane layoutX="361.0" layoutY="103.0" AnchorPane.leftAnchor="361.0" AnchorPane.rightAnchor="10.0">
          <content>
-            <VBox fx:id="vb_" prefHeight="285.0" prefWidth="358.0" style="-fx-background-color: #fff;" />
+            <VBox fx:id="vb_" prefHeight="285.0" prefWidth="353.0" style="-fx-background-color: #fff;" />
          </content>
       </ScrollPane>
       <JFXButton fx:id="btn_print" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="176.0" layoutY="349.0" onAction="#Traitement_commande" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #176FE5;" text="Imprimer" textFill="WHITE" />

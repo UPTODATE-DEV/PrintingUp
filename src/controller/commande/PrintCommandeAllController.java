@@ -42,12 +42,11 @@ public class PrintCommandeAllController implements Initializable {
     private Label lblcmd;
     @FXML
     private Label alert_paiement;
-    @FXML
     private Label lbl_informa;
     @FXML
-    private AnchorPane pan_infor;
-    @FXML
     private Label id_commande;
+    @FXML
+    private Label id_commande1;
 
     /**
      * Initializes the controller class.
@@ -56,7 +55,7 @@ public class PrintCommandeAllController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         initFild();
-        lbl_informa.setGraphic(Mywindows.getInstanceT().font("-fx-fill:#16C75D", MaterialDesignIcon.INFORMATION));
+      //  lbl_informa.setGraphic(Mywindows.getInstanceT().font("-fx-fill:#16C75D", MaterialDesignIcon.INFORMATION));
 
     }
     String str;
@@ -80,13 +79,6 @@ public class PrintCommandeAllController implements Initializable {
         }
     }
 
-    @FXML
-    private void call_informande(MouseEvent event) throws IOException {
-//        Other_commandeController.lab = id_commande;
-//        // popOverMenu(pan_infor, getClass().getResource(OTHEINFO), PopOver.ArrowLocation.TOP_CENTER);
-//        Mywindows.showFormDialog(getClass().getResource(OTHEINFO), JFXDialog.DialogTransition.CENTER, 264, 500);
-
-    }
 
     void eventDetail() {
         lblcmd.setOnMouseClicked((e) -> {

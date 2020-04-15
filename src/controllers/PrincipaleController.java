@@ -150,7 +150,7 @@ public class PrincipaleController implements Initializable {
         bool = true;
         getInstanceL().IsSeleted(s_Rapport, s_Ccommande, s_new, s_dash, s_parametre);
         getInstanceL().SelectDataFor(p5, p3, p1, p2, p4);
-        getInstanceL().makejira(cotent, getClass().getResource(COMMANDE));
+        getInstanceL().makejira(cotent, getClass().getResource(LOAD_RAPPORT));
 
     }
 

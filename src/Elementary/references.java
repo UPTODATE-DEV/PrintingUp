@@ -53,7 +53,7 @@ public class references {
     public static final String PRINT_CLIENT = "/guis/nouveau/printClient.fxml";
     public static final String ADDCOMMANDE = "/guis/commande/Addcommande.fxml";
     public static final String PRINT_CMD = "/guis/commande/PrintCommandeAll.fxml";
-
+    public static final String LOAD_RAPPORT="/guis/commande/rapport_vente.fxml";
     public static final String PRINT_DETTE = "/guis/commande/orther_paiement_dette.fxml";
     public static final String PRINT_PAIEMENT_DETTE = "/guis/commande/other_regle_dette.fxml";
 
@@ -67,6 +67,7 @@ public class references {
     public static final String ENTRER_AGENT = "/parametre/user_detail.fxml";
     public static final String LOAD_UTILISATEUR = "/c_addForms/loadUsers.fxml";
     public static final String LOAD_USER = "/parametre/update_user.fxml";
+    
 
     /**
      * *
