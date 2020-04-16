@@ -62,13 +62,12 @@
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <AnchorPane fx:id="p31" prefHeight="47.0" prefWidth="69.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+                        <AnchorPane fx:id="p_commande" prefHeight="47.0" prefWidth="69.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                            <effect>
                               <DropShadow color="#d0d0d0" />
                            </effect>
                            <children>
-                              <MaterialDesignIconView fx:id="i31" fill="#f24040" glyphName="RESIZE_BOTTOM_RIGHT" layoutX="51.0" layoutY="10.0" />
-                              <JFXButton fx:id="btn_attent1" alignment="CENTER" contentDisplay="TOP" layoutY="-3.0" onAction="#Call_windows" prefHeight="47.0" prefWidth="66.0" style="-fx-background-radius: 5px;" text="Afficher" textFill="#c7c7d4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="0.0">
+                              <JFXButton fx:id="btn_commande" alignment="CENTER" contentDisplay="TOP" layoutY="-3.0" onAction="#Call_windows" prefHeight="47.0" prefWidth="69.0" text="Afficher" textFill="#c7c7d4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="0.0">
                                  <font>
                                     <Font name="Century Gothic Bold" size="10.0" />
                                  </font>
@@ -76,16 +75,15 @@
                                     <MaterialDesignIconView fill="#c7c7d4" glyphName="MESSAGE_DRAW" size="17" />
                                  </graphic>
                               </JFXButton>
+                              <MaterialDesignIconView fx:id="i31" fill="#f24040" glyphName="RESIZE_BOTTOM_RIGHT" layoutX="56.0" layoutY="10.0" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="p3" prefHeight="47.0" prefWidth="71.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="1">
+                        <AnchorPane fx:id="p3" prefHeight="47.0" prefWidth="71.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" stylesheets="@../../css/bootstrap.css" GridPane.columnIndex="1">
                            <effect>
                               <DropShadow color="#d0d0d0" />
                            </effect>
                            <children>
-                              <MaterialDesignIconView fx:id="i3" fill="#f24040" glyphName="INFORMATION_VARIANT" layoutY="19.0" size="20" />
-                              <MaterialDesignIconView glyphName="RESIZE_BOTTOM_RIGHT" layoutX="54.0" layoutY="10.0" />
-                              <JFXButton fx:id="btn_attent" alignment="CENTER" contentDisplay="TOP" layoutY="-3.0" onAction="#Call_windows" prefHeight="47.0" prefWidth="66.0" style="-fx-background-radius: 5px;" text="En attente..." textFill="#c7c7d4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+                              <JFXButton fx:id="btn_attent" alignment="CENTER" contentDisplay="TOP" layoutY="-3.0" onAction="#Call_windows" prefHeight="47.0" prefWidth="71.0" text="En attente..." textFill="#c7c7d4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <font>
                                     <Font name="Century Gothic Bold" size="10.0" />
                                  </font>
@@ -93,16 +91,16 @@
                                     <MaterialIconView fill="#c7c7d4" glyphName="STREETVIEW" size="17" />
                                  </graphic>
                               </JFXButton>
+                              <MaterialDesignIconView fx:id="i3" fill="#f24040" glyphName="INFORMATION_VARIANT" layoutX="-1.0" layoutY="17.0" size="20" wrappingWidth="19.99998900294304" />
+                              <MaterialDesignIconView glyphName="RESIZE_BOTTOM_RIGHT" layoutX="54.0" layoutY="10.0" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="p4" prefHeight="49.0" prefWidth="82.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="2">
+                        <AnchorPane fx:id="p4" prefHeight="49.0" prefWidth="82.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" stylesheets="@../../css/bootstrap.css" GridPane.columnIndex="2">
                            <effect>
                               <DropShadow color="#d0d0d0" />
                            </effect>
                            <children>
-                              <MaterialDesignIconView fx:id="i4" fill="#ee0d0d" glyphName="INFORMATION_VARIANT" layoutX="1.0" layoutY="21.0" size="20" />
-                              <MaterialDesignIconView glyphName="RESIZE_BOTTOM_RIGHT" layoutX="48.0" layoutY="12.0" />
-                              <JFXButton fx:id="btn_encours" alignment="CENTER" contentDisplay="TOP" layoutY="-3.0" onAction="#Call_windows" prefHeight="49.0" prefWidth="66.0" style="-fx-background-radius: 5px;" text="En cours..." textFill="#c7c7d4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                              <JFXButton fx:id="btn_encours" alignment="CENTER" contentDisplay="TOP" layoutY="-3.0" onAction="#Call_windows" prefHeight="49.0" prefWidth="66.0" text="En cours..." textFill="#c7c7d4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                                  <font>
                                     <Font name="Century Gothic Bold" size="10.0" />
                                  </font>
@@ -110,16 +108,16 @@
                                     <Icons525View fill="#c7c7d4" glyphName="SNOWFLAKE" size="18" />
                                  </graphic>
                               </JFXButton>
+                              <MaterialDesignIconView fx:id="i4" fill="#ee0d0d" glyphName="INFORMATION_VARIANT" layoutX="1.0" layoutY="18.0" size="20" />
+                              <MaterialDesignIconView glyphName="RESIZE_BOTTOM_RIGHT" layoutX="60.0" layoutY="11.0" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="p5" prefHeight="47.0" prefWidth="144.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="3">
+                        <AnchorPane fx:id="p5" prefHeight="47.0" prefWidth="144.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" stylesheets="@../../css/bootstrap.css" GridPane.columnIndex="3">
                            <effect>
                               <DropShadow color="#d0d0d0" />
                            </effect>
                            <children>
-                              <MaterialDesignIconView glyphName="RESIZE_BOTTOM_RIGHT" layoutX="48.0" layoutY="12.0" />
-                              <MaterialDesignIconView fx:id="i5" fill="#f93030" glyphName="INFORMATION_VARIANT" layoutX="1.0" layoutY="20.0" size="20" />
-                              <JFXButton fx:id="btn_disponible" alignment="CENTER" contentDisplay="TOP" onAction="#Call_windows" prefHeight="47.0" prefWidth="68.0" style="-fx-background-radius: 5px;" text="Disponible..." textFill="#c7c7d4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                              <JFXButton fx:id="btn_disponible" alignment="CENTER" contentDisplay="TOP" onAction="#Call_windows" prefHeight="47.0" prefWidth="68.0" text="Disponible..." textFill="#c7c7d4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                                  <font>
                                     <Font name="Century Gothic Bold" size="10.0" />
                                  </font>
@@ -127,16 +125,16 @@
                                     <Icons525View fill="#c7c7d4" glyphName="PASTE" size="18" />
                                  </graphic>
                               </JFXButton>
+                              <MaterialDesignIconView glyphName="RESIZE_BOTTOM_RIGHT" layoutX="59.0" layoutY="12.0" />
+                              <MaterialDesignIconView fx:id="i5" fill="#f93030" glyphName="INFORMATION_VARIANT" layoutX="1.0" layoutY="18.0" size="20" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="p2" prefHeight="47.0" prefWidth="85.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="4">
+                        <AnchorPane fx:id="p2" prefHeight="47.0" prefWidth="85.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" stylesheets="@../../css/bootstrap.css" GridPane.columnIndex="4">
                            <effect>
                               <DropShadow color="#d0d0d0" />
                            </effect>
                            <children>
-                              <MaterialDesignIconView glyphName="RESIZE_BOTTOM_RIGHT" layoutX="48.0" layoutY="12.0" />
-                              <MaterialDesignIconView fx:id="i2" fill="#ec3232" glyphName="INFORMATION_VARIANT" layoutX="-2.0" layoutY="17.0" size="20" />
-                              <JFXButton fx:id="btn_dette" alignment="CENTER" contentDisplay="TOP" layoutY="-1.0" onAction="#Call_windows" prefHeight="47.0" prefWidth="73.0" style="-fx-background-radius: 5px;" text="Dette..." textFill="#c7c7d4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <JFXButton fx:id="btn_dette" alignment="CENTER" contentDisplay="TOP" layoutY="-1.0" onAction="#Call_windows" prefHeight="47.0" prefWidth="73.0" text="Dette..." textFill="#c7c7d4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <font>
                                     <Font name="Century Gothic Bold" size="10.0" />
                                  </font>
@@ -144,6 +142,8 @@
                                     <Icons525View fill="#c7c7d4" glyphName="IMPORT" size="18" />
                                  </graphic>
                               </JFXButton>
+                              <MaterialDesignIconView glyphName="RESIZE_BOTTOM_RIGHT" layoutX="59.0" layoutY="12.0" />
+                              <MaterialDesignIconView fx:id="i2" fill="#ec3232" glyphName="INFORMATION_VARIANT" layoutX="-2.0" layoutY="17.0" size="20" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -175,7 +175,7 @@
       </AnchorPane>
       <ScrollPane layoutX="251.0" layoutY="130.0" prefHeight="543.0" prefWidth="484.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="130.0">
          <content>
-            <VBox fx:id="vb_commande" prefHeight="543.0" prefWidth="484.0" style="-fx-background-color: #F5F6FA; -fx-background-radius: 5px;" />
+            <VBox fx:id="vb_commande" layoutX="3.0" prefHeight="543.0" prefWidth="484.0" style="-fx-background-color: #F5F6FA; -fx-background-radius: 5px;" />
          </content>
       </ScrollPane>
       <HBox layoutX="24.0" layoutY="95.0" prefHeight="27.0" prefWidth="243.0">

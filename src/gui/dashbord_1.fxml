@@ -101,7 +101,7 @@
                </children></VBox>
          </children>
       </AnchorPane>
-      <GNCalendarTile layoutX="455.0" layoutY="365.0" prefHeight="197.0" prefWidth="286.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="119.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="364.0">
+      <GNCalendarTile layoutX="455.0" layoutY="365.0" prefHeight="197.0" prefWidth="286.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" styleClass="gn-drawer-menu" stylesheets="@../css/dark.css" AnchorPane.bottomAnchor="119.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="364.0">
          <effect>
             <DropShadow color="#cdcdcd" />
          </effect>

@@ -21,6 +21,10 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
+import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -51,8 +55,6 @@ public class CommandeController implements Initializable {
     @FXML
     private TextField Tfl_search;
     public static VBox vb_commande1;
-    @FXML
-    private AnchorPane p31;
     private Label lbl_dette;
     private Label lbl_attente;
     private Label lblEncours;
@@ -83,11 +85,13 @@ public class CommandeController implements Initializable {
     @FXML
     private GridPane menu_ok;
     @FXML
-    private JFXButton btn_attent1;
-    @FXML
     private MaterialDesignIconView i31;
     @FXML
     private JFXButton btAdd;
+    @FXML
+    private AnchorPane p_commande;
+    @FXML
+    private JFXButton btn_commande;
 
     /**
      * Initializes the controller class.
@@ -97,32 +101,26 @@ public class CommandeController implements Initializable {
         // TODO 
 
         if (status == 1) {
-            if (bool == true) {
-                s_commande_rappor.setText("Rapport");
-                btn_dette.setVisible(false);
-                btn_attent.setVisible(false);
-                btn_encours.setVisible(false);
-                btn_disponible.setVisible(false);
-//                getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
-//                getInstanceL().SelectDataFor1(btn_commande1, btn_dette, btn_attent, btn_encours, btn_disponible);
-                init(1);
+//            if (bool == true) {
+//                s_commande_rappor.setText("Rapport");
+//                btn_dette.setVisible(false);
+//                btn_attent.setVisible(false);
+//                btn_encours.setVisible(false);
+//                btn_disponible.setVisible(false);
+////                getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
+////                getInstanceL().SelectDataFor1(btn_commande1, btn_dette, btn_attent, btn_encours, btn_disponible);
+//                init(1);
                 recherche();
-                menu_ok.setVisible(false);
-                btn_commande_.setVisible(false);
-                //i1.setVisible(false);
-            } else {
-                s_commande_rappor.setText("Commande");
-                menu_ok.setVisible(true);
-                btn_dette.setVisible(true);
-                btn_attent.setVisible(true);
-                btn_encours.setVisible(true);
-                btn_disponible.setVisible(true);
-                getInstanceL().SelectDataFor(p3, p2, p4, p5);
-                getInstanceL().SelectDataFor1(btn_attent, btn_dette, btn_encours, btn_disponible);
-                init(3);
-                initTread();
-
-            }
+//                menu_ok.setVisible(false);
+//                btn_commande_.setVisible(false);
+//                //i1.setVisible(false);
+//            } else {
+            s_commande_rappor.setText("Commande");
+            getInstanceL().SelectDataFor(p_commande, p3, p2, p4, p5);
+            getInstanceL().SelectDataFor1(btn_commande, btn_attent, btn_dette, btn_encours, btn_disponible);
+            init(1);
+            // DOSynchro();
+            initTread1();
 
         }
 
@@ -192,7 +190,7 @@ public class CommandeController implements Initializable {
         }
     }
 
-    public void initTread() {
+    public void initTread1() {
         Thread clock;
         clock = new Thread() {
             @Override
@@ -207,7 +205,7 @@ public class CommandeController implements Initializable {
                     }
 
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(3000);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -217,40 +215,82 @@ public class CommandeController implements Initializable {
         clock.start();
     }
 
+//    private void DOSynchro() {
+//        final Service<Void> calculateService = new Service<Void>() {
+//
+//            @Override
+//            protected Task<Void> createTask() {
+//                return new Task<Void>() {
+//
+//                    @Override
+//                    protected Void call() throws Exception {
+//                        while (true) {
+//                            try {
+//                                initTreed();
+//                                System.out.println("En cours...");
+//                            } catch (Exception ex) {
+//                                System.out.println(ex.getMessage());
+//                            }
+//
+//                        }
+//                    }
+//                };
+//            }
+//        };
+//        calculateService.stateProperty().addListener((ObservableValue<? extends Worker.State> observableValue, Worker.State oldValue, Worker.State newValue) -> {
+//            switch (newValue) {
+//                case FAILED:
+//                    System.out.println("Interrupu traitement \nRelance en cours.....");
+//                    DOSynchro();
+//                    break;
+//                case CANCELLED:
+//                    System.out.println("cancelled traitement \nRelance en cours.....");
+//                    DOSynchro();
+//                    break;
+//                case SUCCEEDED:
+//                    System.out.println("Correct traitement \nRelance en cours.....");
+//                    DOSynchro();
+//                    break;
+//            }
+//        });
+//        calculateService.start();
+//    }
     @FXML
     private void Call_windows(ActionEvent event) throws IOException {
         if (event.getSource() == btn_dette) {
             //  popOverMenu(p2, getClass().getResource(LOAD_PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
             // getInstanceL().SelectDataFor(p2, p1, p31, p3);
-            getInstanceL().SelectDataFor(p2, p3, p4, p5);
-            getInstanceL().SelectDataFor1(btn_dette, btn_attent, btn_encours, btn_disponible);
+            getInstanceL().SelectDataFor(p2, p3, p4, p5, p_commande);
+            getInstanceL().SelectDataFor1(btn_dette, btn_attent, btn_encours, btn_disponible, btn_commande);
             status = 2;
             init(4);
         } else if (event.getSource() == btn_attent) {
             // popOverMenu(p1, getClass().getResource(PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
-            getInstanceL().SelectDataFor(p3, p2, p4, p5);
-            getInstanceL().SelectDataFor1(btn_attent, btn_dette, btn_encours, btn_disponible);
+            getInstanceL().SelectDataFor(p3, p2, p4, p5, p_commande);
+            getInstanceL().SelectDataFor1(btn_attent, btn_dette, btn_encours, btn_disponible, btn_commande);
             init(3);
             status = 3;
         } else if (event.getSource() == btn_encours) {
             //  popOverMenu(p31, getClass().getResource(LOAD_ENCOURS), PopOver.ArrowLocation.TOP_CENTER);
-            getInstanceL().SelectDataFor(p4, p3, p2, p5);
-            getInstanceL().SelectDataFor1(btn_encours, btn_attent, btn_dette, btn_disponible);
+            getInstanceL().SelectDataFor(p4, p3, p2, p5, p_commande);
+            getInstanceL().SelectDataFor1(btn_encours, btn_attent, btn_dette, btn_disponible, btn_commande);
             status = 4;
             init(5);
         } else if (event.getSource() == btn_disponible) {
             // popOverMenu(p3, getClass().getResource(LOAD_PRINT_DISPONIBLE), PopOver.ArrowLocation.TOP_CENTER);
-            getInstanceL().SelectDataFor(p5, p4, p3, p2);
-            getInstanceL().SelectDataFor1(btn_disponible, btn_encours, btn_attent, btn_dette);
+            getInstanceL().SelectDataFor(p5, p4, p3, p2, p_commande);
+            getInstanceL().SelectDataFor1(btn_disponible, btn_encours, btn_attent, btn_dette, btn_commande);
             status = 5;
             init(2);
+        } else if (event.getSource() == btn_commande) {
+            getInstanceL().SelectDataFor(p_commande, p2, p3, p4, p5);
+            getInstanceL().SelectDataFor1(btn_commande, btn_dette, btn_attent, btn_encours, btn_disponible);
+            status = 1;
+            init(1);
         }
 //        else if (event.getSource() == btn_commande1) {
 //
-//            getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
-//            getInstanceL().SelectDataFor1(btn_commande1, btn_dette, btn_attent, btn_encours, btn_disponible);
-//            status = 1;
-//            init(1);
+
 //        }
     }
 
@@ -264,17 +304,64 @@ public class CommandeController implements Initializable {
     void recherche() {
 
         Tfl_search.setOnKeyReleased((e) -> {
-            if (bool == true) {
-                try {
-                    getInstanceL().ScrollwithHBX(vb_commande,
-                            View_gui.getIns().getService(3,
-                                    "SELECT * FROM new_vs_print2_paiement WHERE nom LIKE '%"
-                                    + Tfl_search.getText()
-                                    + "%' OR id LIKE '%" + Tfl_search.getText() + "%'"), PRINT_CMD, 4);
-
-                } catch (SQLException | IOException ex) {
-                    Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
-                }
+            switch (status) {
+                case 1:
+                    try {
+                        getInstanceL().ScrollwithHBX(vb_commande,
+                                View_gui.getIns().getService(3,
+                                        "SELECT * FROM new_vs_print2_paiement WHERE nom LIKE '%"
+                                                + Tfl_search.getText()
+                                                + "%' OR id LIKE '%" + Tfl_search.getText() + "%'"), PRINT_CMD, 2);
+                        
+                    } catch (SQLException | IOException ex) {
+                        Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
+                    }   break;
+                case 2:
+                    try {
+                        getInstanceL().ScrollwithHBX(vb_commande,
+                                View_gui.getIns().getService(5,
+                                        "SELECT * FROM client_dette WHERE (nom LIKE '%"
+                                                + Tfl_search.getText()
+                                                + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), PRINT_PAIEMENT_DETTE, 2);
+                        
+                    } catch (SQLException | IOException ex) {
+                        Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
+                    }   break;
+                case 3:
+                    try {
+                        getInstanceL().ScrollwithHBX(vb_commande,
+                                View_gui.getIns().getService(4,
+                                        "SELECT * FROM new_test_encours Where (statis='Attente') AND (nom LIKE '%"
+                                                + Tfl_search.getText()
+                                                + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), LOAD_PRINT_DETTE, 2);
+                        
+                    } catch (SQLException | IOException ex) {
+                        Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
+                    }   break;
+                case 4:
+                    try {
+                        getInstanceL().ScrollwithHBX(vb_commande,
+                                View_gui.getIns().getService(4,
+                                        "SELECT * FROM new_test_encours Where (statis='Encours') AND (nom LIKE '%"
+                                                + Tfl_search.getText()
+                                                + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), LOAD_PRINT_ENCOURS, 2);
+                        
+                    } catch (SQLException | IOException ex) {
+                        Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
+                    }   break;
+                case 5:
+                    try {
+                        getInstanceL().ScrollwithHBX(vb_commande,
+                                View_gui.getIns().getService(4,
+                                        "SELECT * FROM new_test_encours Where (statis='Fin') AND (nom LIKE '%"
+                                                + Tfl_search.getText()
+                                                + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), LOAD_PRINT_FIN, 2);
+                        
+                    } catch (SQLException | IOException ex) {
+                        Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
+                    }   break;
+                default:
+                    break;
             }
 
         });

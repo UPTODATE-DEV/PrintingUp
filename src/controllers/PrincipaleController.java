@@ -80,6 +80,16 @@ public class PrincipaleController implements Initializable {
     private Label alerter_retrait;
     @FXML
     private AnchorPane p7;
+    @FXML
+    private Label txtCopyRigth;
+    @FXML
+    private Label lbl_attente;
+    @FXML
+    private Label lbl_encours;
+    @FXML
+    private Label lbl_disponible;
+    @FXML
+    private Label lbl_livraison;
 
     /**
      * Initializes the controller class.
@@ -134,23 +144,34 @@ public class PrincipaleController implements Initializable {
 
     void evenememet() {
         btn_refresh.setOnMouseClicked((e) -> {
-            try {
+            try {     
+                InitData();
                 getInstanceL().ScrollwithHBX(vb_serce, getIns().getService(7, "SELECT * FROM new_print_dashboard_2 WHERE date_ BETWEEN '" + dateB(dteP) + "' AND '" + dateB(dteFin) + "'"), PRINT_SERVICE, 3);
+           
                 // new Dashbord_1Controller().pieChat(2, dteP, dteP1);
             } catch (IOException | SQLException ex) {
                 Logger.getLogger(PrincipaleController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         });
+        InitData();
     }
 
     @FXML
     private void CallFormRapport(MouseEvent event) {
-
         bool = true;
         getInstanceL().IsSeleted(s_Rapport, s_Ccommande, s_new, s_dash, s_parametre);
         getInstanceL().SelectDataFor(p5, p3, p1, p2, p4);
         getInstanceL().makejira(cotent, getClass().getResource(LOAD_RAPPORT));
+
+    }
+
+    void InitData() {
+        lbl_attente.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Attente') AND (date BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
+        lbl_encours.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Encours') AND (date BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
+        lbl_disponible.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Fin')  AND (date BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
+        lbl_livraison.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Livraison') AND (date BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
+        System.out.println("La date d'aujourd'hui est "+dteFin.getValue()+"");
 
     }
 

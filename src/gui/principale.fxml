@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gn.GNAvatarView?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="680.0" minWidth="1171.0" prefHeight="680.0" prefWidth="1171.0" stylesheets="@../css/material-color.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PrincipaleController">
    <children>
-      <AnchorPane layoutX="14.0" layoutY="41.0" prefHeight="680.0" prefWidth="210.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="14.0" layoutY="41.0" prefHeight="680.0" prefWidth="210.0" style="-fx-background-radius: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane layoutX="13.0" layoutY="111.0" prefHeight="217.0" prefWidth="173.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="352.0" AnchorPane.leftAnchor="13.5" AnchorPane.rightAnchor="13.5">
                <children>
@@ -41,7 +48,7 @@
                                     <Font name="Century Gothic Bold" size="13.0" />
                                  </font>
                                  <graphic>
-                                    <FontAwesomeIconView fill="LIGHTGRAY" glyphName="TH_LARGE" size="15" />
+                                    <FontAwesomeIconView fill="#727272" glyphName="TH_LARGE" size="15" />
                                  </graphic>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -56,7 +63,7 @@
                                     <Font name="Century Gothic Bold" size="13.0" />
                                  </font>
                                  <graphic>
-                                    <FontAwesomeIconView fill="#d3d3d3" glyphName="FLICKR" size="15" />
+                                    <FontAwesomeIconView fill="#727272" glyphName="FLICKR" size="15" />
                                  </graphic>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -71,7 +78,7 @@
                                     <Font name="Century Gothic Bold" size="13.0" />
                                  </font>
                                  <graphic>
-                                    <FontAwesomeIconView fill="LIGHTGRAY" glyphName="EXTERNAL_LINK_SQUARE" size="15" />
+                                    <FontAwesomeIconView fill="#727272" glyphName="EXTERNAL_LINK_SQUARE" size="15" />
                                  </graphic>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -86,7 +93,7 @@
                                     <Font name="Century Gothic Bold" size="13.0" />
                                  </font>
                                  <graphic>
-                                    <FontAwesomeIconView fill="LIGHTGRAY" glyphName="GEAR" size="17" />
+                                    <FontAwesomeIconView fill="#727272" glyphName="GEAR" size="17" />
                                  </graphic>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -101,7 +108,7 @@
                                     <Font name="Century Gothic Bold" size="13.0" />
                                  </font>
                                  <graphic>
-                                    <FontAwesomeIconView fill="LIGHTGRAY" glyphName="PASTE" size="15" />
+                                    <FontAwesomeIconView fill="#727272" glyphName="PASTE" size="15" />
                                  </graphic>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -122,25 +129,81 @@
                   </Text>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="8.0" layoutY="591.0" prefHeight="54.0" prefWidth="186.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="13.5" AnchorPane.rightAnchor="13.5">
+            <AnchorPane layoutX="11.0" layoutY="582.0" prefHeight="29.0" prefWidth="183.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="17.0">
                <children>
-                  <MaterialDesignIconView fill="#b5b5b5" glyphName="ACCOUNT_BOX" layoutX="9.0" layoutY="41.0" size="35" />
-                  <Text fill="#00000079" layoutX="46.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maurice Bagalwa" wrappingWidth="117.99999535083771">
+                  <Text fill="#00000079" layoutX="63.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maurice Bagalwa" wrappingWidth="117.99999535083771">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Text>
-                  <Text fill="#8d8b8b" layoutX="48.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adimin" wrappingWidth="117.99999105930328">
+                  <Text fill="#8d8b8b" layoutX="65.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adimin" wrappingWidth="117.99999105930328">
                      <font>
                         <Font size="11.0" />
                      </font>
                   </Text>
+                  <GNAvatarView layoutY="4.0" prefHeight="35.0" prefWidth="41.0">
+                     <image>
+                        <Image url="@../media/woman.png" />
+                     </image>
+                  </GNAvatarView>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="13.5" layoutY="473.0" prefHeight="114.0" prefWidth="84.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="13.5" />
-            <AnchorPane layoutX="102.5" layoutY="473.0" prefHeight="114.0" prefWidth="84.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="93.0" AnchorPane.rightAnchor="13.5" />
-            <AnchorPane layoutX="11.0" layoutY="17.0" prefHeight="54.0" prefWidth="173.0" />
+            <AnchorPane layoutX="11.0" layoutY="437.0" prefHeight="114.0" prefWidth="84.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="129.0" AnchorPane.leftAnchor="11.0">
+               <children>
+                  <VBox prefHeight="114.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="114.0" prefWidth="95.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="114.0" prefWidth="101.0">
+                                 <children>
+                                    <JFXButton contentDisplay="GRAPHIC_ONLY" minHeight="46.0" minWidth="49.0" prefHeight="67.0" prefWidth="49.0" ripplerFill="WHITE" styleClass="btn-base">
+                                       <graphic>
+                                          <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_BOX" size="30" />
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                                 <stylesheets>
+                                    <URL value="@../css/bootstrap.css" />
+                                    <URL value="@../css/skeleton.css" />
+                                    <URL value="@../css/material-color.css" />
+                                 </stylesheets>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="border" />
+                        <String fx:value="border-1" />
+                     </styleClass>
+                  </VBox>
+               </children></AnchorPane>
+            <AnchorPane layoutX="116.5" layoutY="437.0" prefHeight="114.0" prefWidth="84.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="129.0" AnchorPane.rightAnchor="10.5" />
+            <AnchorPane layoutX="32.0" layoutY="17.0" prefHeight="55.0" prefWidth="132.0">
+               <children>
+                  <ImageView fitHeight="54.0" fitWidth="194.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/logoAvecsloglan.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
             <FontAwesomeIconView fill="#da9595" glyphName="GET_POCKET" layoutX="28.0" layoutY="371.0" size="20" />
+            <AnchorPane layoutX="12.0" layoutY="637.0" prefHeight="35.0" prefWidth="183.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;">
+               <children>
+                  <Label fx:id="txtCopyRigth" layoutX="35.0" prefHeight="36.0" prefWidth="140.0" text="\@ Copy right by UpDev2020 " textFill="#867c7c" wrapText="true">
+                     <font>
+                        <Font name="Yu Gothic UI Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <GNAvatarView prefHeight="35.0" prefWidth="30.0">
+                     <image>
+                        <Image url="@../icons/uptodate.png" />
+                     </image>
+                  </GNAvatarView>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="311.0" layoutY="14.0" prefHeight="680.0" prefWidth="210.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -169,42 +232,11 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="19.0" layoutY="240.0" prefHeight="263.0" prefWidth="173.0" style="-fx-background-color: Transparent;">
-               <children>
-                  <VBox layoutX="73.0" layoutY="38.0">
-                     <children>
-                        <Label text="200.0" textFill="#33b5e5">
-                           <VBox.margin>
-                              <Insets bottom="5.0" top="5.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Label text="100.0" textFill="#33b5e5">
-                           <VBox.margin>
-                              <Insets bottom="5.0" top="5.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Label text="0.000" textFill="#33b5e5">
-                           <VBox.margin>
-                              <Insets bottom="5.0" top="5.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-               </children></AnchorPane>
             <DatePicker fx:id="dteP" layoutX="7.0" layoutY="82.0" prefHeight="25.0" prefWidth="197.0" stylesheets="@../css/skeleton.css" />
             <DatePicker fx:id="dteFin" layoutX="7.0" layoutY="131.0" prefHeight="25.0" prefWidth="197.0" stylesheets="@../css/skeleton.css" />
             <Label layoutX="7.0" layoutY="63.0" prefHeight="17.0" prefWidth="70.0" text="Date début" />
             <Label layoutX="7.0" layoutY="112.0" prefHeight="17.0" prefWidth="70.0" text="Date fin" />
-            <AnchorPane fx:id="pan61" layoutX="83.0" layoutY="170.0">
+            <AnchorPane fx:id="pan61" layoutX="95.0" layoutY="170.0">
                <children>
                   <JFXButton fx:id="btn_refresh" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="26.0" prefWidth="19.0" style="-fx-background-color: #176FE5;" styleClass="CursorChange" text=" " textAlignment="CENTER" textFill="WHITE">
                      <graphic>
@@ -224,6 +256,193 @@
                   <Font size="3.0" />
                </font>
             </Label>
+            <VBox layoutX="14.0" layoutY="209.0">
+               <children>
+                  <VBox prefHeight="101.0" prefWidth="183.0">
+                     <children>
+                        <HBox prefHeight="93.0" prefWidth="345.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="93.0" prefWidth="271.0">
+                                 <children>
+                                    <JFXButton cache="true" cacheHint="SPEED" contentDisplay="GRAPHIC_ONLY" minHeight="60.0" minWidth="60.0" prefHeight="60.0" prefWidth="60.0" ripplerFill="WHITE" styleClass="btn-primary" text="Button">
+                                       <graphic>
+                                          <SVGPath content="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" fill="WHITE" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label fx:id="lbl_attente" alignment="CENTER" prefHeight="35.0" prefWidth="74.0" text="34" textFill="#4986e7">
+                                             <font>
+                                                <Font name="System Bold" size="25.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="text-primary" />
+                                                <String fx:value="h3" />
+                                             </styleClass>
+                                          </Label>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -text-color;" text="Attente" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="border-1" />
+                        <String fx:value="border" />
+                     </styleClass>
+                     <stylesheets>
+                        <URL value="@../css/skeleton.css" />
+                        <URL value="@../css/material-color.css" />
+                        <URL value="@../css/bootstrap.css" />
+                        <URL value="@../css/simple-green.css" />
+                     </stylesheets>
+                     <VBox.margin>
+                        <Insets bottom="6.0" top="6.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox prefHeight="101.0" prefWidth="181.0">
+                     <children>
+                        <HBox prefHeight="93.0" prefWidth="345.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="93.0" prefWidth="271.0">
+                                 <children>
+                                    <JFXButton contentDisplay="GRAPHIC_ONLY" minHeight="60.0" minWidth="60.0" prefHeight="60.0" prefWidth="60.0" ripplerFill="WHITE" styleClass="btn-grapefruit">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="CART_PLUS" size="30" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label fx:id="lbl_encours" alignment="CENTER" prefHeight="35.0" prefWidth="70.0" text="118" textFill="#fa573c">
+                                             <font>
+                                                <Font name="System Bold" size="25.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="text-danger" />
+                                                <String fx:value="h3" />
+                                             </styleClass>
+                                          </Label>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -text-color;" text="Encours" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="border" />
+                        <String fx:value="border-1" />
+                     </styleClass>
+                     <stylesheets>
+                        <URL value="@../css/typographic.css" />
+                        <URL value="@../css/skeleton.css" />
+                        <URL value="@../css/bootstrap.css" />
+                     </stylesheets>
+                     <VBox.margin>
+                        <Insets bottom="6.0" top="6.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox prefHeight="101.0" prefWidth="179.0">
+                     <children>
+                        <HBox prefHeight="93.0" prefWidth="345.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="93.0" prefWidth="271.0">
+                                 <children>
+                                    <JFXButton contentDisplay="GRAPHIC_ONLY" minHeight="60.0" minWidth="60.0" prefHeight="60.0" prefWidth="60.0" ripplerFill="WHITE" styleClass="btn-warning">
+                                       <graphic>
+                                          <SVGPath content="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="WHITE" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label fx:id="lbl_disponible" alignment="CENTER" prefHeight="35.0" prefWidth="69.0" text="231" textFill="#ff7537">
+                                             <font>
+                                                <Font name="System Bold" size="25.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="text-warning" />
+                                                <String fx:value="h3" />
+                                             </styleClass>
+                                          </Label>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -text-color;" text="Disponible" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="border" />
+                        <String fx:value="border-1" />
+                     </styleClass>
+                     <stylesheets>
+                        <URL value="@../css/bootstrap.css" />
+                        <URL value="@../css/skeleton.css" />
+                     </stylesheets>
+                     <VBox.margin>
+                        <Insets bottom="6.0" top="6.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox prefHeight="101.0" prefWidth="177.0">
+                     <children>
+                        <HBox prefHeight="93.0" prefWidth="345.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="93.0" prefWidth="271.0">
+                                 <children>
+                                    <JFXButton contentDisplay="GRAPHIC_ONLY" maxHeight="60.0" maxWidth="60.0" minHeight="60.0" minWidth="60.0" prefHeight="53.0" prefWidth="52.0" ripplerFill="WHITE">
+                                       <graphic>
+                                          <SVGPath content="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" fill="WHITE" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label fx:id="lbl_livraison" alignment="CENTER" prefHeight="35.0" prefWidth="58.0" text="32" textFill="#219297">
+                                             <font>
+                                                <Font name="System Bold" size="25.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="text-base" />
+                                                <String fx:value="h3" />
+                                             </styleClass>
+                                          </Label>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -text-color;" text="Livraison" wrappingWidth="53.733642578125" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="border" />
+                        <String fx:value="border-1" />
+                     </styleClass>
+                     <stylesheets>
+                        <URL value="@../css/bootstrap.css" />
+                        <URL value="@../css/skeleton.css" />
+                     </stylesheets>
+                     <VBox.margin>
+                        <Insets bottom="6.0" top="6.0" />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+            </VBox>
          </children>
       </AnchorPane>
       <StackPane fx:id="cotent" layoutX="210.0" prefHeight="150.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="211.0" AnchorPane.topAnchor="0.0" />

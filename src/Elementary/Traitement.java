@@ -172,6 +172,16 @@ public class Traitement extends Connexion {
         return date1;
     }
 
+    public static String convertDate(String c) {
+        String j, a, m;
+        String date1;
+        j = c.substring(0, 2);
+        m = c.substring(3, 5);
+        a = c.substring(6, 10);
+        date1 = a + "-" + m + "-" + j;
+        return date1;
+    }
+
     public static void alerteAvertissement(String titre, String message) {
 
         Notifications notificationAvertissement;

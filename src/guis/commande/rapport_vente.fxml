@@ -51,7 +51,7 @@
                   <DropShadow color="#cdcdcd" />
                </effect>
                <children>
-                  <HBox layoutX="13.0" layoutY="28.0" prefHeight="27.0" prefWidth="288.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="166.0">
+                  <HBox layoutX="90.0" layoutY="36.0" prefHeight="27.0" prefWidth="288.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="89.0">
                      <children>
                         <RadioButton fx:id="all_" mnemonicParsing="false" selected="true" text="Tous">
                            <HBox.margin>
@@ -103,7 +103,7 @@
                         </RadioButton>
                      </children>
                   </HBox>
-                  <Label alignment="CENTER" layoutX="21.0" layoutY="3.0" prefHeight="17.0" prefWidth="264.0" text="Rapport des ventes de nos services " />
+                  <Label alignment="CENTER" layoutX="104.0" layoutY="11.0" prefHeight="17.0" prefWidth="264.0" text="Rapport des ventes de nos services " />
                </children>
             </AnchorPane>
          </children>
@@ -126,7 +126,7 @@
             <VBox fx:id="vb_commande" prefHeight="543.0" prefWidth="484.0" style="-fx-background-color: #F5F6FA; -fx-background-radius: 5px;" />
          </content>
       </ScrollPane>
-      <HBox layoutX="24.0" layoutY="95.0" prefHeight="27.0" prefWidth="243.0">
+      <HBox layoutX="24.0" layoutY="95.0" prefHeight="27.0" prefWidth="36.0">
          <children>
             <JFXButton alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="42.0" style="-fx-background-color: #176FE5;" text="Page" textFill="WHITE">
                <font>
@@ -146,7 +146,7 @@
                               <OctIconView fill="#03a9f4" glyphName="DIFF_RENAMED" size="16" />
                            </graphic>
                         </Label>
-                        <Label layoutX="7.0" layoutY="48.0" prefHeight="19.0" prefWidth="80.0" text="23445.45" textFill="#000000cc">
+                        <Label layoutX="2.0" layoutY="49.0" prefHeight="19.0" prefWidth="90.0" text="23445.45" textFill="#000000cc">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
@@ -183,14 +183,14 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="27.0" layoutY="46.05078125" prefHeight="47.0" prefWidth="192.0" style="-fx-background-color: fff;">
+            <AnchorPane layoutX="11.0" layoutY="46.0" prefHeight="47.0" prefWidth="208.0" style="-fx-background-color: fff;">
                <children>
                   <Text fill="#05abf2b2" layoutX="14.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Montant total" wrappingWidth="80.00002297759056">
                      <font>
                         <Font name="Lucida Console" size="12.0" />
                      </font>
                   </Text>
-                  <Label layoutX="80.0" layoutY="18.0" prefHeight="19.0" prefWidth="107.0" text="23445.45">
+                  <Label layoutX="80.0" layoutY="18.0" prefHeight="19.0" prefWidth="120.0" text="23445.45">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>

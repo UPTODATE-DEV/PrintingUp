@@ -57,7 +57,6 @@ public class rapport_vente implements Initializable {
         isEvent();
         if (checkSelected().equals("Tous")) {
             try {
-                // TODO
                 getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 2);
             } catch (IOException | SQLException ex) {
                 Logger.getLogger(rapport_vente.class.getName()).log(Level.SEVERE, null, ex);
@@ -98,35 +97,44 @@ public class rapport_vente implements Initializable {
     }
 
     void Init() {
-        if (checkSelected().equals("Tous")) {
-            try {
-                // TODO
-                getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 2);
-            } catch (IOException | SQLException ex) {
-                Logger.getLogger(rapport_vente.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else if (checkSelected().equals("Solder")) {
-            try {
-                // TODO
-                getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement WHERE (payer=a_payer)"), PRINT_CMD, 2);
-            } catch (IOException | SQLException ex) {
-                Logger.getLogger(rapport_vente.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else if (checkSelected().equals("Avance")) {
-            try {
-                // TODO
-                getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement WHERE ISNULL(payer)<>0"), PRINT_CMD, 2);
-            } catch (IOException | SQLException ex) {
-                Logger.getLogger(rapport_vente.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else if (checkSelected().equals("Dette")) {
-            try {
-                // TODO
-                getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement WHERE (payer is null) or (payer <a_payer)"), PRINT_CMD, 2);
-            } catch (IOException | SQLException ex) {
-                Logger.getLogger(rapport_vente.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        switch (checkSelected()) {
+            case "Tous":
+                try {
+                    // TODO
+                    getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 2);
+                } catch (IOException | SQLException ex) {
+                    Logger.getLogger(rapport_vente.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            case "Solder":
+                try {
+                    // TODO
+                    getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement WHERE (payer=a_payer)"), PRINT_CMD, 2);
+                } catch (IOException | SQLException ex) {
+                    Logger.getLogger(rapport_vente.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            case "Avance":
+                try {
+                    // TODO
+                    getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement WHERE (payer <a_payer)"), PRINT_CMD, 2);
+                } catch (IOException | SQLException ex) {
+                    Logger.getLogger(rapport_vente.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            case "Dette":
+                try {
+                    // TODO
+                    getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement WHERE (payer is null) or (payer <a_payer)"), PRINT_CMD, 2);
+
+                } catch (IOException | SQLException ex) {
+                    Logger.getLogger(rapport_vente.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            default:
+                break;
         }
+        isSearch();
     }
 
     void isSearch() {
@@ -134,29 +142,33 @@ public class rapport_vente implements Initializable {
             switch (checkSelected()) {
                 case "Tous":
                     try {
-                        getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement WHERE (payer=a_payer)"), PRINT_CMD, 2);
+                        getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement WHERE  Nom Like '%" + Tfl_search.getText() + "%' OR id like '%" + Tfl_search.getText() + "%'"), PRINT_CMD, 2);
                     } catch (IOException | SQLException ex) {
                         Logger.getLogger(rapport_vente.class.getName()).log(Level.SEVERE, null, ex);
-                    }   break;
+                    }
+                    break;
                 case "Solder":
                     try {
-                        getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement WHERE (payer=a_payer)"), PRINT_CMD, 2);
+                        getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement WHERE (payer=a_payer) AND (Nom Like '%" + Tfl_search.getText() + "%' OR id like '%" + Tfl_search.getText() + "%')"), PRINT_CMD, 2);
                     } catch (IOException | SQLException ex) {
                         Logger.getLogger(rapport_vente.class.getName()).log(Level.SEVERE, null, ex);
-                    }   break;
+                    }
+                    break;
                 case "Avance":
                     try {
-                        getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 2);
+                        getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement WHERE (payer <a_payer) AND (Nom Like '%" + Tfl_search.getText() + "%' OR id like '%" + Tfl_search.getText() + "%')"), PRINT_CMD, 2);
                     } catch (IOException | SQLException ex) {
                         Logger.getLogger(rapport_vente.class.getName()).log(Level.SEVERE, null, ex);
-                    }   break;
+                    }
+                    break;
                 default:
                     try {
                         getInstanceL().ScrollwithHBX(vb_commande, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement "
-                                + "WHERE (payer is null) and Nom like '%"+Tfl_search.getText()+"%' OR id like '%"+Tfl_search.getText()+"%'"), PRINT_CMD, 2);
+                                + "WHERE ((payer is null) or (payer < a_payer)) AND (Nom like '%" + Tfl_search.getText() + "%' OR id like '%" + Tfl_search.getText() + "%')"), PRINT_CMD, 2);
                     } catch (SQLException | IOException ex) {
                         Logger.getLogger(rapport_vente.class.getName()).log(Level.SEVERE, null, ex);
-                    }   break;
+                    }
+                    break;
             }
         });
     }

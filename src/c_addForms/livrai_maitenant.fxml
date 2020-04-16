@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="83.0" prefWidth="275.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <stylesheets>
+      <URL value="@../css/bootstrap.css" />
+      <URL value="@../css/typographic.css" />
+      <URL value="@../css/skeleton.css" />
+      <URL value="@../css/material-color.css" />
+   </stylesheets>
+   <children>
+      <AnchorPane layoutX="-3.0" layoutY="-5.0" prefHeight="94.0" prefWidth="275.0">
+         <children>
+            <Group>
+               <children>
+                  <Pane layoutX="6.0" layoutY="39.0" prefHeight="24.0" prefWidth="263.0">
+                     <children>
+                        <VBox alignment="CENTER" layoutX="13.0" layoutY="-28.0" prefHeight="36.0" prefWidth="72.0">
+                           <styleClass>
+                              <String fx:value="scale" />
+                              <String fx:value="btn-info" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <children>
+                              <MaterialDesignIconView fill="WHITE" size="30" />
+                           </children>
+                        </VBox>
+                        <Label layoutX="13.0" layoutY="23.0" minHeight="5.0" prefHeight="5.0" prefWidth="238.0" styleClass="btn-info" />
+                        <Label alignment="CENTER" layoutX="11.0" layoutY="24.0" prefHeight="22.0" prefWidth="244.0" style="-fx-text-fill: -text-color;" styleClass="h5" text="Nom du client" textAlignment="RIGHT">
+                           <font>
+                              <Font name="Roboto Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_RIGHT" layoutX="74.0" layoutY="1.0" prefHeight="30.0" prefWidth="188.0" style="-fx-text-fill: -text-color;" styleClass="h5" text="20">
+                           <font>
+                              <Font name="Roboto Black" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow color="#0000001a" />
+                     </effect>
+                  </Pane>
+               </children>
+            </Group>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
