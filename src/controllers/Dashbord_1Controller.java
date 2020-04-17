@@ -55,6 +55,7 @@ public class Dashbord_1Controller implements Initializable {
         try {
             // TODO
             vb_serce = vb_service;
+            vb_service.setSpacing(50.0);
             pieChat(1, null, null);
             staticView.setData(data);
             //  stackedBar.getData().add(series);

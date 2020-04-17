@@ -6,14 +6,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="30.0" prefWidth="287.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.Detail_cmdController">
    <children>
-      <AnchorPane layoutX="1.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="282.0" style="-fx-background-color: #fff;">
+      <AnchorPane layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="282.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
          <children>
             <Label fx:id="lbl_service" layoutX="6.0" layoutY="7.0" prefHeight="17.0" prefWidth="99.0" text="Service">
                <graphic>
-                  <MaterialDesignIconView fill="#72a4f0" glyphName="ANIMATION" size="10" />
+                  <MaterialDesignIconView fill="#42b5e3" glyphName="ANIMATION" size="10" />
                </graphic>
                <font>
                   <Font name="System Bold" size="9.0" />
@@ -21,7 +20,7 @@
             </Label>
             <Label fx:id="lbl_type" layoutX="113.0" layoutY="8.0" prefHeight="17.0" prefWidth="56.0" text="Type" textFill="#0f0f10">
                <graphic>
-                  <MaterialDesignIconView fill="#72a4f0" glyphName="BRUSH" size="10" />
+                  <MaterialDesignIconView fill="#42b5e3" glyphName="BRUSH" size="10" />
                </graphic>
                <font>
                   <Font name="System Bold" size="9.0" />
@@ -29,7 +28,7 @@
             </Label>
             <Label fx:id="lbl_pu" layoutX="174.0" layoutY="8.0" prefHeight="17.0" prefWidth="56.0" text="2000000">
                <graphic>
-                  <MaterialDesignIconView fill="#72a4f0" glyphName="BOOKMARK_PLUS" size="10" />
+                  <MaterialDesignIconView fill="#42b5e3" glyphName="BOOKMARK_PLUS" size="10" />
                </graphic>
                <font>
                   <Font name="System Bold" size="9.0" />
@@ -37,7 +36,7 @@
             </Label>
             <Label fx:id="lbl_qte" layoutX="232.0" layoutY="8.0" prefHeight="17.0" prefWidth="50.0" text="200000">
                <graphic>
-                  <MaterialDesignIconView fill="#72a4f0" glyphName="APPLE_MOBILEME" size="10" />
+                  <MaterialDesignIconView fill="#42b5e3" glyphName="APPLE_MOBILEME" size="10" />
                </graphic>
                <font>
                   <Font name="System Bold" size="9.0" />
@@ -65,7 +64,7 @@
             </Label>
          </children>
          <effect>
-            <DropShadow color="#148dd9" height="2.1" radius="1.0125000000000002" width="3.95" />
+            <DropShadow color="#42b5e3" height="3.03" radius="1.245" width="3.95" />
          </effect>
       </AnchorPane>
    </children>

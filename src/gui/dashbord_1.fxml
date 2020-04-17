@@ -47,7 +47,7 @@
             <Label layoutX="46.0" layoutY="55.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #D23171;" />
             <Label layoutX="11.0" layoutY="89.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #B8AB3B;" />
             <Label layoutX="46.0" layoutY="90.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #AD5354;" />
-            <Label layoutX="80.0" layoutY="91.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #118A4A;" />
+            <Label layoutX="80.0" layoutY="91.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #33B5E5;" />
             <Label layoutX="11.0" layoutY="19.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #ED6C21;" />
             <AnchorPane layoutX="139.0" layoutY="13.0" prefHeight="66.0" prefWidth="565.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="13.0">
                <children>
@@ -106,9 +106,9 @@
             <DropShadow color="#cdcdcd" />
          </effect>
       </GNCalendarTile>
-      <ScrollPane layoutX="12.0" layoutY="214.0" prefHeight="135.0" prefWidth="729.0" styleClass="decrement-arrow" stylesheets="@../css/custom-scroll.css" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="8.0">
+      <ScrollPane layoutX="12.0" layoutY="201.0" prefHeight="156.0" prefWidth="729.0" styleClass="decrement-arrow" stylesheets="@../css/custom-scroll.css" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="8.0">
          <content>
-            <VBox fx:id="vb_service" prefHeight="135.0" prefWidth="729.0" style="-fx-background-color: Transparent;" />
+            <VBox fx:id="vb_service" prefHeight="156.0" prefWidth="729.0" spacing="5.0" style="-fx-background-color: Transparent;" />
          </content>
       </ScrollPane>
    </children>

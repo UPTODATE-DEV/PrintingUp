@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="135.0" prefWidth="293.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PrintRealisationController">
+<AnchorPane prefHeight="154.0" prefWidth="243.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PrintRealisationController">
    <children>
-      <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="92.0" prefWidth="217.0" style="-fx-background-color: #fff; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="7.0">
+      <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="135.0" prefWidth="293.0" style="-fx-background-color: #fff; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
          <children>
-            <Label layoutX="6.0" layoutY="15.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #1875F0; -fx-background-radius: 5px;" />
+            <Label layoutX="6.0" layoutY="15.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #33B5E5; -fx-background-radius: 5px;" />
             <FontAwesomeIconView fill="WHITE" glyphName="LIGHTBULB_ALT" layoutX="13.0" layoutY="34.0" size="18" />
             <Text fill="#00000073" layoutX="5.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="le nombre si haut est le nombre global réalisé pour le service " wrappingWidth="243.0000057220459" />
             <Label fx:id="service_" layoutX="9.0" layoutY="43.0" prefHeight="17.0" prefWidth="243.0" text="Impression">
@@ -23,7 +26,21 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
+            <Pane layoutX="3.0" layoutY="38.0" prefHeight="24.0" prefWidth="243.0" stylesheets="@../css/skeleton.css">
+               <children>
+                  <Label layoutX="5.0" layoutY="23.0" minHeight="5.0" prefHeight="5.0" prefWidth="238.0" styleClass="btn-info" />
+               </children>
+               <effect>
+                  <DropShadow color="#0000001a" />
+               </effect>
+            </Pane>
          </children>
       </AnchorPane>
    </children>
+   <stylesheets>
+      <URL value="@../css/skeleton.css" />
+      <URL value="@../css/bootstrap.css" />
+      <URL value="@../css/typographic.css" />
+      <URL value="@../css/material-color.css" />
+   </stylesheets>
 </AnchorPane>

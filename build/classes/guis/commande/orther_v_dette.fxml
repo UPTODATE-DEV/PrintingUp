@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="119.0" prefWidth="288.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.Orther_v_detteController">
    <children>
-      <AnchorPane layoutX="6.0" layoutY="3.0" prefHeight="95.0" prefWidth="169.0" style="-fx-background-color: #fff; -fx-background-radius: 1px; -fx-border-width: 0.5px;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="3.0">
+      <AnchorPane layoutX="6.0" layoutY="3.0" prefHeight="95.0" prefWidth="169.0" style="-fx-background-color: #fff; -fx-background-radius: 1px; -fx-border-width: 0.5px;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
          <children>
             <MaterialDesignIconView fill="#42b5e3" glyphName="VECTOR_CIRCLE" layoutX="138.0" layoutY="21.0" size="20" />
             <Button fx:id="btn_livre" layoutX="134.0" layoutY="80.0" mnemonicParsing="false" style="-fx-background-color: #42B5E3;" AnchorPane.rightAnchor="118.0">
@@ -51,7 +51,7 @@
                </children>
             </VBox>
             <Label fx:id="Tfd_id" layoutX="9.0" layoutY="5.0" text="0" textFill="WHITE" />
-            <Label layoutX="4.0" layoutY="4.0" prefHeight="17.0" prefWidth="78.0" text="En attente" textFill="#e6e6e6">
+            <Label layoutX="4.0" layoutY="4.0" prefHeight="17.0" prefWidth="78.0" text="En attente" textFill="#e6e6e6" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="197.0" AnchorPane.topAnchor="4.0">
                <graphic>
                   <MaterialDesignIconView fill="#d4cfcf" glyphName="LIBRARY" />
                </graphic>
