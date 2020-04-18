@@ -71,6 +71,7 @@ public class Printl_commandeController implements Initializable {
     private void Traitement(ActionEvent event) throws Exception {
         getInstanceT().ps = Connexion.isConnected().prepareCall("Call sp_delete_service (?)");
         getInstanceT().ps.setString(1, id_.getText());
+        System.err.println("##########"+id_.getText());
         getInstanceT().ps.executeUpdate();
         initData();
         AddcommandeController.initInitial(lbl_frac1, lbl_dollars1);
@@ -90,5 +91,4 @@ public class Printl_commandeController implements Initializable {
         }
     }
 
- 
 }

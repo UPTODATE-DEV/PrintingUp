@@ -2,6 +2,7 @@
 
 <?import com.gn.lab.GNCalendarTile?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -106,10 +107,14 @@
             <DropShadow color="#cdcdcd" />
          </effect>
       </GNCalendarTile>
-      <ScrollPane layoutX="12.0" layoutY="201.0" prefHeight="156.0" prefWidth="729.0" styleClass="decrement-arrow" stylesheets="@../css/custom-scroll.css" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="8.0">
+      <ScrollPane layoutX="9.0" layoutY="199.0" style="-fx-background-color: #FFF; -fx-background-radius: 1em;" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0">
          <content>
-            <VBox fx:id="vb_service" prefHeight="156.0" prefWidth="729.0" spacing="5.0" style="-fx-background-color: Transparent;" />
+            <VBox fx:id="vb_service" alignment="CENTER" maxHeight="1.7976931348623157E308" prefHeight="157.0" prefWidth="728.0" style="-fx-background-color: Transparent;" />
          </content>
+         <stylesheets>
+            <URL value="@../css/custom-scroll.css" />
+            <URL value="@../css/skeleton.css" />
+         </stylesheets>
       </ScrollPane>
    </children>
 </AnchorPane>

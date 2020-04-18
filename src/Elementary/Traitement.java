@@ -5,8 +5,11 @@
  */
 package Elementary;
 
+import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXDialogLayout;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
+import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.PreparedStatement;
@@ -16,14 +19,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
@@ -117,11 +127,14 @@ public class Traitement extends Connexion {
 
     public String getValue(String query) {
         try {
-            rst = stm.executeQuery(query);
-            if (rst.next()) {
-                return rst.getString("x");
+            if (isConnected() != null) {
+                rst = stm.executeQuery(query);
+                if (rst.next()) {
+                    return rst.getString("x");
+                }
+            } else {
+                System.out.println("Connexion impossible");
             }
-
         } catch (SQLException ex) {
             Logger.getLogger(Traitement.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -249,4 +262,25 @@ public class Traitement extends Connexion {
 
         return genre;
     }
+
+    public void showDialog(StackPane rootPane, JFXDialog.DialogTransition transition, String URL, int h, int w) {
+        try {
+            ShowDialog(rootPane, URL, h, w);
+        } catch (IOException ex) {
+            Logger.getLogger(Traitement.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public static JFXDialog dialog;
+
+    public void ShowDialog(StackPane stck, String url, double width, double height) throws IOException {
+        Node node = FXMLLoader.load(getClass().getResource(url));
+        JFXDialogLayout dl = new JFXDialogLayout();
+        dl.setPadding(Insets.EMPTY);
+        dl.setBody(node);
+        dl.setPrefSize(width, height);
+        dialog = new JFXDialog(stck, dl, JFXDialog.DialogTransition.CENTER, false);
+        dialog.show(stck);
+    }
+
 }

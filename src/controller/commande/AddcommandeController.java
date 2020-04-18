@@ -16,6 +16,7 @@ import Elementary.references;
 import static Elementary.references.LOAD_COMMANDE;
 import static Elementary.references.LOAD_PRINT_LISTDETTE;
 import static Elementary.references.OTHEPAIEMENT;
+import static Elementary.references.PRINT_CMD;
 import com.jfoenix.controls.JFXButton;
 import static controller.commande.CommandeController.vb_commande1;
 import controllers.PrincipaleController;
@@ -171,14 +172,13 @@ public class AddcommandeController implements Initializable {
                 } else {
                     //OuputText(Text, icon, references.getInstanceE().MESSAGE_ISMPTY, imageviw, btn_ok, true, true);
                     Mywindows.OuputText(Text, references.getInstanceE().MESSAGE_ISMPTY, icon, true);
-                   
 
                 }
             } else {
                 Mywindows.OuputText(Text, references.getInstanceE().MESSAGE_FACT, icon, true);
             }
-        }else if(event.getSource()==btn_print){
-         System.err.println(PrincipaleController.dteP1.getValue());
+        } else if (event.getSource() == btn_print) {
+            System.err.println(PrincipaleController.dteP1.getValue());
         }
     }
 
@@ -191,7 +191,9 @@ public class AddcommandeController implements Initializable {
 
     public static void initInitial(Label m1, Label m2) {
         double mtant = Double.parseDouble(getInstanceL().ismac_up(getIns().montant + "='" + id_commande1.getText() + "'"));
+
         m1.setText(Double.toString(mtant));
+        System.err.println("========================" + mtant);
         m2.setText(Double.toString(mtant / 1600));
     }
 
@@ -229,6 +231,7 @@ public class AddcommandeController implements Initializable {
         initData();
 
     }
+
     void getClient() {
         if (!Mywindows.getInstanceL().isFieldsempty(Tfdclient)) {
             try {
@@ -262,7 +265,7 @@ public class AddcommandeController implements Initializable {
     void init() {
         try {
             try {
-                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(4, "SELECT * FROM new_test_encours where statis='Attente'"), LOAD_PRINT_LISTDETTE, 4);
+                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 2);
             } catch (SQLException ex) {
                 Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
             }

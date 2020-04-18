@@ -167,6 +167,7 @@ public class PrincipaleController implements Initializable {
     }
 
     void InitData() {
+        
         lbl_attente.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Attente') AND (date_ BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
         lbl_encours.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Encours') AND (date BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
         lbl_disponible.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Fin')  AND (date BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
