@@ -18,12 +18,17 @@ import javafx.stage.Stage;
  */
 public class Up_priting extends Application {
 
+    public static Stage stage_;
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource(LOGIN));
         Scene scene = new Scene(root);
-        stage.setMaximized(true);
+        stage_ = stage;
         stage.setScene(scene);
+        stage.getFullScreenExitKeyCombination();
+        stage.setMaximized(true);
+        //  stage.isFullScreen();
         stage.show();
     }
 

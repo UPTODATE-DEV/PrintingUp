@@ -20,4 +20,6 @@ public interface IUser {
     void retire(UserDao user);
 
     ListView<UserDao> list();
+
+    boolean connexion(UserDao user);
 }

@@ -28,7 +28,7 @@ import javafx.scene.paint.Paint;
  */
 public class Service_widows {
 
-    private void DOSynchro() {
+    private void Login() {
         final Service<Void> calculateService = new Service<Void>() {
 
             @Override
@@ -48,15 +48,15 @@ public class Service_widows {
             switch (newValue) {
                 case FAILED:
                     System.out.println("Interrupu traitement \nRelance en cours.....");
-                    DOSynchro();
+                    Login() ;
                     break;
                 case CANCELLED:
                     System.out.println("cancelled traitement \nRelance en cours.....");
-                    DOSynchro();
+                Login() ;
                     break;
                 case SUCCEEDED:
                     System.out.println("Correct traitement \nRelance en cours.....");
-                    DOSynchro();
+                 Login() ;
                     break;
             }
         });

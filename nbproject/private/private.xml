@@ -3,32 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/utilisateur/ImplementUtilisateurDao.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/GUIControllers/EntrepriseController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/Printl_commandeController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/Elementary/Mask.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/Elementary/Connexion.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/Elementary/Mywindows.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/user/IUser.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/AddcommandeController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/c_parametre/LoadparametreController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/Other_paiementController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/c_addForms/AddUserController.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/guis/parametrer/User.java</file>
             <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controllers/PrincipaleController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/guis/parametrer/login.fxml</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/Elementary/Service_widows.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/orther_paiement_detteController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/user/UserDao.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/utilisateur/UtilisateurDao.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/ChargementControllers/LoadUsersController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/Detail_cmdController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controllers/Dashbord_1Controller.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/Elementary/references.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/Orher_detteController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/lib/user/ImplementeIUser.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/controller/commande/CommandeController.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/up_priting/Up_priting.java</file>
-            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/Elementary/View_gui.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/conf/ConfigApp.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/guis/parametrer/account.fxml</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/conf/ConfigController.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/guis/parametrer/Section.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/guis/parametrer/UserManager.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/guis/parametrer/AccountController.java</file>
+            <file>file:/D:/Cours/Mes%20Projets/Up_priting/src/guis/parametrer/SectionManager.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.icons525.Icons525View?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
@@ -108,7 +109,16 @@
                   </JFXButton>
                </children>
             </AnchorPane>
-            <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="136.0" layoutY="372.0" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #176FE5;" styleClass="btn-small" stylesheets="@../../css/material.css" text="Configurer" textFill="WHITE" />
+            <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="136.0" layoutY="357.0" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #176FE5;" styleClass="btn-small" stylesheets="@../../css/material.css" text="Configurer" textFill="WHITE" />
+            <HBox layoutX="20.0" layoutY="387.0" prefHeight="29.0" prefWidth="305.0">
+               <children>
+                  <Label fx:id="message" prefHeight="29.0" prefWidth="306.0">
+                     <graphic>
+                        <FontAwesomeIconView fx:id="icon" size="15" />
+                     </graphic>
+                  </Label>
+               </children>
+            </HBox>
          </children>
       </AnchorPane>
    </children>

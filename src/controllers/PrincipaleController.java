@@ -24,12 +24,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 import org.controlsfx.control.PopOver;
 
 /**
@@ -90,6 +93,14 @@ public class PrincipaleController implements Initializable {
     private Label lbl_disponible;
     @FXML
     private Label lbl_livraison;
+    @FXML
+    private JFXButton config;
+    public static String nom_agent;
+    public static String id_conne;
+    @FXML
+    private Text Lblfonction;
+    @FXML
+    private Label lbl_user_;
 
     /**
      * Initializes the controller class.
@@ -99,6 +110,9 @@ public class PrincipaleController implements Initializable {
         Rcotent = cotent;
         dteP1 = dteP;
         dteFin2 = dteFin;
+        
+        lbl_user_.setText(nom_agent);
+        Lblfonction.setText(id_conne);
         getInstanceT().Ecart(dteP, dteFin);
         dteP.setValue(LocalDate.now());
         dteFin.setValue(LocalDate.now());
@@ -106,6 +120,7 @@ public class PrincipaleController implements Initializable {
         getInstanceL().IsSeleted(s_dash, s_new, s_Ccommande, s_parametre);
         getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
         evenememet();
+        //loadContentPopup() ;
     }
 
     @FXML
@@ -144,10 +159,10 @@ public class PrincipaleController implements Initializable {
 
     void evenememet() {
         btn_refresh.setOnMouseClicked((e) -> {
-            try {     
+            try {
                 InitData();
                 getInstanceL().ScrollwithHBX(vb_serce, getIns().getService(7, "SELECT * FROM new_print_dashboard_2 WHERE date_ BETWEEN '" + dateB(dteP) + "' AND '" + dateB(dteFin) + "'"), PRINT_SERVICE, 3);
-           
+
                 // new Dashbord_1Controller().pieChat(2, dteP, dteP1);
             } catch (IOException | SQLException ex) {
                 Logger.getLogger(PrincipaleController.class.getName()).log(Level.SEVERE, null, ex);
@@ -167,13 +182,43 @@ public class PrincipaleController implements Initializable {
     }
 
     void InitData() {
-        
+
         lbl_attente.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Attente') AND (date_ BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
         lbl_encours.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Encours') AND (date BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
         lbl_disponible.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Fin')  AND (date BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
         lbl_livraison.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Livraison') AND (date BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
-        System.out.println("La date d'aujourd'hui est "+dteFin.getValue()+"");
+        System.out.println("La date d'aujourd'hui est " + dteFin.getValue() + "");
 
+    }
+    public static final PopOver popConfig = new PopOver();
+    public static final PopOver popup = new PopOver();
+    private Parent popContent;
+
+    private void loadContentPopup() {
+        try {
+            popContent = FXMLLoader.load(getClass().getResource("/conf/Config.fxml"));
+            popConfig.getRoot().getStylesheets().add(getClass().getResource("/css/poplight.css").toExternalForm());
+            popConfig.setContentNode(popContent);
+            popConfig.setArrowLocation(PopOver.ArrowLocation.TOP_RIGHT);
+            popConfig.setArrowIndent(0);
+            popConfig.setArrowSize(0);
+            popConfig.setCornerRadius(0);
+            popConfig.setAutoFix(true);
+            popConfig.setAnimated(false);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void openConfig(MouseEvent event) {
+//        if (popConfig.isShowing()) {
+//            popConfig.hide();
+//        } else {
+//            popConfig.show(config, 0);
+//            popConfig.getRoot().setFocusTraversable(true);
+//        }
     }
 
 }

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.gn.GNAvatarView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
@@ -81,7 +83,7 @@
                                           <Insets right="10.0" />
                                        </padding>
                                     </HBox>
-                                    <Button fx:id="login" defaultButton="true" mnemonicParsing="false" prefHeight="29.0" prefWidth="110.0" style="-fx-background-color: #33B5E5;" stylesheets="@../../css/light.css" text="Sign In" textFill="WHITE">
+                                    <Button fx:id="login" defaultButton="true" mnemonicParsing="false" prefHeight="29.0" prefWidth="105.0" style="-fx-background-color: #33B5E5;" stylesheets="@../../css/light.css" text="Sign In" textFill="WHITE">
                                        <styleClass>
                                           <String fx:value="btn-primary" />
                                           <String fx:value="btn-info" />
@@ -89,7 +91,19 @@
                                        <font>
                                           <Font size="13.0" />
                                        </font>
+                                       <graphic>
+                                          <MaterialDesignIconView fill="WHITE" glyphName="EXPORT" size="15" />
+                                       </graphic>
                                     </Button>
+                                    <HBox prefHeight="27.0" prefWidth="295.0">
+                                       <children>
+                                          <Label fx:id="message" prefHeight="28.0" prefWidth="293.0">
+                                             <graphic>
+                                                <FontAwesomeIconView fx:id="icon" fill="WHITE" size="15" textAlignment="CENTER" />
+                                             </graphic>
+                                          </Label>
+                                       </children>
+                                    </HBox>
                                     <Label fx:id="lbl_error" styleClass="text-danger" text="Invalid username or password." visible="false" />
                                     <HBox alignment="CENTER" prefHeight="17.0" prefWidth="289.0">
                                        <children>

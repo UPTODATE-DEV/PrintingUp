@@ -5,10 +5,12 @@
  */
 package controller.parametrer;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
@@ -28,6 +30,10 @@ public class Configuration_serverController implements Initializable {
     private TextField TfdMotdepasse;
     @FXML
     private TextField TfdChemin;
+    @FXML
+    private Label message;
+    @FXML
+    private FontAwesomeIconView icon;
 
     /**
      * Initializes the controller class.

@@ -9,6 +9,7 @@ import Elementary.Mywindows;
 import static Elementary.Mywindows.Ouput;
 import static Elementary.Mywindows.getInstanceL;
 import static Elementary.Mywindows.popOverMenu;
+import Elementary.Service_widows;
 import static Elementary.Traitement.getInstanceT;
 import Elementary.View_gui;
 import static Elementary.View_gui.getIns;
@@ -20,6 +21,7 @@ import static Elementary.references.PRINT_CMD;
 import com.jfoenix.controls.JFXButton;
 import static controller.commande.CommandeController.vb_commande1;
 import controllers.PrincipaleController;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -76,11 +78,6 @@ public class AddcommandeController implements Initializable {
     private JFXButton btn_test_;
     @FXML
     private Label icon;
-    @FXML
-    private Text Text;
-    @FXML
-    private ImageView imageviw;
-
     public static Button btn_ok = new Button();
     private VBox grideview;
     public static Label id_lab1;
@@ -115,6 +112,8 @@ public class AddcommandeController implements Initializable {
     @FXML
     private ListView<String> listService;
     Dao dao;
+    @FXML
+    private FontAwesomeIconView icon_;
 
     /**
      * Initializes the controller class.
@@ -136,7 +135,7 @@ public class AddcommandeController implements Initializable {
         //initInitial();
         Tfdservice.requestFocus();
         id_commande1 = id_commande;
-        imageviw.setVisible(false);
+
         btn_ok.setVisible(false);
 
         evenement();
@@ -171,14 +170,19 @@ public class AddcommandeController implements Initializable {
                     }
                 } else {
                     //OuputText(Text, icon, references.getInstanceE().MESSAGE_ISMPTY, imageviw, btn_ok, true, true);
-                    Mywindows.OuputText(Text, references.getInstanceE().MESSAGE_ISMPTY, icon, true);
+                    // Mywindows.OuputText(Text, references.getInstanceE().MESSAGE_ISMPTY, icon, true);
+                    new Service_widows().showMssge(icon, icon_, references.getInstanceE().MESSAGE_ISMPTY, 0);
 
                 }
             } else {
-                Mywindows.OuputText(Text, references.getInstanceE().MESSAGE_FACT, icon, true);
+                //Mywindows.OuputText(Text, references.getInstanceE().MESSAGE_FACT, icon, true);
+                new Service_widows().showMssge(icon, icon_, references.getInstanceE().MESSAGE_FACT, 0);
             }
         } else if (event.getSource() == btn_print) {
             System.err.println(PrincipaleController.dteP1.getValue());
+            
+            vb_.getChildren().clear();
+            
         }
     }
 
@@ -226,7 +230,8 @@ public class AddcommandeController implements Initializable {
     void save(int c) throws Exception {
         detailDao = new DetailCommandeDao(Tfd_code.getText(), Float.parseFloat(TfdPunitaire.getText()), Integer.parseInt(TfdQuantite.getText()), id_commande.getText(), Tfdservice.getText(), Integer.toString(c));
         ImplemanteIDetailCommandeDao.Instance().Enregistre(detailDao);
-        Mywindows.OuputText(Text, references.getInstanceE().MESSAGE_SAVE, icon, false);
+        // Mywindows.OuputText(Text, references.getInstanceE().MESSAGE_SAVE, icon, false);
+        new Service_widows().showMssge(icon, icon_, references.getInstanceE().MESSAGE_SAVE, 1);
         Mywindows.initFields(true, TfdPunitaire, TfdQuantite, Tfdservice);
         initData();
 
@@ -242,7 +247,7 @@ public class AddcommandeController implements Initializable {
                 Logger.getLogger(AddcommandeController.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            Ouput(Text, icon, references.getInstanceE().MESSAGE_FACT, imageviw, btn_ok, true, true);
+            new Service_widows().showMssge(icon, icon_, references.getInstanceE().MESSAGE_FACT, 0);
         }
     }
 

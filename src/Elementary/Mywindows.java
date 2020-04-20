@@ -619,7 +619,7 @@ public class Mywindows extends Traitement {
             ps = Connexion.isConnected().prepareStatement(query);
             rst = ps.executeQuery();
             if (rst.next()) {
-                if (rst.getString("x").isEmpty() || Double.parseDouble(rst.getString("x")) == 0.0 ||rst.getString("x")==null) {
+                if (rst.getString("x").isEmpty() || Double.parseDouble(rst.getString("x")) == 0.0 || rst.getString("x") == null) {
                     return "0.0";
                 } else {
                     return rst.getString("x");
@@ -884,7 +884,7 @@ public class Mywindows extends Traitement {
         //  size = tr;
         somme = data.size();
         size = data.size();
-        resulta=data.size();
+        resulta = data.size();
 
         Node[] node = new Node[somme];
         princi.getChildren().clear();

@@ -263,7 +263,7 @@ public class Traitement extends Connexion {
         return genre;
     }
 
-    public void showDialog(StackPane rootPane, JFXDialog.DialogTransition transition, String URL, int h, int w) {
+    public void showDialog(StackPane rootPane,String URL, int h, int w) {
         try {
             ShowDialog(rootPane, URL, h, w);
         } catch (IOException ex) {

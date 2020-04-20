@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -53,13 +54,14 @@
                <children>
                   <HBox layoutX="90.0" layoutY="36.0" prefHeight="27.0" prefWidth="288.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="89.0">
                      <children>
-                        <RadioButton fx:id="all_" mnemonicParsing="false" selected="true" text="Tous">
+                        <RadioButton fx:id="all_" mnemonicParsing="false" selected="true" style="-fx-text-fill: -black;" text="Tous">
                            <HBox.margin>
                               <Insets left="4.0" right="4.0" />
                            </HBox.margin>
                            <stylesheets>
                               <URL value="@../../css/skeleton.css" />
                               <URL value="@../../css/material-color.css" />
+                              <URL value="@../../conf/drawer.css" />
                            </stylesheets>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -67,39 +69,58 @@
                            <toggleGroup>
                               <ToggleGroup fx:id="Group_rapport" />
                            </toggleGroup>
+                           <styleClass>
+                              <String fx:value="radio-warning" />
+                              <String fx:value="radio-drawer" />
+                           </styleClass>
                         </RadioButton>
-                        <RadioButton fx:id="solder" mnemonicParsing="false" text="Solder" toggleGroup="$Group_rapport">
+                        <RadioButton fx:id="solder" mnemonicParsing="false" style="-fx-text-fill: -black;" text="Solder" toggleGroup="$Group_rapport">
                            <HBox.margin>
                               <Insets left="4.0" right="4.0" />
                            </HBox.margin>
                            <stylesheets>
                               <URL value="@../../css/skeleton.css" />
                               <URL value="@../../css/material-color.css" />
+                              <URL value="@../../conf/drawer.css" />
                            </stylesheets>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <styleClass>
+                              <String fx:value="radio-warning" />
+                              <String fx:value="radio-drawer" />
+                           </styleClass>
                         </RadioButton>
-                        <RadioButton fx:id="Avance" mnemonicParsing="false" text="Avance" toggleGroup="$Group_rapport">
+                        <RadioButton fx:id="Avance" mnemonicParsing="false" style="-fx-text-fill: -black;" text="Avance" toggleGroup="$Group_rapport">
                            <HBox.margin>
                               <Insets left="4.0" right="4.0" />
                            </HBox.margin>
                            <stylesheets>
                               <URL value="@../../css/skeleton.css" />
                               <URL value="@../../css/material-color.css" />
+                              <URL value="@../../conf/drawer.css" />
                            </stylesheets>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <styleClass>
+                              <String fx:value="radio-warning" />
+                              <String fx:value="radio-drawer" />
+                           </styleClass>
                         </RadioButton>
-                        <RadioButton fx:id="dette" mnemonicParsing="false" text="Dette" toggleGroup="$Group_rapport">
+                        <RadioButton fx:id="dette" mnemonicParsing="false" style="-fx-text-fill: -black;" text="Dette" toggleGroup="$Group_rapport">
                            <stylesheets>
                               <URL value="@../../css/skeleton.css" />
                               <URL value="@../../css/material-color.css" />
+                              <URL value="@../../conf/drawer.css" />
                            </stylesheets>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <styleClass>
+                              <String fx:value="radio-warning" />
+                              <String fx:value="radio-drawer" />
+                           </styleClass>
                         </RadioButton>
                      </children>
                   </HBox>

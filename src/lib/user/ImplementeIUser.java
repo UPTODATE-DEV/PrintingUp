@@ -6,6 +6,8 @@
 package lib.user;
 
 import Elementary.Connexion;
+import Elementary.View_gui;
+import static controllers.PrincipaleController.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -52,6 +54,38 @@ public class ImplementeIUser implements IUser {
     @Override
     public ListView<UserDao> list() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean connexion(UserDao user) {
+        try {
+            pst = Connexion.isConnected().prepareStatement("SELECT * FROM `tbl_user_` INNER JOIN tbl_utilisateur ON\n"
+                    + "tbl_user_.idUtilisateur=tbl_utilisateur.id WHERE user_name=? AND password_=?");
+            pst.setString(1, user.getUsername()); pst.setString(2, user.getPasswor());
+            rst = pst.executeQuery();
+            if (rst.next()) {
+                TestConnexion(user);
+                nom_agent = View_gui.getIns().capitalize(rst.getString("nom"));
+                id_conne = View_gui.getIns().capitalize(rst.getString("fonction"));
+
+                return true;
+
+            } else {
+                return false;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ImplementeIUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+
+    }
+
+    boolean TestConnexion(UserDao user) throws SQLException {
+        pst = Connexion.isConnected().prepareCall("Call sp_heure_connection (?,?)");
+        pst.setString(1, user.getUsername());
+        pst.setInt(2, 0);
+        pst.executeUpdate();
+        return true;
     }
 
 }

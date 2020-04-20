@@ -5,14 +5,25 @@
  */
 package controller.parametrer.login;
 
+import static App.App.decorator;
+import App.ViewManager;
+import Elementary.Service_widows;
+import Elementary.Traitement;
 import static Elementary.references.PRINCIPAL;
 import animatefx.animation.Flash;
 import animatefx.animation.Pulse;
 import animatefx.animation.SlideInLeft;
+import com.gn.App;
 import com.gn.GNAvatarView;
+import com.jfoenix.controls.JFXDialog;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.RotateTransition;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
+import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,11 +33,14 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lib.user.ImplementeIUser;
+import lib.user.UserDao;
 
 /**
  * FXML Controller class
@@ -58,6 +72,12 @@ public class login implements Initializable {
     private RotateTransition rotateTransition = new RotateTransition();
     @FXML
     private Hyperlink createrUser;
+    private UserDao user;
+    ImplementeIUser Iuser;
+    @FXML
+    private Label message;
+    @FXML
+    private FontAwesomeIconView icon;
 
     /**
      * Initializes the controller class.
@@ -73,6 +93,9 @@ public class login implements Initializable {
         addEffect(password);
         addEffect(username);
         setupListeners();
+        Iuser = new ImplementeIUser();
+        icon.setVisible(false);
+//        ((Stage) username.getScene().getWindow()).getFullScreenExitKeyCombination();
 
     }
 
@@ -133,7 +156,9 @@ public class login implements Initializable {
 
     @FXML
     private void switchCreate(MouseEvent event) {
-        
+        CallWindow.Callwindow.GetInstance().call("/guis/parametrer/account.fxml", "UP-PRINT", 0, "/icons/uptodate.png");
+        ((Stage) username.getScene().getWindow()).close();
+
     }
 
     private boolean validPassword() {
@@ -146,13 +171,92 @@ public class login implements Initializable {
 
     void login() {
         login.setOnMouseClicked((e) -> {
-            if (validPassword() && validUsername()) {
-                ((Stage) fenetreLogin.getScene().getWindow()).close();
-                CallWindow.Callwindow.GetInstance().call(PRINCIPAL, "UP-PRINT", 0, "/icons/uptodate.png");
-            }
+            testLogin();
+        });
+        username.setOnKeyReleased((e) -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                if (username.getText().isEmpty()) {
+                    username.requestFocus();
+                } else {
+                    if (!password.getText().isEmpty()) {
+                        testLogin();
+                    } else {
+                        password.requestFocus();
 
+                    }
+                }
+            }
+        });
+        password.setOnKeyReleased((e) -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                if (password.getText().isEmpty()) {
+                    password.requestFocus();
+                } else {
+                    if (!username.getText().isEmpty()) {
+                        testLogin();
+                    } else {
+                        username.requestFocus();
+
+                    }
+                }
+            }
         });
 
     }
+    boolean bool = false;
+
+    void testLogin() {
+        if (validPassword() && validUsername()) {
+            user = new UserDao(username.getText(), password.getText());
+            if (Iuser.connexion(user) == true) {
+                ((Stage) fenetreLogin.getScene().getWindow()).close();
+                CallWindow.Callwindow.GetInstance().call(PRINCIPAL, "UP-PRINT", 0, "/icons/uptodate.png");
+            } else {
+                new Service_widows().showMssge(message, icon, "Mot de passe ou Nom d'utilisateur incorrect ", 0);
+            }
+        } else {
+
+        }
+    }
+
+//    private void Login() {
+////        if (bool != false) {
+////            Traitement.getInstanceT().showDialog(fenetreLogin, "/up_priting/loadprincipal.fxml", 49, 49);
+////        }
+//        final Service<Void> calculateService = new Service<Void>() {
+//            @Override
+//            protected Task<Void> createTask() {
+//                return new Task<Void>() {
+//
+//                    @Override
+//                    protected Void call() throws Exception {
+//                        return null;
+//                    }
+//                };
+//            }
+//        };
+//        calculateService.stateProperty().addListener((ObservableValue<? extends Worker.State> observableValue, Worker.State oldValue, Worker.State newValue) -> {
+//            switch (newValue) {
+//                case FAILED:
+//
+//                    if (bool == true) {
+//                        ((Stage) fenetreLogin.getScene().getWindow()).close();
+//                        CallWindow.Callwindow.GetInstance().call(PRINCIPAL, "UP-PRINT", 0, "/icons/uptodate.png");
+//                    }
+//                    break;
+//                case CANCELLED:
+//                    Traitement.dialog.close();
+//                    break;
+//                case SUCCEEDED:
+//                    System.out.println("Correct traitement \nRelance en cours.....");
+//                    if (bool == true) {
+//                        ((Stage) fenetreLogin.getScene().getWindow()).close();
+//                        CallWindow.Callwindow.GetInstance().call(PRINCIPAL, "UP-PRINT", 0, "/icons/uptodate.png");
+//                    }
+//                    break;
+//            }
+//        });
+//        calculateService.start();
+//    }
 
 }

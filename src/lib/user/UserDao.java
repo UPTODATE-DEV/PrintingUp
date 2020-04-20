@@ -24,6 +24,12 @@ public class UserDao extends UtilisateurDao {
         this.level_ = level_;
     }
 
+    public UserDao(String username, String passwor) {
+        this.username = username;
+        this.passwor = passwor;
+    }
+    
+
     public UserDao() {
     }
 

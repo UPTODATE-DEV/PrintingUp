@@ -8,8 +8,10 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -25,7 +27,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="680.0" minWidth="1171.0" prefHeight="680.0" prefWidth="1171.0" stylesheets="@../css/material-color.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PrincipaleController">
    <children>
-      <AnchorPane layoutX="14.0" layoutY="41.0" prefHeight="680.0" prefWidth="210.0" style="-fx-background-radius: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="680.0" prefWidth="210.0" style="-fx-background-radius: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane layoutX="13.0" layoutY="111.0" prefHeight="217.0" prefWidth="173.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="352.0" AnchorPane.leftAnchor="13.5" AnchorPane.rightAnchor="13.5">
                <children>
@@ -120,23 +122,9 @@
                   </GridPane>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="13.5" layoutY="337.0" prefHeight="54.0" prefWidth="200.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="289.0" AnchorPane.leftAnchor="13.5" AnchorPane.rightAnchor="13.5">
-               <children>
-                  <Text fill="#c3c3c387" layoutX="39.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UP-PRINT" wrappingWidth="105.66667565703392">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
             <AnchorPane layoutX="11.0" layoutY="582.0" prefHeight="29.0" prefWidth="183.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="17.0">
                <children>
-                  <Text fill="#00000079" layoutX="63.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maurice Bagalwa" wrappingWidth="117.99999535083771">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#8d8b8b" layoutX="65.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adimin" wrappingWidth="117.99999105930328">
+                  <Text fx:id="Lblfonction" fill="#8d8b8b" layoutX="42.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adimin" textAlignment="CENTER" wrappingWidth="131.99998572468758">
                      <font>
                         <Font size="11.0" />
                      </font>
@@ -146,6 +134,11 @@
                         <Image url="@../media/woman.png" />
                      </image>
                   </GNAvatarView>
+                  <Label fx:id="lbl_user_" alignment="CENTER" layoutX="40.0" layoutY="8.0" prefHeight="17.0" prefWidth="132.0" text="BAGALWA MAURICE" textAlignment="CENTER" textFill="#94949f">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="11.0" layoutY="437.0" prefHeight="114.0" prefWidth="84.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="129.0" AnchorPane.leftAnchor="11.0">
@@ -180,7 +173,28 @@
                      </styleClass>
                   </VBox>
                </children></AnchorPane>
-            <AnchorPane layoutX="116.5" layoutY="437.0" prefHeight="114.0" prefWidth="84.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="129.0" AnchorPane.rightAnchor="10.5" />
+            <AnchorPane layoutX="116.5" layoutY="437.0" prefHeight="114.0" prefWidth="84.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="129.0" AnchorPane.rightAnchor="10.5">
+               <children>
+                  <JFXButton fx:id="config" contentDisplay="GRAPHIC_ONLY" layoutX="24.0" layoutY="37.0" onMouseClicked="#openConfig" prefHeight="36.0" prefWidth="40.0" ripplerFill="BLACK">
+                     <graphic>
+                        <SVGPath content="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="#00000080" styleClass="icon" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="btn-transparent" />
+                        <String fx:value="round" />
+                     </styleClass>
+                     <contextMenu>
+                        <ContextMenu>
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                           </items>
+                        </ContextMenu>
+                     </contextMenu>
+                  </JFXButton>
+               </children></AnchorPane>
             <AnchorPane layoutX="32.0" layoutY="17.0" prefHeight="55.0" prefWidth="132.0">
                <children>
                   <ImageView fitHeight="54.0" fitWidth="194.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
@@ -189,7 +203,6 @@
                      </image>
                   </ImageView>
                </children></AnchorPane>
-            <FontAwesomeIconView fill="#da9595" glyphName="GET_POCKET" layoutX="28.0" layoutY="371.0" size="20" />
             <AnchorPane layoutX="12.0" layoutY="637.0" prefHeight="35.0" prefWidth="183.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;">
                <children>
                   <Label fx:id="txtCopyRigth" layoutX="35.0" prefHeight="36.0" prefWidth="140.0" text="\@ Copy right by UpDev2020 " textFill="#867c7c" wrapText="true">
