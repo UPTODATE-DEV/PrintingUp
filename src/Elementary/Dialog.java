@@ -37,12 +37,11 @@ import java.util.Arrays;
 import javafx.scene.Scene;
 
 /**
- * @author Gleidson Neves da Silveira | gleidisonmt@gmail.com Create on
- * 30/01/2019
+ * @author Akim
+ * 30/01/2020
  */
 @SuppressWarnings("unchecked")
 class Dialog {
-
     public static final GNDecorator decorator = new GNDecorator();
     public static final Scene scene = decorator.getScene();
     private static Color color;
@@ -71,10 +70,8 @@ class Dialog {
     private static void createLayout(VBox header, VBox content, HBox actions) {
         StackPane root = new StackPane();
         root.setPadding(new Insets(10));
-
         VBox box = new VBox();
         box.setStyle("-fx-background-radius : 10 0 10 0; -fx-background-color : white;");
-
         box.getChildren().addAll(header, content, actions);
         root.getChildren().add(box);
 
@@ -122,21 +119,16 @@ class Dialog {
         VBox container = new VBox();
         container.setAlignment(Pos.TOP_CENTER);
         container.setSpacing(20D);
-
         VBox.setMargin(container, new Insets(10, 0, 0, 0));
-
         Label lblTitle = new Label(title);
         lblTitle.getStyleClass().add("h2");
-
         Label text = new Label();
         text.setWrapText(true);
         text.setText(message);
         text.setMaxWidth(420);
         text.setAlignment(Pos.CENTER);
         text.setStyle("-fx-text-fill : -text-color; ");
-
         container.getChildren().addAll(lblTitle, text);
-
         return container;
     }
 
@@ -146,9 +138,7 @@ class Dialog {
         actions.setAlignment(Pos.CENTER);
         VBox.setMargin(actions, new Insets(10, 0, 0, 10));
         actions.setSpacing(5D);
-
         ArrayList<EventHandler<MouseEvent>> list = new ArrayList<>(Arrays.asList(event));
-
         switch (type) {
 //            case WARNING:
 //                actions.getChildren().add(
@@ -160,7 +150,6 @@ class Dialog {
         }
         return actions;
     }
-
     private static Button createButton(ButtonType type, String text, EventHandler<MouseEvent> eventEventHandler) {
         Button button = new Button(text);
         button.setCursor(Cursor.HAND);
@@ -178,13 +167,10 @@ class Dialog {
         }
         return button;
     }
-
     private static void show(Region region) {
-
         dialog.setDialogContainer(decorator.getBackground());
         dialog.setContent(region);
         dialog.setTransitionType(JFXDialog.DialogTransition.TOP);
-
         Platform.runLater(() -> new Thread(new Task() {
             @Override
             protected Object call() {

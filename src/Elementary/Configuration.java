@@ -5,6 +5,7 @@
  */
 package Elementary;
 
+import java.time.LocalDateTime;
 import java.util.prefs.Preferences;
 
 /**
@@ -17,7 +18,7 @@ public class Configuration {
 
     public static boolean RedKey(String url, String db, String login, String pwd, String port) {
 
-        if (port.isEmpty() || port.equals("")|| port==null) {
+        if (port.isEmpty() || port.equals("") || port == null) {
             pref.put("url", "jdbc:mysql://" + url + "/" + db + "");
         } else {
             pref.put("url", "jdbc:mysql://" + url + ":" + port + "/" + db + "");
@@ -64,5 +65,13 @@ public class Configuration {
 
     public static String cheminDynamyc() {
         return pref.get("accespoint", "accespoint");
+    }
+
+    public void setDate(LocalDateTime da) {
+        pref.put("maintenant", da.toString());
+    }
+
+    public String getDate() {
+        return pref.get("maintenant", "maintenant");
     }
 }

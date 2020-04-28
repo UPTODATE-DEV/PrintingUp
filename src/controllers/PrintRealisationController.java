@@ -34,7 +34,6 @@ public class PrintRealisationController implements Initializable {
         initFild();
     }
     String str;
-
     void initFild() {
 
         str = getIns().list.get(getInstanceL().code);

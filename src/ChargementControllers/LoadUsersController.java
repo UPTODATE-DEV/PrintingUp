@@ -82,8 +82,7 @@ public class LoadUsersController implements Initializable {
         btn_update.setOnMouseClicked((e) -> {
             id_u = id;
             niveau_ = this.niveau.getText();
-            System.out.println(id_u.getText());
-            try {
+             try {
                 rst = stm.executeQuery(" SELECT * FROM vs_utilisateur WHERE id='" + id_u.getText() + "'");
                 if (rst.next()) {
                     Mywindows.showFormDialog(getClass().getResource(LOAD_USER), JFXDialog.DialogTransition.CENTER, 529, 660);

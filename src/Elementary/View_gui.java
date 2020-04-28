@@ -14,10 +14,10 @@ import java.util.ArrayList;
  * @author Akim
  */
 public class View_gui extends Connexion {
-
+    
     public ArrayList<String> list = new ArrayList();
     public volatile static View_gui view;
-
+    
     public ArrayList getService(int z, String query) throws SQLException {
         list.clear();
         String id;
@@ -108,18 +108,19 @@ public class View_gui extends Connexion {
                     );
                     break;
                 case 6:
-
+                    
                     list.add(
                             rst.getString("codecmd")
                             + "^" + rst.getString("service")
                             + "#" + rst.getString("type_")
                             + "&" + rst.getString("Punitaire")
                             + "%" + rst.getString("qte")
+                            + "%$" + rst.getString("nom")
                     );
                     break;
                 case 7:
                     String nbre = rst.getString("nbre");
-
+                    
                     if (Integer.parseInt(nbre) < 10) {
                         nbre = "00" + nbre;
                     } else if (Integer.parseInt(nbre) >= 10 && Integer.parseInt(nbre) < 100) {
@@ -152,7 +153,7 @@ public class View_gui extends Connexion {
         }
         return list;
     }
-
+    
     public static View_gui getIns() {
         if (view == null) {
             synchronized (View_gui.class) {
@@ -163,7 +164,7 @@ public class View_gui extends Connexion {
         }
         return view;
     }
-
+    
     public String capitalize(String txt) {
         return txt.substring(0, 1) + "" + (txt.toLowerCase()).substring(1, txt.length());
     }

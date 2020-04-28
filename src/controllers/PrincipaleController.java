@@ -5,6 +5,7 @@
  */
 package controllers;
 
+import static Elementary.Alerts.warning;
 import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
 import static Elementary.Mywindows.popOverMenu;
@@ -15,6 +16,7 @@ import static Elementary.View_gui.getIns;
 import static Elementary.references.*;
 import com.jfoenix.controls.JFXButton;
 import static controllers.Dashbord_1Controller.vb_serce;
+import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -41,7 +43,7 @@ import org.controlsfx.control.PopOver;
  * @author Authentique
  */
 public class PrincipaleController implements Initializable {
-
+    
     @FXML
     private StackPane cotent;
     @FXML
@@ -76,7 +78,7 @@ public class PrincipaleController implements Initializable {
     @FXML
     private AnchorPane p5;
     public static boolean bool;
-
+    
     public static DatePicker dteFin2;
     public static DatePicker dteP1;
     @FXML
@@ -101,6 +103,8 @@ public class PrincipaleController implements Initializable {
     private Text Lblfonction;
     @FXML
     private Label lbl_user_;
+    @FXML
+    private MaterialDesignIconView strech;
 
     /**
      * Initializes the controller class.
@@ -122,28 +126,30 @@ public class PrincipaleController implements Initializable {
         evenememet();
         //loadContentPopup() ;
     }
-
+    
     @FXML
     private void CallFormArticle(MouseEvent event) {
         getInstanceL().IsSeleted(s_dash, s_new, s_Ccommande, s_parametre, s_Rapport);
         getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
         Mywindows.makejira(cotent, getClass().getResource(DASHBORD_1));
-    }
+        //warning("Enregistrement","");
 
+    }
+    
     @FXML
     private void CallFormEntreprise(MouseEvent event) {
         getInstanceL().IsSeleted(s_parametre, s_dash, s_new, s_Ccommande, s_Rapport);
         getInstanceL().SelectDataFor(p4, p1, p2, p3, p5);
         getInstanceL().makejira(cotent, getClass().getResource(PARAMETRE));
     }
-
+    
     @FXML
     private void CallFormNew(MouseEvent event) {
         getInstanceL().IsSeleted(s_new, s_dash, s_Ccommande, s_parametre, s_Rapport);
         getInstanceL().SelectDataFor(p2, p1, p3, p4, p5);
         getInstanceL().makejira(cotent, getClass().getResource(NOUVEAU));
     }
-
+    
     @FXML
     private void CallFormCommande(MouseEvent event) {
         bool = false;
@@ -151,49 +157,51 @@ public class PrincipaleController implements Initializable {
         getInstanceL().SelectDataFor(p3, p1, p2, p4, p5);
         getInstanceL().makejira(cotent, getClass().getResource(COMMANDE));
     }
-
+    
     @FXML
     private void setMenu(ActionEvent event) throws IOException {
         popOverMenu(pan6, getClass().getResource(OTHERMENU), PopOver.ArrowLocation.TOP_CENTER);
     }
-
+    
     void evenememet() {
         btn_refresh.setOnMouseClicked((e) -> {
             try {
                 InitData();
                 getInstanceL().ScrollwithHBX(vb_serce, getIns().getService(7, "SELECT * FROM new_print_dashboard_2 WHERE date_ BETWEEN '" + dateB(dteP) + "' AND '" + dateB(dteFin) + "'"), PRINT_SERVICE, 3);
-
                 // new Dashbord_1Controller().pieChat(2, dteP, dteP1);
             } catch (IOException | SQLException ex) {
                 Logger.getLogger(PrincipaleController.class.getName()).log(Level.SEVERE, null, ex);
             }
-
+            
+        });
+        strech.setOnMouseClicked((e) -> {
+            Mywindows.stage_.setFullScreen(true);
         });
         InitData();
     }
-
+    
     @FXML
     private void CallFormRapport(MouseEvent event) {
         bool = true;
         getInstanceL().IsSeleted(s_Rapport, s_Ccommande, s_new, s_dash, s_parametre);
         getInstanceL().SelectDataFor(p5, p3, p1, p2, p4);
         getInstanceL().makejira(cotent, getClass().getResource(LOAD_RAPPORT));
-
+        
     }
-
+    
     void InitData() {
-
+        
         lbl_attente.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Attente') AND (date_ BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
         lbl_encours.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Encours') AND (date BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
         lbl_disponible.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Fin')  AND (date BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
         lbl_livraison.setText("" + Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM vs_exe_commande WHERE (statis='Livraison') AND (date BETWEEN '" + dteP.getValue() + "' AND '" + dteFin.getValue() + "')")));
         System.out.println("La date d'aujourd'hui est " + dteFin.getValue() + "");
-
+        
     }
     public static final PopOver popConfig = new PopOver();
     public static final PopOver popup = new PopOver();
     private Parent popContent;
-
+    
     private void loadContentPopup() {
         try {
             popContent = FXMLLoader.load(getClass().getResource("/conf/Config.fxml"));
@@ -205,12 +213,12 @@ public class PrincipaleController implements Initializable {
             popConfig.setCornerRadius(0);
             popConfig.setAutoFix(true);
             popConfig.setAnimated(false);
-
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
+    
     @FXML
     private void openConfig(MouseEvent event) {
 //        if (popConfig.isShowing()) {
@@ -220,5 +228,5 @@ public class PrincipaleController implements Initializable {
 //            popConfig.getRoot().setFocusTraversable(true);
 //        }
     }
-
+    
 }

@@ -5,26 +5,21 @@
  */
 package controller.parametrer.login;
 
-import static App.App.decorator;
-import App.ViewManager;
+import Elementary.Configuration;
+import Elementary.Connexion;
+import Elementary.Mywindows;
+import static Elementary.Mywindows.openWindow;
 import Elementary.Service_widows;
-import Elementary.Traitement;
+import Elementary.references;
 import static Elementary.references.PRINCIPAL;
 import animatefx.animation.Flash;
 import animatefx.animation.Pulse;
 import animatefx.animation.SlideInLeft;
-import com.gn.App;
 import com.gn.GNAvatarView;
-import com.jfoenix.controls.JFXDialog;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.RotateTransition;
-import javafx.beans.value.ObservableValue;
-import javafx.concurrent.Service;
-import javafx.concurrent.Task;
-import javafx.concurrent.Worker;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -41,6 +36,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import lib.user.ImplementeIUser;
 import lib.user.UserDao;
+import static up_priting.Up_priting.stage_;
 
 /**
  * FXML Controller class
@@ -78,6 +74,7 @@ public class login implements Initializable {
     private Label message;
     @FXML
     private FontAwesomeIconView icon;
+    Configuration conf = new Configuration();
 
     /**
      * Initializes the controller class.
@@ -95,8 +92,13 @@ public class login implements Initializable {
         setupListeners();
         Iuser = new ImplementeIUser();
         icon.setVisible(false);
-//        ((Stage) username.getScene().getWindow()).getFullScreenExitKeyCombination();
+        //conf.setDate(LocalDateTime.now());
+        System.out.println(conf.getDate());
 
+        // ((Stage) username.getScene().getWindow()).close();
+//            CallWindow.Callwindow.GetInstance().call(references.LOAD_CLE_PRODUIT, "Saisir une clé de produit", 2, "/icons/uptodate.png");
+        // Mywindows.createWindow(getClass().getResource(references.LOAD_CLE_PRODUIT), "Saisir une clé de produit", new Stage(), false);
+//        ((Stage) username.getScene().getWindow()).getFullScreenExitKeyCombination();
     }
 
     private void addEffect(Node node) {
@@ -168,6 +170,7 @@ public class login implements Initializable {
     private boolean validUsername() {
         return !username.getText().isEmpty() && username.getLength() > 3;
     }
+    boolean bol = true;
 
     void login() {
         login.setOnMouseClicked((e) -> {
@@ -185,8 +188,17 @@ public class login implements Initializable {
 
                     }
                 }
+            } else if (e.getCode() == KeyCode.ESCAPE) {
+                if (bol == true) {
+                    stage_.setFullScreen(bol);
+                    bol = false;
+                } else {
+                    stage_.setFullScreen(bol);
+                    bol = true;
+                }
             }
         });
+
         password.setOnKeyReleased((e) -> {
             if (e.getCode() == KeyCode.ENTER) {
                 if (password.getText().isEmpty()) {
@@ -199,6 +211,14 @@ public class login implements Initializable {
 
                     }
                 }
+            } else if (e.getCode() == KeyCode.ESCAPE) {
+                if (bol == true) {
+                    stage_.setFullScreen(bol);
+                    bol = false;
+                } else {
+                    stage_.setFullScreen(bol);
+                    bol = true;
+                }
             }
         });
 
@@ -208,9 +228,11 @@ public class login implements Initializable {
     void testLogin() {
         if (validPassword() && validUsername()) {
             user = new UserDao(username.getText(), password.getText());
+
             if (Iuser.connexion(user) == true) {
                 ((Stage) fenetreLogin.getScene().getWindow()).close();
-                CallWindow.Callwindow.GetInstance().call(PRINCIPAL, "UP-PRINT", 0, "/icons/uptodate.png");
+                openWindow(getClass().getResource(PRINCIPAL), "UP-PRINT");
+                //  CallWindow.Callwindow.GetInstance().call(PRINCIPAL, "UP-PRINT", 0, "/icons/uptodate.png");
             } else {
                 new Service_widows().showMssge(message, icon, "Mot de passe ou Nom d'utilisateur incorrect ", 0);
             }
@@ -258,5 +280,4 @@ public class login implements Initializable {
 //        });
 //        calculateService.start();
 //    }
-
 }

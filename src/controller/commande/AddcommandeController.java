@@ -6,20 +6,18 @@
 package controller.commande;
 
 import Elementary.Mywindows;
-import static Elementary.Mywindows.Ouput;
 import static Elementary.Mywindows.getInstanceL;
 import static Elementary.Mywindows.popOverMenu;
 import Elementary.Service_widows;
+import Elementary.Traitement;
 import static Elementary.Traitement.getInstanceT;
 import Elementary.View_gui;
 import static Elementary.View_gui.getIns;
 import Elementary.references;
-import static Elementary.references.LOAD_COMMANDE;
-import static Elementary.references.LOAD_PRINT_LISTDETTE;
-import static Elementary.references.OTHEPAIEMENT;
-import static Elementary.references.PRINT_CMD;
+import static Elementary.references.*;
 import com.jfoenix.controls.JFXButton;
 import static controller.commande.CommandeController.vb_commande1;
+import controllers.FXMLrapportController;
 import controllers.PrincipaleController;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.io.IOException;
@@ -36,14 +34,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import lib.commande.detail.DetailCommandeDao;
 import lib.commande.detail.ImplemanteIDetailCommandeDao;
 import lib.commande.entete.EnteteCommendeDao;
@@ -114,6 +111,8 @@ public class AddcommandeController implements Initializable {
     Dao dao;
     @FXML
     private FontAwesomeIconView icon_;
+    @FXML
+    private StackPane fenetre_pan;
 
     /**
      * Initializes the controller class.
@@ -180,9 +179,10 @@ public class AddcommandeController implements Initializable {
             }
         } else if (event.getSource() == btn_print) {
             System.err.println(PrincipaleController.dteP1.getValue());
-            
+            FXMLrapportController.lbl_code_ = id_commande.getText();
             vb_.getChildren().clear();
-            
+            Traitement.getInstanceT().showDialog(fenetre_pan, LOADDING_RAPPORT, 236, 114);
+
         }
     }
 
@@ -195,7 +195,6 @@ public class AddcommandeController implements Initializable {
 
     public static void initInitial(Label m1, Label m2) {
         double mtant = Double.parseDouble(getInstanceL().ismac_up(getIns().montant + "='" + id_commande1.getText() + "'"));
-
         m1.setText(Double.toString(mtant));
         System.err.println("========================" + mtant);
         m2.setText(Double.toString(mtant / 1600));

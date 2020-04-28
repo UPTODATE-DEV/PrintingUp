@@ -23,17 +23,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
@@ -263,7 +258,7 @@ public class Traitement extends Connexion {
         return genre;
     }
 
-    public void showDialog(StackPane rootPane,String URL, int h, int w) {
+    public void showDialog(StackPane rootPane, String URL, int h, int w) {
         try {
             ShowDialog(rootPane, URL, h, w);
         } catch (IOException ex) {

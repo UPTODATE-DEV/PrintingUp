@@ -29,6 +29,7 @@ public class Detail_cmdController implements Initializable {
     @FXML
     private Label lbl_qte;
     public static String code_1;
+    public static String nom_client_;
 
     /**
      * Initializes the controller class.
@@ -40,14 +41,14 @@ public class Detail_cmdController implements Initializable {
     }
 
     String str;
-
     void initFild() {
         str = getIns().list.get(getInstanceL().code);
         code_1 = str.substring(0, str.indexOf("^"));
         lbl_service.setText(str.substring(str.indexOf("^") + 1, str.indexOf("#")));
         lbl_type.setText(str.substring(str.indexOf("#") + 1, str.indexOf("&")));
         lbl_pu.setText(str.substring(str.indexOf("&") + 1, str.indexOf("%")));
-        lbl_qte.setText(str.substring(str.indexOf("%") + 1));
+        lbl_qte.setText(str.substring(str.indexOf("%") + 1, str.indexOf("%$")));
+        nom_client_ = str.substring(str.indexOf("%$") + 2);
 
     }
 

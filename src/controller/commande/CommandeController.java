@@ -9,6 +9,7 @@ import static Elementary.Connexion.isConnected;
 import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
 import Elementary.Traitement;
+import static Elementary.Traitement.dateB;
 import Elementary.View_gui;
 import static Elementary.references.*;
 import com.jfoenix.controls.JFXButton;
@@ -18,6 +19,7 @@ import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,11 +30,13 @@ import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -92,6 +96,18 @@ public class CommandeController implements Initializable {
     private AnchorPane p_commande;
     @FXML
     private JFXButton btn_commande;
+    private StackPane stackPane_commande;
+    public static StackPane stackPane_;
+    @FXML
+    private DatePicker date_debut;
+    @FXML
+    private DatePicker date_fin;
+    @FXML
+    private Label dette;
+    @FXML
+    private Label caisse;
+    @FXML
+    private Label total;
 
     /**
      * Initializes the controller class.
@@ -99,28 +115,17 @@ public class CommandeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO 
-
+        stackPane_ = stackPane_commande;
         if (status == 1) {
-//            if (bool == true) {
-//                s_commande_rappor.setText("Rapport");
-//                btn_dette.setVisible(false);
-//                btn_attent.setVisible(false);
-//                btn_encours.setVisible(false);
-//                btn_disponible.setVisible(false);
-////                getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
-////                getInstanceL().SelectDataFor1(btn_commande1, btn_dette, btn_attent, btn_encours, btn_disponible);
-//                init(1);
-                recherche();
-//                menu_ok.setVisible(false);
-//                btn_commande_.setVisible(false);
-//                //i1.setVisible(false);
-//            } else {
+            recherche();
             s_commande_rappor.setText("Commande");
             getInstanceL().SelectDataFor(p_commande, p3, p2, p4, p5);
             getInstanceL().SelectDataFor1(btn_commande, btn_attent, btn_dette, btn_encours, btn_disponible);
             init(1);
             // DOSynchro();
             initTread1();
+            date_fin.setValue(LocalDate.now());
+            date_debut.setValue(LocalDate.now());
 
         }
 
@@ -310,65 +315,83 @@ public class CommandeController implements Initializable {
                         getInstanceL().ScrollwithHBX(vb_commande,
                                 View_gui.getIns().getService(3,
                                         "SELECT * FROM new_vs_print2_paiement WHERE nom LIKE '%"
-                                                + Tfl_search.getText()
-                                                + "%' OR id LIKE '%" + Tfl_search.getText() + "%'"), PRINT_CMD, 2);
-                        
+                                        + Tfl_search.getText()
+                                        + "%' OR id LIKE '%" + Tfl_search.getText() + "%'"), PRINT_CMD, 2);
+
                     } catch (SQLException | IOException ex) {
                         Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
-                    }   break;
+                    }
+                    break;
                 case 2:
                     try {
                         getInstanceL().ScrollwithHBX(vb_commande,
                                 View_gui.getIns().getService(5,
                                         "SELECT * FROM client_dette WHERE (nom LIKE '%"
-                                                + Tfl_search.getText()
-                                                + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), PRINT_PAIEMENT_DETTE, 2);
-                        
+                                        + Tfl_search.getText()
+                                        + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), PRINT_PAIEMENT_DETTE, 2);
+
                     } catch (SQLException | IOException ex) {
                         Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
-                    }   break;
+                    }
+                    break;
                 case 3:
                     try {
                         getInstanceL().ScrollwithHBX(vb_commande,
                                 View_gui.getIns().getService(4,
                                         "SELECT * FROM new_test_encours Where (statis='Attente') AND (nom LIKE '%"
-                                                + Tfl_search.getText()
-                                                + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), LOAD_PRINT_DETTE, 2);
-                        
+                                        + Tfl_search.getText()
+                                        + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), LOAD_PRINT_DETTE, 2);
+
                     } catch (SQLException | IOException ex) {
                         Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
-                    }   break;
+                    }
+                    break;
                 case 4:
                     try {
                         getInstanceL().ScrollwithHBX(vb_commande,
                                 View_gui.getIns().getService(4,
                                         "SELECT * FROM new_test_encours Where (statis='Encours') AND (nom LIKE '%"
-                                                + Tfl_search.getText()
-                                                + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), LOAD_PRINT_ENCOURS, 2);
-                        
+                                        + Tfl_search.getText()
+                                        + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), LOAD_PRINT_ENCOURS, 2);
+
                     } catch (SQLException | IOException ex) {
                         Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
-                    }   break;
+                    }
+                    break;
                 case 5:
                     try {
                         getInstanceL().ScrollwithHBX(vb_commande,
                                 View_gui.getIns().getService(4,
                                         "SELECT * FROM new_test_encours Where (statis='Fin') AND (nom LIKE '%"
-                                                + Tfl_search.getText()
-                                                + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), LOAD_PRINT_FIN, 2);
-                        
+                                        + Tfl_search.getText()
+                                        + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), LOAD_PRINT_FIN, 2);
+
                     } catch (SQLException | IOException ex) {
                         Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
-                    }   break;
+                    }
+                    break;
                 default:
                     break;
             }
 
         });
     }
+    String id_co, id_co1;
 
     @FXML
     private void synchro(ActionEvent event) {
+        try {
+            dette.setText(getInstanceL().ismac_up("SELECT sum(rester) x FROM vs_paiement_date_01 WHERE date_format(date_,'%Y-%m-%d') BETWEEN '" + dateB(date_debut) + "' AND '" + dateB(date_fin) + "'"));
+            total.setText(getInstanceL().ismac_up("SELECT sum(montant) x FROM vs_paiement_date_01 WHERE date_format(date_,'%Y-%m-%d') BETWEEN '" + dateB(date_debut) + "' AND '" + dateB(date_fin) + "'"));
+            caisse.setText(getInstanceL().ismac_up("SELECT sum(payer) x FROM vs_paiement_date_01 WHERE date_format(date_,'%Y-%m-%d') BETWEEN '" + dateB(date_debut) + "' AND '" + dateB(date_fin) + "'"));
+            id_co = getInstanceL().ismac_up("SELECT min(id) x FROM vs_paiement_date_01 WHERE date_format(date_,'%Y-%m-%d') BETWEEN '" + dateB(date_debut) + "' AND '" + dateB(date_fin) + "'");
+            id_co1 = getInstanceL().ismac_up("SELECT max(id) x FROM vs_paiement_date_01 WHERE date_format(date_,'%Y-%m-%d') BETWEEN '" + dateB(date_debut) + "' AND '" + dateB(date_fin) + "'");
+            getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement WHERE id BETWEEN '" + id_co + "' AND '" + id_co1 + "'"), PRINT_CMD, 2);
+            
+        } catch (IOException | SQLException ex) {
+            Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
 }

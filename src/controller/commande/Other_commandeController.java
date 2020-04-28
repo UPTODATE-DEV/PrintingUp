@@ -9,6 +9,7 @@ import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
 import Elementary.View_gui;
 import static Elementary.references.LOAD_DETAIL;
+import static controller.commande.Detail_cmdController.nom_client_;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -30,6 +31,9 @@ public class Other_commandeController implements Initializable {
     @FXML
     private VBox vb_detail;
     public static Label lab;
+    @FXML
+    private Label lab_client;
+   
 
     /**
      * Initializes the controller class.
@@ -39,8 +43,11 @@ public class Other_commandeController implements Initializable {
         // TODO
         initData();
         lab.getText();
+        lab_client.setText(nom_client_);
+      
     }
-    String str = "SELECT codecmd,service,type_,Punitaire,qte FROM vs_facture where codecmd='" + lab.getText() + "'";
+    String str = "SELECT codecmd,service,type_,Punitaire,qte,nom FROM vs_facture where codecmd='" + lab.getText() + "'";
+
     void initData() {
         try {
             Mywindows.getInstanceL().ScrollwithHBX(vb_detail, View_gui.getIns().getService(6, str), LOAD_DETAIL, 1);

@@ -16,10 +16,10 @@ public class references {
      * @Gui
      */
     public static final String PRINCIPAL = "/gui/principale.fxml";
-
     public static final String DASHBORD_1 = "/gui/dashbord_1.fxml";
-
     public static final String PRINT_SERVICE = "/gui/printRealisation.fxml";
+    public static final String LOADDING_RAPPORT = "/gui/FXMLrapport.fxml";
+    public static final String LOAD_CLE_PRODUIT = "/gui/cle_produit.fxml";
 
     public static final String LOGIN = "/guis/parametrer/login.fxml";
 
@@ -53,7 +53,7 @@ public class references {
     public static final String PRINT_CLIENT = "/guis/nouveau/printClient.fxml";
     public static final String ADDCOMMANDE = "/guis/commande/Addcommande.fxml";
     public static final String PRINT_CMD = "/guis/commande/PrintCommandeAll.fxml";
-    public static final String LOAD_RAPPORT="/guis/commande/rapport_vente.fxml";
+    public static final String LOAD_RAPPORT = "/guis/commande/rapport_vente.fxml";
     public static final String PRINT_DETTE = "/guis/commande/orther_paiement_dette.fxml";
     public static final String PRINT_PAIEMENT_DETTE = "/guis/commande/other_regle_dette.fxml";
 
@@ -67,7 +67,6 @@ public class references {
     public static final String ENTRER_AGENT = "/parametre/user_detail.fxml";
     public static final String LOAD_UTILISATEUR = "/c_addForms/loadUsers.fxml";
     public static final String LOAD_USER = "/parametre/update_user.fxml";
-    
 
     /**
      * *
@@ -80,6 +79,7 @@ public class references {
     public final String MESSAGE_ISMPTY = "Completer les champs svp";
     public final String MESSAGE_INFERIEUR = "Vous avez entrer le nontant invalider";
     public final String MESSAGE_FACT = "Créé d'abord la facture svp";
+    public final String MESSAGE_QUESTION_DELETE = "Voulaiz vous supprimer svp";
 
     /**
      * *

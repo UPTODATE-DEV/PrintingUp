@@ -6,6 +6,7 @@
 package controller.commande;
 
 import static Elementary.Mywindows.getInstanceL;
+import static Elementary.Traitement.getInstanceT;
 import Elementary.View_gui;
 import static Elementary.references.PRINT_CMD;
 import com.jfoenix.controls.JFXButton;
@@ -19,8 +20,11 @@ import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -48,6 +52,18 @@ public class rapport_vente implements Initializable {
     private VBox vb_commande;
     @FXML
     private JFXButton btAdd;
+    @FXML
+    private ToggleGroup Group_rapport;
+    @FXML
+    private Label lbl_dette;
+    @FXML
+    private Label lbl_caissier;
+    @FXML
+    private Label lbl_total;
+    @FXML
+    private DatePicker date_debut;
+    @FXML
+    private DatePicker date_fin;
 
     /**
      * Initializes the controller class.
@@ -67,6 +83,7 @@ public class rapport_vente implements Initializable {
 
     @FXML
     private void synchro(ActionEvent event) {
+        
     }
 
     String checkSelected() {
@@ -94,6 +111,7 @@ public class rapport_vente implements Initializable {
         dette.setOnMouseClicked((e) -> {
             Init();
         });
+        getInstanceT().Ecart(date_debut, date_fin);
     }
 
     void Init() {

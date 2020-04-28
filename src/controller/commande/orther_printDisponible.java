@@ -6,6 +6,7 @@
 package controller.commande;
 
 import Elementary.Connexion;
+import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
 import Elementary.Traitement;
 import static Elementary.Traitement.alerteAvertissement;
@@ -13,6 +14,8 @@ import static Elementary.Traitement.getInstanceT;
 import Elementary.View_gui;
 import static Elementary.View_gui.getIns;
 import Elementary.references;
+import static Elementary.references.OTHEINFO;
+import com.jfoenix.controls.JFXDialog;
 import static controller.commande.CommandeController.vb_commande1;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.io.IOException;
@@ -25,6 +28,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import lib.testCommande.Dao;
 import lib.testCommande.ImplemanteITestCommande;
 
@@ -46,6 +50,8 @@ public class orther_printDisponible implements Initializable {
     @FXML
     private Label Tfd_id;
     Dao dao;
+    @FXML
+    private AnchorPane voir_plus;
 
     /**
      * Initializes the controller class.
@@ -58,6 +64,7 @@ public class orther_printDisponible implements Initializable {
     String str;
 
     void initFild() {
+        eventDetail();
         livrecommande();
         str = getIns().list.get(getInstanceL().code);
         Tfd_id.setText(str.substring(0, str.indexOf("|")));
@@ -109,6 +116,16 @@ public class orther_printDisponible implements Initializable {
             return false;
         }
 
+    }
+       void eventDetail() {
+        voir_plus.setOnMouseClicked((e) -> {
+            try {
+                Other_commandeController.lab = Tfd_id;
+                Mywindows.showFormDialog(getClass().getResource(OTHEINFO), JFXDialog.DialogTransition.CENTER, 264, 450);
+            } catch (IOException ex) {
+                Logger.getLogger(PrintCommandeAllController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
     }
 
 }

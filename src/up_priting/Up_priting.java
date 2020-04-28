@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -29,6 +30,7 @@ public class Up_priting extends Application {
         stage.getFullScreenExitKeyCombination();
         stage.setMaximized(true);
         //  stage.isFullScreen();
+        stage.getIcons().add(new javafx.scene.image.Image("/icons/uptodate.png"));
         stage.show();
     }
 

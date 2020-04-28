@@ -6,6 +6,7 @@
 package controller.commande;
 
 import Elementary.Mywindows;
+import static Elementary.Traitement.getInstanceT;
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -50,7 +51,10 @@ public class Orher_detteController implements Initializable {
                 if (Tfd_montnt.getText().equals("0.0") || Tfd_montnt.getText().isEmpty() || tbl_client.getText().isEmpty() || Double.parseDouble(Tfd_montnt.getText()) <= 0.0) {
                     Mywindows.OuputText(message, "Paiement échoue", icon, true);
                 } else {
-                    if (Mywindows.isSaved("sp_paiement", "PROCEDURE", Tfd_montnt, tbl_client, "1") == true) {
+ //                  if (Mywindows.isSaved("sp_paiement", "PROCEDURE", Tfd_montnt, tbl_client, "1") == true) {
+//                        Mywindows.OuputText(message, "Paiement réussi ", icon, false);
+//                    }
+                    if (getInstanceT().getprepare("Call sp_paiement('" + Tfd_montnt.getText() + "', '" + tbl_client.getText() + "','" + 1 + "')") == true) {
                         Mywindows.OuputText(message, "Paiement réussi ", icon, false);
                     }
                 }

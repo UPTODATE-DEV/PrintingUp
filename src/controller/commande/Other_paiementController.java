@@ -139,7 +139,7 @@ public class Other_paiementController implements Initializable {
     void init() {
         try {
             try {
-                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 4);
+                getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement"), PRINT_CMD, 2);
             } catch (SQLException ex) {
                 Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -4,7 +4,6 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.icons525.Icons525View?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
-<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
@@ -17,206 +16,210 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="490.0" prefWidth="729.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.AddcommandeController">
+
+<StackPane fx:id="fenetre_pan" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.commande.AddcommandeController">
    <children>
-      <AnchorPane layoutX="28.0" layoutY="9.0" prefHeight="57.0" prefWidth="100.0" style="-fx-background-color: #176FE5; -fx-background-radius: 5px;">
-         <effect>
-            <DropShadow color="#d0d0d0" />
-         </effect>
+      <AnchorPane id="AnchorPane" prefHeight="490.0" prefWidth="729.0" style="-fx-background-color: #fff;">
          <children>
-            <JFXButton alignment="CENTER" contentDisplay="TOP" layoutY="7.0" prefHeight="48.0" prefWidth="56.0" text="Commande" textFill="WHITE" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0">
+            <AnchorPane layoutX="28.0" layoutY="9.0" prefHeight="57.0" prefWidth="100.0" style="-fx-background-color: #176FE5; -fx-background-radius: 5px;">
+               <effect>
+                  <DropShadow color="#d0d0d0" />
+               </effect>
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="TOP" layoutY="7.0" prefHeight="48.0" prefWidth="56.0" text="Commande" textFill="WHITE" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0">
+                     <font>
+                        <Font name="Century Gothic Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <Icons525View fill="WHITE" glyphName="BASKET2" size="18" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <GridPane layoutX="25.0" layoutY="83.923828125" vgap="5.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom client">
+                           <font>
+                              <Font name="Century Gothic" size="13.0" />
+                           </font>
+                        </Text>
+                        <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
+                           <children>
+                              <TextField fx:id="Tfdclient" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom du client" style="-fx-background-color: #fff;" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#1970e389" glyphName="CHECKBOX_MARKED" size="18" />
+                                 </graphic>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane GridPane.rowIndex="1">
+                     <children>
+                        <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service">
+                           <font>
+                              <Font name="Century Gothic" size="13.0" />
+                           </font>
+                        </Text>
+                        <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
+                           <children>
+                              <TextField fx:id="Tfdservice" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le service" style="-fx-background-color: #fff;" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#1970e389" glyphName="CHECKBOX_MARKED" size="18" />
+                                 </graphic>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane GridPane.rowIndex="2">
+                     <children>
+                        <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantite">
+                           <font>
+                              <Font name="Century Gothic" size="13.0" />
+                           </font>
+                        </Text>
+                        <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
+                           <children>
+                              <TextField fx:id="TfdQuantite" layoutX="39.0" layoutY="2.0" onKeyReleased="#key_testcaracteur" prefHeight="32.0" prefWidth="256.0" promptText="Entrer la quantite" style="-fx-background-color: #fff;" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#1970e389" glyphName="CHECKBOX_MARKED" size="18" />
+                                 </graphic>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane GridPane.rowIndex="3">
+                     <children>
+                        <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P.unitaire">
+                           <font>
+                              <Font name="Century Gothic" size="13.0" />
+                           </font>
+                        </Text>
+                        <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
+                           <children>
+                              <TextField fx:id="TfdPunitaire" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer punitaire" style="-fx-background-color: #fff;" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#1970e389" glyphName="CHECKBOX_MARKED" size="18" />
+                                 </graphic>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+            <JFXButton fx:id="btn_commande" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="72.0" layoutY="349.0" onAction="#Traitement_commande" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #176FE5;" text="Commander" textFill="WHITE" />
+            <AnchorPane layoutX="24.0" layoutY="379.0" prefHeight="27.0" prefWidth="298.0">
+               <children>
+                  <Label fx:id="icon" prefHeight="27.0" prefWidth="298.0">
+                     <graphic>
+                        <FontAwesomeIconView fx:id="icon_" fill="WHITE" size="18" />
+                     </graphic>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label fx:id="Tfd_code" layoutX="181.0" layoutY="32.0" text="0" textFill="WHITE" />
+            <Label fx:id="id_commande" layoutX="131.0" layoutY="7.0" prefHeight="17.0" prefWidth="100.0" style="-fx-background-color: #FFF;" text="0" textFill="WHITE">
                <font>
-                  <Font name="Century Gothic Bold" size="13.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
-               <graphic>
-                  <Icons525View fill="WHITE" glyphName="BASKET2" size="18" />
-               </graphic>
-            </JFXButton>
-         </children>
-      </AnchorPane>
-      <GridPane layoutX="25.0" layoutY="83.923828125" vgap="5.0">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-         </rowConstraints>
-         <children>
-            <AnchorPane>
-               <children>
-                  <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom client">
-                     <font>
-                        <Font name="Century Gothic" size="13.0" />
-                     </font>
-                  </Text>
-                  <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
-                     <children>
-                        <TextField fx:id="Tfdclient" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le nom du client" style="-fx-background-color: #fff;" />
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <graphic>
-                              <MaterialDesignIconView fill="#1970e389" glyphName="CHECKBOX_MARKED" size="18" />
-                           </graphic>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane GridPane.rowIndex="1">
-               <children>
-                  <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service">
-                     <font>
-                        <Font name="Century Gothic" size="13.0" />
-                     </font>
-                  </Text>
-                  <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
-                     <children>
-                        <TextField fx:id="Tfdservice" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer le service" style="-fx-background-color: #fff;" />
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <graphic>
-                              <MaterialDesignIconView fill="#1970e389" glyphName="CHECKBOX_MARKED" size="18" />
-                           </graphic>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane GridPane.rowIndex="2">
-               <children>
-                  <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantite">
-                     <font>
-                        <Font name="Century Gothic" size="13.0" />
-                     </font>
-                  </Text>
-                  <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
-                     <children>
-                        <TextField fx:id="TfdQuantite" layoutX="39.0" layoutY="2.0" onKeyReleased="#key_testcaracteur" prefHeight="32.0" prefWidth="256.0" promptText="Entrer la quantite" style="-fx-background-color: #fff;" />
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <graphic>
-                              <MaterialDesignIconView fill="#1970e389" glyphName="CHECKBOX_MARKED" size="18" />
-                           </graphic>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane GridPane.rowIndex="3">
-               <children>
-                  <Text layoutX="2.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P.unitaire">
-                     <font>
-                        <Font name="Century Gothic" size="13.0" />
-                     </font>
-                  </Text>
-                  <AnchorPane layoutY="20.076171875" prefHeight="36.0" prefWidth="298.0" style="-fx-background-color: #fff; -fx-border-color: #D8D8D8; -fx-border-width: 0.5px;">
-                     <children>
-                        <TextField fx:id="TfdPunitaire" layoutX="39.0" layoutY="2.0" prefHeight="32.0" prefWidth="256.0" promptText="Entrer punitaire" style="-fx-background-color: #fff;" />
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="3.0" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #D8D8D8; -fx-border-width: 0px 0.5px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <graphic>
-                              <MaterialDesignIconView fill="#1970e389" glyphName="CHECKBOX_MARKED" size="18" />
-                           </graphic>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-         </children>
-      </GridPane>
-      <JFXButton fx:id="btn_commande" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="72.0" layoutY="349.0" onAction="#Traitement_commande" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #176FE5;" text="Commander" textFill="WHITE" />
-      <AnchorPane layoutX="24.0" layoutY="379.0" prefHeight="27.0" prefWidth="298.0">
-         <children>
-            <Label fx:id="icon" prefHeight="27.0" prefWidth="298.0">
-               <graphic>
-                  <FontAwesomeIconView fx:id="icon_" fill="WHITE" size="18" />
-               </graphic></Label>
-         </children></AnchorPane>
-      <Label fx:id="Tfd_code" layoutX="181.0" layoutY="32.0" text="0" textFill="WHITE" />
-      <Label fx:id="id_commande" layoutX="131.0" layoutY="7.0" prefHeight="17.0" prefWidth="100.0" style="-fx-background-color: #FFF;" text="0" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="135.0" layoutY="8.0" prefHeight="17.0" prefWidth="93.0" style="-fx-background-color: #FFF;" text="Numéro facture" textFill="WHITE" />
-      <JFXButton fx:id="btn_test_" alignment="CENTER" contentDisplay="CENTER" layoutX="330.0" layoutY="109.0" onAction="#getadd" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #176FE5;" text=" ">
-         <graphic>
-            <FontAwesomeIconView fill="WHITE" glyphName="TH_LARGE" size="13" />
-         </graphic>
-         <font>
-            <Font size="7.0" />
-         </font>
-      </JFXButton>
-      <ScrollPane layoutX="360.0" layoutY="103.0" prefHeight="287.0" prefWidth="358.0" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="3.0">
-         <content>
-            <VBox fx:id="vb_" prefHeight="285.0" prefWidth="364.0" style="-fx-background-color: #fff;" />
-         </content>
-         <stylesheets>
-            <URL value="@../../css/custom-scroll.css" />
-            <URL value="@../../css/skeleton.css" />
-         </stylesheets>
-      </ScrollPane>
-      <JFXButton fx:id="btn_print" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="176.0" layoutY="349.0" onAction="#Traitement_commande" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #176FE5;" text="Imprimer" textFill="WHITE" />
-      <HBox alignment="CENTER" layoutX="135.0" layoutY="14.0" prefHeight="54.0" prefWidth="308.0" style="-fx-border-width: 0.5px; -fx-border-color: #D8D8D8; -fx-background-radius: 1em;" AnchorPane.leftAnchor="361.0" AnchorPane.rightAnchor="10.0">
-         <children>
-            <AnchorPane prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: Transparent;">
-               <children>
-                  <Label fx:id="lbl_frac" alignment="CENTER" layoutX="4.0" layoutY="20.0" prefHeight="25.0" prefWidth="153.0" text="00.000">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="2.0" layoutY="9.0" prefHeight="17.0" prefWidth="153.0" text="Montant à payer en fc" textFill="#c2c2c2">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Label>
-                  <MaterialDesignIconView fill="#6aa2ee" glyphName="BUFFER" layoutX="73.0" layoutY="14.0" size="15" />
-               </children>
-               <HBox.margin>
-                  <Insets bottom="2.0" left="4.0" right="4.0" top="2.0" />
-               </HBox.margin>
-            </AnchorPane>
-            <AnchorPane prefHeight="48.0" prefWidth="158.0" style="-fx-background-color: Transparent;">
-               <children>
-                  <Label fx:id="lbl_dollars" alignment="CENTER" layoutX="7.0" layoutY="22.0" prefHeight="25.0" prefWidth="153.0" text="00.000">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="7.0" layoutY="13.0" prefHeight="17.0" prefWidth="153.0" text="Montant à payer dollars" textFill="#c2c2c2">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Label>
-                  <MaterialDesignIconView fill="#eebd62" glyphName="SQUARE_INC_CASH" layoutX="74.0" layoutY="14.0" size="15" />
-               </children>
-               <HBox.margin>
-                  <Insets bottom="2.0" left="4.0" right="4.0" top="2.0" />
-               </HBox.margin>
-            </AnchorPane>
-         </children>
-         <padding>
-            <Insets right="4.0" />
-         </padding>
-      </HBox>
-      <Label alignment="CENTER" layoutX="361.0" layoutY="87.0" prefHeight="17.0" prefWidth="358.0" text="LISTE DES SERVICES SELECTIONNERS" textFill="#d8d8d8" />
-      <AnchorPane fx:id="pan1_" layoutX="130.0" layoutY="30.0" prefHeight="20.0" prefWidth="108.0" style="-fx-background-color: #4F9E77; -fx-background-radius: 5px;">
-         <children>
-            <Label fx:id="lbl_paiement" alignment="CENTER" layoutX="3.0" layoutY="1.0" onMouseClicked="#callpaiement" prefHeight="17.0" prefWidth="100.0" style="-fx-background-color: #4F9E77;" text="Payer la facture" textFill="WHITE">
-               <graphic>
-                  <MaterialDesignIconView fill="WHITE" glyphName="LAYERS" />
-               </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </Label>
+            <Label layoutX="135.0" layoutY="8.0" prefHeight="17.0" prefWidth="93.0" style="-fx-background-color: #FFF;" text="Numéro facture" textFill="WHITE" />
+            <JFXButton fx:id="btn_test_" alignment="CENTER" contentDisplay="CENTER" layoutX="330.0" layoutY="109.0" onAction="#getadd" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #176FE5;" text=" ">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TH_LARGE" size="13" />
+               </graphic>
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </JFXButton>
+            <ScrollPane layoutX="360.0" layoutY="103.0" prefHeight="287.0" prefWidth="358.0" stylesheets="@../../css/custom-scroll.css" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="3.0">
+               <content>
+                  <VBox fx:id="vb_" prefHeight="285.0" prefWidth="364.0" style="-fx-background-color: #fff;" />
+               </content>
+            </ScrollPane>
+            <JFXButton fx:id="btn_print" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="176.0" layoutY="349.0" onAction="#Traitement_commande" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #176FE5;" text="Imprimer" textFill="WHITE" />
+            <HBox alignment="CENTER" layoutX="135.0" layoutY="14.0" prefHeight="54.0" prefWidth="308.0" style="-fx-border-width: 0.5px; -fx-border-color: #D8D8D8; -fx-background-radius: 1em;" AnchorPane.leftAnchor="361.0" AnchorPane.rightAnchor="10.0">
+               <children>
+                  <AnchorPane prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: Transparent;">
+                     <children>
+                        <Label fx:id="lbl_frac" alignment="CENTER" layoutX="4.0" layoutY="20.0" prefHeight="25.0" prefWidth="153.0" text="00.000">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="2.0" layoutY="9.0" prefHeight="17.0" prefWidth="153.0" text="Montant à payer en fc" textFill="#c2c2c2">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <MaterialDesignIconView fill="#6aa2ee" glyphName="BUFFER" layoutX="73.0" layoutY="14.0" size="15" />
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="2.0" left="4.0" right="4.0" top="2.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="48.0" prefWidth="158.0" style="-fx-background-color: Transparent;">
+                     <children>
+                        <Label fx:id="lbl_dollars" alignment="CENTER" layoutX="7.0" layoutY="22.0" prefHeight="25.0" prefWidth="153.0" text="00.000">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="7.0" layoutY="13.0" prefHeight="17.0" prefWidth="153.0" text="Montant à payer dollars" textFill="#c2c2c2">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <MaterialDesignIconView fill="#eebd62" glyphName="SQUARE_INC_CASH" layoutX="74.0" layoutY="14.0" size="15" />
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="2.0" left="4.0" right="4.0" top="2.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+               </children>
+               <padding>
+                  <Insets right="4.0" />
+               </padding>
+            </HBox>
+            <Label alignment="CENTER" layoutX="361.0" layoutY="87.0" prefHeight="17.0" prefWidth="358.0" text="LISTE DES SERVICES SELECTIONNERS" textFill="#d8d8d8" />
+            <AnchorPane fx:id="pan1_" layoutX="130.0" layoutY="30.0" prefHeight="20.0" prefWidth="108.0" style="-fx-background-color: #4F9E77; -fx-background-radius: 5px;">
+               <children>
+                  <Label fx:id="lbl_paiement" alignment="CENTER" layoutX="3.0" layoutY="1.0" onMouseClicked="#callpaiement" prefHeight="17.0" prefWidth="100.0" style="-fx-background-color: #4F9E77;" text="Payer la facture" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="LAYERS" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <ListView fx:id="listClient" layoutX="24.0" layoutY="140.0" prefHeight="265.0" prefWidth="298.0" style="-fx-background-color: Transparent;" />
+            <ListView fx:id="listService" layoutX="25.0" layoutY="202.0" prefHeight="287.0" prefWidth="298.0" style="-fx-background-color: Transparent;" />
          </children>
       </AnchorPane>
-      <ListView fx:id="listClient" layoutX="24.0" layoutY="140.0" prefHeight="265.0" prefWidth="298.0" style="-fx-background-color: Transparent;" />
-      <ListView fx:id="listService" layoutX="25.0" layoutY="202.0" prefHeight="287.0" prefWidth="298.0" style="-fx-background-color: Transparent;" />
    </children>
-</AnchorPane>
+</StackPane>

@@ -58,5 +58,17 @@
             </Label>
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="voir_plus" layoutX="7.0" layoutY="95.0" style="-fx-background-radius: 1em;">
+         <children>
+            <Label prefHeight="17.0" prefWidth="84.0" text="Voir plus" textFill="#a19898">
+               <graphic>
+                  <MaterialDesignIconView fill="#ea6f6f" glyphName="PLUS" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -239,7 +239,7 @@
                               <OctIconView fill="#03a9f4" glyphName="DIFF_RENAMED" size="16" />
                            </graphic>
                         </Label>
-                        <Label layoutX="7.0" layoutY="48.0" prefHeight="19.0" prefWidth="80.0" text="23445.45" textFill="#000000cc">
+                        <Label fx:id="dette" layoutX="7.0" layoutY="48.0" prefHeight="19.0" prefWidth="80.0" text="23445.45" textFill="#000000cc">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
@@ -260,7 +260,7 @@
                               <OctIconView fill="#fe4b4c" glyphName="LINK_EXTERNAL" rotate="-90.0" size="16" />
                            </graphic>
                         </Label>
-                        <Label layoutX="7.0" layoutY="48.0" prefHeight="19.0" prefWidth="80.0" text="23445.45" textFill="#000000cc">
+                        <Label fx:id="caisse" layoutX="7.0" layoutY="48.0" prefHeight="19.0" prefWidth="80.0" text="23445.45" textFill="#000000cc">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
@@ -283,7 +283,7 @@
                         <Font name="Lucida Console" size="12.0" />
                      </font>
                   </Text>
-                  <Label layoutX="80.0" layoutY="18.0" prefHeight="19.0" prefWidth="107.0" text="23445.45">
+                  <Label fx:id="total" layoutX="80.0" layoutY="18.0" prefHeight="19.0" prefWidth="107.0" text="23445.45">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
@@ -310,8 +310,8 @@
             <Font name="Ebrima Bold" size="13.0" />
          </font>
       </JFXButton>
-      <DatePicker layoutX="23.0" layoutY="142.0" prefHeight="25.0" prefWidth="192.0" stylesheets="@../../css/skeleton.css" />
-      <DatePicker layoutX="23.0" layoutY="185.0" prefHeight="25.0" prefWidth="192.0" stylesheets="@../../css/skeleton.css" />
+      <DatePicker fx:id="date_debut" layoutX="23.0" layoutY="142.0" prefHeight="25.0" prefWidth="192.0" stylesheets="@../../css/skeleton.css" />
+      <DatePicker fx:id="date_fin" layoutX="23.0" layoutY="185.0" prefHeight="25.0" prefWidth="192.0" stylesheets="@../../css/skeleton.css" />
    </children>
    <stylesheets>
       <URL value="@../../css/custom-scroll.css" />

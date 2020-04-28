@@ -5,7 +5,6 @@
  */
 package Elementary;
 
-//import Others.ElementaryCode;
 import static Elementary.Connexion.isConnected;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
@@ -14,7 +13,6 @@ import static controller.commande.AddcommandeController.id_commande1;
 import static controllers.PrincipaleController.Rcotent;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
-//import static controllers.PrincipaleController.Indexstack;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
@@ -81,8 +79,25 @@ public class Mywindows extends Traitement {
             }
             stage.setResizable(resizable);
             stage.setTitle(title);
+            stage.getIcons().add(new javafx.scene.image.Image("/icons/uptodate.png"));
             stage.setScene(new Scene(root));
 
+            stage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    public static Stage stage_;
+
+    public static void openWindow(URL URL, String title) {
+        try {
+            Parent root = FXMLLoader.load(URL);
+            Stage stage = new Stage();
+            stage.setMaximized(true);
+            stage_ = stage;
+            stage.setTitle(title);
+            stage.getIcons().add(new javafx.scene.image.Image("/icons/uptodate.png"));
+            stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -512,108 +527,107 @@ public class Mywindows extends Traitement {
 
     static int ip;
 
-    public static boolean isSaved(String nameT, String typeQuerry, Object... DataExt) throws IOException, Exception {
-        /**
-         * @Initialisation des variables i & size
-         */
-        ip = 0;
-        size = DataExt.length;
-        Object dataInt[] = new Object[size];
-
-        for (Object f : DataExt) {
-            if (f instanceof TextField) {
-                TextField text = (TextField) f;
-                dataInt[ip] = text.getText();
-            } else if (f instanceof DatePicker) {
-                DatePicker text = (DatePicker) f;
-                dataInt[ip] = text.getValue();
-            } else if (f instanceof TextArea) {
-                TextArea text = (TextArea) f;
-                dataInt[ip] = text.getText();
-            } else if (f instanceof ComboBox) {
-                ComboBox text = (ComboBox) f;
-                dataInt[ip] = text.getValue();
-            } else if (f instanceof Label) {
-                Label text = (Label) f;
-                dataInt[ip] = text.getText();
-            } else if (f instanceof Text) {
-                Text text = (Text) f;
-                dataInt[ip] = text.getText();
-            } else if (f instanceof PasswordField) {
-                PasswordField text = (PasswordField) f;
-                dataInt[ip] = text.getText();
-            } else if (f instanceof String) {
-                String str2 = (String) f;
-                dataInt[ip] = str2;
-            } else if (f instanceof Integer) {
-                Integer inter = (Integer) f;
-                dataInt[ip] = inter;
-            } else if (f instanceof Float) {
-                Float flt = (Float) f;
-                dataInt[ip] = flt;
-            } else if (f instanceof Double) {
-                Double dble = (Double) f;
-                dataInt[ip] = dble;
-            } else if (f instanceof Boolean) {
-                Boolean bool = (Boolean) f;
-                dataInt[ip] = bool;
-            }
-            ip++;
-        }
-        /**
-         * @Bouble permetant de creer les pointeurs "?"
-         *
-         */
-        for (int j = 1; j < size; j++) {
-            if (size == 1) {
-                _p = "" + _p;
-            } else {
-                _p = _p + ",?";
-            }
-        }
-        _p = "(" + _p + ")";
-        ip = 0;
-        /**
-         * @verification du Type de requette (Procedurale ou simple insertion)
-         */
-        try {
-            if ("PROCEDURE".equals(typeQuerry)) {
-                getInstanceT().ps = isConnected().prepareCall("Call " + nameT + "" + _p);
-                System.out.println("Call " + nameT + "" + _p);
-            } else if ("QUERRY".equals(typeQuerry)) {
-                getInstanceT().ps = isConnected().prepareStatement("insert into " + nameT + " values" + _p);
-            }
-            System.out.println("Querry: insert into " + nameT + " values" + _p);
-            /**
-             * @Bouble permetant de remplir les pointeurs avec des données "?"
-             */
-            System.out.println("data size" + dataInt.length);
-//            for (Object data : dataInt) {
-            for (int k = 0; k < dataInt.length; k++) {
-                System.out.println("data[" + (ip + 1) + "] " + dataInt[k]);
-                getInstanceT().ps.setObject((k + 1), dataInt[k].toString());
-                ip++;
-            }
-            /**
-             * @Execution de PrepareStatement
-             */
-            int x = getInstanceT().ps.executeUpdate();
-            if (x == 1) {
-                return true;
-            }
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-
-        } finally {
-//            BD.Disconnect();
-            _p = "?";
-            System.out.println("Para: " + _p);
-        }
-
-        return false;
-    }
-
+//    public static boolean isSaved(String nameT, String typeQuerry, Object... DataExt) throws IOException, Exception {
+//        /**
+//         * @Initialisation des variables i & size
+//         */
+//        ip = 0;
+//        size = DataExt.length;
+//        Object dataInt[] = new Object[size];
+//
+//        for (Object f : DataExt) {
+//            if (f instanceof TextField) {
+//                TextField text = (TextField) f;
+//                dataInt[ip] = text.getText();
+//            } else if (f instanceof DatePicker) {
+//                DatePicker text = (DatePicker) f;
+//                dataInt[ip] = text.getValue();
+//            } else if (f instanceof TextArea) {
+//                TextArea text = (TextArea) f;
+//                dataInt[ip] = text.getText();
+//            } else if (f instanceof ComboBox) {
+//                ComboBox text = (ComboBox) f;
+//                dataInt[ip] = text.getValue();
+//            } else if (f instanceof Label) {
+//                Label text = (Label) f;
+//                dataInt[ip] = text.getText();
+//            } else if (f instanceof Text) {
+//                Text text = (Text) f;
+//                dataInt[ip] = text.getText();
+//            } else if (f instanceof PasswordField) {
+//                PasswordField text = (PasswordField) f;
+//                dataInt[ip] = text.getText();
+//            } else if (f instanceof String) {
+//                String str2 = (String) f;
+//                dataInt[ip] = str2;
+//            } else if (f instanceof Integer) {
+//                Integer inter = (Integer) f;
+//                dataInt[ip] = inter;
+//            } else if (f instanceof Float) {
+//                Float flt = (Float) f;
+//                dataInt[ip] = flt;
+//            } else if (f instanceof Double) {
+//                Double dble = (Double) f;
+//                dataInt[ip] = dble;
+//            } else if (f instanceof Boolean) {
+//                Boolean bool = (Boolean) f;
+//                dataInt[ip] = bool;
+//            }
+//            ip++;
+//        }
+//        /**
+//         * @Bouble permetant de creer les pointeurs "?"
+//         *
+//         */
+//        for (int j = 1; j < size; j++) {
+//            if (size == 1) {
+//                _p = "" + _p;
+//            } else {
+//                _p = _p + ",?";
+//            }
+//        }
+//        _p = "(" + _p + ")";
+//        ip = 0;
+//        /**
+//         * @verification du Type de requette (Procedurale ou simple insertion)
+//         */
+//        try {
+//            if ("PROCEDURE".equals(typeQuerry)) {
+//                getInstanceT().ps = isConnected().prepareCall("Call " + nameT + "" + _p);
+//                System.out.println("Call " + nameT + "" + _p);
+//            } else if ("QUERRY".equals(typeQuerry)) {
+//                getInstanceT().ps = isConnected().prepareStatement("insert into " + nameT + " values" + _p);
+//            }
+//            System.out.println("Querry: insert into " + nameT + " values" + _p);
+//            /**
+//             * @Bouble permetant de remplir les pointeurs avec des données "?"
+//             */
+//            System.out.println("data size" + dataInt.length);
+////            for (Object data : dataInt) {
+//            for (int k = 0; k < dataInt.length; k++) {
+//                System.out.println("data[" + (ip + 1) + "] " + dataInt[k]);
+//                getInstanceT().ps.setObject((k + 1), dataInt[k].toString());
+//                ip++;
+//            }
+//            /**
+//             * @Execution de PrepareStatement
+//             */
+//            int x = getInstanceT().ps.executeUpdate();
+//            if (x == 1) {
+//                return true;
+//            }
+//
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//
+//        } finally {
+////            BD.Disconnect();
+//            _p = "?";
+//            System.out.println("Para: " + _p);
+//        }
+//
+//        return false;
+//    }
     public String ismac_up(String query) {
         try {
             ps = Connexion.isConnected().prepareStatement(query);

@@ -5,10 +5,13 @@
  */
 package controller.commande;
 
+import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
 import Elementary.View_gui;
 import static Elementary.View_gui.getIns;
 import static Elementary.references.LOAD_PRINT_LISTDETTE;
+import static Elementary.references.OTHEINFO;
+import com.jfoenix.controls.JFXDialog;
 import static controller.commande.CommandeController.vb_commande1;
 import static controller.commande.ort_traitement_encours.vbx_;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
@@ -22,6 +25,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import lib.testCommande.Dao;
 import lib.testCommande.ImplemanteITestCommande;
 
@@ -43,6 +47,8 @@ public class ort_encours implements Initializable {
     @FXML
     private Label Tfd_id;
     Dao dao;
+    @FXML
+    private AnchorPane voir_plus;
 
     /**
      * Initializes the controller class.
@@ -50,6 +56,7 @@ public class ort_encours implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        eventDetail();
         initFild();
     }
     String str;
@@ -66,12 +73,12 @@ public class ort_encours implements Initializable {
 
     void livrecommande() {
         btn_livre.setOnMouseClicked((e) -> {
-            
+
             try {
                 if (!Tfd_nom.getText().isEmpty()) {
                     dao = new Dao(Tfd_id.getText(), "Fin");
                     if (!Tfd_id.getText().equals("0")) {
-                       // if()
+                        // if()
                         ImplemanteITestCommande.Instance().save(dao);
                         init();
                     }
@@ -94,6 +101,17 @@ public class ort_encours implements Initializable {
             Logger.getLogger(Orther_verifier_detteController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+
+    void eventDetail() {
+        voir_plus.setOnMouseClicked((e) -> {
+            try {
+                Other_commandeController.lab = Tfd_id;
+                Mywindows.showFormDialog(getClass().getResource(OTHEINFO), JFXDialog.DialogTransition.CENTER, 264, 525);
+            } catch (IOException ex) {
+                Logger.getLogger(PrintCommandeAllController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
     }
 
 }

@@ -5,10 +5,13 @@
  */
 package controller.commande;
 
+import Elementary.Mywindows;
 import static Elementary.Mywindows.getInstanceL;
 import Elementary.View_gui;
 import static Elementary.View_gui.getIns;
 import static Elementary.references.LOAD_PRINT_LISTDETTE;
+import static Elementary.references.OTHEINFO;
+import com.jfoenix.controls.JFXDialog;
 import static controller.commande.CommandeController.vb_commande1;
 import java.io.IOException;
 import java.net.URL;
@@ -20,6 +23,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import lib.testCommande.Dao;
 import lib.testCommande.ImplemanteITestCommande;
 
@@ -41,6 +45,8 @@ public class Orther_v_detteController implements Initializable {
     @FXML
     private Label lbldateFin;
     Dao dao;
+    @FXML
+    private AnchorPane voir_plus;
 
     /**
      * Initializes the controller class.
@@ -49,6 +55,7 @@ public class Orther_v_detteController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         initFild();
+        eventDetail();
     }
     String str;
 
@@ -92,5 +99,15 @@ public class Orther_v_detteController implements Initializable {
             Logger.getLogger(Orther_verifier_detteController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+       void eventDetail() {
+        voir_plus.setOnMouseClicked((e) -> {
+            try {
+                Other_commandeController.lab = Tfd_id;
+                Mywindows.showFormDialog(getClass().getResource(OTHEINFO), JFXDialog.DialogTransition.CENTER, 264, 525);
+            } catch (IOException ex) {
+                Logger.getLogger(PrintCommandeAllController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
     }
 }
