@@ -8,11 +8,14 @@
 <?import de.jensd.fx.glyphs.octicons.OctIconView?>
 <?import java.lang.String?>
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -46,12 +49,12 @@
                   <Text fill="#686868" layoutX="13.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cette interface vous permet d'ajouter des nouveaux commande..." wrappingWidth="224.126953125" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="73.0" prefWidth="463.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="1">
+            <AnchorPane prefHeight="73.0" prefWidth="467.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;" GridPane.columnIndex="1">
                <effect>
                   <DropShadow color="#cdcdcd" />
                </effect>
                <children>
-                  <GridPane fx:id="menu_ok" hgap="10.0" layoutX="12.0" layoutY="14.0" prefHeight="47.0" prefWidth="434.0" vgap="1.0" AnchorPane.bottomAnchor="12.0" AnchorPane.topAnchor="14.0">
+                  <GridPane fx:id="menu_ok" hgap="10.0" layoutX="12.0" layoutY="28.0" prefHeight="47.0" prefWidth="434.0" vgap="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="28.0">
                      <columnConstraints>
                         <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="72.66668701171875" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="72.66668701171875" minWidth="10.0" prefWidth="100.0" />
@@ -189,6 +192,20 @@
                         </AnchorPane>
                      </children>
                   </GridPane>
+                  <TextField fx:id="lab_search" layoutY="-4.0" prefHeight="25.0" prefWidth="417.0" promptText="Rechercher généralise" style="-fx-background-color: Transparent;" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="52.0">
+                     <padding>
+                        <Insets bottom="4.0" left="10.0" top="10.0" />
+                     </padding>
+                  </TextField>
+                  <AnchorPane fx:id="emojis_all" layoutX="418.0" layoutY="1.0" prefHeight="20.0" prefWidth="20.0">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/04.gif" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </children>
@@ -228,9 +245,9 @@
             </JFXButton>
          </children>
       </HBox>
-      <AnchorPane layoutX="6.0" layoutY="334.0" prefHeight="328.0" prefWidth="242.0">
+      <AnchorPane layoutX="6.0" layoutY="324.0" prefHeight="328.0" prefWidth="242.0">
          <children>
-            <AnchorPane layoutX="28.0" layoutY="107.0" prefHeight="162.0" prefWidth="192.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+            <AnchorPane layoutX="28.0" layoutY="107.0" prefHeight="162.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
                   <AnchorPane layoutX="8.0" layoutY="15.0" prefHeight="116.0" prefWidth="90.0" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="8.0">
                      <children>
@@ -239,12 +256,15 @@
                               <OctIconView fill="#03a9f4" glyphName="DIFF_RENAMED" size="16" />
                            </graphic>
                         </Label>
-                        <Label fx:id="dette" layoutX="7.0" layoutY="48.0" prefHeight="19.0" prefWidth="80.0" text="23445.45" textFill="#000000cc">
+                        <Label fx:id="dette" layoutX="3.0" layoutY="53.0" prefHeight="19.0" prefWidth="80.0" text="0.000.000" textFill="#000000cc">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
-                        <FontAwesomeIconView glyphName="DOLLAR" layoutY="51.42857360839844" size="10" AnchorPane.topAnchor="42.85714530944824" />
+                        <FontAwesomeIconView glyphName="DOLLAR" layoutY="52.791015625" size="10" text="FC" wrappingWidth="20.000011324882507" AnchorPane.topAnchor="42.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></FontAwesomeIconView>
                         <Text fill="#05abf2b2" layoutX="4.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="En dette" wrappingWidth="58.999999925494194">
                            <font>
                               <Font name="Lucida Console" size="12.0" />
@@ -253,14 +273,14 @@
                         <FontAwesomeIconView fill="#00000036" glyphName="ELLIPSIS_H" layoutX="7.0" layoutY="113.0" size="15" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="101.0" layoutY="15.0" prefHeight="116.0" prefWidth="90.0" AnchorPane.bottomAnchor="31.0" AnchorPane.rightAnchor="1.0">
+                  <AnchorPane layoutX="101.0" layoutY="15.0" prefHeight="116.0" prefWidth="107.0" AnchorPane.bottomAnchor="31.0" AnchorPane.rightAnchor="1.0">
                      <children>
                         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" opacity="0.57" prefHeight="36.0" prefWidth="36.0" rotate="90.0" style="-fx-background-color: FFE0E0; -fx-background-radius: 50px; -fx-border-color: FE4B4C; -fx-border-radius: 50px; -fx-border-width: 0.25px;" textFill="#000000c5">
                            <graphic>
                               <OctIconView fill="#fe4b4c" glyphName="LINK_EXTERNAL" rotate="-90.0" size="16" />
                            </graphic>
                         </Label>
-                        <Label fx:id="caisse" layoutX="7.0" layoutY="48.0" prefHeight="19.0" prefWidth="80.0" text="23445.45" textFill="#000000cc">
+                        <Label fx:id="caisse" layoutX="2.0" layoutY="53.0" prefHeight="19.0" prefWidth="90.0" text="0 000.000.000" textFill="#000000cc">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
@@ -271,7 +291,7 @@
                            </font>
                         </Text>
                         <FontAwesomeIconView fill="#00000036" glyphName="ELLIPSIS_H" layoutX="7.0" layoutY="113.0" size="15" />
-                        <FontAwesomeIconView glyphName="DOLLAR" layoutX="1.0" layoutY="51.0" size="10" AnchorPane.topAnchor="42.85714530944824" />
+                        <FontAwesomeIconView glyphName="DOLLAR" layoutX="1.0" layoutY="53.0" size="10" text="FC" wrappingWidth="20.000011324882507" AnchorPane.topAnchor="43.0" />
                      </children>
                   </AnchorPane>
                </children>
@@ -283,12 +303,12 @@
                         <Font name="Lucida Console" size="12.0" />
                      </font>
                   </Text>
-                  <Label fx:id="total" layoutX="80.0" layoutY="18.0" prefHeight="19.0" prefWidth="107.0" text="23445.45">
+                  <Label fx:id="total" layoutX="80.0" layoutY="18.0" prefHeight="19.0" prefWidth="107.0" text="0 000.000.00">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="81.0" layoutY="6.0" prefHeight="17.0" prefWidth="20.0" text="\$">
+                  <Label layoutX="81.0" layoutY="6.0" prefHeight="17.0" prefWidth="20.0" text="FC">
                      <font>
                         <Font name="Ebrima Bold" size="12.0" />
                      </font>
@@ -304,7 +324,7 @@
       </AnchorPane>
       <JFXButton fx:id="btAdd" layoutX="23.0" layoutY="233.0" onAction="#synchro" prefHeight="24.0" prefWidth="192.0" style="-fx-background-color: #fff; -fx-border-color: #48477b; -fx-border-width: 0.25px; -fx-border-radius: 5px;" text="Synchroniser" textFill="#48477b">
          <graphic>
-            <FontAwesomeIconView fill="#48477b" glyphName="CLOUD_DOWNLOAD" size="20" />
+            <FontAwesomeIconView fill="#48477b" glyphName="UNDO" size="15" />
          </graphic>
          <font>
             <Font name="Ebrima Bold" size="13.0" />
@@ -312,6 +332,15 @@
       </JFXButton>
       <DatePicker fx:id="date_debut" layoutX="23.0" layoutY="142.0" prefHeight="25.0" prefWidth="192.0" stylesheets="@../../css/skeleton.css" />
       <DatePicker fx:id="date_fin" layoutX="23.0" layoutY="185.0" prefHeight="25.0" prefWidth="192.0" stylesheets="@../../css/skeleton.css" />
+      <AnchorPane fx:id="emojis_" layoutX="245.0" layoutY="348.0" prefHeight="200.0" prefWidth="495.0" style="-fx-background-color: Transparent;" AnchorPane.leftAnchor="245.0" AnchorPane.rightAnchor="9.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="184.0" layoutX="205.0" layoutY="26.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/04.gif" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
    <stylesheets>
       <URL value="@../../css/custom-scroll.css" />

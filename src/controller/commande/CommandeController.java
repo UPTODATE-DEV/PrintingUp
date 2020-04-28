@@ -33,6 +33,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
@@ -108,6 +109,13 @@ public class CommandeController implements Initializable {
     private Label caisse;
     @FXML
     private Label total;
+    private ImageView emojis;
+    @FXML
+    private AnchorPane emojis_;
+    @FXML
+    private TextField lab_search;
+    @FXML
+    private AnchorPane emojis_all;
 
     /**
      * Initializes the controller class.
@@ -122,8 +130,15 @@ public class CommandeController implements Initializable {
             getInstanceL().SelectDataFor(p_commande, p3, p2, p4, p5);
             getInstanceL().SelectDataFor1(btn_commande, btn_attent, btn_dette, btn_encours, btn_disponible);
             init(1);
+            if (getInstanceL().resulta != 0) {
+                emojis_.setVisible(false);
+            } else {
+                emojis_.setVisible(true);
+            }
+            emojis_all.setVisible(false);
             // DOSynchro();
             initTread1();
+            isSearch();
             date_fin.setValue(LocalDate.now());
             date_debut.setValue(LocalDate.now());
 
@@ -168,9 +183,7 @@ public class CommandeController implements Initializable {
     }
 
     void initTreed() {
-
         if (isConnected() != null) {
-
             if (Integer.parseInt(Traitement.getInstanceT().getValue("SELECT count(id) x FROM tbl_exe_commande where statis='Attente'")) > 0) {
                 i3.setVisible(true);
             } else {
@@ -269,29 +282,54 @@ public class CommandeController implements Initializable {
             getInstanceL().SelectDataFor1(btn_dette, btn_attent, btn_encours, btn_disponible, btn_commande);
             status = 2;
             init(4);
+            if (getInstanceL().resulta == 0) {
+                emojis_.setVisible(true);
+            } else {
+                emojis_.setVisible(false);
+            }
         } else if (event.getSource() == btn_attent) {
             // popOverMenu(p1, getClass().getResource(PRINT_DETTE), PopOver.ArrowLocation.TOP_CENTER);
             getInstanceL().SelectDataFor(p3, p2, p4, p5, p_commande);
             getInstanceL().SelectDataFor1(btn_attent, btn_dette, btn_encours, btn_disponible, btn_commande);
             init(3);
             status = 3;
+            if (getInstanceL().resulta == 0) {
+                emojis_.setVisible(true);
+            } else {
+                emojis_.setVisible(false);
+            }
         } else if (event.getSource() == btn_encours) {
             //  popOverMenu(p31, getClass().getResource(LOAD_ENCOURS), PopOver.ArrowLocation.TOP_CENTER);
             getInstanceL().SelectDataFor(p4, p3, p2, p5, p_commande);
             getInstanceL().SelectDataFor1(btn_encours, btn_attent, btn_dette, btn_disponible, btn_commande);
             status = 4;
             init(5);
+            if (getInstanceL().resulta == 0) {
+                emojis_.setVisible(true);
+            } else {
+                emojis_.setVisible(false);
+            }
         } else if (event.getSource() == btn_disponible) {
             // popOverMenu(p3, getClass().getResource(LOAD_PRINT_DISPONIBLE), PopOver.ArrowLocation.TOP_CENTER);
             getInstanceL().SelectDataFor(p5, p4, p3, p2, p_commande);
             getInstanceL().SelectDataFor1(btn_disponible, btn_encours, btn_attent, btn_dette, btn_commande);
             status = 5;
             init(2);
+            if (getInstanceL().resulta == 0) {
+                emojis_.setVisible(true);
+            } else {
+                emojis_.setVisible(false);
+            }
         } else if (event.getSource() == btn_commande) {
             getInstanceL().SelectDataFor(p_commande, p2, p3, p4, p5);
             getInstanceL().SelectDataFor1(btn_commande, btn_dette, btn_attent, btn_encours, btn_disponible);
             status = 1;
             init(1);
+            if (getInstanceL().resulta == 0) {
+                emojis_.setVisible(true);
+            } else {
+                emojis_.setVisible(false);
+            }
         }
 //        else if (event.getSource() == btn_commande1) {
 //
@@ -318,6 +356,12 @@ public class CommandeController implements Initializable {
                                         + Tfl_search.getText()
                                         + "%' OR id LIKE '%" + Tfl_search.getText() + "%'"), PRINT_CMD, 2);
 
+                        if (getInstanceL().resulta == 0) {
+                            emojis_.setVisible(true);
+                        } else {
+                            emojis_.setVisible(false);
+                        }
+
                     } catch (SQLException | IOException ex) {
                         Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -329,7 +373,11 @@ public class CommandeController implements Initializable {
                                         "SELECT * FROM client_dette WHERE (nom LIKE '%"
                                         + Tfl_search.getText()
                                         + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), PRINT_PAIEMENT_DETTE, 2);
-
+                        if (getInstanceL().resulta == 0) {
+                            emojis_.setVisible(true);
+                        } else {
+                            emojis_.setVisible(false);
+                        }
                     } catch (SQLException | IOException ex) {
                         Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -341,7 +389,11 @@ public class CommandeController implements Initializable {
                                         "SELECT * FROM new_test_encours Where (statis='Attente') AND (nom LIKE '%"
                                         + Tfl_search.getText()
                                         + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), LOAD_PRINT_DETTE, 2);
-
+                        if (getInstanceL().resulta == 0) {
+                            emojis_.setVisible(true);
+                        } else {
+                            emojis_.setVisible(false);
+                        }
                     } catch (SQLException | IOException ex) {
                         Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -353,7 +405,11 @@ public class CommandeController implements Initializable {
                                         "SELECT * FROM new_test_encours Where (statis='Encours') AND (nom LIKE '%"
                                         + Tfl_search.getText()
                                         + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), LOAD_PRINT_ENCOURS, 2);
-
+                        if (getInstanceL().resulta == 0) {
+                            emojis_.setVisible(true);
+                        } else {
+                            emojis_.setVisible(false);
+                        }
                     } catch (SQLException | IOException ex) {
                         Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -365,7 +421,11 @@ public class CommandeController implements Initializable {
                                         "SELECT * FROM new_test_encours Where (statis='Fin') AND (nom LIKE '%"
                                         + Tfl_search.getText()
                                         + "%' OR id LIKE '%" + Tfl_search.getText() + "%')"), LOAD_PRINT_FIN, 2);
-
+                        if (getInstanceL().resulta == 0) {
+                            emojis_.setVisible(true);
+                        } else {
+                            emojis_.setVisible(false);
+                        }
                     } catch (SQLException | IOException ex) {
                         Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -387,11 +447,125 @@ public class CommandeController implements Initializable {
             id_co = getInstanceL().ismac_up("SELECT min(id) x FROM vs_paiement_date_01 WHERE date_format(date_,'%Y-%m-%d') BETWEEN '" + dateB(date_debut) + "' AND '" + dateB(date_fin) + "'");
             id_co1 = getInstanceL().ismac_up("SELECT max(id) x FROM vs_paiement_date_01 WHERE date_format(date_,'%Y-%m-%d') BETWEEN '" + dateB(date_debut) + "' AND '" + dateB(date_fin) + "'");
             getInstanceL().ScrollwithHBX(vb_commande1, View_gui.getIns().getService(3, "SELECT * FROM new_vs_print2_paiement WHERE id BETWEEN '" + id_co + "' AND '" + id_co1 + "'"), PRINT_CMD, 2);
-            
+            if (getInstanceL().resulta != 0) {
+                emojis_.setVisible(false);
+            } else {
+                emojis_.setVisible(true);
+            }
         } catch (IOException | SQLException ex) {
             Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
+    int t = 0;
 
+    void isSearch() {
+        lab_search.setOnKeyReleased((e) -> {
+            emojis_all.setVisible(true);
+
+            try {
+                switch (t) {
+                    case 0:
+                        getInstanceL().ScrollwithHBX(vb_commande,
+                                View_gui.getIns().getService(3,
+                                        "SELECT * FROM new_vs_print2_paiement WHERE nom LIKE '%"
+                                        + lab_search.getText()
+                                        + "%' OR id LIKE '%" + lab_search.getText() + "%'"), PRINT_CMD, 2);
+                        if (getInstanceL().resulta == 0) {
+                            t = 1;
+                        }
+                        break;
+                    case 1:
+                        getInstanceL().ScrollwithHBX(vb_commande,
+                                View_gui.getIns().getService(5,
+                                        "SELECT * FROM client_dette WHERE (nom LIKE '%"
+                                        + lab_search.getText()
+                                        + "%' OR id LIKE '%" + lab_search.getText() + "%')"), PRINT_PAIEMENT_DETTE, 2);
+                        if (getInstanceL().resulta == 0) {
+                            t = 2;
+                        }
+                        break;
+                    case 2:
+                        getInstanceL().ScrollwithHBX(vb_commande,
+                                View_gui.getIns().getService(4,
+                                        "SELECT * FROM new_test_encours Where (statis='Attente') AND (nom LIKE '%"
+                                        + lab_search.getText()
+                                        + "%' OR id LIKE '%" + lab_search.getText() + "%')"), LOAD_PRINT_DETTE, 2);
+                        if (getInstanceL().resulta == 0) {
+                            t = 3;
+                        }
+                        break;
+                    case 3:
+                        getInstanceL().ScrollwithHBX(vb_commande,
+                                View_gui.getIns().getService(4,
+                                        "SELECT * FROM new_test_encours Where (statis='Encours') AND (nom LIKE '%"
+                                        + lab_search.getText()
+                                        + "%' OR id LIKE '%" + lab_search.getText() + "%')"), LOAD_PRINT_ENCOURS, 2);
+                        if (getInstanceL().resulta == 0) {
+                            t = 4;
+                        }
+                        break;
+                    case 4:
+                        getInstanceL().ScrollwithHBX(vb_commande,
+                                View_gui.getIns().getService(4,
+                                        "SELECT * FROM new_test_encours Where (statis='Fin') AND (nom LIKE '%"
+                                        + lab_search.getText()
+                                        + "%' OR id LIKE '%" + lab_search.getText() + "%')"), LOAD_PRINT_FIN, 2);
+                        if (getInstanceL().resulta == 0) {
+                            t = 5;
+                        }
+                        break;
+                    case 5:
+                        if (getInstanceL().resulta == 0) {
+                            emojis_.setVisible(true);
+                        } else {
+                            emojis_.setVisible(false);
+                        }
+                        emojis_all.setVisible(false);
+                        t=0;
+                        break;
+                    default:
+                        break;
+                }
+
+            } catch (SQLException | IOException ex) {
+                Logger.getLogger(CommandeController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+
+    }
+
+//    private void Login() {
+//        emojis_all.setVisible(true);
+//        final Service<Void> calculateService = new Service<Void>() {
+//            @Override
+//            protected Task<Void> createTask() {
+//                return new Task<Void>() {
+//                    @Override
+//                    protected Void call() throws Exception {
+//                        isSearch();
+//                        return null;
+//                    }
+//                };
+//            }
+//        };
+//        calculateService.stateProperty().addListener((ObservableValue<? extends Worker.State> observableValue, Worker.State oldValue, Worker.State newValue) -> {
+//            switch (newValue) {
+//                case FAILED:
+//                    emojis_all.setVisible(false);
+//                    break;
+//                case CANCELLED:
+//                    emojis_all.setVisible(false);
+//
+//                case SUCCEEDED:
+//                    if (getInstanceL().resulta == 0) {
+//                        emojis_.setVisible(true);
+//                    } else {
+//                        emojis_.setVisible(false);
+//                    }
+//                    break;
+//            }
+//        });
+//        calculateService.start();
+//    }
 }

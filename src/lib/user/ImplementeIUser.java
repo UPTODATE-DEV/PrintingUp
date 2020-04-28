@@ -59,19 +59,24 @@ public class ImplementeIUser implements IUser {
     @Override
     public boolean connexion(UserDao user) {
         try {
-            pst = Connexion.isConnected().prepareStatement("SELECT * FROM `tbl_user_` INNER JOIN tbl_utilisateur ON\n"
-                    + "tbl_user_.idUtilisateur=tbl_utilisateur.id WHERE user_name=? AND password_=?");
-            pst.setString(1, user.getUsername()); pst.setString(2, user.getPasswor());
-            rst = pst.executeQuery();
-            if (rst.next()) {
-                TestConnexion(user);
-                nom_agent = View_gui.getIns().capitalize(rst.getString("nom"));
-                id_conne = View_gui.getIns().capitalize(rst.getString("fonction"));
+            if (Connexion.isConnected() != null) {
+                pst = Connexion.isConnected().prepareStatement("SELECT * FROM `tbl_user_` INNER JOIN tbl_utilisateur ON\n"
+                        + "tbl_user_.idUtilisateur=tbl_utilisateur.id WHERE user_name=? AND password_=?");
+                pst.setString(1, user.getUsername());
+                pst.setString(2, user.getPasswor());
+                rst = pst.executeQuery();
+                if (rst.next()) {
+                    TestConnexion(user);
+                    nom_agent = View_gui.getIns().capitalize(rst.getString("nom"));
+                    id_conne = View_gui.getIns().capitalize(rst.getString("fonction"));
 
-                return true;
+                    return true;
 
+                } else {
+                    return false;
+                }
             } else {
-                return false;
+                System.out.println("Redemarre le serveur svp");
             }
         } catch (SQLException ex) {
             Logger.getLogger(ImplementeIUser.class.getName()).log(Level.SEVERE, null, ex);
