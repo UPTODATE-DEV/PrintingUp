@@ -7,6 +7,7 @@ package controllers;
 
 import static Elementary.Alerts.warning;
 import Elementary.Mywindows;
+import static Elementary.Mywindows.createWindow;
 import static Elementary.Mywindows.getInstanceL;
 import static Elementary.Mywindows.popOverMenu;
 import Elementary.Traitement;
@@ -35,6 +36,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import org.controlsfx.control.PopOver;
 
 /**
@@ -105,6 +107,10 @@ public class PrincipaleController implements Initializable {
     private Label lbl_user_;
     @FXML
     private MaterialDesignIconView strech;
+    @FXML
+    private JFXButton btn_disponible;
+    @FXML
+    private AnchorPane p1_sign_in;
 
     /**
      * Initializes the controller class.
@@ -114,7 +120,7 @@ public class PrincipaleController implements Initializable {
         Rcotent = cotent;
         dteP1 = dteP;
         dteFin2 = dteFin;
-        
+        mainAcces();
         lbl_user_.setText(nom_agent);
         Lblfonction.setText(id_conne);
         getInstanceT().Ecart(dteP, dteFin);
@@ -124,6 +130,7 @@ public class PrincipaleController implements Initializable {
         getInstanceL().IsSeleted(s_dash, s_new, s_Ccommande, s_parametre);
         getInstanceL().SelectDataFor(p1, p2, p3, p4, p5);
         evenememet();
+        config.setTooltip(getInstanceT().Titre("Deconnexion"));
         //loadContentPopup() ;
     }
     
@@ -175,8 +182,16 @@ public class PrincipaleController implements Initializable {
             
         });
         strech.setOnMouseClicked((e) -> {
-            Mywindows.stage_.setFullScreen(true);
+            up_priting.Up_priting.stage_.setFullScreen(true);
         });
+        config.setOnMouseClicked((e) -> {
+            try {
+                popOverMenu(p1_sign_in, getClass().getResource(LOAD_DECONNEXION), PopOver.ArrowLocation.TOP_CENTER);
+            } catch (IOException ex) {
+                Logger.getLogger(PrincipaleController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        
         InitData();
     }
     
@@ -227,6 +242,12 @@ public class PrincipaleController implements Initializable {
 //            popConfig.show(config, 0);
 //            popConfig.getRoot().setFocusTraversable(true);
 //        }
+    }
+    
+    void mainAcces() {
+        btn_disponible.setOnMouseClicked((e) -> {
+            createWindow(getClass().getResource(LOAD_DIALOGUE_DISPONIBLE), "COMMANDE DISPONIBLE", new Stage(), false);
+        });
     }
     
 }

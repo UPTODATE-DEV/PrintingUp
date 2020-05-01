@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PrintDisponibleController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="113.0" prefWidth="185.0">
+         <children>
+            <Label fx:id="idcommande" alignment="CENTER" layoutX="1.0" layoutY="13.0" prefHeight="36.0" prefWidth="191.0" text="118" textFill="#fa573c">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="text-danger" />
+                  <String fx:value="h3" />
+               </styleClass>
+            </Label>
+            <Text layoutX="-1.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -text-color;" text="Commande" textAlignment="CENTER" wrappingWidth="190.99999982118607" />
+            <Label alignment="CENTER" layoutX="-6.0" layoutY="48.0" prefHeight="17.0" prefWidth="191.0" text="AKILIMALI CIZUNGU INNOCENT" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="-2.0" layoutY="65.0" prefHeight="17.0" prefWidth="191.0" text="500.0" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutY="84.0" prefHeight="17.0" prefWidth="185.0" text="Status" textAlignment="CENTER">
+               <graphic>
+                  <MaterialDesignIconView textAlignment="JUSTIFY" />
+               </graphic>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

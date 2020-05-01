@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane prefHeight="539.0" prefWidth="379.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CommandeDisponibleController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="378.0">
+         <children>
+            <Label fx:id="lbl_numberRegisters211" layoutX="3.0" prefHeight="36.0" prefWidth="367.0" text="118" textFill="#fa573c">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="text-danger" />
+                  <String fx:value="h3" />
+               </styleClass>
+            </Label>
+            <ScrollPane layoutX="5.0" layoutY="53.0" prefHeight="443.0" prefWidth="367.0" stylesheets="@../css/custom-scroll.css">
+               <content>
+                  <VBox fx:id="vb_box" prefHeight="443.0" prefWidth="365.0" />
+               </content>
+            </ScrollPane>
+            <Text layoutX="8.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -text-color;" text="Commande Disponible" wrappingWidth="143.0703125" />
+            <Pagination fx:id="pgi" layoutY="497.0" maxPageIndicatorCount="5" pageCount="10" prefHeight="36.0" prefWidth="378.0" styleClass="txt-danger">
+               <stylesheets>
+                  <URL value="@../css/material-color.css" />
+                  <URL value="@../css/typographic.css" />
+                  <URL value="@../css/bootstrap.css" />
+                  <URL value="@../conf/drawer.css" />
+               </stylesheets>
+            </Pagination>
+            <HBox layoutX="150.0" layoutY="24.0" prefHeight="27.0" prefWidth="223.0" style="-fx-border-color: #c2c2c2c2; -fx-border-width: 0.5px;">
+               <children>
+                  <FontAwesomeIconView fill="#fa573c" glyphName="SEARCH">
+                     <HBox.margin>
+                        <Insets left="4.0" top="6.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <TextField fx:id="Tfdsearch" prefHeight="25.0" prefWidth="223.0" promptText="Rechercher de livre..." style="-fx-background-color: Transparent;" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

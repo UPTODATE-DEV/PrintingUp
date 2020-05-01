@@ -158,7 +158,7 @@ public class login implements Initializable {
 
     @FXML
     private void switchCreate(MouseEvent event) {
-        CallWindow.Callwindow.GetInstance().call("/guis/parametrer/account.fxml", "UP-PRINT", 0, "/icons/uptodate.png");
+        Mywindows.openWindow(getClass().getResource("/guis/parametrer/account.fxml"), "UP-PRINT");
         ((Stage) username.getScene().getWindow()).close();
 
     }
@@ -226,18 +226,22 @@ public class login implements Initializable {
     boolean bool = false;
 
     void testLogin() {
-        if (validPassword() && validUsername()) {
-            user = new UserDao(username.getText(), password.getText());
+        if (Connexion.isConnected() != null) {
+            if (validPassword() && validUsername()) {
+                user = new UserDao(username.getText(), password.getText());
 
-            if (Iuser.connexion(user) == true) {
-                ((Stage) fenetreLogin.getScene().getWindow()).close();
-                openWindow(getClass().getResource(PRINCIPAL), "UP-PRINT");
-                //  CallWindow.Callwindow.GetInstance().call(PRINCIPAL, "UP-PRINT", 0, "/icons/uptodate.png");
+                if (Iuser.connexion(user) == true) {
+                    ((Stage) fenetreLogin.getScene().getWindow()).close();
+                    openWindow(getClass().getResource(PRINCIPAL), "UP-PRINT");
+                    //  CallWindow.Callwindow.GetInstance().call(PRINCIPAL, "UP-PRINT", 0, "/icons/uptodate.png");
+                } else {
+                    new Service_widows().showMssge(message, icon, "Mot de passe ou Nom d'utilisateur incorrect ", 0);
+                }
             } else {
-                new Service_widows().showMssge(message, icon, "Mot de passe ou Nom d'utilisateur incorrect ", 0);
+                new Service_widows().showMssge(message, icon, "Le mot de passe doit contenir plus de 3 caracter ", 0);
             }
         } else {
-
+            Mywindows.createWindow(getClass().getResource(references.LOAD_CONFIGURATION), "Configuration", new Stage(), false);
         }
     }
 

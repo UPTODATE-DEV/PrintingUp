@@ -522,7 +522,7 @@ public class CommandeController implements Initializable {
                             emojis_.setVisible(false);
                         }
                         emojis_all.setVisible(false);
-                        t=0;
+                        t = 0;
                         break;
                     default:
                         break;

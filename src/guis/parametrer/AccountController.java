@@ -6,6 +6,8 @@
 package guis.parametrer;
 
 import Elementary.Mask;
+import Elementary.Mywindows;
+import static Elementary.Mywindows.stage_;
 import static Elementary.references.LOGIN;
 import animatefx.animation.Flash;
 import animatefx.animation.Pulse;
@@ -26,8 +28,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -74,6 +78,8 @@ public class AccountController implements Initializable {
     private TextField txtmail;
     @FXML
     private JFXButton btAdd;
+    @FXML
+    private StackPane btn_pe;
 
     /**
      * Initializes the controller class.
@@ -81,32 +87,58 @@ public class AccountController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
- 
-//        rotateTransition.setNode(avatar);
-//        rotateTransition.setByAngle(360);
-//        rotateTransition.setDuration(Duration.seconds(1));
-//        rotateTransition.setAutoReverse(true);
-//
-//        addEffect(email);
-//        addEffect(fullname);
-//        addEffect(username);
-//        addEffect(password);
+        init();
+        rotateTransition.setNode(avatar);
+        rotateTransition.setByAngle(360);
+        rotateTransition.setDuration(Duration.seconds(1));
+        rotateTransition.setAutoReverse(true);
+
+        addEffect(txtnom);
+        addEffect(txtadresseph);
+        addEffect(txtnum);
+        addEffect(txtrccm);
+        addEffect(txtchemin);
+        addEffect(txtmail);
+
 //
 //        Mask.nameField(fullname);
 //        Mask.noInitSpace(username);
 //        Mask.noSpaces(username);
 //        setupListeners();
-     //
+        //
     }
 
     @FXML
     private void back(ActionEvent event) {
-
-        CallWindow.Callwindow.GetInstance().call(LOGIN, "UP-PRINT", 0, "/icons/uptodate.png");
+        Mywindows.openWindow(getClass().getResource(LOGIN), "UP-PRINT");
         ((Stage) txtnom.getScene().getWindow()).close();
-       
-        
 
+    }
+
+    void init() {
+        boolean bol = true;
+        txtnom.setOnKeyReleased((e) -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                Mywindows.stage_.setFullScreen(bol);
+            }
+        });
+        txtchemin.setOnKeyReleased((e) -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                Mywindows.stage_.setFullScreen(bol);
+            }
+        });
+        txtnum.setOnKeyReleased((e) -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                Mywindows.stage_.setFullScreen(bol);
+            }
+        });
+
+        txtrccm.setOnKeyReleased((e) -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                Mywindows.stage_.setFullScreen(bol);
+
+            }
+        });
     }
 
     private void addEffect(Node node) {
@@ -116,7 +148,7 @@ public class AccountController implements Initializable {
             pulse.setDelay(Duration.millis(100));
             pulse.setSpeed(5);
             pulse.play();
-            node.getParent().setStyle("-icon-color : -success; -fx-border-color : -success");
+            node.getParent().setStyle("-icon-color : -success; -fx-border-color : -transparent");
         });
 
         node.focusedProperty().addListener((observable, oldValue, newValue) -> {

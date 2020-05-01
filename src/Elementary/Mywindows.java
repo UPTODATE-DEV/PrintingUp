@@ -94,7 +94,7 @@ public class Mywindows extends Traitement {
             Parent root = FXMLLoader.load(URL);
             Stage stage = new Stage();
             stage.setMaximized(true);
-            stage_ = stage;
+            up_priting.Up_priting.stage_ = stage;
             stage.setTitle(title);
             stage.getIcons().add(new javafx.scene.image.Image("/icons/uptodate.png"));
             stage.setScene(new Scene(root));
@@ -424,7 +424,6 @@ public class Mywindows extends Traitement {
     static Thread out;
 
     public static void Loading(ImageView image) {
-
         try {
 
             image.setVisible(true);
@@ -932,6 +931,7 @@ public class Mywindows extends Traitement {
             }
 
         }
+
     }
 
     public ArrayList getData() throws SQLException {

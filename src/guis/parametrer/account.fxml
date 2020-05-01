@@ -5,6 +5,7 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -21,7 +22,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane prefHeight="601.0" prefWidth="1004.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guis.parametrer.AccountController">
+<StackPane fx:id="btn_pe" prefHeight="601.0" prefWidth="1004.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guis.parametrer.AccountController">
    <padding>
       <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
    </padding>
@@ -32,7 +33,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="566.0" prefWidth="836.0">
                      <children>
-                        <GNAvatarView fx:id="avatar" prefHeight="564.0" prefWidth="218.0" strokeWidth="0.0" type="CIRCLE">
+                        <GNAvatarView fx:id="avatar" prefHeight="538.0" prefWidth="172.0" strokeWidth="0.0" type="CIRCLE">
                            <effect>
                               <DropShadow color="#00000035" />
                            </effect>
@@ -57,7 +58,7 @@
                                        <children>
                                           <HBox alignment="CENTER" layoutX="13.0" layoutY="33.0" style="-fx-background-color: #212B38;" AnchorPane.leftAnchor="12.5" AnchorPane.rightAnchor="12.5" AnchorPane.topAnchor="33.0">
                                              <children>
-                                                <AnchorPane prefHeight="158.0" prefWidth="528.0" style="-fx-background-color: #0075B3; -fx-background-radius: 5px;">
+                                                <AnchorPane prefHeight="158.0" prefWidth="528.0" style="-fx-background-color: #AADCEE; -fx-background-radius: 5px;">
                                                    <children>
                                                       <Label layoutX="50.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #F9C933; -fx-background-radius: 2px;">
                                                          <font>
@@ -69,7 +70,7 @@
                                                             <Font size="7.0" />
                                                          </font>
                                                       </Label>
-                                                      <Label layoutX="121.0" layoutY="11.0" prefHeight="53.0" prefWidth="5.0" style="-fx-background-color: #2E3542; -fx-background-radius: 2px;">
+                                                      <Label layoutX="121.0" layoutY="11.0" prefHeight="53.0" prefWidth="5.0" style="-fx-background-color: #0075B3; -fx-background-radius: 2px;">
                                                          <font>
                                                             <Font size="7.0" />
                                                          </font>
@@ -134,7 +135,7 @@
                                                             <Font size="7.0" />
                                                          </font>
                                                       </Label>
-                                                      <Text fill="WHITE" layoutX="51.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Up to Date Developpers" textAlignment="CENTER" wrappingWidth="428.00000536441803">
+                                                      <Text fill="WHITE" layoutX="51.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UP TO DATE DEVELOPERS" textAlignment="CENTER" wrappingWidth="428.00000536441803">
                                                          <font>
                                                             <Font name="Lucida Console" size="29.0" />
                                                          </font>
@@ -149,7 +150,7 @@
                                                             <Font size="7.0" />
                                                          </font>
                                                       </Label>
-                                                      <Label layoutX="415.0" layoutY="11.0" prefHeight="53.0" prefWidth="5.0" style="-fx-background-color: #2E3542; -fx-background-radius: 2px;">
+                                                      <Label layoutX="415.0" layoutY="11.0" prefHeight="53.0" prefWidth="5.0" style="-fx-background-color: #0075B3; -fx-background-radius: 2px;">
                                                          <font>
                                                             <Font size="7.0" />
                                                          </font>
@@ -219,7 +220,7 @@
                                                             <Font size="7.0" />
                                                          </font>
                                                       </Label>
-                                                      <Label layoutX="433.0" layoutY="113.0" prefHeight="36.0" prefWidth="5.0" style="-fx-background-color: #EF844A; -fx-background-radius: 2px;">
+                                                      <Label layoutX="433.0" layoutY="113.0" prefHeight="36.0" prefWidth="5.0" style="-fx-background-color: #0075B3; -fx-background-radius: 2px;">
                                                          <font>
                                                             <Font size="7.0" />
                                                          </font>
@@ -234,12 +235,12 @@
                                                             <Font size="7.0" />
                                                          </font>
                                                       </Label>
-                                                      <Text fill="WHITE" layoutX="55.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RCCM:" wrappingWidth="49.99999575316906">
+                                                      <Text fill="WHITE" layoutX="84.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RCCM:" wrappingWidth="49.99999575316906">
                                                          <font>
                                                             <Font name="Arial Bold" size="12.0" />
                                                          </font>
                                                       </Text>
-                                                      <Label layoutX="101.0" layoutY="107.0" prefHeight="17.0" prefWidth="270.0" text="12-R/3847599689" textFill="WHITE">
+                                                      <Label layoutX="130.0" layoutY="100.0" prefHeight="17.0" prefWidth="270.0" text="12-R/3847599689" textFill="WHITE">
                                                          <font>
                                                             <Font name="System Bold" size="12.0" />
                                                          </font>
@@ -258,14 +259,14 @@
                                              <children>
                                                 <AnchorPane layoutX="10.0" layoutY="8.0" prefHeight="49.0" prefWidth="371.0">
                                                    <children>
-                                                      <Label layoutX="3.0" text="Nom de l'Entreprise" textFill="#42526e">
+                                                      <Label layoutX="3.0" text="Nom entreprise" textFill="#42526e">
                                                          <font>
                                                             <Font name="System Bold" size="12.0" />
                                                          </font>
                                                       </Label>
                                                       <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="328.0">
                                                          <children>
-                                                            <TextField fx:id="txtnom" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="328.0" promptText="Saisisez Identiter de la Personne" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
+                                                            <TextField fx:id="txtnom" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="328.0" promptText="Saisissez le nom de l'entreprise" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
                                                          </children>
                                                       </AnchorPane>
                                                    </children>
@@ -279,7 +280,7 @@
                                                       </Label>
                                                       <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="193.0">
                                                          <children>
-                                                            <TextField fx:id="txtrccm" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="193.0" promptText="Saisisez Identiter de la Personne" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
+                                                            <TextField fx:id="txtrccm" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="205.0" promptText="Saisissez RCCM  de l'entreprise" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
                                                          </children>
                                                       </AnchorPane>
                                                    </children>
@@ -296,7 +297,10 @@
                                                             <TextField fx:id="txtchemin" editable="false" layoutX="-5.0" layoutY="1.0" prefHeight="28.0" prefWidth="253.0" promptText="Saisisez Identiter de la Personne" style="-fx-background-color: #fff;" />
                                                          </children>
                                                       </AnchorPane>
-                                                      <FontAwesomeIconView fx:id="chema" glyphName="FOLDER_ALT" layoutX="8.0" layoutY="38.0" size="15" styleClass="CursorChange" />
+                                                      <FontAwesomeIconView fx:id="logos_entreprise" glyphName="FOLDER_ALT" layoutX="8.0" layoutY="38.0" size="15" styleClass="CursorChange">
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor></FontAwesomeIconView>
                                                    </children>
                                                 </AnchorPane>
                                                 <JFXButton alignment="BASELINE_CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="505.0" layoutY="10.0" onAction="#editedate" prefHeight="22.0" prefWidth="20.0" style="-fx-background-color: #fff;" styleClass="CursorChange" text=" " textFill="#0747a6" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
@@ -306,6 +310,9 @@
                                                    <graphic>
                                                       <FontAwesomeIconView fill="#48477b" glyphName="EDIT" size="15" />
                                                    </graphic>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
                                                 </JFXButton>
                                              </children>
                                           </AnchorPane>
@@ -313,42 +320,42 @@
                                              <children>
                                                 <AnchorPane layoutX="10.0" layoutY="8.0" prefHeight="49.0" prefWidth="381.0">
                                                    <children>
-                                                      <Label layoutX="3.0" text="Adresse Physique" textFill="#42526e">
+                                                      <Label layoutX="3.0" text="Adresse physique" textFill="#42526e">
                                                          <font>
                                                             <Font name="System Bold" size="12.0" />
                                                          </font>
                                                       </Label>
                                                       <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="381.0">
                                                          <children>
-                                                            <TextField fx:id="txtadresseph" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="381.0" promptText="Saisisez Identiter de la Personne" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
+                                                            <TextField fx:id="txtadresseph" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="381.0" promptText="Saisissez l'adresse physique de l'entreprise" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
                                                          </children>
                                                       </AnchorPane>
                                                    </children>
                                                 </AnchorPane>
                                                 <AnchorPane layoutX="10.0" layoutY="126.0" prefHeight="49.0" prefWidth="371.0">
                                                    <children>
-                                                      <Label layoutX="3.0" text="Num Téléphone" textFill="#42526e">
+                                                      <Label layoutX="3.0" text="Téléphone" textFill="#42526e">
                                                          <font>
                                                             <Font name="System Bold" size="12.0" />
                                                          </font>
                                                       </Label>
                                                       <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="253.0">
                                                          <children>
-                                                            <TextField fx:id="txtnum" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="253.0" promptText="Saisisez Identiter de la Personne" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
+                                                            <TextField fx:id="txtnum" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="253.0" promptText="Saisissez le numéro téléphone de l'entreprise" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
                                                          </children>
                                                       </AnchorPane>
                                                    </children>
                                                 </AnchorPane>
                                                 <AnchorPane layoutX="10.0" layoutY="67.0" prefHeight="49.0" prefWidth="253.0">
                                                    <children>
-                                                      <Label layoutX="3.0" text="Adreese Mail" textFill="#42526e">
+                                                      <Label layoutX="3.0" text="Adress mail" textFill="#42526e">
                                                          <font>
                                                             <Font name="System Bold" size="12.0" />
                                                          </font>
                                                       </Label>
                                                       <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="253.0">
                                                          <children>
-                                                            <TextField fx:id="txtmail" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="253.0" promptText="Saisisez Identiter de la Personne" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
+                                                            <TextField fx:id="txtmail" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="253.0" promptText="Saisissez l'adresse mail de l'entreprise" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
                                                          </children>
                                                       </AnchorPane>
                                                    </children>
@@ -360,6 +367,9 @@
                                                    <graphic>
                                                       <FontAwesomeIconView fill="#48477b" glyphName="EDIT" size="15" />
                                                    </graphic>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
                                                 </JFXButton>
                                              </children>
                                           </AnchorPane>
@@ -381,7 +391,7 @@
                   </HBox>
                </children>
             </FlowPane>
-            <Hyperlink alignment="CENTER_RIGHT" contentDisplay="RIGHT" onAction="#back" text="Return">
+            <Hyperlink alignment="CENTER_RIGHT" contentDisplay="RIGHT" onAction="#back" stylesheets="@../../css/skeleton.css" text="Return">
                <graphic>
                   <SVGPath content="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" />
                </graphic>

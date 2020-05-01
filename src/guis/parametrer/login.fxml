@@ -104,13 +104,12 @@
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="lbl_error" styleClass="text-danger" text="Invalid username or password." visible="false" />
-                                    <HBox alignment="CENTER" prefHeight="17.0" prefWidth="289.0">
+                                    <HBox accessibleRole="LIST_ITEM" alignment="CENTER" prefHeight="17.0" prefWidth="289.0">
                                        <children>
-                                          <Label text="Creation de compte " />
-                                          <Hyperlink fx:id="createrUser" prefHeight="23.0" prefWidth="122.0" text="utilisateur / password" />
+                                          <Hyperlink fx:id="createrUser" alignment="CENTER" prefHeight="23.0" prefWidth="293.0" stylesheets="@../../css/skeleton.css" text="Mot de passe oublier" textAlignment="CENTER" />
                                        </children>
                                     </HBox>
+                                    <Label fx:id="lbl_error" styleClass="text-danger" text="Invalid username or password." visible="false" />
                                  </children>
                               </VBox>
                            </children>
@@ -128,7 +127,7 @@
                   </HBox>
                </children>
             </FlowPane>
-            <Hyperlink alignment="CENTER_RIGHT" contentDisplay="RIGHT" onMouseClicked="#switchCreate" text="Créate entreprise">
+            <Hyperlink alignment="CENTER_RIGHT" contentDisplay="RIGHT" onMouseClicked="#switchCreate" stylesheets="@../../css/skeleton.css" text="Créate entreprise">
                <graphic>
                   <SVGPath content="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" />
                </graphic>

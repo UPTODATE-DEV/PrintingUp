@@ -20,6 +20,7 @@ public class references {
     public static final String PRINT_SERVICE = "/gui/printRealisation.fxml";
     public static final String LOADDING_RAPPORT = "/gui/FXMLrapport.fxml";
     public static final String LOAD_CLE_PRODUIT = "/gui/cle_produit.fxml";
+    public static final String LOAD_DECONNEXION = "/conf/deconnexion.fxml";
 
     public static final String LOGIN = "/guis/parametrer/login.fxml";
 
@@ -29,6 +30,7 @@ public class references {
     public static final String OTHERMENU = "/gui/other.fxml";
     public static final String OTHEPAIEMENT = "/guis/commande/other_paiement.fxml";
     public static final String OTHEINFO = "/guis/commande/other_commande.fxml";
+    public static final String LOAD_DIALOGUE_DISPONIBLE = "/gui/CommandeDisponible.fxml";
 
     /**
      *
@@ -56,6 +58,7 @@ public class references {
     public static final String LOAD_RAPPORT = "/guis/commande/rapport_vente.fxml";
     public static final String PRINT_DETTE = "/guis/commande/orther_paiement_dette.fxml";
     public static final String PRINT_PAIEMENT_DETTE = "/guis/commande/other_regle_dette.fxml";
+    public static final String LOAD_CONFIGURATION = "/guis/parametrer/configuration_server.fxml";
 
     public static final String PARAMETRE = "/parametre/parametre.fxml";
     public static final String USER = "/parametre/user.fxml";

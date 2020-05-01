@@ -175,25 +175,29 @@
                </children></AnchorPane>
             <AnchorPane layoutX="116.5" layoutY="437.0" prefHeight="114.0" prefWidth="84.0" style="-fx-background-color: #F6F7F9; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="129.0" AnchorPane.rightAnchor="10.5">
                <children>
-                  <JFXButton fx:id="config" contentDisplay="GRAPHIC_ONLY" layoutX="24.0" layoutY="37.0" onMouseClicked="#openConfig" prefHeight="36.0" prefWidth="40.0" ripplerFill="BLACK">
-                     <graphic>
-                        <SVGPath content="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="#00000080" styleClass="icon" />
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="btn-transparent" />
-                        <String fx:value="round" />
-                     </styleClass>
-                     <contextMenu>
-                        <ContextMenu>
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                           </items>
-                        </ContextMenu>
-                     </contextMenu>
-                  </JFXButton>
+                  <AnchorPane fx:id="p1_sign_in" layoutX="23.0" layoutY="36.0">
+                     <children>
+                        <JFXButton fx:id="config" contentDisplay="GRAPHIC_ONLY" layoutX="1.0" layoutY="1.0" onMouseClicked="#openConfig" prefHeight="36.0" prefWidth="40.0" ripplerFill="BLACK">
+                           <graphic>
+                              <SVGPath content="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="#00000080" styleClass="icon" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <styleClass>
+                              <String fx:value="btn-transparent" />
+                              <String fx:value="round" />
+                           </styleClass>
+                           <contextMenu>
+                              <ContextMenu>
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                                 </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
                </children></AnchorPane>
             <AnchorPane layoutX="32.0" layoutY="17.0" prefHeight="55.0" prefWidth="132.0">
                <children>
@@ -379,7 +383,7 @@
                            <children>
                               <HBox alignment="CENTER_LEFT" prefHeight="93.0" prefWidth="271.0">
                                  <children>
-                                    <JFXButton contentDisplay="GRAPHIC_ONLY" minHeight="60.0" minWidth="60.0" prefHeight="60.0" prefWidth="60.0" ripplerFill="WHITE" styleClass="btn-warning">
+                                    <JFXButton fx:id="btn_disponible" contentDisplay="GRAPHIC_ONLY" minHeight="60.0" minWidth="60.0" prefHeight="60.0" prefWidth="60.0" ripplerFill="WHITE" styleClass="btn-warning">
                                        <graphic>
                                           <SVGPath content="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="WHITE" />
                                        </graphic>

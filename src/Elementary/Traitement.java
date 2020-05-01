@@ -28,6 +28,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.StackPane;
 import javafx.util.Callback;
 import javafx.util.Duration;
@@ -276,6 +277,12 @@ public class Traitement extends Connexion {
         dl.setPrefSize(width, height);
         dialog = new JFXDialog(stck, dl, JFXDialog.DialogTransition.CENTER, false);
         dialog.show(stck);
+    }
+    
+     public Tooltip Titre(String titre) {
+        Tooltip a = new Tooltip();
+        a.setText(titre);
+        return a;
     }
 
 }
