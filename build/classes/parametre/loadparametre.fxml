@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="128.0" prefWidth="138.0" style="-fx-background-color: fff; -fx-background-radius: 4px;" stylesheets="@../Style/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c_parametre.LoadparametreController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="21.0" prefHeight="38.0" prefWidth="38.0" style="-fx-background-color: #2E3542; -fx-background-radius: 5px; -fx-border-color: #03A9F4; -fx-border-radius: 5px; -fx-border-width: 0.25px;" text="MB" textFill="#ffffffd8">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="63.0" opacity="0.57" prefHeight="26.0" prefWidth="118.0" text="Maurice Bagalwa" textFill="#000000">
+         <font>
+            <Font name="Yu Gothic Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="85.0" opacity="0.57" prefHeight="26.0" prefWidth="118.0" text="Simple" textFill="#000000c5">
+         <font>
+            <Font name="Yu Gothic UI Light" size="12.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="#48477a" glyphName="ELLIPSIS_H" layoutX="112.0" layoutY="18.0" size="15" styleClass="CursorChange" />
+   </children>
+</AnchorPane>

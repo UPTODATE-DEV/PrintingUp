@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="570.0" prefWidth="556.0" style="-fx-background-color: #F1F4F9;" stylesheets="@../Style/Style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c_parametre.AbonnementController">
+   <children>
+      <HBox alignment="CENTER" layoutX="9.0" layoutY="33.0" prefHeight="158.0" prefWidth="536.0" style="-fx-background-color: #212B38;" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="33.0">
+         <children>
+            <AnchorPane prefHeight="158.0" prefWidth="528.0" style="-fx-background-color: #212B38; -fx-background-radius: 5px;">
+               <children>
+                  <Label layoutX="50.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #F9C933; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="63.0" layoutY="29.0" prefHeight="36.0" prefWidth="5.0" style="-fx-background-color: #EF844A; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="121.0" layoutY="11.0" prefHeight="53.0" prefWidth="5.0" style="-fx-background-color: #2E3542; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="50.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #85F497; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="63.0" layoutY="10.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #85F497; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="88.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #398395; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="104.0" layoutY="29.0" prefHeight="36.0" prefWidth="5.0" style="-fx-background-color: #85F497; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="88.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #2E3542; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="104.0" layoutY="10.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #FFD432; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="134.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #E94368; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="134.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #F9C933; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="150.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #EF844A; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="150.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #48477B; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="72.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #48477B; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="72.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #E94368; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="340.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #F9C933; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="353.0" layoutY="29.0" prefHeight="36.0" prefWidth="5.0" style="-fx-background-color: #EF844A; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="415.0" layoutY="11.0" prefHeight="53.0" prefWidth="5.0" style="-fx-background-color: #2E3542; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="340.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #85F497; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="353.0" layoutY="10.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #85F497; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="366.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #398395; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="398.0" layoutY="29.0" prefHeight="36.0" prefWidth="5.0" style="-fx-background-color: #85F497; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="366.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #2E3542; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="398.0" layoutY="10.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #FFD432; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="428.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #E94368; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="428.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #F9C933; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="444.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #EF844A; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="444.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #48477B; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="382.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #48477B; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="382.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #E94368; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="420.0" layoutY="114.0" prefHeight="25.0" prefWidth="5.0" style="-fx-background-color: #F9C933; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="433.0" layoutY="113.0" prefHeight="36.0" prefWidth="5.0" style="-fx-background-color: #EF844A; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="446.0" layoutY="114.0" prefHeight="16.0" prefWidth="5.0" style="-fx-background-color: #398395; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="446.0" layoutY="134.0" prefHeight="16.0" prefWidth="5.0" style="-fx-background-color: #398395; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Circle fx:id="logo" fill="#212b38" layoutX="248.0" layoutY="38.0" radius="30.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="78.0" prefHeight="25.0" prefWidth="76.0" text="23jrs" textFill="WHITE">
+                     <font>
+                        <Font name="Ebrima Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Text fill="WHITE" layoutX="48.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Restant avant l'Echeance">
+                     <font>
+                        <Font name="Ebrima" size="13.0" />
+                     </font>
+                  </Text>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="313.0" layoutY="78.0" prefHeight="25.0" prefWidth="141.0" text="Premium" textFill="WHITE">
+                     <font>
+                        <Font name="Ebrima Bold" size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <Text layoutX="27.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mon Abonnement" wrappingWidth="252.99999575316906">
+         <font>
+            <Font name="Lucida Console" size="18.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="10.0" layoutY="199.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="199.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="366.0" prefWidth="536.0" style="-fx-background-color: fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ScrollPane prefHeight="366.0" prefWidth="548.0" stylesheets="@../css/custom-scroll.css">
+                     <content>
+                        <AnchorPane prefHeight="743.0" prefWidth="512.0">
+                           <children>
+                              <AnchorPane prefHeight="378.0" prefWidth="512.0" style="-fx-background-color: fff; -fx-background-radius: 5px;">
+                                 <children>
+                                    <AnchorPane layoutX="19.0" layoutY="118.0" prefHeight="128.0" prefWidth="485.0" AnchorPane.leftAnchor="19.0">
+                                       <children>
+                                          <AnchorPane layoutX="172.0" layoutY="13.0" prefHeight="25.0" prefWidth="108.0" AnchorPane.leftAnchor="4.0">
+                                             <children>
+                                                <Text fill="#756f6f" layoutX="26.0" layoutY="18.6875" strokeType="OUTSIDE" strokeWidth="0.0" text="Standard">
+                                                   <font>
+                                                      <Font name="Ebrima Bold" size="16.0" />
+                                                   </font>
+                                                </Text>
+                                                <Icons525View fill="#3c6ce7" glyphName="CREDITCARD" layoutX="2.0" layoutY="21.0" size="20" />
+                                             </children>
+                                          </AnchorPane>
+                                          <Text fill="#0000009d" layoutX="8.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esst une abonnemenr don tla somme payée au vendeur d'une option d'achat (ou de vente) de titres par l'acheteur de l'option. (C'est le prix d'un dédit versé au vendeur lors de la conclusion du contrat pour le cas de non-exécution de la transaction par l'acheteur.)" wrappingWidth="461.826171875">
+                                             <font>
+                                                <Font name="Yu Gothic UI Regular" size="12.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="19.0" layoutY="232.0" prefHeight="132.0" prefWidth="485.0" AnchorPane.leftAnchor="19.0">
+                                       <children>
+                                          <AnchorPane layoutX="172.0" layoutY="13.0" prefHeight="25.0" prefWidth="108.0" AnchorPane.leftAnchor="4.0">
+                                             <children>
+                                                <Text fill="#756f6f" layoutX="24.0" layoutY="16.6875" strokeType="OUTSIDE" strokeWidth="0.0" text="Premium">
+                                                   <font>
+                                                      <Font name="Ebrima Bold" size="16.0" />
+                                                   </font>
+                                                </Text>
+                                                <Icons525View fill="#dcb235" glyphName="CREDITCARD" layoutY="20.0" size="20" />
+                                             </children>
+                                          </AnchorPane>
+                                          <Text fill="#0000009d" layoutX="13.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esst une abonnemenr don tla somme payée au vendeur d'une option d'achat (ou de vente) de titres par l'acheteur de l'option. (C'est le prix d'un dédit versé au vendeur lors de la conclusion du contrat pour le cas de non-exécution de la transaction par l'acheteur.)" wrappingWidth="461.8261747062206">
+                                             <font>
+                                                <Font name="Yu Gothic UI Regular" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <JFXButton fx:id="btlogin" layoutX="387.0" layoutY="107.0" onAction="#abonner" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #fff; -fx-border-color: #48477b; -fx-border-width: 0.5px; -fx-border-radius: 5px;" text="s'abonner" textFill="#48477b" AnchorPane.rightAnchor="40.0">
+                                             <font>
+                                                <Font name="Ebrima Bold" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <Label alignment="CENTER" layoutX="10.0" layoutY="108.0" prefHeight="29.0" prefWidth="68.0" text="0.75$/jrs">
+                                             <font>
+                                                <Font name="Ebrima Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="19.0" layoutY="14.0" prefHeight="119.0" prefWidth="485.0" AnchorPane.leftAnchor="19.0">
+                                       <children>
+                                          <AnchorPane layoutX="162.0" layoutY="4.0" prefHeight="29.0" prefWidth="108.0" AnchorPane.leftAnchor="4.0">
+                                             <children>
+                                                <Text fill="#756f6f" layoutX="25.0" layoutY="19.6875" strokeType="OUTSIDE" strokeWidth="0.0" text="Essaie">
+                                                   <font>
+                                                      <Font name="Ebrima Bold" size="16.0" />
+                                                   </font>
+                                                </Text>
+                                                <Icons525View fill="#b699eb" glyphName="CREDITCARD" layoutX="1.0" layoutY="22.0" size="20" />
+                                             </children>
+                                          </AnchorPane>
+                                          <Text fill="#0000009d" layoutX="6.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esst une abonnemenr don tla somme payée au vendeur d'une option d'achat (ou de vente) de titres par l'acheteur de l'option. (C'est le prix d'un dédit versé " wrappingWidth="445.826171875">
+                                             <font>
+                                                <Font name="Yu Gothic UI Regular" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <Label alignment="CENTER" layoutX="-5.0" layoutY="71.0" prefHeight="29.0" prefWidth="174.0" text="30 jours d'essaie grauit">
+                                             <font>
+                                                <Font name="Ebrima Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutY="419.0" prefHeight="326.0" prefWidth="512.0" style="-fx-background-color: fff; -fx-background-radius: 5px;">
+                                 <children>
+                                    <VBox layoutX="12.0" layoutY="65.0" prefHeight="187.0" prefWidth="485.0">
+                                       <children>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="474.0" style="-fx-background-color: E8E8E8;">
+                                             <children>
+                                                <Text layoutX="12.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Effectuer les Opérations">
+                                                   <font>
+                                                      <Font name="Yu Gothic UI Bold" size="14.0" />
+                                                   </font>
+                                                </Text>
+                                                <Icons525View fill="#b699eb" glyphName="OK" layoutX="225.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="222.0" />
+                                                <Icons525View fill="#3c6ce7" glyphName="OK" layoutX="327.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="327.0" />
+                                                <Icons525View fill="#dcb235" glyphName="OK" layoutX="436.0" layoutY="24.0" size="15" AnchorPane.leftAnchor="433.0" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="6.0" />
+                                             </VBox.margin>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="10.0" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="474.0">
+                                             <children>
+                                                <Text layoutX="12.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visualisation">
+                                                   <font>
+                                                      <Font name="Yu Gothic UI Bold" size="14.0" />
+                                                   </font>
+                                                </Text>
+                                                <Icons525View fill="#b699eb" glyphName="OK" layoutX="216.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="222.0" />
+                                                <Icons525View fill="#3c6ce7" glyphName="OK" layoutX="300.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="327.0" />
+                                                <Icons525View fill="#dcb235" glyphName="OK" layoutX="379.0" layoutY="24.0" size="15" AnchorPane.leftAnchor="433.0" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="6.0" />
+                                             </VBox.margin>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="10.0" layoutY="95.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="474.0" style="-fx-background-color: E8E8E8;">
+                                             <children>
+                                                <Text layoutX="12.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rapport">
+                                                   <font>
+                                                      <Font name="Yu Gothic UI Bold" size="14.0" />
+                                                   </font>
+                                                </Text>
+                                                <Icons525View fill="#b699eb" glyphName="OK" layoutX="216.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="222.0" />
+                                                <Icons525View fill="#3c6ce7" glyphName="CANCEL" layoutX="300.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="327.0" />
+                                                <Icons525View fill="#dcb235" glyphName="OK" layoutX="379.0" layoutY="24.0" size="15" AnchorPane.leftAnchor="433.0" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="6.0" />
+                                             </VBox.margin>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="10.0" layoutY="130.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="476.0">
+                                             <children>
+                                                <Text layoutX="12.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Synchrinisation">
+                                                   <font>
+                                                      <Font name="Yu Gothic UI Bold" size="14.0" />
+                                                   </font>
+                                                </Text>
+                                                <Icons525View fill="#b699eb" glyphName="OK" layoutX="216.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="222.0" />
+                                                <Icons525View fill="#3c6ce7" glyphName="CANCEL" layoutX="300.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="327.0" />
+                                                <Icons525View fill="#dcb235" glyphName="OK" layoutX="379.0" layoutY="24.0" size="15" AnchorPane.leftAnchor="433.0" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="6.0" />
+                                             </VBox.margin>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="10.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="475.0" style="-fx-background-color: E8E8E8;">
+                                             <children>
+                                                <Text layoutX="12.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Multi Utilisateur">
+                                                   <font>
+                                                      <Font name="Yu Gothic UI Bold" size="14.0" />
+                                                   </font>
+                                                </Text>
+                                                <Icons525View fill="#b699eb" glyphName="OK" layoutX="216.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="222.0" />
+                                                <Icons525View fill="#3c6ce7" glyphName="CANCEL" layoutX="300.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="327.0" />
+                                                <Icons525View fill="#dcb235" glyphName="OK" layoutX="379.0" layoutY="24.0" size="15" AnchorPane.leftAnchor="433.0" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="6.0" />
+                                             </VBox.margin>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="16.0" layoutY="115.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="476.0">
+                                             <children>
+                                                <Text layoutX="12.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Validation Mobile">
+                                                   <font>
+                                                      <Font name="Yu Gothic UI Bold" size="14.0" />
+                                                   </font>
+                                                </Text>
+                                                <Icons525View fill="#b699eb" glyphName="OK" layoutX="216.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="222.0" />
+                                                <Icons525View fill="#3c6ce7" glyphName="CANCEL" layoutX="300.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="327.0" />
+                                                <Icons525View fill="#dcb235" glyphName="OK" layoutX="379.0" layoutY="24.0" size="15" AnchorPane.leftAnchor="433.0" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="6.0" />
+                                             </VBox.margin>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="16.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="475.0" style="-fx-background-color: E8E8E8;">
+                                             <children>
+                                                <Text layoutX="12.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Backup">
+                                                   <font>
+                                                      <Font name="Yu Gothic UI Bold" size="14.0" />
+                                                   </font>
+                                                </Text>
+                                                <Icons525View fill="#b699eb" glyphName="OK" layoutX="216.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="222.0" />
+                                                <Icons525View fill="#3c6ce7" glyphName="CANCEL" layoutX="300.0" layoutY="25.0" size="15" AnchorPane.leftAnchor="327.0" />
+                                                <Icons525View fill="#dcb235" glyphName="OK" layoutX="379.0" layoutY="24.0" size="15" AnchorPane.leftAnchor="433.0" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="6.0" />
+                                             </VBox.margin>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                    <AnchorPane layoutX="6.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="485.0">
+                                       <children>
+                                          <Label alignment="CENTER" layoutX="208.0" layoutY="11.0" prefHeight="29.0" prefWidth="68.0" style="-fx-background-color: #b699eb; -fx-background-radius: 4px;" text="Essaie" textFill="#ebebeb">
+                                             <font>
+                                                <Font name="Ebrima Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" layoutX="313.0" layoutY="11.0" prefHeight="29.0" prefWidth="68.0" style="-fx-background-color: #3c6ce7; -fx-background-radius: 4px;" text="Standard" textFill="WHITE">
+                                             <font>
+                                                <Font name="Ebrima Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" layoutX="418.0" layoutY="11.0" prefHeight="29.0" prefWidth="68.0" style="-fx-background-color: DCB235; -fx-background-radius: 4px;" text="Premium" textFill="WHITE">
+                                             <font>
+                                                <Font name="Ebrima Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <Text fill="#756f6f" layoutX="25.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details sur les differents types d'abonnement">
+                                 <font>
+                                    <Font name="Ebrima Bold" size="16.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

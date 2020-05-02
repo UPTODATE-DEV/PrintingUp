@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="431.0" prefWidth="434.0" style="-fx-background-color: fff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="c_addForms.Proc3Controller">
+   <children>
+      <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="194.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/crocIcon.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="82.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Renitialisation du mot de passe de l'utilisateur" textAlignment="CENTER" wrappingWidth="258.00000059604645">
+         <font>
+            <Font name="Lucida Console" size="15.0" />
+         </font>
+      </Text>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="51.0" layoutY="107.0" prefHeight="17.0" prefWidth="331.0" text="Maurice Bagalwa" textAlignment="CENTER" textFill="#42526e">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="403.0" layoutY="7.0" onAction="#close" prefHeight="20.0" prefWidth="18.0" style="-fx-background-color: #48477b;" text="Configurer " textFill="WHITE">
+         <font>
+            <Font name="Ebrima" size="6.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" size="16" />
+         </graphic>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="176.0" layoutY="149.0" prefHeight="20.0" prefWidth="82.0" text="Securité" textAlignment="CENTER" textFill="#070707">
+         <font>
+            <Font name="Ebrima Bold" size="13.0" />
+         </font>
+         <graphic>
+            <MaterialDesignIconView glyphName="SECURITY" size="20" />
+         </graphic>
+      </Label>
+      <AnchorPane layoutX="74.0" layoutY="190.0" prefHeight="49.0" prefWidth="324.0">
+         <children>
+            <Label layoutX="3.0" text="Nouveau  mot de passe" textFill="#42526e">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="317.0" style="-fx-border-color: #b6b6b6; -fx-border-width: 0.25px;">
+               <children>
+                  <PasswordField fx:id="txtpsswd" layoutX="2.0" layoutY="2.0" prefHeight="28.0" prefWidth="308.0" style="-fx-background-color: fff;" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="74.0" layoutY="250.0" prefHeight="49.0" prefWidth="324.0">
+         <children>
+            <Label layoutX="3.0" text="Confirmé le Nouveau  mot de passe" textFill="#42526e">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="317.0" style="-fx-border-color: #b6b6b6; -fx-border-width: 0.25px;">
+               <children>
+                  <PasswordField fx:id="txtconfirme" layoutX="2.0" layoutY="2.0" prefHeight="28.0" prefWidth="308.0" style="-fx-background-color: fff;" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="47.0" layoutY="353.0" prefHeight="42.0" prefWidth="258.0">
+         <children>
+            <Text fx:id="message" layoutX="44.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="205.13671875" />
+            <Label fx:id="icon" layoutY="2.0" prefHeight="30.0" prefWidth="38.0" text=" " />
+         </children>
+      </AnchorPane>
+      <JFXButton alignment="CENTER" contentDisplay="RIGHT" layoutX="74.0" layoutY="312.0" onAction="#config" prefHeight="26.0" prefWidth="317.0" style="-fx-background-color: #48477b;" text="Renitialisez le mot de passe" textFill="WHITE">
+         <font>
+            <Font name="Ebrima" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

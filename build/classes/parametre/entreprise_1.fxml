@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="635.0" prefWidth="566.0" style="-fx-background-color: #F1F4F9;" stylesheets="@../Style/Style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUIControllers.EntrepriseController">
+   <children>
+      <HBox alignment="CENTER" layoutX="12.5" layoutY="33.0" style="-fx-background-color: #212B38;" AnchorPane.leftAnchor="12.5" AnchorPane.rightAnchor="12.5" AnchorPane.topAnchor="33.0">
+         <children>
+            <AnchorPane prefHeight="158.0" prefWidth="528.0" style="-fx-background-color: #212B38; -fx-background-radius: 5px;">
+               <children>
+                  <Label layoutX="50.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #F9C933; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="63.0" layoutY="29.0" prefHeight="36.0" prefWidth="5.0" style="-fx-background-color: #EF844A; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="121.0" layoutY="11.0" prefHeight="53.0" prefWidth="5.0" style="-fx-background-color: #2E3542; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="50.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #85F497; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="63.0" layoutY="10.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #85F497; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="88.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #398395; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="104.0" layoutY="29.0" prefHeight="36.0" prefWidth="5.0" style="-fx-background-color: #85F497; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="88.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #2E3542; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="104.0" layoutY="10.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #FFD432; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="134.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #E94368; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="134.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #F9C933; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="150.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #EF844A; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="150.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #48477B; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="72.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #48477B; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="72.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #E94368; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="txttitle" fill="WHITE" layoutX="51.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Up to Date Developpers" textAlignment="CENTER" wrappingWidth="428.00000536441803">
+                     <font>
+                        <Font name="Lucida Console" size="29.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="340.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #F9C933; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="353.0" layoutY="29.0" prefHeight="36.0" prefWidth="5.0" style="-fx-background-color: #EF844A; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="415.0" layoutY="11.0" prefHeight="53.0" prefWidth="5.0" style="-fx-background-color: #2E3542; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="340.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #85F497; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="353.0" layoutY="10.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #85F497; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="366.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #398395; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="398.0" layoutY="29.0" prefHeight="36.0" prefWidth="5.0" style="-fx-background-color: #85F497; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="366.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #2E3542; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="398.0" layoutY="10.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #FFD432; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="428.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #E94368; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="428.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #F9C933; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="444.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #EF844A; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="444.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #48477B; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="382.0" layoutY="11.0" prefHeight="34.0" prefWidth="5.0" style="-fx-background-color: #48477B; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="382.0" layoutY="54.0" prefHeight="7.0" prefWidth="5.0" style="-fx-background-color: #E94368; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="420.0" layoutY="114.0" prefHeight="25.0" prefWidth="5.0" style="-fx-background-color: #F9C933; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="433.0" layoutY="113.0" prefHeight="36.0" prefWidth="5.0" style="-fx-background-color: #EF844A; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="446.0" layoutY="114.0" prefHeight="16.0" prefWidth="5.0" style="-fx-background-color: #398395; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="446.0" layoutY="134.0" prefHeight="16.0" prefWidth="5.0" style="-fx-background-color: #398395; -fx-background-radius: 2px;">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </Label>
+                  <Text fill="WHITE" layoutX="55.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RCCM:" wrappingWidth="49.99999575316906">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="101.0" layoutY="107.0" prefHeight="17.0" prefWidth="270.0" text="12-R/3847599689" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Circle fx:id="logo" fill="#212b38" layoutX="248.0" layoutY="38.0" radius="30.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <Text layoutX="17.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profil de l'Entreprise" wrappingWidth="252.99999575316906">
+         <font>
+            <Font name="Lucida Console" size="18.0" />
+         </font>
+      </Text>
+      <ScrollPane layoutX="14.0" layoutY="199.0" prefHeight="423.0" prefWidth="541.0" styleClass="othersscroll" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="199.0">
+         <content>
+            <AnchorPane prefHeight="703.0" prefWidth="520.0" style="-fx-background-color: #F1F4F9;">
+               <children>
+                  <AnchorPane layoutY="30.0" prefHeight="131.0" prefWidth="520.0" style="-fx-background-color: fff; -fx-background-radius: 5px;">
+                     <children>
+                        <AnchorPane layoutX="10.0" layoutY="9.0" prefHeight="49.0" prefWidth="371.0">
+                           <children>
+                              <Label layoutX="3.0" text="Nom de l'Entreprise" textFill="#42526e">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="328.0">
+                                 <children>
+                                    <TextField fx:id="txtnom" layoutX="-4.0" layoutY="1.0" onKeyReleased="#setname" prefHeight="28.0" prefWidth="328.0" promptText="Saisisez Identiter de la Personne" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="68.0" prefHeight="49.0" prefWidth="193.0">
+                           <children>
+                              <Label layoutX="3.0" text="RCCM" textFill="#42526e">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="193.0">
+                                 <children>
+                                    <TextField fx:id="txtrccm" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="182.0" promptText="Saisisez Identiter de la Personne" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="228.0" layoutY="69.0" prefHeight="49.0" prefWidth="253.0" AnchorPane.leftAnchor="228.0">
+                           <children>
+                              <Label layoutX="3.0" text="Logo" textFill="#42526e">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutX="26.0" layoutY="17.0" prefHeight="30.0" prefWidth="253.0">
+                                 <children>
+                                    <TextField fx:id="txtchemin" editable="false" layoutX="-5.0" layoutY="1.0" prefHeight="28.0" prefWidth="253.0" promptText="Saisisez Identiter de la Personne" style="-fx-background-color: #fff;" />
+                                 </children>
+                              </AnchorPane>
+                              <FontAwesomeIconView fx:id="chema" glyphName="FOLDER_ALT" layoutX="8.0" layoutY="38.0" size="15" styleClass="CursorChange" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="200.0" prefHeight="188.0" prefWidth="520.0" style="-fx-background-color: fff; -fx-background-radius: 5px;">
+                     <children>
+                        <AnchorPane layoutX="10.0" layoutY="8.0" prefHeight="49.0" prefWidth="381.0">
+                           <children>
+                              <Label layoutX="3.0" text="Adresse Physique" textFill="#42526e">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="381.0">
+                                 <children>
+                                    <TextField fx:id="txtadresseph" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="381.0" promptText="Saisisez Identiter de la Personne" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="126.0" prefHeight="49.0" prefWidth="371.0">
+                           <children>
+                              <Label layoutX="3.0" text="Num Téléphone" textFill="#42526e">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="253.0">
+                                 <children>
+                                    <TextField fx:id="txtnum" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="253.0" promptText="Saisisez Identiter de la Personne" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="67.0" prefHeight="49.0" prefWidth="253.0">
+                           <children>
+                              <Label layoutX="3.0" text="Adreese Mail" textFill="#42526e">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="253.0">
+                                 <children>
+                                    <TextField fx:id="txtmail" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="253.0" promptText="Saisisez Identiter de la Personne" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="8.0" layoutY="3.0" text="Identificaion de l'Entreprise" textFill="#42526e" AnchorPane.leftAnchor="10.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="8.0" layoutY="168.0" text="Adressse Electronique &amp; Physique" textFill="#42526e" AnchorPane.leftAnchor="10.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="398.0" text="Administrateur" textFill="#42526e" AnchorPane.leftAnchor="10.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutY="426.0" prefHeight="227.0" prefWidth="520.0" style="-fx-background-color: fff; -fx-background-radius: 5px;">
+                     <children>
+                        <AnchorPane layoutX="10.0" layoutY="9.0" prefHeight="49.0" prefWidth="371.0">
+                           <children>
+                              <Label layoutX="3.0" text="Identiter de l'Admin" textFill="#42526e">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="328.0">
+                                 <children>
+                                    <TextField fx:id="txtAdmin" layoutX="-4.0" layoutY="1.0" prefHeight="28.0" prefWidth="328.0" promptText="Saisisez Identiter de la Personne" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="-4.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="68.0" prefHeight="49.0" prefWidth="328.0">
+                           <children>
+                              <Label layoutX="3.0" text="Mot de Passe" textFill="#42526e">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="328.0">
+                                 <children>
+                                    <PasswordField fx:id="txtpasswd" layoutX="-4.0" prefHeight="30.0" prefWidth="328.0" promptText="Entrez le mot de passe par defaut de l'Admin" style="-fx-background-color: fff;" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <Text fill="#00000091" layoutX="35.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ce dernier pourra modifier ces données dans l'onglet Profil d'utilisateur" wrappingWidth="391.9999899417162" />
+                        <AnchorPane layoutX="11.0" layoutY="124.0" prefHeight="49.0" prefWidth="328.0">
+                           <children>
+                              <Label layoutX="3.0" text="Mot de Passe" textFill="#42526e">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutY="19.0" prefHeight="30.0" prefWidth="328.0">
+                                 <children>
+                                    <PasswordField fx:id="txtpasswd1" layoutX="-4.0" prefHeight="30.0" prefWidth="328.0" promptText="Confirmer le mot de passe saisie " style="-fx-background-color: fff;" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <FontAwesomeIconView glyphName="LIGHTBULB_ALT" layoutX="20.0" layoutY="207.0" size="20">
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#03a9f4" />
+                                    <Stop color="#3949a3" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </FontAwesomeIconView>
+                     </children>
+                  </AnchorPane>
+                  <JFXButton fx:id="btsave" buttonType="RAISED" layoutX="403.0" layoutY="667.0" onAction="#save" prefHeight="27.0" prefWidth="104.0" style="-fx-background-color: #fff; -fx-border-color: #48477b; -fx-border-width: 0.25px; -fx-border-radius: 5px;" text="Enregistrer" textFill="#48477b">
+                     <graphic>
+                        <FontAwesomeIconView fill="#48477b" glyphName="DOT_CIRCLE_ALT" size="15" />
+                     </graphic>
+                     <font>
+                        <Font name="Ebrima Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="530.0" layoutY="8.0" onAction="#retour" prefHeight="20.0" prefWidth="18.0" style="-fx-background-color: #48477b;" text="Configurer " textFill="WHITE">
+         <font>
+            <Font name="Ebrima" size="6.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="16" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

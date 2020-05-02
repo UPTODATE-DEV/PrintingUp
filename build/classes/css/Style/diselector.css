@@ -1,0 +1,15 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 31, 2019, 8:27:19 AM
+    Author     : Authentique
+*/
+
+.label .glyph-icon{
+-fx-background-color:#727272; ;
+/*-fx-fill: #cc8f1e;*/
+-fx-fill:#727272;
+}
